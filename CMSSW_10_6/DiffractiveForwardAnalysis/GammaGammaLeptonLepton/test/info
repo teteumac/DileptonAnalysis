@@ -1,2 +1,5 @@
 Para rodar: 
           cmsRun <arquivo cfg.py desejado>
+          
+RunGammaGammaLeptonLeptonMC_cfg.py - Arquivo de configuração que roda o módulo GammaGammaLL que cria as ntuplas para serem analisadas
+PUHistos_*.root - Arquivos obtidos pelo pileup reweighting (https://github.com/UHH2/UHH2/wiki/Pileup-reweighting-for-MC)
