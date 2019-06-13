@@ -59,6 +59,7 @@ process.ctppsTrackDistributionPlotter = cms.EDAnalyzer("CTPPSTrackDistributionPl
 
 process.dump = cms.EDAnalyzer("EventContentAnalyzer")
 
+#https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGenParticlePruner
 process.prunedGenParticles = cms.EDProducer(
 "GenParticlePruner",
 src = cms.InputTag("genParticles"),
