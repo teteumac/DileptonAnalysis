@@ -55,7 +55,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 # event source
 process.source = cms.Source("PoolSource",
-  fileNames = cms.untracked.vstring("file:///afs/cern.ch/user/r/rebassoo/public/ForJan/062366B6-DF2B-E911-BB28-C45444922958.root")
+  fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/input/2017/MC/LPAIRmumuElastic_Fall17/GGToMuMu_Pt-50_Inel-El_13TeV-lpairAODSIM92X.root")
 )
 
 # number of events
@@ -101,13 +101,13 @@ process.hltFilter.HLTPaths = cms.vstring(
 process.ctppsHepMCDistributionPlotter = cms.EDAnalyzer("CTPPSHepMCDistributionPlotter",
   tagHepMC = cms.InputTag("beamDivergenceVtxGenerator"),
   lhcInfoLabel = cms.string(""),
-  outputFile = cms.string("output_HepMC.root")
+  outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_HepMC.root")
 )
 
 # XY distribution plotter
 process.ctppsTrackDistributionPlotter = cms.EDAnalyzer("CTPPSTrackDistributionPlotter",
   tagTracks = cms.InputTag("ctppsLocalTrackLiteProducer"),
-  outputFile = cms.string("output_track_xy.root")
+  outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_track_xy.root")
 )
 
 process.dump = cms.EDAnalyzer("EventContentAnalyzer")
@@ -127,26 +127,36 @@ process.ggll_aod.mcpupath = 'input_Event/N_TrueInteractions'
 
 # prepare the output file
 process.TFileService = cms.Service('TFileService',
-    fileName = cms.string('output_xangle120.root'),
+    fileName = cms.string('/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_xangle120.root'),
     closeFileFast = cms.untracked.bool(True)
+)
+
+#https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGenParticlePruner
+process.prunedGenParticles = cms.EDProducer(
+"GenParticlePruner",
+src = cms.InputTag("genParticles"),
+select = cms.vstring('drop *',
+# for miniAOD matching
+'keep status == 1')
 )
 
 # processing path
 process.p = cms.Path(
+  process.prunedGenParticles *
   #process.dump *
-  process.beamDivergenceVtxGenerator
-  * process.ctppsDirectProtonSimulation
+  process.beamDivergenceVtxGenerator *
+  process.ctppsDirectProtonSimulation *
 
-  * process.reco_local
+  process.reco_local  *
+ 
+  process.ctppsProtons *
 
-  * process.ctppsProtons
+  process.ctppsHepMCDistributionPlotter *
+  process.ctppsTrackDistributionPlotter *
 
-  * process.ctppsHepMCDistributionPlotter
-  * process.ctppsTrackDistributionPlotter
+  process.hltFilter *
 
-  * process.hltFilter
-
-  * process.ggll_aod
+  process.ggll_aod
 )
 
 #process.outpath = cms.EndPath(process.out, patAlgosToolsTask)
