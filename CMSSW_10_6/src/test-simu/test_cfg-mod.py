@@ -120,8 +120,7 @@ process.ggll_aod.leptonsType = cms.string('Muon')
 #process.ggll_aod.leptonsType = cms.string('Electron')
 process.ggll_aod.runOnMC = cms.bool(runOnMC)
 process.ggll_aod.fetchProtons = cms.bool(True)
-process.ggll_aod.sa
-veExtraTracks = cms.bool(False)
+process.ggll_aod.saveExtraTracks = cms.bool(False)
 process.ggll_aod.year = cms.string('2017MC')
 process.ggll_aod.mcpupath = 'input_Event/N_TrueInteractions'
 
