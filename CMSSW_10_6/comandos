@@ -2,4 +2,4 @@
 cmsenv -- Cria o ambiente para utilização dos programas e aplicativos ligados ao CMS.
 scram b -j8 -- Copila tudo o que na sua área. 
 edmDumpEventContent <arquivo .root> > texto.txt -- Arquivo que mostra as coleções que tem dentro do .root.
-xrdcp <endereço do .root> -- Copia arquivos .root que de servidores fora da lxplus.
+xrdcp root://cmsxrootd.fnal.gov//<endereço do .root> -- Copia arquivos .root que de servidores fora da lxplus.
