@@ -19,7 +19,7 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 # event source
 process.source = cms.Source("PoolSource",
-  fileNames = cms.untracked.vstring("file:///afs/cern.ch/user/r/rebassoo/public/ForJan/062366B6-DF2B-E911-BB28-C45444922958.root")
+  fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/input/2017/MC/LPAIRmumuElastic_Fall17/GGToMuMu_Pt-50_Inel-El_13TeV-lpairAODSIM92X.root")
 )
 
 # number of events
@@ -48,14 +48,15 @@ process.ctppsBeamParametersESSource.vtxOffsetZ45 = -8.1100 * 1E-1
 process.ctppsHepMCDistributionPlotter = cms.EDAnalyzer("CTPPSHepMCDistributionPlotter",
   tagHepMC = cms.InputTag("beamDivergenceVtxGenerator"),
   lhcInfoLabel = cms.string(""),
-  outputFile = cms.string("output_HepMC.root")
+  outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_HepMC.root")
 )
 
 # XY distribution plotter
 process.ctppsTrackDistributionPlotter = cms.EDAnalyzer("CTPPSTrackDistributionPlotter",
   tagTracks = cms.InputTag("ctppsLocalTrackLiteProducer"),
-  outputFile = cms.string("output_track_xy.root")
+  outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_track_xy.root")
 )
+
 
 process.dump = cms.EDAnalyzer("EventContentAnalyzer")
 
