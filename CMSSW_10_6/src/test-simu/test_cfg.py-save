@@ -59,14 +59,24 @@ process.ctppsTrackDistributionPlotter = cms.EDAnalyzer("CTPPSTrackDistributionPl
 
 process.dump = cms.EDAnalyzer("EventContentAnalyzer")
 
+process.prunedGenParticles = cms.EDProducer(
+"GenParticlePruner",
+src = cms.InputTag("genParticles"),
+select = cms.vstring('drop *',
+# for miniAOD matching
+'keep status == 1')
+)
+
 # processing path
 process.p = cms.Path(
-  #process.dump *
-  process.beamDivergenceVtxGenerator
-  * process.ctppsDirectProtonSimulation
+process.prunedGenParticles *
+#process.dump *
+process.beamDivergenceVtxGenerator *
+process.ctppsDirectProtonSimulation *
 
-  * process.reco_local
+process.reco_local *
 
-  * process.ctppsHepMCDistributionPlotter
-  * process.ctppsTrackDistributionPlotter
+process.ctppsHepMCDistributionPlotter *
+process.ctppsTrackDistributionPlotter
 )
+
