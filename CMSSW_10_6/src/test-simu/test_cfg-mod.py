@@ -54,13 +54,14 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 # event source
 process.source = cms.Source("PoolSource",
-  fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/input/2017/MC/LPAIRmumuElastic_Fall17/GGToMuMu_Pt-50_Inel-El_13TeV-lpairAODSIM92X.root")
+  #fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/input/2017/MC/LPAIRmumuElastic_Fall17/GGToMuMu_Pt-50_Inel-El_13TeV-lpairAODSIM92X.root")
+	fileNames = cms.untracked.vstring("")
 )
 
 # number of events
 process.maxEvents = cms.untracked.PSet(
-  #input = cms.untracked.int32(-1)
-  input = cms.untracked.int32(10000)
+  input = cms.untracked.int32(-1)
+  #input = cms.untracked.int32(10000)
 )
 
 # update settings of beam-smearing module
@@ -164,13 +165,14 @@ process.ggll_aod.runOnMC = cms.bool(runOnMC)
 process.ggll_aod.fetchProtons = cms.bool(True)
 process.ggll_aod.saveExtraTracks = cms.bool(False)
 process.ggll_aod.year = cms.string('2017MC')
-process.ggll_aod.mcpufile = cms.string('/afs/cern.ch/user/m/malvesga/work/ProtonRecon/TEST/CMSSW_10_6_0/src/DiffractiveForwardAnalysis/GammaGammaLeptonLepton/test/PUHistos_mc.root')
-process.ggll_aod.datapufile = cms.string('/afs/cern.ch/user/m/malvesga/work/ProtonRecon/TEST/CMSSW_10_6_0/src/DiffractiveForwardAnalysis/GammaGammaLeptonLepton/test/PUHistos_data.root')
+process.ggll_aod.mcpufile = cms.string('PUHistos_mc.root')
+process.ggll_aod.datapufile = cms.string('PUHistos_data.root')
 process.ggll_aod.mcpupath = 'input_Event/N_TrueInteractions'
 
 # prepare the output file
+# copiar o output depois de rodar o crab para a pasta /afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/
 process.TFileService = cms.Service('TFileService',
-    fileName = cms.string('/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_xangle120.root'),
+    fileName = cms.string('output_xangle120.root'),
     closeFileFast = cms.untracked.bool(True)
 )
 
