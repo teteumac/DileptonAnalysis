@@ -6,6 +6,10 @@ Para rodar o CRAB:
           voms-proxy-init --voms cms --valid 168:00
           crab submit -c sub_generic_MC.py
           
+Verificar o  status do CRAB:
+          crab status -d crab_projects/crab_Dimuon_Elastic_Fall2017
+
+          
 Mais info sobre o CRAB: 
           https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial (exemplos de como rodar)
           https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile (descrição de alguns parametros)
