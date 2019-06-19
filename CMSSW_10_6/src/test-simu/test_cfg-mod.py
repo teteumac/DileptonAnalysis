@@ -54,14 +54,14 @@ process.MessageLogger = cms.Service("MessageLogger",
 
 # event source
 process.source = cms.Source("PoolSource",
-  #fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/input/2017/MC/LPAIRmumuElastic_Fall17/GGToMuMu_Pt-50_Inel-El_13TeV-lpairAODSIM92X.root")
-	fileNames = cms.untracked.vstring("")
+    fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/input/2017/MC/LPAIRmumuElastic_Fall17/GGToMuMu_Pt-50_Inel-El_13TeV-lpairAODSIM92X.root")
+	 #fileNames = cms.untracked.vstring("")
 )
 
 # number of events
 process.maxEvents = cms.untracked.PSet(
-  input = cms.untracked.int32(-1)
-  #input = cms.untracked.int32(10000)
+  #input = cms.untracked.int32(-1)
+  input = cms.untracked.int32(1000)
 )
 
 # update settings of beam-smearing module
@@ -109,6 +109,8 @@ process.GlobalTag = GlobalTag(process.GlobalTag, "auto:run2_mc");
 
 #JH - for tests of 2018 alignment candidate
 #from CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi import *
+
+"""
 process.ctppsRPAlignmentCorrectionsDataESSourceXML = cms.ESSource("CTPPSRPAlignmentCorrectionsDataESSourceXML",
     verbosity = cms.untracked.uint32(0),
 
@@ -116,7 +118,8 @@ process.ctppsRPAlignmentCorrectionsDataESSourceXML = cms.ESSource("CTPPSRPAlignm
     RealFiles = cms.vstring(),
     MisalignedFiles = cms.vstring()
 )
-
+"""
+"""
 process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring(
   # internal pixel alignment
   "CalibPPS/ESProducers/data/alignment/RPixGeometryCorrections-2017-2018.xml",
@@ -131,10 +134,7 @@ process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring(
 )
 
 process.esPreferLocalAlignment = cms.ESPrefer("CTPPSRPAlignmentCorrectionsDataESSourceXML", "ctppsRPAlignmentCorrectionsDataESSourceXML")
-
-
-
-
+"""
 
 process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load("TrackingTools.TransientTrack.TransientTrackBuilder_cfi")
@@ -144,13 +144,15 @@ process.load("TrackingTools.TransientTrack.TransientTrackBuilder_cfi")
 process.ctppsHepMCDistributionPlotter = cms.EDAnalyzer("CTPPSHepMCDistributionPlotter",
   tagHepMC = cms.InputTag("beamDivergenceVtxGenerator"),
   lhcInfoLabel = cms.string(""),
-  outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_HepMC.root")
+  #outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_HepMC.root")
+  outputFile = cms.string("output_HepMC.root")
 )
 
 # XY distribution plotter
 process.ctppsTrackDistributionPlotter = cms.EDAnalyzer("CTPPSTrackDistributionPlotter",
   tagTracks = cms.InputTag("ctppsLocalTrackLiteProducer"),
-  outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_track_xy.root")
+  #outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_track_xy.root")
+  outputFile = cms.string("output_track_xy.root")
 )
 
 process.dump = cms.EDAnalyzer("EventContentAnalyzer")

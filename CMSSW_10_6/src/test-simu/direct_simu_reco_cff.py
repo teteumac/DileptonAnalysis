@@ -75,8 +75,10 @@ ctppsOpticalFunctionsESSource.configuration.append(config_2017)
 from Geometry.VeryForwardGeometry.geometryRPFromDD_2017_cfi import *
 
 from CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi import *
-ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["test-simu/alignment.xml"]
-ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["test-simu/alignment.xml"]
+#ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["test-simu/alignment.xml"]
+#ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["test-simu/alignment.xml"]
+ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["CalibPPS/ESProducers/data/alignment/alignment.xml"]
+ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["CalibPPS/ESProducers/data/alignment/alignment.xml"]
 
 # particle-data table
 from SimGeneral.HepPDTESSource.pythiapdt_cfi import *
