@@ -1,3 +1,7 @@
+AMOSTRAS USADAS:    
+          GGToMuMu_Pt-50_Elastic_13TeV-lpair
+          DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8
+
 Para rodar: 
           cmsRun <arquivo cfg.py desejado>
           
@@ -8,7 +12,6 @@ Para rodar o CRAB:
           
 Verificar o  status do CRAB:
           crab status -d crab_projects/crab_Dimuon_Elastic_Fall2017
-
           
 Mais info sobre o CRAB: 
           https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial (exemplos de como rodar)
