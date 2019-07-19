@@ -442,11 +442,13 @@ GammaGammaLL::analyze( const edm::Event& iEvent, const edm::EventSetup& iSetup )
   iEvent.getByToken( pfCand_, pfCand );
       for (unsigned int i = 0; i < pfCand->size() && evt_.nPfCand < ggll::AnalysisEvent::MAX_PFCAND; ++i) {
 			const pat::PackedCandidate &pf = (*pfCand)[i];
-			//std::cout << pf.pt() << std::endl;
-    		evt_.PfCand_phi[evt_.nPfCand] = pf.phi();
-    		evt_.PfCand_eta[evt_.nPfCand] = pf.eta();
-    		evt_.PfCand_fromPV[evt_.nPfCand] = pf.fromPV();
-    		evt_.PfCand_dz[evt_.nPfCand] = pf.dz();
+			if ( pf.dz() < .3 ) {
+				//std::cout << pf.pt() << std::endl;
+    			evt_.PfCand_phi[evt_.nPfCand] = pf.phi();
+    			evt_.PfCand_eta[evt_.nPfCand] = pf.eta();
+    			evt_.PfCand_fromPV[evt_.nPfCand] = pf.fromPV();
+    			evt_.PfCand_dz[evt_.nPfCand] = pf.dz();
+			}
 			evt_.nPfCand++;	
   		}
   }
