@@ -40,6 +40,11 @@ ggll_aod = cms.EDAnalyzer('GammaGammaLL',
     datapufile = cms.string('PUHistos_data.root'),
     datapupath = cms.string('pileup'),
     fixedGridRhoFastjetAllLabel = cms.InputTag('fixedGridRhoFastjetAll'),
+
+	 # MINIAOD
+	 runOnMINIAOD = cms.bool(False),
+    pfCand = cms.InputTag('packedPFCandidates'),
+
 )
 
 ggll = ggll_aod.clone() ## for backward-compatibility
@@ -61,4 +66,7 @@ ggll_miniaod = ggll_aod.clone(
     genParticleTag = cms.InputTag('prunedGenParticles'),
     #pfTag = cms.InputTag('packedPFCandidates'),
     pileupInfo = cms.InputTag('slimmedAddPileupInfo'),
+	
+	 #MINIAOD	
+	 runOnMINIAOD = cms.bool(True),
 )
