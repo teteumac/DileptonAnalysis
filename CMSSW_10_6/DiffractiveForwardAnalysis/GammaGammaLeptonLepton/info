@@ -1,2 +1,8 @@
 
- 	combined_RPIN_CMS.json - Diz quais os runs e lumisections do CMS foram certificados no ano de 2017 e tem os Roman Pots do PPS incluídos. 
+combined_RPIN_CMS.json - Diz quais os runs e lumisections do CMS foram certificados no ano de 2017 e tem os Roman Pots do PPS incluídos. 
+
+Mudanças para MINIAOD:
+             interface/AnalysisEvent.h
+             plugins/GammaGammaLL.cc
+             python/GammaLL_cfi.py
+   
