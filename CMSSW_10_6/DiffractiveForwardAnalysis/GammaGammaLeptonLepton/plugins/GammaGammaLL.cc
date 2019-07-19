@@ -210,6 +210,11 @@ class GammaGammaLL : public edm::one::EDAnalyzer<edm::one::WatchRuns,edm::one::S
     std::map<unsigned int,reco::TransientTrack> muonTransientTracks_, eleTransientTracks_;
 
     unsigned int nCandidates_;
+
+	 bool runOnMINIAOD_;
+    edm::EDGetTokenT<edm::View<pat::PackedCandidate> > pfCand_;
+
+
 };
 
 const unsigned int ggll::AnalysisEvent::MAX_ET;
@@ -250,7 +255,9 @@ GammaGammaLL::GammaGammaLL( const edm::ParameterSet& iConfig ) :
   dataPileupFile_     ( iConfig.getParameter<std::string>( "datapufile" ) ),
   mcPileupPath_       ( iConfig.getParameter<std::string>( "mcpupath" ) ),
   dataPileupPath_     ( iConfig.getParameter<std::string>( "datapupath" ) ),
-  nCandidates_( 0 )
+  nCandidates_( 0 ),
+  runOnMINIAOD_       ( iConfig.getParameter<bool>( "runOnMINIAOD" ) ),
+  pfCand_          ( consumes<edm::View<pat::PackedCandidate> >                ( iConfig.getParameter<edm::InputTag>( "pfCand" ) ) )
 {
   // Generator level
   if ( runOnMC_ ) {
@@ -407,13 +414,19 @@ GammaGammaLL::analyze( const edm::Event& iEvent, const edm::EventSetup& iSetup )
 
   if ( fetchMuons_ ) fetchMuons( iEvent );
   if ( fetchElectrons_ ) fetchElectrons( iEvent );
+	
+  if (runOnMINIAOD_ == false) {
+	  newVertexInfoRetrieval( iEvent );
 
-  newVertexInfoRetrieval( iEvent );
-
-  if ( !foundPairInEvent_ ) {
-    //LogDebug( "GammaGammaLL" ) << "No pair retrieved in event";
-    return; // avoid to unpack RP/jet/MET if no dilepton candidate has been found
-  }
+  	  if ( !foundPairInEvent_ ) {
+    		//LogDebug( "GammaGammaLL" ) << "No pair retrieved in event";
+    		return; // avoid to unpack RP/jet/MET if no dilepton candidate has been found
+  	  }
+	}
+ 
+	else {
+  		fetchVertices( iEvent );
+   }
 
   if ( fetchProtons_ ) {
     fetchProtons( iEvent );
@@ -423,6 +436,20 @@ GammaGammaLL::analyze( const edm::Event& iEvent, const edm::EventSetup& iSetup )
 
   if ( printCandidates_ )
     std::cout << "Event " << evt_.Run << ":" << evt_.EventNum << " has " << evt_.nPair << " leptons pair(s) candidate(s) (vertex mult. : " << evt_.nPrimVertexCand << " )" << std::endl;
+
+  if (runOnMINIAOD_ == true) {
+  edm::Handle<edm::View<pat::PackedCandidate> > pfCand;
+  iEvent.getByToken( pfCand_, pfCand );
+      for (unsigned int i = 0; i < pfCand->size() && evt_.nPfCand < ggll::AnalysisEvent::MAX_PFCAND; ++i) {
+			const pat::PackedCandidate &pf = (*pfCand)[i];
+			//std::cout << pf.pt() << std::endl;
+    		evt_.PfCand_phi[evt_.nPfCand] = pf.phi();
+    		evt_.PfCand_eta[evt_.nPfCand] = pf.eta();
+    		evt_.PfCand_fromPV[evt_.nPfCand] = pf.fromPV();
+    		evt_.PfCand_dz[evt_.nPfCand] = pf.dz();
+			evt_.nPfCand++;	
+  		}
+  }
 
   tree_->Fill();
 
@@ -841,7 +868,6 @@ GammaGammaLL::fetchVertices( const edm::Event& iEvent )
   // Get the vertex collection from the event
   edm::Handle<edm::View<reco::Vertex> > recoVertexColl;
   iEvent.getByToken( recoVertexToken_, recoVertexColl );
-
   for ( unsigned int i = 0; i < recoVertexColl->size() && evt_.nPrimVertexCand < ggll::AnalysisEvent::MAX_VTX; ++i ) {
     const edm::Ptr<reco::Vertex> vertex = recoVertexColl->ptrAt( i);
 
@@ -854,7 +880,6 @@ GammaGammaLL::fetchVertices( const edm::Event& iEvent )
     evt_.nPrimVertexCand++;
   }
 }
-
 void
 GammaGammaLL::newVertexInfoRetrieval( const edm::Event& iEvent )
 {
