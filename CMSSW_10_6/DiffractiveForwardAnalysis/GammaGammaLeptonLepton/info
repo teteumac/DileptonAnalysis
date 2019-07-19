@@ -4,5 +4,5 @@ combined_RPIN_CMS.json - Diz quais os runs e lumisections do CMS foram certifica
 Mudanças para MINIAOD:
              interface/AnalysisEvent.h
              plugins/GammaGammaLL.cc
-             python/GammaLL_cfi.py
+             python/GammaGammaLL_cfi.py
    
