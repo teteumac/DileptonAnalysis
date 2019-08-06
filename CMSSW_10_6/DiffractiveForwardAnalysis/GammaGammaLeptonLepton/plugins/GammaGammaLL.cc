@@ -438,19 +438,68 @@ GammaGammaLL::analyze( const edm::Event& iEvent, const edm::EventSetup& iSetup )
     std::cout << "Event " << evt_.Run << ":" << evt_.EventNum << " has " << evt_.nPair << " leptons pair(s) candidate(s) (vertex mult. : " << evt_.nPrimVertexCand << " )" << std::endl;
 
   if (runOnMINIAOD_ == true) {
+
+  /* Codigo do Mauricio:
+ 
+	int npfVtx = 0;
+	for (size_t pf = 0; pf < PFCand->size(); pf++) {
+		if (abs(PFCand->at(pf).pdgId()) == 211 || abs(PFCand->at(pf).pdgId()) == 11 || abs(PFCand->at(pf).pdgId()) == 13){
+			//                      if (PFCand->at(pf).fromPV(0)==3) {
+			if (abs(PFCand->at(pf).dz())<0.3){
+				npfVtx++;
+				pfphi->push_back(PFCand->at(pf).phiAtVtx());
+				pfeta->push_back(PFCand->at(pf).eta());
+				pffromPV->push_back(PFCand->at(pf).fromPV(0));
+				pfdz->push_back(PFCand->at(pf).dz());
+				pfpt->push_back(PFCand->at(pf).pt());
+			}
+			//                      }
+		}
+	}
+ 
+ 
+ 
+ */
+
+
   edm::Handle<edm::View<pat::PackedCandidate> > pfCand;
   iEvent.getByToken( pfCand_, pfCand );
-      for (unsigned int i = 0; i < pfCand->size() && evt_.nPfCand < ggll::AnalysisEvent::MAX_PFCAND; ++i) {
+  unsigned int jj = 0;
+      for (unsigned int i = 0; i < pfCand->size() && /*evt_.nPfCand*/jj < ggll::AnalysisEvent::MAX_PFCAND; ++i) {
 			const pat::PackedCandidate &pf = (*pfCand)[i];
+/*
+			std::cout << " i = " << i << std::endl;
+         std::cout << " evt_.nPfCand = " << evt_.nPfCand << std::endl;
 			if ( pf.dz() < .3 ) {
+         std::cout << "                           i = " << i << std::endl;
+         std::cout << "                           evt_.nPfCand = " << evt_.nPfCand << std::endl;
 				//std::cout << pf.pt() << std::endl;
     			evt_.PfCand_phi[evt_.nPfCand] = pf.phi();
     			evt_.PfCand_eta[evt_.nPfCand] = pf.eta();
     			evt_.PfCand_fromPV[evt_.nPfCand] = pf.fromPV();
     			evt_.PfCand_dz[evt_.nPfCand] = pf.dz();
 			}
-			evt_.nPfCand++;	
+*/
+ //        std::cout << " i = " << i << std::endl;
+//         std::cout << " evt_.nPfCand = " << evt_.nPfCand << std::endl;
+         if ( ( pf.dz() < .3 ) && 
+		        ( abs(pf.pdgId()) == 211 || abs(pf.pdgId()) == 11 || abs(pf.pdgId()) == 13 ) &&
+				  ( (pf.fromPV() == 2) || (pf.fromPV() == 3) ) ) {
+//         std::cout << "                           i = " << i << std::endl;
+//         std::cout << "                           evt_.nPfCand = " << evt_.nPfCand << std::endl;
+//         std::cout << "                           jj = " << jj << std::endl;
+            evt_.PfCand_phi[jj] = pf.phi();
+            evt_.PfCand_eta[jj] = pf.eta();
+            evt_.PfCand_fromPV[jj] = pf.fromPV();
+            evt_.PfCand_dz[jj] = pf.dz();
+				jj++;
+			   evt_.nPfCand++;	
+         }
+
   		}
+ //        std::cout << "                           evt_.nPfCand = " << evt_.nPfCand << std::endl;
+ //        std::cout << "                           jj = " << jj << std::endl;
+
   }
 
   tree_->Fill();
