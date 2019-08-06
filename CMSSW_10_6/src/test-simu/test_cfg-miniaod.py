@@ -56,13 +56,15 @@ process.MessageLogger = cms.Service("MessageLogger",
 # event source
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring("/store/mc/RunIISummer17MiniAOD/GGToMuMu_Pt-50_Inel-El_13TeV-lpair/MINIAODSIM/92X_upgrade2017_realistic_v10-v1/50000/700F5FC1-92A7-E711-A012-FA163E2425C0.root")
+#    fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/CMSSW_9_4_7/src/workspace/ProductionSamples_DoubleDiss/TOP-RunIIFall17MiniAOD-00091.root")
+#    fileNames = cms.untracked.vstring("/store/mc/RunIIFall17MiniAODv2/GGToMuMu_Pt-50_Elastic_13TeV-lpair/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/A27AD9A6-3444-E811-A0C1-FA163E15F054.root")
 	 #fileNames = cms.untracked.vstring("")
 )
 
 # number of events
 process.maxEvents = cms.untracked.PSet(
-  #input = cms.untracked.int32(-1)
-  input = cms.untracked.int32(1000)
+  input = cms.untracked.int32(-1)
+  #input = cms.untracked.int32(20000)
 )
 
 # update settings of beam-smearing module
@@ -187,7 +189,7 @@ process.ggll_miniaod.mcpupath = 'input_Event/N_TrueInteractions'
 # prepare the output file
 # copiar o output depois de rodar o crab para a pasta /afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/
 process.TFileService = cms.Service('TFileService',
-    fileName = cms.string('output_xangle120.root'),
+    fileName = cms.string('output_single_xangle120.root'),
     closeFileFast = cms.untracked.bool(True)
 )
 
