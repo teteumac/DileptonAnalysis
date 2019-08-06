@@ -1,4 +1,11 @@
 ntp1 - Analizer criado com o MakeClass
+       MakeClass - root <arquivo.root> -l
+                   _file0->ls()
+                   _file0->cd("<diretorio>")
+                   _file0->ls()
+                   auto data = (TTree*)(_file0->Get("<caminho/ttree>"))
+                   data
+                   data->MakeClass()
 CompHistos - Comparador de ntuplas de dados com de Monte Carlo
 
 Ntuplas criadas usando o condor
