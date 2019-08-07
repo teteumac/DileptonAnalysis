@@ -1,4 +1,4 @@
-AMOSTRAS USADAS:
+AMOSTRAS USADAS (AOD e MINIAOD):
           GGToMuMu_Pt-50_Inel-El_13TeV-lpair
           GGToMuMu_Pt-50_Elastic_13TeV-lpair
           DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8
@@ -15,7 +15,7 @@ Para rodar o CRAB:
 Verificar o  status do CRAB:
           crab status -d crab_projects/crab_Dimuon_Elastic_Fall2017
           
-Crab reports: 
+Crab reports (AOD): 
           crab_Dimuon_DrellYan_Fall2017-xangle120-v6: Number of files processed: 3997
                                                       Number of events read: 49313842
           crab_Dimuon_DrellYan_Fall2017-xangle130-v6: Number of files processed: 3997
@@ -26,6 +26,10 @@ Crab reports:
                                                       Number of events read: 49307960
           crab_Dimuon_Elastic_Fall2017-xangle*:       Number of files processed:  17
                                                       Number of events read: 200000
+                                                      
+Crab reports (MINIAOD):
+          crab_Dimuon_SingleDiss_Summer2017-xangle*: Number of files processed: 5
+                                                     Number of events read: 200000
                                                       
           
 Mais info sobre o CRAB: 
