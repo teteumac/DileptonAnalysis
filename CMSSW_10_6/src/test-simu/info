@@ -9,7 +9,8 @@ Para rodar:
 Para rodar o CRAB: 
           source /cvmfs/cms.cern.ch/crab3/crab.sh
           voms-proxy-init --voms cms --valid 168:00
-          crab submit -c sub_generic_MC.py
+          #### crab submit -c sub_generic_MC.py
+          Rodar o Multicrab - python sub_generic_MC.py
           
 Verificar o  status do CRAB:
           crab status -d crab_projects/crab_Dimuon_Elastic_Fall2017
