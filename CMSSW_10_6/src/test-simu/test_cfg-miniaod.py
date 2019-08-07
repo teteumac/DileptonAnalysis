@@ -7,7 +7,7 @@ runOnMC = True
 useAOD = True
 MINIAOD = True
 
-xangle = 150
+xangle = 140
 
 # load common code
 process.load("direct_simu_reco_cff")
@@ -189,7 +189,7 @@ process.ggll_miniaod.mcpupath = 'input_Event/N_TrueInteractions'
 # prepare the output file
 # copiar o output depois de rodar o crab para a pasta /afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/
 process.TFileService = cms.Service('TFileService',
-    fileName = cms.string('output_single_xangle120.root'),
+    fileName = cms.string('output_single_xangle140.root'),
     closeFileFast = cms.untracked.bool(True)
 )
 
