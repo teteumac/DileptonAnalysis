@@ -314,8 +314,11 @@ GammaGammaLL::lookAtTriggers( const edm::Event& iEvent, const edm::EventSetup& i
   std::ostringstream os;
   os << "Prescale set: " << hltPrescale_.prescaleSet(iEvent, iSetup) << "\n"
      << "Trigger names: " << std::endl;
+
+
   for ( unsigned int i = 0; i < trigNames.size(); ++i ) {
     os << "* " << trigNames.triggerNames().at( i ) << std::endl;
+
 
     // ensure trigger matches the interesting ones
     const int trigNum = hlts_.TriggerNum( trigNames.triggerNames().at( i ) );
@@ -365,9 +368,9 @@ GammaGammaLL::analyze( const edm::Event& iEvent, const edm::EventSetup& iSetup )
 
   // High level trigger information retrieval
   // JH - for Summer17 MC this crashes...
-  if ( !runOnMC_ ) {
+//  if ( !runOnMC_ ) {
     lookAtTriggers( iEvent, iSetup);
-  }
+//  }
 
   LogDebug( "GammaGammaLL" ) << "Passed trigger filtering stage";
 
@@ -430,8 +433,8 @@ GammaGammaLL::analyze( const edm::Event& iEvent, const edm::EventSetup& iSetup )
 
   if ( fetchProtons_ ) {
     fetchProtons( iEvent );
-    if ( evt_.nLocalProtCand < 1 )
-      return;
+//    if ( evt_.nLocalProtCand < 1 )
+//      return;     AQUI
   }
 
   if ( printCandidates_ )
@@ -460,7 +463,6 @@ GammaGammaLL::analyze( const edm::Event& iEvent, const edm::EventSetup& iSetup )
  
  
  */
-
 
   edm::Handle<edm::View<pat::PackedCandidate> > pfCand;
   iEvent.getByToken( pfCand_, pfCand );
