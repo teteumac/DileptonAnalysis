@@ -28,11 +28,13 @@ Crab reports (AOD):
                                                       Number of events read: 200000
                                                       
 Crab reports (MINIAOD):
-          crab_Dimuon_SingleDiss_Summer2017-xangle*: Number of files processed: 5
-                                                     Number of events read: 200000
+         
                                                       
           
 Mais info sobre o CRAB: 
           https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial (exemplos de como rodar)
           https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile (descrição de alguns parametros)
           https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3Commands (detalhes de alguns comandos)
+
+Para dados:  
+          Para obter o JSON usado: wget https://cernbox.cern.ch/index.php/s/SwJ2vLDUfCf1CDm/download (onde o arquivo foi renomeado para json_file_rpin_2017.txt)
