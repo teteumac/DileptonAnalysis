@@ -16,19 +16,18 @@ Verificar o  status do CRAB:
           crab status -d crab_projects/crab_Dimuon_Elastic_Fall2017
           
 Crab reports (AOD): 
-          crab_Dimuon_DrellYan_Fall2017-xangle120-v6: Number of files processed: 3997
-                                                      Number of events read: 49313842
-          crab_Dimuon_DrellYan_Fall2017-xangle130-v6: Number of files processed: 3997
-                                                      Number of events read: 49313842
-          crab_Dimuon_DrellYan_Fall2017-xangle140-v6: Number of files processed: 3997
-                                                      Number of events read: 49307805
-          crab_Dimuon_DrellYan_Fall2017-xangle150-v6: Number of files processed: 3997
-                                                      Number of events read: 49307960
-          crab_Dimuon_Elastic_Fall2017-xangle*:       Number of files processed:  17
-                                                      Number of events read: 200000
+          crab_Dimuon_DrellYan_Fall2017: Number of files processed: 3997
+                                         Number of events read: 49313842
+          crab_Dimuon_Elastic_Fall2017:  Number of files processed:  17
+                                         Number of events read: 200000
                                                       
 Crab reports (MINIAOD):
-         
+         crab_Dimuon_DrellYan_Fall2017:     Number of files processed: 553
+                                            Number of events read: 48675378
+         crab_Dimuon_SingleDiss_Summer2017: Number of files processed: 5
+                                            Number of events read: 200000
+         crab_Dimuon_Elastic_Fall2017:      Number of files processed: 2
+                                            Number of events read: 200000
                                                       
           
 Mais info sobre o CRAB: 
