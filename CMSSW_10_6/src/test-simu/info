@@ -37,3 +37,17 @@ Mais info sobre o CRAB:
 
 Para dados:  
           Para obter o JSON usado: wget https://cernbox.cern.ch/index.php/s/SwJ2vLDUfCf1CDm/download (onde o arquivo foi renomeado para json_file_rpin_2017.txt)
+
+Crab reports (MINIAOD):
+         crab_DoubleMuon_Data_2017B: Number of files processed: 106
+                                     Number of events read: 6723485
+         crab_DoubleMuon_Data_2017C: Number of files processed: 454
+                                     Number of events read: 41120143
+         crab_DoubleMuon_Data_2017D: Number of files processed: 223
+                                     Number of events read: 21699173
+         crab_DoubleMuon_Data_2017E: Number of files processed: 573
+                                     Number of events read: 48655353
+         crab_DoubleMuon_Data_2017F: Number of files processed: 846
+                                     Number of events read: 73476700
+                                     
+                                     
