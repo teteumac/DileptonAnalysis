@@ -48,34 +48,37 @@ void ntp1::Loop()
 //    fChain->GetEntry(jentry);       //read all branches
 //by  b_branchname->GetEntry(ientry); //read only this branch
 
-	TH1D *mumu_mass = new TH1D("mumu_mass", "#mu^{+}#mu^{-} Mass", 100, 0, 1000);
-	TH1D *mumu_pt = new TH1D("mumu_pt", "#mu^{+}#mu^{-} p_{T}", 100, 0, 200);
+
+	TH1D *PrimVertex_ndof = new TH1D("PrimVertex_ndof", "PrimVertexCand_ndof", 200, 0, 200);
+	TH1D *PrimVertex_chi2 = new TH1D("PrimVertex_chi2", "PrimVertexCand_chi2", 100, 0, 200);
+	TH1D *mumu_mass = new TH1D("mumu_mass", "#mu^{+}#mu^{-} Mass", 100, 0, 500);
+	TH1D *mumu_pt = new TH1D("mumu_pt", "#mu^{+}#mu^{-} p_{T}", 100, 0, 60);
 	TH1D *mumu_y = new TH1D("mumu_y", "#mu^{+}#mu^{-} y", 100, -3, 3);
-	TH1D *n_fromPV = new TH1D("n_fromPV", "n from PV", 20, 0, 20);
-	TH1D *n_fromPV_2 = new TH1D("n_fromPV_2", "n from PV 2", 20, 0, 20);
-	TH1D *n_fromPV_3 = new TH1D("n_fromPV_3", "n from PV 3", 20, 0, 20);
-	TH1D *n_ext_fromPV = new TH1D("n_ext_fromPV", "n extra from PV", 20, 0, 20);
-	TH1D *n_ext_fromPV_2 = new TH1D("n_ext_fromPV_2", "n extra from PV 2", 20, 0, 20);
-	TH1D *n_ext_fromPV_3 = new TH1D("n_ext_fromPV_3", "n extra from PV 3", 20, 0, 20);
-	TH1D *n_fromPV_dz02 = new TH1D("n_fromPV_dz02", "n from PV with dz < 0.2", 20, 0, 20);
-	TH1D *n_fromPV_2_dz02 = new TH1D("n_fromPV_2_dz02", "n from PV 2 with dz < 0.2", 20, 0, 20);
-	TH1D *n_fromPV_3_dz02 = new TH1D("n_fromPV_3_dz02", "n from PV 3 with dz < 0.2", 20, 0, 20);
-	TH1D *n_ext_fromPV_dz02 = new TH1D("n_ext_fromPV_dz02", "n extra from PV with dz < 0.2", 20, 0, 20);
-	TH1D *n_ext_fromPV_2_dz02 = new TH1D("n_ext_fromPV_2_dz02", "n extra from PV 2 with dz < 0.2", 20, 0, 20);
-	TH1D *n_ext_fromPV_3_dz02 = new TH1D("n_ext_fromPV_3_dz02", "n extra from PV 3 with dz < 0.2", 20, 0, 20);
-	TH1D *n_fromPV_dz01 = new TH1D("n_fromPV_dz01", "n from PV with dz < 0.1", 20, 0, 20);
-	TH1D *n_fromPV_2_dz01 = new TH1D("n_fromPV_2_dz01", "n from PV 2 with dz < 0.1", 20, 0, 20);
-	TH1D *n_fromPV_3_dz01 = new TH1D("n_fromPV_3_dz01", "n from PV 3 with dz < 0.1", 20, 0, 20);
-	TH1D *n_ext_fromPV_dz01 = new TH1D("n_ext_fromPV_dz01", "n extra from PV with dz < 0.1", 20, 0, 20);
-	TH1D *n_ext_fromPV_2_dz01 = new TH1D("n_ext_fromPV_2_dz01", "n extra from PV 2 with dz < 0.1", 20, 0, 20);
-	TH1D *n_ext_fromPV_3_dz01 = new TH1D("n_ext_fromPV_3_dz01", "n extra from PV 3 with dz < 0.1", 20, 0, 20);
+	TH1D *n_fromPV = new TH1D("n_fromPV", "n from PV", 100, 0, 100);
+	TH1D *n_fromPV_2 = new TH1D("n_fromPV_2", "n from PV 2", 100, 0, 100);
+	TH1D *n_fromPV_3 = new TH1D("n_fromPV_3", "n from PV 3", 100, 0, 100);
+	TH1D *n_ext_fromPV = new TH1D("n_ext_fromPV", "n extra from PV", 100, 0, 100);
+	TH1D *n_ext_fromPV_2 = new TH1D("n_ext_fromPV_2", "n extra from PV 2", 100, 0, 100);
+	TH1D *n_ext_fromPV_3 = new TH1D("n_ext_fromPV_3", "n extra from PV 3", 100, 0, 100);
+	TH1D *n_fromPV_dz02 = new TH1D("n_fromPV_dz02", "n from PV with dz < 0.2", 100, 0, 100);
+	TH1D *n_fromPV_2_dz02 = new TH1D("n_fromPV_2_dz02", "n from PV 2 with dz < 0.2", 100, 0, 100);
+	TH1D *n_fromPV_3_dz02 = new TH1D("n_fromPV_3_dz02", "n from PV 3 with dz < 0.2", 100, 0, 100);
+	TH1D *n_ext_fromPV_dz02 = new TH1D("n_ext_fromPV_dz02", "n extra from PV with dz < 0.2", 100, 0, 100);
+	TH1D *n_ext_fromPV_2_dz02 = new TH1D("n_ext_fromPV_2_dz02", "n extra from PV 2 with dz < 0.2", 100, 0, 100);
+	TH1D *n_ext_fromPV_3_dz02 = new TH1D("n_ext_fromPV_3_dz02", "n extra from PV 3 with dz < 0.2", 100, 0, 100);
+	TH1D *n_fromPV_dz01 = new TH1D("n_fromPV_dz01", "n from PV with dz < 0.1", 100, 0, 100);
+	TH1D *n_fromPV_2_dz01 = new TH1D("n_fromPV_2_dz01", "n from PV 2 with dz < 0.1", 100, 0, 100);
+	TH1D *n_fromPV_3_dz01 = new TH1D("n_fromPV_3_dz01", "n from PV 3 with dz < 0.1", 100, 0, 100);
+	TH1D *n_ext_fromPV_dz01 = new TH1D("n_ext_fromPV_dz01", "n extra from PV with dz < 0.1", 100, 0, 100);
+	TH1D *n_ext_fromPV_2_dz01 = new TH1D("n_ext_fromPV_2_dz01", "n extra from PV 2 with dz < 0.1", 100, 0, 100);
+	TH1D *n_ext_fromPV_3_dz01 = new TH1D("n_ext_fromPV_3_dz01", "n extra from PV 3 with dz < 0.1", 100, 0, 100);
 	TH1D *mu1_z_mu2_z = new TH1D("mu1_z_mu2_z", "#mu^{+} z - #mu^{-} z", 1000, -.02, .02);
 	TH1D *mu1_z_primvertex_z = new TH1D("mu1_z_primevertex_z", "#mu 1 z - primary vertex z", 1000, -.02, .02);
 	TH1D *mu2_z_primvertex_z = new TH1D("mu2_z_primevertex_z", "#mu 2 z - primary vertex z", 1000, -.02, .02);
 	TH2D *xi_left = new TH2D("xi_left", "#xi Left Correlation", 100, 0, 0.5, 100, 0, 0.5); 
-	TH2D *xi_left_wrong = new TH2D("xi_left_wrong", "#xi Left Correlation", 100, 0, 0.5, 100, 0, 0.5); 
-	TH2D *xi_right = new TH2D("x_right", "#xi Right Correlation", 100, 0, 0.5, 100, 0, 0.5);
-	TH2D *xi_right_wrong = new TH2D("x_right_wrong", "#xi Right Correlation", 100, 0, 0.5, 100, 0, 0.5);
+	//TH2D *xi_left_wrong = new TH2D("xi_left_wrong", "#xi Left Correlation", 100, 0, 0.5, 100, 0, 0.5); 
+	TH2D *xi_right = new TH2D("xi_right", "#xi Right Correlation", 100, 0, 0.5, 100, 0, 0.5);
+	//TH2D *xi_right_wrong = new TH2D("xi_right_wrong", "#xi Right Correlation", 100, 0, 0.5, 100, 0, 0.5);
 
    if (fChain == 0) return;
 
@@ -89,7 +92,7 @@ void ntp1::Loop()
 	int cincocortes = 0;
 	int seiscortes = 0;
 	int setecortes = 0;
-	int oitocortes = 0;
+	//int oitocortes = 0;
 
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
@@ -136,91 +139,93 @@ void ntp1::Loop()
 						quatrocortes++;
               		if(fabs(PrimVertexCand_z[0] < 15.)){
 							cincocortes++;
+							PrimVertex_ndof->Fill(PrimVertexCand_ndof[0]);
+							PrimVertex_chi2->Fill(PrimVertexCand_chi2[0]);
 							if((fabs(MuonCand_vtxz[0] - PrimVertexCand_z[0]) < 3*0.004) && (fabs(MuonCand_vtxz[1] - PrimVertexCand_z[0]) < 3*0.004)){
 								seiscortes++;
-                  		if(ClosestExtraTrack_vtxdxyz[0] > 0.05){
+								if(a < 0.009){
 									setecortes++;
-									if(a < 0.009){
-										oitocortes++;
-										for (size_t pf = 0; pf < nPfCand; pf++) {
-											contador_PV++;
-											if(PfCand_fromPV[pf] == 2) contador_PV2++;	
-											if(PfCand_fromPV[pf] == 3) contador_PV3++;	
-											if (((pow( pow(deltaPhi(PfCand_phi[pf],mu1.Phi()),2) + pow( PfCand_eta[pf]-(mu1.Eta()),2),0.5))>0.3) && ((pow( pow(deltaPhi(PfCand_phi[pf],mu2.Phi()),2) + pow( PfCand_eta[pf]-(mu2.Eta()),2),0.5))>0.3)){
-												contador_ext_PV++;
-                                 	if(PfCand_fromPV[pf] == 2) contador_ext_PV2++;
-                                 	if(PfCand_fromPV[pf] == 3) contador_ext_PV3++;
+									for (size_t pf = 0; pf < nPfCand; pf++) {
+										contador_PV++;
+										if(PfCand_fromPV[pf] == 2) contador_PV2++;	
+										if(PfCand_fromPV[pf] == 3) contador_PV3++;	
+										if (((pow( pow(deltaPhi(PfCand_phi[pf],mu1.Phi()),2) + pow( PfCand_eta[pf]-(mu1.Eta()),2),0.5))>0.3) && ((pow( pow(deltaPhi(PfCand_phi[pf],mu2.Phi()),2) + pow( PfCand_eta[pf]-(mu2.Eta()),2),0.5))>0.3)){
+											contador_ext_PV++;
+                                 if(PfCand_fromPV[pf] == 2) contador_ext_PV2++;
+                                 if(PfCand_fromPV[pf] == 3) contador_ext_PV3++;
 										
+										}
+										if(PfCand_dz[pf] < .2){
+											contador_PV_dz02++;
+											if(PfCand_fromPV[pf] == 2) contador_PV2_dz02++;	
+											if(PfCand_fromPV[pf] == 3) contador_PV3_dz02++;	
+											if (((pow( pow(deltaPhi(PfCand_phi[pf],mu1.Phi()),2) + pow( PfCand_eta[pf]-(mu1.Eta()),2),0.5))>0.3) && ((pow( pow(deltaPhi(PfCand_phi[pf],mu2.Phi()),2) + pow( PfCand_eta[pf]-(mu2.Eta()),2),0.5))>0.3)){
+												contador_ext_PV_dz02++;
+                                 	if(PfCand_fromPV[pf] == 2) contador_ext_PV2_dz02++;
+                                 	if(PfCand_fromPV[pf] == 3) contador_ext_PV3_dz02++;
+					
 											}
-											if(PfCand_dz[pf] < .2){
-												contador_PV_dz02++;
-												if(PfCand_fromPV[pf] == 2) contador_PV2_dz02++;	
-												if(PfCand_fromPV[pf] == 3) contador_PV3_dz02++;	
-												if (((pow( pow(deltaPhi(PfCand_phi[pf],mu1.Phi()),2) + pow( PfCand_eta[pf]-(mu1.Eta()),2),0.5))>0.3) && ((pow( pow(deltaPhi(PfCand_phi[pf],mu2.Phi()),2) + pow( PfCand_eta[pf]-(mu2.Eta()),2),0.5))>0.3)){
-													contador_ext_PV_dz02++;
-                                 		if(PfCand_fromPV[pf] == 2) contador_ext_PV2_dz02++;
-                                 		if(PfCand_fromPV[pf] == 3) contador_ext_PV3_dz02++;
-					
-												}
 												
-												if(PfCand_dz[pf] < .1){
-													contador_PV_dz01++;
-													if(PfCand_fromPV[pf] == 2) contador_PV2_dz01++;	
-													if(PfCand_fromPV[pf] == 3) contador_PV3_dz01++;	
-													if (((pow( pow(deltaPhi(PfCand_phi[pf],mu1.Phi()),2) + pow( PfCand_eta[pf]-(mu1.Eta()),2),0.5))>0.3) && ((pow( pow(deltaPhi(PfCand_phi[pf],mu2.Phi()),2) + pow( PfCand_eta[pf]-(mu2.Eta()),2),0.5))>0.3)){
-														contador_ext_PV_dz01++;
-                                 			if(PfCand_fromPV[pf] == 2) contador_ext_PV2_dz01++;
-                                 			if(PfCand_fromPV[pf] == 3) contador_ext_PV3_dz01++;
+											if(PfCand_dz[pf] < .1){
+												contador_PV_dz01++;
+												if(PfCand_fromPV[pf] == 2) contador_PV2_dz01++;	
+												if(PfCand_fromPV[pf] == 3) contador_PV3_dz01++;	
+												if (((pow( pow(deltaPhi(PfCand_phi[pf],mu1.Phi()),2) + pow( PfCand_eta[pf]-(mu1.Eta()),2),0.5))>0.3) && ((pow( pow(deltaPhi(PfCand_phi[pf],mu2.Phi()),2) + pow( PfCand_eta[pf]-(mu2.Eta()),2),0.5))>0.3)){
+													contador_ext_PV_dz01++;
+                                 		if(PfCand_fromPV[pf] == 2) contador_ext_PV2_dz01++;
+                                 		if(PfCand_fromPV[pf] == 3) contador_ext_PV3_dz01++;
 					
-													}
 												}
 											}
 										}
-
-										n_fromPV->Fill(contador_PV);
-										n_fromPV_2->Fill(contador_PV2);
-										n_fromPV_3->Fill(contador_PV3);
-										n_ext_fromPV->Fill(contador_ext_PV);
-										n_ext_fromPV_2->Fill(contador_ext_PV2);
-										n_ext_fromPV_3->Fill(contador_ext_PV3);
-										n_fromPV_dz02->Fill(contador_PV_dz02);
-										n_fromPV_2_dz02->Fill(contador_PV2_dz02);
-										n_fromPV_3_dz02->Fill(contador_PV3_dz02);
-										n_ext_fromPV_dz02->Fill(contador_ext_PV_dz02);
-										n_ext_fromPV_2_dz02->Fill(contador_ext_PV2_dz02);
-										n_ext_fromPV_3_dz02->Fill(contador_ext_PV3_dz02);
-										n_fromPV_dz01->Fill(contador_PV_dz01);
-										n_fromPV_2_dz01->Fill(contador_PV2_dz01);
-										n_fromPV_3_dz01->Fill(contador_PV3_dz01);
-										n_ext_fromPV_dz01->Fill(contador_ext_PV_dz01);
-										n_ext_fromPV_2_dz01->Fill(contador_ext_PV2_dz01);
-										n_ext_fromPV_3_dz01->Fill(contador_ext_PV3_dz01);
-										//cout << *ProtCand_arm << endl;
-									
-										mumu_mass->Fill(v.M());
-										mumu_pt->Fill(v.Pt());
-										mumu_y->Fill(v.Rapidity());
-										for ( int idx = 0; idx < nRecoProtCand; ++idx ) {
-											if ((ProtCand_rpid[idx] == 3) || (ProtCand_rpid[idx] == 23)) {
-												if (ProtCand_ismultirp[idx] == 0) {
-													xi_left->Fill(ProtCand_xi[idx], xi_pair_left); 
-													xi_left_wrong->Fill(ProtCand_xi[idx], xi_pair_right); 
-												}		
-											}
-											if ((ProtCand_rpid[idx] == 103) || (ProtCand_rpid[idx] == 123)) {                           
-            	              		   if (ProtCand_ismultirp[idx] == 0) {
-													xi_right->Fill(ProtCand_xi[idx], xi_pair_right);
-													xi_right_wrong->Fill(ProtCand_xi[idx], xi_pair_left);
-												}	
-               	           	   }
-                          	   }
 									}
+
+									n_fromPV->Fill(contador_PV);
+									n_fromPV_2->Fill(contador_PV2);
+									n_fromPV_3->Fill(contador_PV3);
+									n_ext_fromPV->Fill(contador_ext_PV);
+									n_ext_fromPV_2->Fill(contador_ext_PV2);
+									n_ext_fromPV_3->Fill(contador_ext_PV3);
+									n_fromPV_dz02->Fill(contador_PV_dz02);
+									n_fromPV_2_dz02->Fill(contador_PV2_dz02);
+									n_fromPV_3_dz02->Fill(contador_PV3_dz02);
+									n_ext_fromPV_dz02->Fill(contador_ext_PV_dz02);
+									n_ext_fromPV_2_dz02->Fill(contador_ext_PV2_dz02);
+									n_ext_fromPV_3_dz02->Fill(contador_ext_PV3_dz02);
+									n_fromPV_dz01->Fill(contador_PV_dz01);
+									n_fromPV_2_dz01->Fill(contador_PV2_dz01);
+									n_fromPV_3_dz01->Fill(contador_PV3_dz01);
+									n_ext_fromPV_dz01->Fill(contador_ext_PV_dz01);
+									n_ext_fromPV_2_dz01->Fill(contador_ext_PV2_dz01);
+									n_ext_fromPV_3_dz01->Fill(contador_ext_PV3_dz01);
+									//cout << *ProtCand_arm << endl;
+									
+									//if(contador_PV3_dz01 == 0){
+									//oitocortes++;
+									mumu_mass->Fill(v.M());
+									mumu_pt->Fill(v.Pt());
+									mumu_y->Fill(v.Rapidity());
+									for ( int idx = 0; idx < nRecoProtCand; ++idx ) {
+										if ((ProtCand_rpid[idx] == 3) || (ProtCand_rpid[idx] == 23)) {
+											if (ProtCand_ismultirp[idx] == 0) {
+												xi_left->Fill(ProtCand_xi[idx], xi_pair_left); 
+												//xi_left_wrong->Fill(ProtCand_xi[idx], xi_pair_right); 
+											}		
+										}
+										if ((ProtCand_rpid[idx] == 103) || (ProtCand_rpid[idx] == 123)) {                           
+            	              	   if (ProtCand_ismultirp[idx] == 0) {
+												xi_right->Fill(ProtCand_xi[idx], xi_pair_right);
+												//xi_right_wrong->Fill(ProtCand_xi[idx], xi_pair_left);
+											}	
+               	          	}
+                          	}
+							 //}
 								}
 							}
 						}
 					}
 				}
-			}	
+			}		
 		}
 	}
 
@@ -232,9 +237,11 @@ void ntp1::Loop()
 	cout << "5cortes: " << cincocortes << endl;
 	cout << "6cortes: " << seiscortes << endl;
 	cout << "7cortes: " << setecortes << endl;
-	cout << "8cortes: " << oitocortes << endl;
+	//cout << "8cortes: " << oitocortes << endl;
 
-	TFile* f = new TFile("/eos/user/m/malvesga/miniaod/GGToMuMu_Pt-50_Inel-El_13TeV-lpair/Dimuon_SingleDiss_Summer17/output_single_xangle120_cut.root", "RECREATE");
+	TFile* f = new TFile("output_cut.root", "RECREATE");
+	PrimVertex_ndof->Write();
+	PrimVertex_chi2->Write();
    mumu_mass->Write();
    mumu_pt->Write();
    mumu_y->Write();
@@ -263,6 +270,8 @@ void ntp1::Loop()
    xi_right->Write();
 
 	f->Close();
+
+	//cout << "oi" <<endl;
 }
 	
 int run() {
