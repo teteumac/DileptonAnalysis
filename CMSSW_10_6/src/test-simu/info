@@ -59,5 +59,20 @@ Crab reports (MINIAOD):
          crab_DoubleMuon_Data_2017F: Number of files processed: 846
                                      GetEntries: 29756381
                                      Number of events read: 73476700
+         crab_DoubleEG_Data_2017B: Number of files processed: 484
+                                     GetEntries: 
+                                     Number of events read: 27190987
+         crab_DoubleEG_Data_2017C: Number of files processed: 676
+                                     GetEntries: 
+                                     Number of events read: 53041478
+         crab_DoubleEG_Data_2017D: Number of files processed: 250
+                                     GetEntries: 
+                                     Number of events read: 24158532
+         crab_DoubleEG_Data_2017E: Number of files processed: 659
+                                     GetEntries: 
+                                     Number of events read: 52507908
+         crab_DoubleEG_Data_2017F: Number of files processed: 867
+                                     GetEntries: 
+                                     Number of events read: 70698430
                                      
                                      
