@@ -23,7 +23,7 @@ Crab reports (AOD):
                                                       
 Crab reports (MINIAOD):
          crab_Dimuon_DrellYan_Fall2017:     Number of files processed: 553
-                                            GetEntries: 7136367
+                                            GetEntries: 7137203
                                             Number of events read: 48675378
          crab_Dimuon_SingleDiss_Summer2017: Number of files processed: 5
                                             GetEntries: 178174
