@@ -1,5 +1,5 @@
 #define ntp1_cxx
-#include "ntp1.h"
+#include "ntp1_pileup.h"
 #include <TH2.h>
 #include <TStyle.h>
 #include <TCanvas.h>
@@ -12,6 +12,8 @@
 #include <TCanvas.h>
 #include <TGraphErrors.h>
 #include <TSpline.h>
+#include <TRandom3.h>
+#include <TF1.h>
 #include <math.h>
 #include "DataFormats/Math/interface/deltaPhi.h"
 
@@ -52,9 +54,9 @@ void ntp1::Loop()
 
 	TH1D *PrimVertex_ndof = new TH1D("PrimVertex_ndof", "PrimVertexCand_ndof", 200, 0, 200);
 	TH1D *PrimVertex_chi2 = new TH1D("PrimVertex_chi2", "PrimVertexCand_chi2", 100, 0, 200);
-	TH1D *mumu_mass = new TH1D("mumu_mass", "#mu^{+}#mu^{-} Mass", 50, 0, 600);
-	TH1D *mumu_pt = new TH1D("mumu_pt", "#mu^{+}#mu^{-} p_{T}", 50, 0, 25);
-	TH1D *mumu_y = new TH1D("mumu_y", "#mu^{+}#mu^{-} y", 50, -3, 3);
+	TH1D *mumu_mass = new TH1D("mumu_mass", "#mu^{+}#mu^{-} Mass", 20, 0, 600);
+	TH1D *mumu_pt = new TH1D("mumu_pt", "#mu^{+}#mu^{-} p_{T}", 20, 0, 25);
+	TH1D *mumu_y = new TH1D("mumu_y", "#mu^{+}#mu^{-} y", 20, -3, 3);
 	/*	
 	TH1D *n_fromPV = new TH1D("n_fromPV", "n from PV", 100, 0, 100);
 	TH1D *n_fromPV_2 = new TH1D("n_fromPV_2", "n from PV 2", 100, 0, 100);
@@ -78,117 +80,172 @@ void ntp1::Loop()
 	TH1D *mu1_z_primvertex_z = new TH1D("mu1_z_primevertex_z", "#mu 1 z - primary vertex z", 1000, -.02, .02);
 	TH1D *mu2_z_primvertex_z = new TH1D("mu2_z_primevertex_z", "#mu 2 z - primary vertex z", 1000, -.02, .02);
 	*/
-	TH1D *proton_xi_left_rp3 = new TH1D("proton_xi_left_rp3", "#xi Proton Left - RP 3", 50, 0.02, 0.16);
-	TH1D *proton_resolution_left_gen_rp3 = new TH1D("proton_resolution_left_gen_rp3", "#xi Left gen Proton Resolution - RP 3", 50, -.8, .8);
-	TH1D *proton_resolution_left_reco_rp3 = new TH1D("proton_resolution_left_reco_rp3", "#xi Left reco Proton Resolution - RP 3", 50, -.8, .8);
-	TH1D *pair_xi_left_rp3 = new TH1D("pair_xi_left_rp3", "#xi Pair Left - RP 3", 50, 0.02, 0.16);
-	TH2D *xi_left_reco_rp3 = new TH2D("xi_left_reco_rp3", "#xi Left Correlation - RP 3", 50, 0.02, 0.16, 50, 0.02, 0.16); 
-	TH1D *proton_resolution_left_rp3_1 = new TH1D("proton_resolution_left_rp3_1", "#xi Proton Left Proton Resolution - RP 3", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp3_2 = new TH1D("proton_resolution_left_rp3_2", "#xi Proton Left Proton Resolution - RP 3", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp3_3 = new TH1D("proton_resolution_left_rp3_3", "#xi Proton Left Proton Resolution - RP 3", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp3_4 = new TH1D("proton_resolution_left_rp3_4", "#xi Proton Left Proton Resolution - RP 3", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp3_5 = new TH1D("proton_resolution_left_rp3_5", "#xi Proton Left Proton Resolution - RP 3", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp3_6 = new TH1D("proton_resolution_left_rp3_6", "#xi Proton Left Proton Resolution - RP 3", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp3_7 = new TH1D("proton_resolution_left_rp3_7", "#xi Proton Left Proton Resolution - RP 3", 50, -.05, .05);
+	TH1D *proton_xi_left_rp3 = new TH1D("proton_xi_left_rp3", "#xi Proton Left - RP 3", 20, 0, 0.16);
+	TH1D *proton_resolution_left_gen_rp3 = new TH1D("proton_resolution_left_gen_rp3", "#xi Left gen Proton Resolution - RP 3", 20, -.8, .8);
+	TH1D *proton_resolution_left_reco_rp3 = new TH1D("proton_resolution_left_reco_rp3", "#xi Left reco Proton Resolution - RP 3", 20, -.8, .8);
+	TH1D *pair_xi_left_rp3 = new TH1D("pair_xi_left_rp3", "#xi Pair Left - RP 3", 20, 0, 0.16);
+	TH2D *xi_left_reco_rp3 = new TH2D("xi_left_reco_rp3", "#xi Left Correlation - RP 3", 20, 0, 0.16, 20, 0, 0.16); 
+	TH1D *proton_resolution_left_rp3_1 = new TH1D("proton_resolution_left_rp3_1", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp3_2 = new TH1D("proton_resolution_left_rp3_2", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp3_3 = new TH1D("proton_resolution_left_rp3_3", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp3_4 = new TH1D("proton_resolution_left_rp3_4", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp3_5 = new TH1D("proton_resolution_left_rp3_5", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp3_6 = new TH1D("proton_resolution_left_rp3_6", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp3_7 = new TH1D("proton_resolution_left_rp3_7", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
+	TH1D *diff_proton_reco_pair_xi_left_rp3 = new TH1D("diff_proton_reco_pair_xi_left_rp3", "reco (Proton - Pair) #xi Left - RP 3", 20, -1, 1);
+	TH1D *ratio_proton_reco_pair_xi_left_rp3 = new TH1D("ratio_proton_reco_pair_xi_left_rp3", "reco (1 - Proton/Pair) #xi Left - RP 3", 20, -3, 3);
 
-	TH1D *proton_xi_left_rp23 = new TH1D("proton_xi_left_rp23", "#xi Proton Left - RP 23", 50, 0.02, 0.16);
-	TH1D *proton_resolution_left_gen_rp23 = new TH1D("proton_resolution_left_gen_rp23", "#xi Left gen Proton Resolution - RP 23", 50, -.8, .8);
-	TH1D *proton_resolution_left_reco_rp23 = new TH1D("proton_resolution_left_reco_rp23", "#xi Left reco Proton Resolution - RP 23", 50, -.8, .8);
-	TH1D *pair_xi_left_rp23 = new TH1D("pair_xi_left_rp23", "#xi Pair Left - RP 23", 50, 0.02, 0.16);
-	TH2D *xi_left_reco_rp23 = new TH2D("xi_left_reco_rp23", "#xi Left Correlation - RP 23", 50, 0.02, 0.16, 50, 0.02, 0.16); 
-	TH1D *proton_resolution_left_rp23_1 = new TH1D("proton_resolution_left_rp23_1", "#xi Proton Left Proton Resolution - RP 23", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp23_2 = new TH1D("proton_resolution_left_rp23_2", "#xi Proton Left Proton Resolution - RP 23", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp23_3 = new TH1D("proton_resolution_left_rp23_3", "#xi Proton Left Proton Resolution - RP 23", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp23_4 = new TH1D("proton_resolution_left_rp23_4", "#xi Proton Left Proton Resolution - RP 23", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp23_5 = new TH1D("proton_resolution_left_rp23_5", "#xi Proton Left Proton Resolution - RP 23", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp23_6 = new TH1D("proton_resolution_left_rp23_6", "#xi Proton Left Proton Resolution - RP 23", 50, -.05, .05);
-	TH1D *proton_resolution_left_rp23_7 = new TH1D("proton_resolution_left_rp23_7", "#xi Proton Left Proton Resolution - RP 23", 50, -.05, .05);
+	TH1D *proton_xi_left_rp23 = new TH1D("proton_xi_left_rp23", "#xi Proton Left - RP 23", 20, 0, 0.16);
+	TH1D *proton_resolution_left_gen_rp23 = new TH1D("proton_resolution_left_gen_rp23", "#xi Left gen Proton Resolution - RP 23", 20, -.8, .8);
+	TH1D *proton_resolution_left_reco_rp23 = new TH1D("proton_resolution_left_reco_rp23", "#xi Left reco Proton Resolution - RP 23", 20, -.8, .8);
+	TH1D *pair_xi_left_rp23 = new TH1D("pair_xi_left_rp23", "#xi Pair Left - RP 23", 20, 0, 0.16);
+	TH2D *xi_left_reco_rp23 = new TH2D("xi_left_reco_rp23", "#xi Left Correlation - RP 23", 20, 0, 0.16, 20, 0, 0.16); 
+	TH1D *proton_resolution_left_rp23_1 = new TH1D("proton_resolution_left_rp23_1", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp23_2 = new TH1D("proton_resolution_left_rp23_2", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp23_3 = new TH1D("proton_resolution_left_rp23_3", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp23_4 = new TH1D("proton_resolution_left_rp23_4", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp23_5 = new TH1D("proton_resolution_left_rp23_5", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp23_6 = new TH1D("proton_resolution_left_rp23_6", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
+	TH1D *proton_resolution_left_rp23_7 = new TH1D("proton_resolution_left_rp23_7", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
+	TH1D *diff_proton_reco_pair_xi_left_rp23 = new TH1D("diff_proton_reco_pair_xi_left_rp23", "reco (Proton - Pair) #xi Left - RP 23", 20, -1, 1);
+	TH1D *ratio_proton_reco_pair_xi_left_rp23 = new TH1D("ratio_proton_reco_pair_xi_left_rp23", "reco (1 - Proton/Pair) #xi Left - RP 23", 20, -3, 3);
 
-	TH1D *proton_xi_left_single = new TH1D("proton_xi_left_single", "#xi Proton Left - Single RP", 50, 0.02, 0.16);
-	TH1D *proton_resolution_left_gen_single = new TH1D("proton_resolution_left_gen_single", "#xi Left gen Proton Resolution - Single RP", 50, -.8, .8);
-	TH1D *proton_resolution_left_reco_single = new TH1D("proton_resolution_left_reco_single", "#xi Left reco Proton Resolution - Single RP", 50, -.8, .8);
-	TH1D *pair_xi_left_single = new TH1D("pair_xi_left_single", "#xi Pair Left - Single RP", 50, 0.02, 0.16);
-	TH2D *xi_left_reco_single = new TH2D("xi_left_reco_single", "#xi Left Correlation - Single RP", 50, 0.02, 0.16, 50, 0.02, 0.16); 	
-	TH1D *proton_resolution_left_single_1 = new TH1D("proton_resolution_left_single_1", "#xi Proton Left Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_single_2 = new TH1D("proton_resolution_left_single_2", "#xi Proton Left Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_single_3 = new TH1D("proton_resolution_left_single_3", "#xi Proton Left Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_single_4 = new TH1D("proton_resolution_left_single_4", "#xi Proton Left Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_single_5 = new TH1D("proton_resolution_left_single_5", "#xi Proton Left Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_single_6 = new TH1D("proton_resolution_left_single_6", "#xi Proton Left Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_single_7 = new TH1D("proton_resolution_left_single_7", "#xi Proton Left Proton Resolution - Single RP", 50, -.05, .05);
+	TH1D *proton_xi_left_single = new TH1D("proton_xi_left_single", "#xi Proton Left - Single RP", 20, 0, 0.16);
+	TH1D *proton_resolution_left_gen_single = new TH1D("proton_resolution_left_gen_single", "#xi Left gen Proton Resolution - Single RP", 20, -.8, .8);
+	TH1D *proton_resolution_left_reco_single = new TH1D("proton_resolution_left_reco_single", "#xi Left reco Proton Resolution - Single RP", 20, -.8, .8);
+	TH1D *pair_xi_left_single = new TH1D("pair_xi_left_single", "#xi Pair Left - Single RP", 20, 0, 0.16);
+	TH2D *xi_left_reco_single = new TH2D("xi_left_reco_single", "#xi Left Correlation - Single RP", 20, 0, 0.16, 20, 0, 0.16); 	
+	TH2D *xi_left_reco_single_2 = new TH2D("xi_left_reco_single_2", "#xi Left Correlation - Single RP", 20, 0, 0.16, 20, 0, 0.16); 	
+	TH1D *proton_resolution_left_single_1 = new TH1D("proton_resolution_left_single_1", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_single_2 = new TH1D("proton_resolution_left_single_2", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_single_3 = new TH1D("proton_resolution_left_single_3", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_single_4 = new TH1D("proton_resolution_left_single_4", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_single_5 = new TH1D("proton_resolution_left_single_5", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_single_6 = new TH1D("proton_resolution_left_single_6", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_single_7 = new TH1D("proton_resolution_left_single_7", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *diff_proton_reco_pair_xi_left_single = new TH1D("diff_proton_reco_pair_xi_left_single", "reco (Proton - Pair) #xi Left - Single", 20, -1, 1);
+	TH1D *ratio_proton_reco_pair_xi_left_single = new TH1D("ratio_proton_reco_pair_xi_left_single", "reco (1 - reco Proton/Pair) #xi Left - Single", 20, -3, 3);
 
-	TH1D *proton_xi_right_rp103 = new TH1D("proton_xi_right_rp103", "#xi Proton Right - RP 103", 50, 0.02, 0.16);
-	TH1D *proton_resolution_right_gen_rp103 = new TH1D("proton_resolution_right_gen_rp103", "#xi Right gen Proton Resolution - RP 103", 50, -.8, .8);
-	TH1D *proton_resolution_right_reco_rp103 = new TH1D("proton_resolution_right_reco_rp103", "#xi Right reco Proton Resolution - RP 103", 50, -.8, .8);
-	TH1D *pair_xi_right_rp103 = new TH1D("pair_xi_right_rp103", "#xi Pair Right - RP 103", 50, 0.02, 0.16);
-	TH2D *xi_right_reco_rp103 = new TH2D("xi_right_reco_rp103", "#xi Right Correlation - RP 103", 50, 0.02, 0.16, 50, 0.02, 0.16); 
-	TH1D *proton_resolution_right_rp103_1 = new TH1D("proton_resolution_right_rp103_1", "#xi Proton Right Proton Resolution - RP 103", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp103_2 = new TH1D("proton_resolution_right_rp103_2", "#xi Proton Right Proton Resolution - RP 103", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp103_3 = new TH1D("proton_resolution_right_rp103_3", "#xi Proton Right Proton Resolution - RP 103", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp103_4 = new TH1D("proton_resolution_right_rp103_4", "#xi Proton Right Proton Resolution - RP 103", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp103_5 = new TH1D("proton_resolution_right_rp103_5", "#xi Proton Right Proton Resolution - RP 103", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp103_6 = new TH1D("proton_resolution_right_rp103_6", "#xi Proton Right Proton Resolution - RP 103", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp103_7 = new TH1D("proton_resolution_right_rp103_7", "#xi Proton Right Proton Resolution - RP 103", 50, -.05, .05);
+	TH1D *proton_xi_right_rp103 = new TH1D("proton_xi_right_rp103", "#xi Proton Right - RP 103", 20, 0, 0.16);
+	TH1D *proton_resolution_right_gen_rp103 = new TH1D("proton_resolution_right_gen_rp103", "#xi Right gen Proton Resolution - RP 103", 20, -.8, .8);
+	TH1D *proton_resolution_right_reco_rp103 = new TH1D("proton_resolution_right_reco_rp103", "#xi Right reco Proton Resolution - RP 103", 20, -.8, .8);
+	TH1D *pair_xi_right_rp103 = new TH1D("pair_xi_right_rp103", "#xi Pair Right - RP 103", 20, 0, 0.16);
+	TH2D *xi_right_reco_rp103 = new TH2D("xi_right_reco_rp103", "#xi Right Correlation - RP 103", 20, 0, 0.16, 20, 0, 0.16); 
+	TH1D *proton_resolution_right_rp103_1 = new TH1D("proton_resolution_right_rp103_1", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp103_2 = new TH1D("proton_resolution_right_rp103_2", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp103_3 = new TH1D("proton_resolution_right_rp103_3", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp103_4 = new TH1D("proton_resolution_right_rp103_4", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp103_5 = new TH1D("proton_resolution_right_rp103_5", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp103_6 = new TH1D("proton_resolution_right_rp103_6", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp103_7 = new TH1D("proton_resolution_right_rp103_7", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
+	TH1D *diff_proton_reco_pair_xi_right_rp103 = new TH1D("diff_proton_reco_pair_xi_right_rp103", "reco (Proton - Pair) #xi Right - RP 103", 20, -1, 1);
+	TH1D *ratio_proton_reco_pair_xi_right_rp103 = new TH1D("ratio_proton_reco_pair_xi_right_rp103", "reco (1 - Proton/Pair) #xi Right - RP 103", 20, -3, 3);
 
-	TH1D *proton_xi_right_rp123 = new TH1D("proton_xi_right_rp123", "#xi Proton Right - RP 123", 50, 0.02, 0.16);
-	TH1D *proton_resolution_right_gen_rp123 = new TH1D("proton_resolution_right_gen_rp123", "#xi Right gen Proton Resolution - RP 123", 50, -.8, .8);
-	TH1D *proton_resolution_right_reco_rp123 = new TH1D("proton_resolution_right_reco_rp123", "#xi Right reco Proton Resolution - RP 123", 50, -.8, .8);
-	TH1D *pair_xi_right_rp123 = new TH1D("pair_xi_right_rp123", "#xi Pair Right - RP 123", 50, 0.02, 0.16);
-	TH2D *xi_right_reco_rp123 = new TH2D("xi_right_reco_rp123", "#xi Right Correlation - RP 123", 50, 0.02, 0.16, 50, 0.02, 0.16); 
-	TH1D *proton_resolution_right_rp123_1 = new TH1D("proton_resolution_right_rp123_1", "#xi Proton Right Proton Resolution - RP 123", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp123_2 = new TH1D("proton_resolution_right_rp123_2", "#xi Proton Right Proton Resolution - RP 123", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp123_3 = new TH1D("proton_resolution_right_rp123_3", "#xi Proton Right Proton Resolution - RP 123", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp123_4 = new TH1D("proton_resolution_right_rp123_4", "#xi Proton Right Proton Resolution - RP 123", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp123_5 = new TH1D("proton_resolution_right_rp123_5", "#xi Proton Right Proton Resolution - RP 123", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp123_6 = new TH1D("proton_resolution_right_rp123_6", "#xi Proton Right Proton Resolution - RP 123", 50, -.05, .05);
-	TH1D *proton_resolution_right_rp123_7 = new TH1D("proton_resolution_right_rp123_7", "#xi Proton Right Proton Resolution - RP 123", 50, -.05, .05);
+	TH1D *proton_xi_right_rp123 = new TH1D("proton_xi_right_rp123", "#xi Proton Right - RP 123", 20, 0, 0.16);
+	TH1D *proton_resolution_right_gen_rp123 = new TH1D("proton_resolution_right_gen_rp123", "#xi Right gen Proton Resolution - RP 123", 20, -.8, .8);
+	TH1D *proton_resolution_right_reco_rp123 = new TH1D("proton_resolution_right_reco_rp123", "#xi Right reco Proton Resolution - RP 123", 20, -.8, .8);
+	TH1D *pair_xi_right_rp123 = new TH1D("pair_xi_right_rp123", "#xi Pair Right - RP 123", 20, 0, 0.16);
+	TH2D *xi_right_reco_rp123 = new TH2D("xi_right_reco_rp123", "#xi Right Correlation - RP 123", 20, 0, 0.16, 20, 0, 0.16); 
+	TH1D *proton_resolution_right_rp123_1 = new TH1D("proton_resolution_right_rp123_1", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp123_2 = new TH1D("proton_resolution_right_rp123_2", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp123_3 = new TH1D("proton_resolution_right_rp123_3", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp123_4 = new TH1D("proton_resolution_right_rp123_4", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp123_5 = new TH1D("proton_resolution_right_rp123_5", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp123_6 = new TH1D("proton_resolution_right_rp123_6", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
+	TH1D *proton_resolution_right_rp123_7 = new TH1D("proton_resolution_right_rp123_7", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
+	TH1D *diff_proton_reco_pair_xi_right_rp123 = new TH1D("diff_proton_reco_pair_xi_right_rp123", "reco (Proton - Pair) #xi Right - RP 123", 20, -1, 1);
+	TH1D *ratio_proton_reco_pair_xi_right_rp123 = new TH1D("ratio_proton_reco_pair_xi_right_rp123", "reco (1 - Proton/Pair) #xi Right - RP 123", 20, -3, 3);
 
-	TH1D *proton_xi_right_single = new TH1D("proton_xi_right_single", "#xi Proton Right - Single RP", 50, 0.02, 0.16);
-	TH1D *proton_resolution_right_gen_single = new TH1D("proton_resolution_right_gen_single", "#xi Right gen Proton Resolution - Single RP", 50, -.8, .8);
-	TH1D *proton_resolution_right_reco_single = new TH1D("proton_resolution_right_reco_single", "#xi Right reco Proton Resolution - Single RP", 50, -.8, .8);
-	TH1D *pair_xi_right_single = new TH1D("pair_xi_right_single", "#xi Pair Right - Single RP", 50, 0.02, 0.16);
-	TH2D *xi_right_reco_single = new TH2D("xi_right_reco_single", "#xi Right Correlation - Single RP", 50, 0.02, 0.16, 50, 0.02, 0.16); 	
-	TH1D *proton_resolution_right_single_1 = new TH1D("proton_resolution_right_single_1", "#xi Proton Right Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_single_2 = new TH1D("proton_resolution_right_single_2", "#xi Proton Right Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_single_3 = new TH1D("proton_resolution_right_single_3", "#xi Proton Right Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_single_4 = new TH1D("proton_resolution_right_single_4", "#xi Proton Right Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_single_5 = new TH1D("proton_resolution_right_single_5", "#xi Proton Right Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_single_6 = new TH1D("proton_resolution_right_single_6", "#xi Proton Right Proton Resolution - Single RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_single_7 = new TH1D("proton_resolution_right_single_7", "#xi Proton Right Proton Resolution - Single RP", 50, -.05, .05);
+	TH1D *proton_xi_right_single = new TH1D("proton_xi_right_single", "#xi Proton Right - Single RP", 20, 0, 0.16);
+	TH1D *proton_resolution_right_gen_single = new TH1D("proton_resolution_right_gen_single", "#xi Right gen Proton Resolution - Single RP", 20, -.8, .8);
+	TH1D *proton_resolution_right_reco_single = new TH1D("proton_resolution_right_reco_single", "#xi Right reco Proton Resolution - Single RP", 20, -.8, .8);
+	TH1D *pair_xi_right_single = new TH1D("pair_xi_right_single", "#xi Pair Right - Single RP", 20, 0, 0.16);
+	TH2D *xi_right_reco_single = new TH2D("xi_right_reco_single", "#xi Right Correlation - Single RP", 20, 0, 0.16, 20, 0, 0.16); 	
+	TH2D *xi_right_reco_single_2 = new TH2D("xi_right_reco_single_2", "#xi Right Correlation - Single RP", 20, 0, 0.16, 20, 0, 0.16); 	
+	TH1D *proton_resolution_right_single_1 = new TH1D("proton_resolution_right_single_1", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_single_2 = new TH1D("proton_resolution_right_single_2", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_single_3 = new TH1D("proton_resolution_right_single_3", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_single_4 = new TH1D("proton_resolution_right_single_4", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_single_5 = new TH1D("proton_resolution_right_single_5", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_single_6 = new TH1D("proton_resolution_right_single_6", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_single_7 = new TH1D("proton_resolution_right_single_7", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
+	TH1D *diff_proton_reco_pair_xi_right_single = new TH1D("diff_proton_reco_pair_xi_right_single", "reco (Proton - Pair) #xi Right - Single", 20, -1, 1);
+	TH1D *ratio_proton_reco_pair_xi_right_single = new TH1D("ratio_proton_reco_pair_xi_right_single", "reco (1 - Proton/Pair) #xi Right - Single", 20, -3, 3);
 
-	TH1D *proton_xi_left_multi = new TH1D("proton_xi_left_multi", "#xi Proton Left - Multi RP", 50, 0.02, 0.16);
-	TH1D *proton_resolution_left_gen_multi = new TH1D("proton_resolution_left_gen_multi", "#xi Left gen Proton Resolution - Multi RP", 50, -2, 2);
-	TH1D *proton_resolution_left_reco_multi = new TH1D("proton_resolution_left_reco_multi", "#xi Left reco Proton Resolution - Multi RP", 50, -2, 2);
-	TH1D *pair_xi_left_multi = new TH1D("pair_xi_left_multi", "#xi Pair Left - Multi RP", 50, 0.02, 0.16);
-	TH2D *xi_left_reco_multi = new TH2D("xi_left_reco_multi", "#xi Left Correlation - Multi RP", 50, 0.02, 0.16, 50, 0.02, 0.16); 	
-	TH1D *proton_resolution_left_multi_1 = new TH1D("proton_resolution_left_multi_1", "#xi Proton Left Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_multi_2 = new TH1D("proton_resolution_left_multi_2", "#xi Proton Left Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_multi_3 = new TH1D("proton_resolution_left_multi_3", "#xi Proton Left Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_multi_4 = new TH1D("proton_resolution_left_multi_4", "#xi Proton Left Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_multi_5 = new TH1D("proton_resolution_left_multi_5", "#xi Proton Left Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_multi_6 = new TH1D("proton_resolution_left_multi_6", "#xi Proton Left Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_left_multi_7 = new TH1D("proton_resolution_left_multi_7", "#xi Proton Left Proton Resolution - Multi RP", 50, -.05, .05);
+	TH1D *proton_xi_left_multi = new TH1D("proton_xi_left_multi", "#xi Proton Left - Multi RP", 20, 0, 0.16);
+	TH1D *proton_resolution_left_gen_multi = new TH1D("proton_resolution_left_gen_multi", "#xi Left gen Proton Resolution - Multi RP", 20, -2, 2);
+	TH1D *proton_resolution_left_reco_multi = new TH1D("proton_resolution_left_reco_multi", "#xi Left reco Proton Resolution - Multi RP", 20, -2, 2);
+	TH1D *pair_xi_left_multi = new TH1D("pair_xi_left_multi", "#xi Pair Left - Multi RP", 20, 0, 0.16);
+	TH2D *xi_left_reco_multi = new TH2D("xi_left_reco_multi", "#xi Left Correlation - Multi RP", 20, 0, 0.16, 20, 0, 0.16); 	
+	TH1D *proton_resolution_left_multi_1 = new TH1D("proton_resolution_left_multi_1", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_multi_2 = new TH1D("proton_resolution_left_multi_2", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_multi_3 = new TH1D("proton_resolution_left_multi_3", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_multi_4 = new TH1D("proton_resolution_left_multi_4", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_multi_5 = new TH1D("proton_resolution_left_multi_5", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_multi_6 = new TH1D("proton_resolution_left_multi_6", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_left_multi_7 = new TH1D("proton_resolution_left_multi_7", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *diff_proton_reco_pair_xi_left_multi = new TH1D("diff_proton_reco_pair_xi_left_multi", "reco (Proton - Pair) #xi Left - Multi", 20, -1, 1);
+	TH1D *ratio_proton_reco_pair_xi_left_multi = new TH1D("ratio_proton_reco_pair_xi_left_multi", "reco (1 - Proton/Pair) #xi Left - Multi", 20, -3, 3);
 
-	TH1D *proton_xi_right_multi = new TH1D("proton_xi_right_multi", "#xi Proton Right - Multi RP", 50, 0.02, 0.16);
-	TH1D *proton_resolution_right_gen_multi = new TH1D("proton_resolution_right_gen_multi", "#xi Right gen Proton Resolution - Multi RP", 50, -.2, .2);
-	TH1D *proton_resolution_right_reco_multi = new TH1D("proton_resolution_right_reco_multi", "#xi Right reco Proton Resolution - Multi RP", 50, -2, 2);
-	TH1D *pair_xi_right_multi = new TH1D("pair_xi_right_multi", "#xi Pair Right - Multi RP", 50, 0.02, 0.16);
-	TH2D *xi_right_reco_multi = new TH2D("xi_right_reco_multi", "#xi Right Correlation - Multi RP", 50, 0.02, 0.16, 50, 0.02, 0.16); 	
-	TH1D *proton_resolution_right_multi_1 = new TH1D("proton_resolution_right_multi_1", "#xi Proton Right Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_multi_2 = new TH1D("proton_resolution_right_multi_2", "#xi Proton Right Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_multi_3 = new TH1D("proton_resolution_right_multi_3", "#xi Proton Right Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_multi_4 = new TH1D("proton_resolution_right_multi_4", "#xi Proton Right Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_multi_5 = new TH1D("proton_resolution_right_multi_5", "#xi Proton Right Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_multi_6 = new TH1D("proton_resolution_right_multi_6", "#xi Proton Right Proton Resolution - Multi RP", 50, -.05, .05);
-	TH1D *proton_resolution_right_multi_7 = new TH1D("proton_resolution_right_multi_7", "#xi Proton Right Proton Resolution - Multi RP", 50, -.05, .05);
+	TH1D *proton_xi_right_multi = new TH1D("proton_xi_right_multi", "#xi Proton Right - Multi RP", 20, 0, 0.16);
+	TH1D *proton_resolution_right_gen_multi = new TH1D("proton_resolution_right_gen_multi", "#xi Right gen Proton Resolution - Multi RP", 20, -.2, .2);
+	TH1D *proton_resolution_right_reco_multi = new TH1D("proton_resolution_right_reco_multi", "#xi Right reco Proton Resolution - Multi RP", 20, -2, 2);
+	TH1D *pair_xi_right_multi = new TH1D("pair_xi_right_multi", "#xi Pair Right - Multi RP", 20, 0, 0.16);
+	TH2D *xi_right_reco_multi = new TH2D("xi_right_reco_multi", "#xi Right Correlation - Multi RP", 20, 0, 0.16, 20, 0, 0.16); 	
+	TH1D *proton_resolution_right_multi_1 = new TH1D("proton_resolution_right_multi_1", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_multi_2 = new TH1D("proton_resolution_right_multi_2", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_multi_3 = new TH1D("proton_resolution_right_multi_3", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_multi_4 = new TH1D("proton_resolution_right_multi_4", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_multi_5 = new TH1D("proton_resolution_right_multi_5", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_multi_6 = new TH1D("proton_resolution_right_multi_6", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *proton_resolution_right_multi_7 = new TH1D("proton_resolution_right_multi_7", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
+	TH1D *diff_proton_reco_pair_xi_right_multi = new TH1D("diff_proton_reco_pair_xi_right_multi", "reco (Proton - Pair) #xi Right - Multi", 20, -1, 1);
+	TH1D *ratio_proton_reco_pair_xi_right_multi = new TH1D("ratio_proton_reco_pair_xi_right_multi", "reco (1 - Proton/Pair) #xi Right - Multi", 20, -3, 3);
 
-	TH1D *xi_pair_resolution_left = new TH1D("xi_pair_resolution_left", "Left #xi #mu^{+}#mu^{-} gen - #xi #mu^{+}#mu^{-} reco", 50, -.005, .005);
-	TH1D *xi_pair_resolution_right = new TH1D("xi_pair_resolution_right", "Right #xi #mu^{+}#mu^{-} gen - #xi #mu^{+}#mu^{-} reco", 50, -.005, .005);
+	TH1D *xi_pair_resolution_left = new TH1D("xi_pair_resolution_left", "Left #xi #mu^{+}#mu^{-} gen - #xi #mu^{+}#mu^{-} reco", 20, -.005, .005);
+	TH1D *xi_pair_resolution_right = new TH1D("xi_pair_resolution_right", "Right #xi #mu^{+}#mu^{-} gen - #xi #mu^{+}#mu^{-} reco", 20, -.005, .005);
 
    if (fChain == 0) return;
 
    Long64_t nentries = fChain->GetEntriesFast();
 
+   //Int_t seed = 12345678;
+   //TRandom3 random( seed );
+   //Long64_t nentries_pileup = -1;
+
+   //std::vector<PileUpEvent> pileup_data; pileup_data.clear();
+   //if( mix_pileup ) {
+   //   nentries_pileup = pileup_tree->GetEntriesFast();
+   //   for (Long64_t jentry=0; jentry < nentries_pileup; jentry++) {
+   //      pileup_tree->GetEntry(jentry);
+
+   //      PileUpEvent pileupevt_;
+   //      pileupevt_.nRecoProtCand = nRecoProtCand;
+   //      if( nRecoProtCand > NMAXPROTONS) std::cout << "Number of protons in event: " << nRecoProtCand << std::endl;
+   //      for ( unsigned int idx = 0; idx < nRecoProtCand; ++idx ) {
+   //         pileupevt_.ProtCand_xi[idx] = ProtCand_xi[idx];
+   //         //pileupevt_.ProtCand_t[idx] = ProtCand_t[idx];
+   //         pileupevt_.ProtCand_ThX[idx] = ProtCand_ThX[idx];
+   //         pileupevt_.ProtCand_ThY[idx] = ProtCand_ThY[idx];
+   //         pileupevt_.ProtCand_rpid[idx] = ProtCand_rpid[idx]; 
+   //         pileupevt_.ProtCand_arm[idx] = ProtCand_arm[idx];
+   //         pileupevt_.ProtCand_ismultirp[idx] = ProtCand_ismultirp[idx];
+   //         //pileupevt_.ProtCand_time[idx] = ProtCand_time[idx];
+   //         //pileupevt_.ProtCand_trackx1[idx] = ProtCand_trackx1[idx];  
+   //         //pileupevt_.ProtCand_tracky1[idx] = ProtCand_tracky1[idx];
+   //         //pileupevt_.ProtCand_trackx2[idx] = ProtCand_trackx2[idx];
+   //         //pileupevt_.ProtCand_tracky2[idx] = ProtCand_tracky2[idx];
+   //         //pileupevt_.ProtCand_rpid1[idx] = ProtCand_rpid1[idx];
+   //         //pileupevt_.ProtCand_rpid2[idx] = ProtCand_rpid2[idx];
+   //         //pileupevt_.ProtCand_trackpixshift1[idx] = ProtCand_trackpixshift1[idx];
+   //         //pileupevt_.ProtCand_trackpixshift2[idx] = ProtCand_trackpixshift2[idx];
+   //      }
+   //      pileup_data.push_back( pileupevt_ );
+   //   }
+   //   assert( pileup_data.size() == nentries_pileup );
+   //   std::cout << "Loaded " << pileup_data.size() << " pileup events." << std::endl;
+   //}
+  
 	int zerocortes = 0;
 	int umcortes = 0;
 	int doiscortes = 0;
@@ -199,13 +256,93 @@ void ntp1::Loop()
 	int setecortes = 0;
 	int oitocortes = 0;
 
-   Long64_t nbytes = 0, nb = 0;
-   for (Long64_t jentry=0; jentry<nentries;jentry++) {
-      Long64_t ientry = LoadTree(jentry);
-      if (ientry < 0) break;
-      nb = fChain->GetEntry(jentry);   nbytes += nb;
-      // if (Cut(ientry) < 0) continue;
+   Long64_t nentries_pileup = pileup_tree->GetEntriesFast();
+   std::cout << "Loaded " << nentries_pileup << " pileup events." << std::endl;
 
+   Long64_t nentries_corr = nentries;
+   std::cout << "Total number of events: " << nentries << std::endl;
+   if( resample ){ 
+      nentries_corr = nentries*resample_number;
+      std::cout << "Total number of events (resampled): " << nentries_corr << std::endl; 
+	}
+
+   unsigned int pileup_per_bkg = ( nentries_pileup / nentries );
+   unsigned int pileup_incr = 1;
+   if( pileup_per_bkg > 1 ) pileup_incr = pileup_per_bkg;
+   std::cout << "Pileup sample increment: " << pileup_incr << std::endl;
+
+   Long64_t nbytes = 0, nb = 0;
+   //for (Long64_t jentry=0; jentry<nentries;jentry++) {
+   //for (Long64_t jentry=0,ientry_pileup=0; jentry<nentries; jentry++, ientry_pileup++) {
+   //for (Long64_t jentry=0,ientry_pileup=0; jentry < nentries_corr; jentry++, ientry_pileup++) {
+   for (Long64_t jentry=0,ientry_pileup=0; jentry < nentries_corr; jentry++) {
+      
+      ientry_pileup += pileup_incr;
+
+      Long64_t jentry_corr = ( jentry % nentries );
+
+      //Long64_t ientry = LoadTree(jentry);
+      Long64_t ientry = LoadTree(jentry_corr);
+      if (ientry < 0) break;
+      //nb = fChain->GetEntry(jentry);   nbytes += nb;
+      nb = fChain->GetEntry(jentry_corr);   nbytes += nb;
+ 
+      //Long64_t ientry_pileup_corr = ( ientry_pileup < nentries_pileup ) ? ientry_pileup : ( ientry_pileup % nentries_pileup );
+      Long64_t ientry_pileup_corr = ( ientry_pileup % nentries_pileup );
+
+      //if( jentry % 10000 == 0 ) 
+      //   std::cout << "Analyzing event number " << jentry 
+      //             << " (entry in sample: " << jentry_corr 
+      //             << ", entry in pileup sample: " << ientry_pileup_corr 
+      //             << ")" << std::endl;  
+
+      if( mix_pileup ){
+         //Long64_t ientry_pileup = nentries_pileup * random.Rndm();
+         
+         pileup_tree->GetEntry( ientry_pileup_corr );
+
+         //PileUpEvent const& pileupevt_ = pileup_data.at( ientry_pileup );
+         //nRecoProtCand = pileupevt_.nRecoProtCand;   
+			//for ( unsigned int idx = 0; idx < nRecoProtCand; ++idx ) {
+         //   ProtCand_xi[idx]             = pileupevt_.ProtCand_xi[idx];
+         //   //ProtCand_t[idx]              = pileupevt_.ProtCand_t[idx];
+         //   ProtCand_t[idx]              = -1;
+         //   ProtCand_ThX[idx]            = pileupevt_.ProtCand_ThX[idx];
+         //   ProtCand_ThY[idx]            = pileupevt_.ProtCand_ThY[idx];
+         //   ProtCand_rpid[idx]           = pileupevt_.ProtCand_rpid[idx];
+         //   ProtCand_arm[idx]            = pileupevt_.ProtCand_arm[idx];
+         //   ProtCand_ismultirp[idx]      = pileupevt_.ProtCand_ismultirp[idx];
+         //   //ProtCand_time[idx]           = pileupevt_.ProtCand_time[idx];
+         //   //ProtCand_trackx1[idx]        = pileupevt_.ProtCand_trackx1[idx];
+         //   //ProtCand_tracky1[idx]        = pileupevt_.ProtCand_tracky1[idx];
+         //   //ProtCand_trackx2[idx]        = pileupevt_.ProtCand_trackx2[idx];
+         //   //ProtCand_tracky2[idx]        = pileupevt_.ProtCand_tracky2[idx];
+         //   //ProtCand_rpid1[idx]          = pileupevt_.ProtCand_rpid1[idx];
+         //   //ProtCand_rpid2[idx]          = pileupevt_.ProtCand_rpid2[idx];
+         //   //ProtCand_trackpixshift1[idx] = pileupevt_.ProtCand_trackpixshift1[idx];
+         //   //ProtCand_trackpixshift2[idx] = pileupevt_.ProtCand_trackpixshift2[idx];
+         //   ProtCand_time[idx]           = -1;
+         //   ProtCand_trackx1[idx]        = -1;
+         //   ProtCand_tracky1[idx]        = -1;
+         //   ProtCand_trackx2[idx]        = -1;
+         //   ProtCand_tracky2[idx]        = -1;
+         //   ProtCand_rpid1[idx]          = -1;
+         //   ProtCand_rpid2[idx]          = -1;
+         //   ProtCand_trackpixshift1[idx] = -1;
+         //   ProtCand_trackpixshift2[idx] = -1;
+         //}
+
+      }
+
+      // if (Cut(ientry) < 0) continue;
+		double single_left_xi = -999;
+      double single_rp23_xi = -999;
+      double single_rp3_xi = -999;
+      int cont_single_rp3 = 0;
+      double single_right_xi = -999;
+      double single_rp103_xi = -999;
+      double single_rp123_xi = -999;
+      int cont_single_rp123 = 0;
 		int contador_xangle = 0;
 		int contador_PV = 0, contador_PV2 = 0, contador_PV3 = 0, contador_ext_PV = 0, contador_ext_PV2 = 0, contador_ext_PV3 = 0;
 		int contador_PV_dz02 = 0, contador_PV2_dz02 = 0, contador_PV3_dz02 = 0, contador_ext_PV_dz02 = 0, contador_ext_PV2_dz02 = 0, contador_ext_PV3_dz02 = 0;
@@ -315,12 +452,12 @@ void ntp1::Loop()
 										mumu_y->Fill(v.Rapidity());
 										xi_pair_resolution_left->Fill(xi_pair_diff_left);
 										xi_pair_resolution_right->Fill(xi_pair_diff_right);
-										for ( int idz = 0; idz < nGenProtCand; ++idz ) {
-										//cout << idz << "   " << GenProtCand_status[idz] << "   " << GenProtCand_eta[idz] << "   " << (1 - GenProtCand_e[idz]/6500) << endl;
-									   	if (GenProtCand_eta[idz] > 0) xi_proton_gen_left = (1 - GenProtCand_e[idz]/6500);
+										for ( unsigned int idz = 0; idz < nGenProtCand; ++idz ) {
+											//cout << idz << "   " << GenProtCand_status[idz] << "   " << GenProtCand_eta[idz] << "   " << (1 - GenProtCand_e[idz]/6500) << endl;
+									  		if (GenProtCand_eta[idz] > 0) xi_proton_gen_left = (1 - GenProtCand_e[idz]/6500);
 									   	if (GenProtCand_eta[idz] < 0) xi_proton_gen_right = (1 - GenProtCand_e[idz]/6500);
 										}
-										for ( int idx = 0; idx < nRecoProtCand; ++idx ) {
+										for ( unsigned int idx = 0; idx < nRecoProtCand; ++idx ) {
 											//cout << idx << " " << ProtCand_rpid[idx] << " " << ProtCand_arm[idx] << " " << ProtCand_xi[idx] << endl;
 											if (ProtCand_rpid[idx] == 3) {
 												if (ProtCand_ismultirp[idx] == 0) {
@@ -328,27 +465,29 @@ void ntp1::Loop()
 													proton_resolution_left_gen_rp3->Fill((xi_proton_gen_left - ProtCand_xi[idx])/xi_proton_gen_left);
 													proton_resolution_left_reco_rp3->Fill((ProtCand_xi[idx] - xi_proton_gen_left)/ProtCand_xi[idx]);
 													pair_xi_left_rp3->Fill(xi_pair_left_reco);
-													xi_left_reco_rp3->Fill(ProtCand_xi[idx], xi_pair_left_reco); 
+													xi_left_reco_rp3->Fill(ProtCand_xi[idx], xi_pair_left_reco);
+													diff_proton_reco_pair_xi_left_rp3->Fill(ProtCand_xi[idx] - xi_pair_left_reco); 
+													ratio_proton_reco_pair_xi_left_rp3->Fill(1 - ProtCand_xi[idx]/xi_pair_left_reco); 
 													//xi_left_wrong->Fill(ProtCand_xi[idx], xi_pair_right); 
 													if (ProtCand_xi[idx] >= 0.02 && ProtCand_xi[idx] < 0.04) {
 														proton_resolution_left_rp3_1->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
+                             	         if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
 														proton_resolution_left_rp3_2->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
+                             	         if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
 														proton_resolution_left_rp3_3->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
                                        if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) { 
 														proton_resolution_left_rp3_4->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
+                             	         if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
 														proton_resolution_left_rp3_5->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
+                             	         if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
 														proton_resolution_left_rp3_6->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}	
-                                       if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
+                             	         if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
 														proton_resolution_left_rp3_7->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
 												}		
@@ -360,23 +499,25 @@ void ntp1::Loop()
 													proton_resolution_left_reco_rp23->Fill((ProtCand_xi[idx] - xi_proton_gen_left)/ProtCand_xi[idx]);
 													pair_xi_left_rp23->Fill(xi_pair_left_reco);
 													xi_left_reco_rp23->Fill(ProtCand_xi[idx], xi_pair_left_reco); 
+													diff_proton_reco_pair_xi_left_rp23->Fill(ProtCand_xi[idx] - xi_pair_left_reco); 
+													ratio_proton_reco_pair_xi_left_rp23->Fill(1 - ProtCand_xi[idx]/xi_pair_left_reco); 
 													//xi_left_wrong->Fill(ProtCand_xi[idx], xi_pair_right); 
 													if (ProtCand_xi[idx] >= 0.02 && ProtCand_xi[idx] < 0.04) {
 														proton_resolution_left_rp23_1->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
+                             	         if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
 														proton_resolution_left_rp23_2->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
+                             	         if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
 														proton_resolution_left_rp23_3->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
+                              	      if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
 														proton_resolution_left_rp23_4->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
+                             	         if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
 														proton_resolution_left_rp23_5->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
+                              	      if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
 														proton_resolution_left_rp23_6->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
                                        if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
@@ -392,6 +533,8 @@ void ntp1::Loop()
 													proton_resolution_left_reco_single->Fill((ProtCand_xi[idx] - xi_proton_gen_left)/ProtCand_xi[idx]);
 													pair_xi_left_single->Fill(xi_pair_left_reco);
 													xi_left_reco_single->Fill(ProtCand_xi[idx], xi_pair_left_reco); 
+													diff_proton_reco_pair_xi_left_single->Fill(ProtCand_xi[idx] - xi_pair_left_reco); 
+													ratio_proton_reco_pair_xi_left_single->Fill(1 - ProtCand_xi[idx]/xi_pair_left_reco); 
 													//xi_left_wrong->Fill(ProtCand_xi[idx], xi_pair_right); 
 													if (ProtCand_xi[idx] >= 0.02 && ProtCand_xi[idx] < 0.04) {
 														proton_resolution_left_single_1->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
@@ -399,16 +542,16 @@ void ntp1::Loop()
                                        if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
 														proton_resolution_left_single_2->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
+                             	         if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
 														proton_resolution_left_single_3->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
+                             	         if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
 														proton_resolution_left_single_4->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {	
-														proton_resolution_left_single_5->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
+                             	         if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {	                                                          
+														proton_resolution_left_single_5->Fill(ProtCand_xi[idx] - xi_proton_gen_left);										
 													}
-                                       if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
+                              	      if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
 														proton_resolution_left_single_6->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
                                        if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
@@ -416,6 +559,13 @@ void ntp1::Loop()
 													}
 												}		
 											}
+
+											if(ProtCand_rpid[idx] == 23 && ProtCand_ismultirp[idx] == 0) single_rp23_xi = ProtCand_xi[idx];
+                              	if(ProtCand_rpid[idx] == 3 && ProtCand_ismultirp[idx] == 0){
+                              	   single_rp3_xi = ProtCand_xi[idx];
+                              	   cont_single_rp3++;
+                                 }
+
 											if (ProtCand_rpid[idx] == 103) {                           
             	              	   	if (ProtCand_ismultirp[idx] == 0) {
 													proton_xi_right_rp103->Fill(ProtCand_xi[idx]);
@@ -423,68 +573,74 @@ void ntp1::Loop()
 													proton_resolution_right_reco_rp103->Fill((ProtCand_xi[idx] - xi_proton_gen_right)/ProtCand_xi[idx]);
 													pair_xi_right_rp103->Fill(xi_pair_right_reco);
 													xi_right_reco_rp103->Fill(ProtCand_xi[idx], xi_pair_right_reco);
+													diff_proton_reco_pair_xi_right_rp103->Fill(ProtCand_xi[idx] - xi_pair_right_reco); 
+													ratio_proton_reco_pair_xi_right_rp103->Fill(1 - ProtCand_xi[idx]/xi_pair_right_reco); 
 													//xi_right_wrong->Fill(ProtCand_xi[idx], xi_pair_left);
 													if (ProtCand_xi[idx] >= 0.02 && ProtCand_xi[idx] < 0.04) {
 														proton_resolution_right_rp103_1->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
+                              	      if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
 														proton_resolution_right_rp103_2->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
+                             	         if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
 														proton_resolution_right_rp103_3->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
+                             	         if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
 														proton_resolution_right_rp103_4->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
+                             	         if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
 														proton_resolution_right_rp103_5->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
                                        if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
 														proton_resolution_right_rp103_6->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
+                             	         if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
 														proton_resolution_right_rp103_7->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
 												}		
 											}
 											if (ProtCand_rpid[idx] == 123) {                           
-            	              	   	if (ProtCand_ismultirp[idx] == 0) {
+           	              		   	if (ProtCand_ismultirp[idx] == 0) {
 													proton_xi_right_rp123->Fill(ProtCand_xi[idx]);
 													proton_resolution_right_gen_rp123->Fill((xi_proton_gen_right - ProtCand_xi[idx])/xi_proton_gen_right);
 													proton_resolution_right_reco_rp123->Fill((ProtCand_xi[idx] - xi_proton_gen_right/ProtCand_xi[idx]));
 													pair_xi_right_rp123->Fill(xi_pair_right_reco);
 													xi_right_reco_rp123->Fill(ProtCand_xi[idx], xi_pair_right_reco);
+													diff_proton_reco_pair_xi_right_rp123->Fill(ProtCand_xi[idx] - xi_pair_right_reco); 
+													ratio_proton_reco_pair_xi_right_rp123->Fill(1 - ProtCand_xi[idx]/xi_pair_right_reco); 
 													//xi_right_wrong->Fill(ProtCand_xi[idx], xi_pair_left);
 													if (ProtCand_xi[idx] >= 0.02 && ProtCand_xi[idx] < 0.04) {
 														proton_resolution_right_rp123_1->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
+        	                      	      if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
 														proton_resolution_right_rp123_2->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
                                        if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {	
 														proton_resolution_right_rp123_3->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
+                             	         if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
 														proton_resolution_right_rp123_4->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
+                             	         if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
 														proton_resolution_right_rp123_5->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
+                             	         if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
 														proton_resolution_right_rp123_6->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
+                             	         if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
 														proton_resolution_right_rp123_6->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
 												}		
 											}
 											if ((ProtCand_rpid[idx] == 103) || (ProtCand_rpid[idx] == 123)) {                           
-            	              	   	if (ProtCand_ismultirp[idx] == 0) {
+            	              		   if (ProtCand_ismultirp[idx] == 0) {
 													proton_xi_right_single->Fill(ProtCand_xi[idx]);
 													proton_resolution_right_gen_single->Fill((xi_proton_gen_right - ProtCand_xi[idx])/xi_proton_gen_right);
 													proton_resolution_right_reco_single->Fill((ProtCand_xi[idx] - xi_proton_gen_right/ProtCand_xi[idx]));
 													pair_xi_right_single->Fill(xi_pair_right_reco);
 													xi_right_reco_single->Fill(ProtCand_xi[idx], xi_pair_right_reco);
+													diff_proton_reco_pair_xi_right_single->Fill(ProtCand_xi[idx] - xi_pair_right_reco); 
+													ratio_proton_reco_pair_xi_right_single->Fill(1 - ProtCand_xi[idx]/xi_pair_right_reco); 
 													//xi_right_wrong->Fill(ProtCand_xi[idx], xi_pair_left);
 													if (ProtCand_xi[idx] >= 0.02 && ProtCand_xi[idx] < 0.04) {
 														proton_resolution_right_single_1->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
@@ -492,16 +648,16 @@ void ntp1::Loop()
                                        if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
 														proton_resolution_right_single_2->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
+                             	         if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
 														proton_resolution_right_single_3->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
+                             	         if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
 														proton_resolution_right_single_4->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
+                             	         if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
 														proton_resolution_right_single_5->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
+                              	      if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
 														proton_resolution_right_single_6->Fill(ProtCand_xi[idx] - xi_proton_gen_right);	
 													}
                                        if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {	
@@ -509,6 +665,13 @@ void ntp1::Loop()
 													}
 												}		
 											}
+
+											if(ProtCand_rpid[idx] == 103 && ProtCand_ismultirp[idx] == 0) single_rp103_xi = ProtCand_xi[idx];
+                             	   if(ProtCand_rpid[idx] == 123 && ProtCand_ismultirp[idx] == 0){
+                                    single_rp123_xi = ProtCand_xi[idx];
+                             	      cont_single_rp123++;
+                             	   }
+		
 											if (ProtCand_arm[idx] == 0) {
 												if (ProtCand_ismultirp[idx] == 1) {
 													proton_xi_left_multi->Fill(ProtCand_xi[idx]);
@@ -516,63 +679,82 @@ void ntp1::Loop()
 													proton_resolution_left_reco_multi->Fill((ProtCand_xi[idx] - xi_proton_gen_left/ProtCand_xi[idx]));
 													pair_xi_left_multi->Fill(xi_pair_left_reco);
 													xi_left_reco_multi->Fill(ProtCand_xi[idx], xi_pair_left_reco); 
+													diff_proton_reco_pair_xi_left_multi->Fill(ProtCand_xi[idx] - xi_pair_left_reco); 
+													ratio_proton_reco_pair_xi_left_multi->Fill(1 - ProtCand_xi[idx]/xi_pair_left_reco); 
 													//xi_left_wrong->Fill(ProtCand_xi[idx], xi_pair_right); 
 													if (ProtCand_xi[idx] >= 0.02 && ProtCand_xi[idx] < 0.04) {
 														proton_resolution_left_multi_1->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
+                              	        if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
 														proton_resolution_left_multi_2->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
+                             	         if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
 														proton_resolution_left_multi_3->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
+                             	         if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
 														proton_resolution_left_multi_4->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {	
+                             	         if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {	
 														proton_resolution_left_multi_5->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
                                        if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {	
 														proton_resolution_left_multi_6->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
-                                       if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {	
+                             	         if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {	
 														proton_resolution_left_multi_7->Fill(ProtCand_xi[idx] - xi_proton_gen_left);
 													}
 												}		
 											}
 											if (ProtCand_arm[idx] == 1) {                           
-            	              	   	if (ProtCand_ismultirp[idx] == 1) {
+           	              		   	if (ProtCand_ismultirp[idx] == 1) {
 													proton_xi_right_multi->Fill(ProtCand_xi[idx]);
 													proton_resolution_right_gen_multi->Fill((xi_proton_gen_right - ProtCand_xi[idx])/xi_proton_gen_right);
 													proton_resolution_right_reco_multi->Fill((ProtCand_xi[idx] - xi_proton_gen_right/ProtCand_xi[idx]));
 													pair_xi_right_multi->Fill(xi_pair_right_reco);
 													xi_right_reco_multi->Fill(ProtCand_xi[idx], xi_pair_right_reco);
+													diff_proton_reco_pair_xi_right_multi->Fill(ProtCand_xi[idx] - xi_pair_right_reco); 
+													ratio_proton_reco_pair_xi_right_multi->Fill(1 - ProtCand_xi[idx]/xi_pair_right_reco); 
 													//xi_right_wrong->Fill(ProtCand_xi[idx], xi_pair_left);
 													if (ProtCand_xi[idx] >= 0.02 && ProtCand_xi[idx] < 0.04) {
 														proton_resolution_right_multi_1->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
+                             	         if (ProtCand_xi[idx] >= 0.04 && ProtCand_xi[idx] < 0.06) {
 														proton_resolution_right_multi_2->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
+                             	         if (ProtCand_xi[idx] >= 0.06 && ProtCand_xi[idx] < 0.08) {
 														proton_resolution_right_multi_3->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
+                             	         if (ProtCand_xi[idx] >= 0.08 && ProtCand_xi[idx] < 0.10) {
 														proton_resolution_right_multi_4->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
+                             	         if (ProtCand_xi[idx] >= 0.10 && ProtCand_xi[idx] < 0.12) {
 														proton_resolution_right_multi_5->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
+                              	      if (ProtCand_xi[idx] >= 0.12 && ProtCand_xi[idx] < 0.14) {
 														proton_resolution_right_multi_6->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
-                                       if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
+                             	         if (ProtCand_xi[idx] >= 0.14 && ProtCand_xi[idx] < 0.16) {
 														proton_resolution_right_multi_7->Fill(ProtCand_xi[idx] - xi_proton_gen_right);
 													}
 												}	
-               	          		}
-                          		}
-							 		}
+                        			}
+                       			}
+										if (cont_single_rp3==1 && single_rp3_xi > 0){
+                             	   single_left_xi = single_rp3_xi;
+                             	   xi_left_reco_single_2->Fill(single_left_xi,xi_pair_left_reco);
+                             	}
+                             	else {
+                             	   single_left_xi = single_rp23_xi;
+                             	}
+
+                             	if (cont_single_rp123==1 && single_rp123_xi > 0){
+                             	   single_right_xi = single_rp123_xi;
+                             	   xi_right_reco_single_2->Fill(single_right_xi,xi_pair_right_reco);
+                             	}
+                             	else {
+                             	   single_right_xi = single_rp103_xi;
+                             	}
+				 		 			}
 								}
 							}
 						}
@@ -594,10 +776,10 @@ void ntp1::Loop()
 	proton_left_rp3_err[3] = (proton_resolution_left_rp3_4->GetStdDevError());
 	proton_left_rp3[4] = (proton_resolution_left_rp3_5->GetStdDev());
 	proton_left_rp3_err[4] = (proton_resolution_left_rp3_5->GetStdDevError());
-	proton_left_rp3[5] = (proton_resolution_left_rp3_6->GetStdDev());
-	proton_left_rp3_err[5] = (proton_resolution_left_rp3_6->GetStdDevError());
-	proton_left_rp3[6] = (proton_resolution_left_rp3_7->GetStdDev());
-	proton_left_rp3_err[6] = (proton_resolution_left_rp3_7->GetStdDevError());
+	//proton_left_rp3[5] = (proton_resolution_left_rp3_6->GetStdDev());
+	//proton_left_rp3_err[5] = (proton_resolution_left_rp3_6->GetStdDevError());
+	//proton_left_rp3[6] = (proton_resolution_left_rp3_7->GetStdDev());
+	//proton_left_rp3_err[6] = (proton_resolution_left_rp3_7->GetStdDevError());
 
 	double proton_left_rp23[10];
 	double proton_left_rp23_err[10];
@@ -611,10 +793,10 @@ void ntp1::Loop()
 	proton_left_rp23_err[3] = (proton_resolution_left_rp23_4->GetStdDevError());
 	proton_left_rp23[4] = (proton_resolution_left_rp23_5->GetStdDev());
 	proton_left_rp23_err[4] = (proton_resolution_left_rp23_5->GetStdDevError());
-	proton_left_rp23[5] = (proton_resolution_left_rp23_6->GetStdDev());
-	proton_left_rp23_err[5] = (proton_resolution_left_rp23_6->GetStdDevError());
-	proton_left_rp23[6] = (proton_resolution_left_rp23_7->GetStdDev());
-	proton_left_rp23_err[6] = (proton_resolution_left_rp23_7->GetStdDevError());
+	//proton_left_rp23[5] = (proton_resolution_left_rp23_6->GetStdDev());
+	//proton_left_rp23_err[5] = (proton_resolution_left_rp23_6->GetStdDevError());
+	//proton_left_rp23[6] = (proton_resolution_left_rp23_7->GetStdDev());
+	//proton_left_rp23_err[6] = (proton_resolution_left_rp23_7->GetStdDevError());
 
 	double proton_left_single[10];
 	double proton_left_single_err[10];
@@ -628,10 +810,10 @@ void ntp1::Loop()
 	proton_left_single_err[3] = (proton_resolution_left_single_4->GetStdDevError());
 	proton_left_single[4] = (proton_resolution_left_single_5->GetStdDev());
 	proton_left_single_err[4] = (proton_resolution_left_single_5->GetStdDevError());
-	proton_left_single[5] = (proton_resolution_left_single_6->GetStdDev());
-	proton_left_single_err[5] = (proton_resolution_left_single_6->GetStdDevError());
-	proton_left_single[6] = (proton_resolution_left_single_7->GetStdDev());
-	proton_left_single_err[6] = (proton_resolution_left_single_7->GetStdDevError());
+	//proton_left_single[5] = (proton_resolution_left_single_6->GetStdDev());
+	//proton_left_single_err[5] = (proton_resolution_left_single_6->GetStdDevError());
+	//proton_left_single[6] = (proton_resolution_left_single_7->GetStdDev());
+	//proton_left_single_err[6] = (proton_resolution_left_single_7->GetStdDevError());
 
 	double proton_right_rp103[10];
 	double proton_right_rp103_err[10];
@@ -645,10 +827,10 @@ void ntp1::Loop()
 	proton_right_rp103_err[3] = (proton_resolution_right_rp103_4->GetStdDevError());
 	proton_right_rp103[4] = (proton_resolution_right_rp103_5->GetStdDev());
 	proton_right_rp103_err[4] = (proton_resolution_right_rp103_5->GetStdDevError());
-	proton_right_rp103[5] = (proton_resolution_right_rp103_6->GetStdDev());
-	proton_right_rp103_err[5] = (proton_resolution_right_rp103_6->GetStdDevError());
-	proton_right_rp103[6] = (proton_resolution_right_rp103_7->GetStdDev());
-	proton_right_rp103_err[6] = (proton_resolution_right_rp103_7->GetStdDevError());
+	//proton_right_rp103[5] = (proton_resolution_right_rp103_6->GetStdDev());
+	//proton_right_rp103_err[5] = (proton_resolution_right_rp103_6->GetStdDevError());
+	//proton_right_rp103[6] = (proton_resolution_right_rp103_7->GetStdDev());
+	//proton_right_rp103_err[6] = (proton_resolution_right_rp103_7->GetStdDevError());
 
 	double proton_right_rp123[10];
 	double proton_right_rp123_err[10];
@@ -662,10 +844,10 @@ void ntp1::Loop()
 	proton_right_rp123_err[3] = (proton_resolution_right_rp123_4->GetStdDevError());
 	proton_right_rp123[4] = (proton_resolution_right_rp123_5->GetStdDev());
 	proton_right_rp123_err[4] = (proton_resolution_right_rp123_5->GetStdDevError());
-	proton_right_rp123[5] = (proton_resolution_right_rp123_6->GetStdDev());
-	proton_right_rp123_err[5] = (proton_resolution_right_rp123_6->GetStdDevError());
-	proton_right_rp123[6] = (proton_resolution_right_rp123_7->GetStdDev());
-	proton_right_rp123_err[6] = (proton_resolution_right_rp123_7->GetStdDevError());
+	//proton_right_rp123[5] = (proton_resolution_right_rp123_6->GetStdDev());
+	//proton_right_rp123_err[5] = (proton_resolution_right_rp123_6->GetStdDevError());
+	//proton_right_rp123[6] = (proton_resolution_right_rp123_7->GetStdDev());
+	//proton_right_rp123_err[6] = (proton_resolution_right_rp123_7->GetStdDevError());
 
 	double proton_right_single[10];
 	double proton_right_single_err[10];
@@ -679,10 +861,10 @@ void ntp1::Loop()
 	proton_right_single_err[3] = (proton_resolution_right_single_4->GetStdDevError());
 	proton_right_single[4] = (proton_resolution_right_single_5->GetStdDev());
 	proton_right_single_err[4] = (proton_resolution_right_single_5->GetStdDevError());
-	proton_right_single[5] = (proton_resolution_right_single_6->GetStdDev());
-	proton_right_single_err[5] = (proton_resolution_right_single_6->GetStdDevError());
-	proton_right_single[6] = (proton_resolution_right_single_7->GetStdDev());
-	proton_right_single_err[6] = (proton_resolution_right_single_7->GetStdDevError());
+	//proton_right_single[5] = (proton_resolution_right_single_6->GetStdDev());
+	//proton_right_single_err[5] = (proton_resolution_right_single_6->GetStdDevError());
+	//proton_right_single[6] = (proton_resolution_right_single_7->GetStdDev());
+	//proton_right_single_err[6] = (proton_resolution_right_single_7->GetStdDevError());
 
 	double proton_left_multi[10];
 	double proton_left_multi_err[10];
@@ -696,10 +878,10 @@ void ntp1::Loop()
 	proton_left_multi_err[3] = (proton_resolution_left_multi_4->GetStdDevError());
 	proton_left_multi[4] = (proton_resolution_left_multi_5->GetStdDev());
 	proton_left_multi_err[4] = (proton_resolution_left_multi_5->GetStdDevError());
-	proton_left_multi[5] = (proton_resolution_left_multi_6->GetStdDev());
-	proton_left_multi_err[5] = (proton_resolution_left_multi_6->GetStdDevError());
-	proton_left_multi[6] = (proton_resolution_left_multi_7->GetStdDev());
-	proton_left_multi_err[6] = (proton_resolution_left_multi_7->GetStdDevError());
+	//proton_left_multi[5] = (proton_resolution_left_multi_6->GetStdDev());
+	//proton_left_multi_err[5] = (proton_resolution_left_multi_6->GetStdDevError());
+	//proton_left_multi[6] = (proton_resolution_left_multi_7->GetStdDev());
+	//proton_left_multi_err[6] = (proton_resolution_left_multi_7->GetStdDevError());
 
 	double proton_right_multi[10];
 	double proton_right_multi_err[10];
@@ -713,10 +895,10 @@ void ntp1::Loop()
 	proton_right_multi_err[3] = (proton_resolution_right_multi_4->GetStdDevError());
 	proton_right_multi[4] = (proton_resolution_right_multi_5->GetStdDev());
 	proton_right_multi_err[4] = (proton_resolution_right_multi_5->GetStdDevError());
-	proton_right_multi[5] = (proton_resolution_right_multi_6->GetStdDev());
-	proton_right_multi_err[5] = (proton_resolution_right_multi_6->GetStdDevError());
-	proton_right_multi[6] = (proton_resolution_right_multi_7->GetStdDev());
-	proton_right_multi_err[6] = (proton_resolution_right_multi_7->GetStdDevError());
+	//proton_right_multi[5] = (proton_resolution_right_multi_6->GetStdDev());
+	//proton_right_multi_err[5] = (proton_resolution_right_multi_6->GetStdDevError());
+	//proton_right_multi[6] = (proton_resolution_right_multi_7->GetStdDev());
+	//proton_right_multi_err[6] = (proton_resolution_right_multi_7->GetStdDevError());
 
 
 	cout << "0cortes: " << zerocortes << endl;
@@ -729,7 +911,7 @@ void ntp1::Loop()
 	cout << "7cortes: " << setecortes << endl;
 	cout << "8cortes: " << oitocortes << endl;
 
-   Int_t n = 7;
+   Int_t n = 5;
 	
 	TCanvas *rp3 = new TCanvas("rp3","#sigma x #xi - Proton Left - RP 3",200,10,700,500);
    Double_t x_rp3[10], y_rp3[10], ex_rp3[10], ey_rp3[10];
@@ -900,6 +1082,8 @@ void ntp1::Loop()
 	proton_resolution_left_rp3_5->Write();
 	proton_resolution_left_rp3_6->Write();
 	proton_resolution_left_rp3_7->Write();
+	diff_proton_reco_pair_xi_left_rp3->Write();
+	ratio_proton_reco_pair_xi_left_rp3->Write();
 	gr_rp3->Write();
 
 	proton_xi_left_rp23->Write();
@@ -914,6 +1098,8 @@ void ntp1::Loop()
 	proton_resolution_left_rp23_5->Write();
 	proton_resolution_left_rp23_6->Write();
 	proton_resolution_left_rp23_7->Write();
+	diff_proton_reco_pair_xi_left_rp23->Write();
+	ratio_proton_reco_pair_xi_left_rp23->Write();
 	gr_rp23->Write();
 
 	proton_xi_left_single->Write();
@@ -921,6 +1107,7 @@ void ntp1::Loop()
   	proton_resolution_left_reco_single->Write();
 	pair_xi_left_single->Write();
    xi_left_reco_single->Write();
+   xi_left_reco_single_2->Write();
 	proton_resolution_left_single_1->Write();
 	proton_resolution_left_single_2->Write();
 	proton_resolution_left_single_3->Write();
@@ -928,6 +1115,8 @@ void ntp1::Loop()
 	proton_resolution_left_single_5->Write();
 	proton_resolution_left_single_6->Write();
 	proton_resolution_left_single_7->Write();
+	diff_proton_reco_pair_xi_left_single->Write();
+	ratio_proton_reco_pair_xi_left_single->Write();
 	gr_left_single->Write();
 
 	proton_xi_right_rp103->Write();
@@ -942,6 +1131,8 @@ void ntp1::Loop()
 	proton_resolution_right_rp103_5->Write();
 	proton_resolution_right_rp103_6->Write();
 	proton_resolution_right_rp103_7->Write();
+	diff_proton_reco_pair_xi_right_rp103->Write();
+	ratio_proton_reco_pair_xi_right_rp103->Write();
 	gr_rp103->Write();
 
 	proton_xi_right_rp123->Write();
@@ -956,6 +1147,8 @@ void ntp1::Loop()
 	proton_resolution_right_rp123_5->Write();
 	proton_resolution_right_rp123_6->Write();
 	proton_resolution_right_rp123_7->Write();
+	diff_proton_reco_pair_xi_right_rp123->Write();
+	ratio_proton_reco_pair_xi_right_rp123->Write();
 	gr_rp123->Write();
 
 	proton_xi_right_single->Write();
@@ -963,6 +1156,7 @@ void ntp1::Loop()
   	proton_resolution_right_reco_single->Write();
 	pair_xi_right_single->Write();
    xi_right_reco_single->Write();
+   xi_right_reco_single_2->Write();
 	proton_resolution_right_single_1->Write();
 	proton_resolution_right_single_2->Write();
 	proton_resolution_right_single_3->Write();
@@ -970,6 +1164,8 @@ void ntp1::Loop()
 	proton_resolution_right_single_5->Write();
 	proton_resolution_right_single_6->Write();
 	proton_resolution_right_single_7->Write();
+	diff_proton_reco_pair_xi_right_single->Write();
+	ratio_proton_reco_pair_xi_right_single->Write();
 	gr_right_single->Write();
 
 	proton_xi_left_multi->Write();
@@ -984,6 +1180,8 @@ void ntp1::Loop()
 	proton_resolution_left_multi_5->Write();
 	proton_resolution_left_multi_6->Write();
 	proton_resolution_left_multi_7->Write();
+	diff_proton_reco_pair_xi_left_multi->Write();
+	ratio_proton_reco_pair_xi_left_multi->Write();
 	gr_left_multi->Write();
 
 	proton_xi_right_multi->Write();
@@ -998,6 +1196,8 @@ void ntp1::Loop()
 	proton_resolution_right_multi_5->Write();
 	proton_resolution_right_multi_6->Write();
 	proton_resolution_right_multi_7->Write();
+	diff_proton_reco_pair_xi_right_multi->Write();
+	ratio_proton_reco_pair_xi_right_multi->Write();
 	gr_right_multi->Write();
 
 	xi_pair_resolution_left->Write();
@@ -1008,9 +1208,13 @@ void ntp1::Loop()
 	//cout << "oi" <<endl;
 }
 	
-int run() {
+int run(bool resample, unsigned int number_of_samples) {
 	ntp1 m;
+   m.SetResample( resample );
+   m.SetNumberOfSamples( number_of_samples );
+
  	m.Loop();
 
  	return 0;
  	}
+
