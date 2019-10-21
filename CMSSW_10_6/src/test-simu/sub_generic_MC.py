@@ -22,7 +22,6 @@ config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'null'
 #config.JobType.maxMemoryMB = 760
 config.JobType.inputFiles = ['alignment.xml','direct_simu_reco_cff.py','customisation_cff.py','PUHistos_data.root','PUHistos_mc.root']
-#config.JobType.outputFiles = ['out.root']
 #config.JobType.outputFiles = ['output_HepMC.root', 'output_track_xy.root']
 
 config.section_('Data')
@@ -50,36 +49,33 @@ def submit(config):
 if __name__ == '__main__':
 
     #config.General.workArea = 'crab_projects'
-    #config.General.requestName = 'Dimuon_Elastic_Fall2017-xangle140'
+    #config.General.requestName = 'Dimuon_Elastic_Fall2017-xangle150'
     #config.JobType.psetName = 'test_cfg-el.py'
     #config.Data.inputDataset = '/GGToMuMu_Pt-50_Elastic_13TeV-lpair/RunIIFall17DRPremix-94X_mc2017_realistic_v11-v1/AODSIM'
     #config.Data.outLFNDirBase = '/store/user/malvesga/aod'
     #submit(config)
     
     config.General.workArea = 'crab_projects'
-    config.General.requestName = 'Dimuon_Elastic_Fall2017-xangle140-MINIAOD'
+    config.General.requestName = 'Dimuon_Elastic_Fall2017-xangle150'
     config.JobType.psetName = 'test_cfg-miniaod.py'
+    #config.JobType.outputFiles = ['output_el_xangle150.root']
     config.Data.inputDataset = '/GGToMuMu_Pt-50_Elastic_13TeV-lpair/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM'
     config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
     submit(config)
     
+    config.General.workArea = 'crab_projects'
+    config.General.requestName = 'Dimuon_SingleDiss_Summer2017-xangle150'
+    config.JobType.psetName = 'test_cfg-miniaod.py'
+    #config.JobType.outputFiles = ['output_single_xangle150.root']
+    config.Data.inputDataset = '/GGToMuMu_Pt-50_Inel-El_13TeV-lpair/RunIISummer17MiniAOD-92X_upgrade2017_realistic_v10-v1/MINIAODSIM'
+    config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
+    submit(config)
+    
     #config.General.workArea = 'crab_projects'
-    #config.General.requestName = 'Dimuon_SingleDiss_Summer2017-xangle140'
+    #config.General.requestName = 'Dimuon_DrellYan_Fall2017'
     #config.JobType.psetName = 'test_cfg-miniaod.py'
-    #config.Data.inputDataset = '/GGToMuMu_Pt-50_Inel-El_13TeV-lpair/RunIISummer17MiniAOD-92X_upgrade2017_realistic_v10-v1/MINIAODSIM'
+    #config.JobType.outputFiles = ['output_dy.root']
+    #config.Data.inputDataset = '/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM'
     #config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
     #submit(config)
     
-    config.General.workArea = 'crab_projects'
-    config.General.requestName = 'Dimuon_DrellYan_Fall2017-xangle140-MINIAOD'
-    config.JobType.psetName = 'test_cfg-miniaod.py'
-    config.Data.inputDataset = '/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM'
-    config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
-    submit(config)
-    
-    config.General.workArea = 'crab_projects'
-    config.General.requestName = 'Dimuon_DrellYan_Fall2017_ext1-xangle140-MINIAOD'
-    config.JobType.psetName = 'test_cfg-miniaod.py'
-    config.Data.inputDataset = '/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14_ext1-v1/MINIAODSIM'
-    config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
-    submit(config)

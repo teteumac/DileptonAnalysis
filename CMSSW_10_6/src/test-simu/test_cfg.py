@@ -57,7 +57,6 @@ process.ctppsTrackDistributionPlotter = cms.EDAnalyzer("CTPPSTrackDistributionPl
   outputFile = cms.string("/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_track_xy.root")
 )
 
-
 process.dump = cms.EDAnalyzer("EventContentAnalyzer")
 
 #https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGenParticlePruner
@@ -81,4 +80,6 @@ process.reco_local *
 process.ctppsHepMCDistributionPlotter *
 process.ctppsTrackDistributionPlotter
 )
+
+
 

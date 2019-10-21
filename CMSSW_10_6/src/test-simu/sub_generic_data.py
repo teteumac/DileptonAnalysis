@@ -39,7 +39,7 @@ config.Data.publication = False
 
 config.section_('Site')
 config.Site.storageSite = 'T2_CH_CERNBOX'
-config.Site.whitelist = ['T2_CH_*','T2_DE_*','T2_IT_*','T2_US_*']
+config.Site.whitelist = ['T2_CH_CERN','T2_DE_*','T2_IT_Bari','T2_US_*']
 #config.Site.storageSite = 'T2_IT_Bari'
 
 def submit(config):
@@ -51,38 +51,38 @@ def submit(config):
         print "Failed submitting task: %s" % (cle)
 
 if __name__ == '__main__':
-
+    
     config.General.workArea = 'crab_projects'
-    config.General.requestName = 'DoubleMuon_Data_2017B'
+    config.General.requestName = 'DoubleEG_Data_2017B'
     config.JobType.psetName = 'test_cfg-miniaod_data.py'
-    config.Data.inputDataset = '/DoubleMuon/Run2017B-31Mar2018-v1/MINIAOD'
+    config.Data.inputDataset = '/DoubleEG/Run2017B-31Mar2018-v1/MINIAOD'
     config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
     submit(config)
     
     config.General.workArea = 'crab_projects'
-    config.General.requestName = 'DoubleMuon_Data_2017C'
+    config.General.requestName = 'DoubleEG_Data_2017C'
     config.JobType.psetName = 'test_cfg-miniaod_data.py'
-    config.Data.inputDataset = '/DoubleMuon/Run2017C-31Mar2018-v1/MINIAOD'
+    config.Data.inputDataset = '/DoubleEG/Run2017C-31Mar2018-v1/MINIAOD'
     config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
     submit(config)
 
     config.General.workArea = 'crab_projects'
-    config.General.requestName = 'DoubleMuon_Data_2017D'
+    config.General.requestName = 'DoubleEG_Data_2017D'
     config.JobType.psetName = 'test_cfg-miniaod_data.py'
-    config.Data.inputDataset = '/DoubleMuon/Run2017D-31Mar2018-v1/MINIAOD'
+    config.Data.inputDataset = '/DoubleEG/Run2017D-31Mar2018-v1/MINIAOD'
     config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
     submit(config)
 
     config.General.workArea = 'crab_projects'
-    config.General.requestName = 'DoubleMuon_Data_2017E'
+    config.General.requestName = 'DoubleEG_Data_2017E'
     config.JobType.psetName = 'test_cfg-miniaod_data.py'
-    config.Data.inputDataset = '/DoubleMuon/Run2017E-31Mar2018-v1/MINIAOD'
+    config.Data.inputDataset = '/DoubleEG/Run2017E-31Mar2018-v1/MINIAOD'
     config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
     submit(config)
-
+    
     config.General.workArea = 'crab_projects'
-    config.General.requestName = 'DoubleMuon_Data_2017F'
+    config.General.requestName = 'DoubleEG_Data_2017F'
     config.JobType.psetName = 'test_cfg-miniaod_data.py'
-    config.Data.inputDataset = '/DoubleMuon/Run2017F-31Mar2018-v1/MINIAOD'
+    config.Data.inputDataset = '/DoubleEG/Run2017F-31Mar2018-v1/MINIAOD'
     config.Data.outLFNDirBase = '/store/user/malvesga/miniaod'
     submit(config)

@@ -63,7 +63,7 @@ process.source = cms.Source("PoolSource",
     secondaryFileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/mthiel/public/To_Miquel/samples/RECO_RAW2DIGI_L1Reco_RECO_ALCA_SKIM_EI_PAT_DQM.root")
 #    fileNames = cms.untracked.vstring("/store/mc/RunIIFall17MiniAODv2/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14-v1/20000/88BE601E-6B44-E811-94D0-44A842CFD619.root")
 #    fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/CMSSW_9_4_7/src/workspace/ProductionSamples_DoubleDiss/TOP-RunIIFall17MiniAOD-00091.root")
-#    fileNames = cms.untracked.vstring("/store/mc/RunIIFall17MiniAODv2/GGToMuMu_Pt-50_Elastic_13TeV-lpair/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/A27AD9A6-3444-E811-A0C1-FA163E15F054.root")
+    #fileNames = cms.untracked.vstring("/store/data/Run2017F/DoubleEG/MINIAOD/31Mar2018-v1/00000/0CB19F00-1C38-E811-9F88-0025905C42A2.root")
 	 #fileNames = cms.untracked.vstring("")
 )
 
@@ -72,7 +72,7 @@ process.options=cms.untracked.PSet(wantSummary=cms.untracked.bool(True))
 # number of events
 process.maxEvents = cms.untracked.PSet(
   #input = cms.untracked.int32(-1)
-  input = cms.untracked.int32(100)
+  input = cms.untracked.int32(1000)
 )
 
 # update settings of beam-smearing module
@@ -100,12 +100,12 @@ process.maxEvents = cms.untracked.PSet(
 process.load("DiffractiveForwardAnalysis.GammaGammaLeptonLepton.HLTFilter_cfi")
 process.hltFilter.TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")
 process.hltFilter.HLTPaths = cms.vstring(
-    'HLT_DoubleMu43NoFiltersNoVtx_*',
-    'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_*',
-    'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_*'
-#    'HLT_DoubleEle33_CaloIdL_MW_v*',
-#    'HLT_Ele27_HighEta_Ele20_Mass55_v*',
-#    'HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v*',
+#    'HLT_DoubleMu43NoFiltersNoVtx_*',
+#    'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_*',
+#    'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_*'
+    'HLT_DoubleEle33_CaloIdL_MW_v*',
+    'HLT_Ele27_HighEta_Ele20_Mass55_v*',
+    'HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v*',
 )
 
 #########################
@@ -179,7 +179,7 @@ process.PoolDBESSourceOptics = cms.ESSource("PoolDBESSource",
 	DumpStat = cms.untracked.bool(False),
 	toGet = cms.VPSet(cms.PSet(
 		record = cms.string('CTPPSOpticsRcd'),
-		tag = cms.string("PPSOpticalFunctions offline v4")
+		tag = cms.string("PPSOpticalFunctions_offline_v4")
 	)),
 )
 
@@ -193,7 +193,7 @@ process.PoolDBESSourceAlignment = cms.ESSource("PoolDBESSource",
 	#timetype = cms.untracked.string('runnumber'),
 	toGet = cms.VPSet(cms.PSet(
 		record = cms.string('RPRealAlignmentRecord'),
-		tag = cms.string('CTPPSRPAlignment real offline v3')
+		tag = cms.string('CTPPSRPAlignment_real_offline_v3')
 	))
 )
 
@@ -220,9 +220,9 @@ process.dump = cms.EDAnalyzer("EventContentAnalyzer")
 process.load("DiffractiveForwardAnalysis.GammaGammaLeptonLepton.GammaGammaLL_cfi")
 
 process.ggll_aod.triggersList = process.hltFilter.HLTPaths
-process.ggll_aod.leptonsType = cms.string('Muon')
+#process.ggll_aod.leptonsType = cms.string('Muon')
 #process.ggll_aod.leptonsType = cms.string('ElectronMuon')
-#process.ggll_aod.leptonsType = cms.string('Electron')
+process.ggll_aod.leptonsType = cms.string('Electron')
 process.ggll_aod.runOnMC = cms.bool(runOnMC)
 process.ggll_aod.fetchProtons = cms.bool(True)
 process.ggll_aod.saveExtraTracks = cms.bool(False)
@@ -232,9 +232,9 @@ process.ggll_aod.datapufile = cms.string('PUHistos_data.root')
 process.ggll_aod.mcpupath = 'input_Event/N_TrueInteractions'
 
 process.ggll_miniaod.triggersList = process.hltFilter.HLTPaths
-process.ggll_miniaod.leptonsType = cms.string('Muon')
+#process.ggll_miniaod.leptonsType = cms.string('Muon')
 #process.ggll_miniaod.leptonsType = cms.string('ElectronMuon')
-#process.ggll_miniaod.leptonsType = cms.string('Electron')
+process.ggll_miniaod.leptonsType = cms.string('Electron')
 process.ggll_miniaod.runOnMC = cms.bool(runOnMC)
 process.ggll_miniaod.fetchProtons = cms.bool(True)
 process.ggll_miniaod.saveExtraTracks = cms.bool(False)
@@ -243,10 +243,18 @@ process.ggll_miniaod.mcpufile = cms.string('PUHistos_mc.root')
 process.ggll_miniaod.datapufile = cms.string('PUHistos_data.root')
 process.ggll_miniaod.mcpupath = 'input_Event/N_TrueInteractions'
 
-# prepare the output file
-# copiar o output depois de rodar o crab para a pasta /afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/
+# E/gamma identification
+process.ggll_miniaod.eleIdLabels = cms.PSet(
+    mediumLabel = cms.InputTag('mvaEleID-Fall17-iso-V1-wp90'),
+    tightLabel = cms.InputTag('mvaEleID-Fall17-iso-V1-wp80'),
+)
+process.ggll_miniaod.phoIdLabels = cms.PSet(
+    mediumLabel = cms.InputTag('mvaPhoID-RunIIFall17-v1-wp90'),
+    tightLabel = cms.InputTag('mvaPhoID-RunIIFall17-v1-wp80'),
+)
+
 process.TFileService = cms.Service('TFileService',
-    fileName = cms.string('output_data.root'),
+    fileName = cms.string('output_data_EG.root'),
     closeFileFast = cms.untracked.bool(True)
 )
 '''
@@ -302,7 +310,7 @@ else:
 		process.ctppsLocalTrackLiteProducer *
 
 		process.ctppsProtons *
-  		process.hltFilter *
+ 		process.hltFilter *
 
   		process.ggll_miniaod
 	)
