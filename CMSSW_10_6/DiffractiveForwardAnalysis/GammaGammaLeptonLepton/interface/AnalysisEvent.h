@@ -54,7 +54,7 @@ namespace ggll
       /// Maximum number of generator level protons per event
       static constexpr unsigned int MAX_GENPRO = 8;
       /// Maximum number of generator level pfcand per event
-      static constexpr unsigned int MAX_PFCAND = 1000;
+      static constexpr unsigned int MAX_PFCAND = 50000;
       /// Maximum number of jets per event
       static constexpr unsigned int MAX_JETS = 40;
       /// Maximum number of reconstructed local tracks in RPs
