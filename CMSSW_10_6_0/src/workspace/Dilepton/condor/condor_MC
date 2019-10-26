@@ -1,4 +1,4 @@
-executable = sub.sh
+executable = sub_MC.sh
 
 output     = test/output_$(ProcId).out
 error      = test/output_$(ProcId).err
@@ -15,5 +15,5 @@ requirements = (OpSysAndVer =?= "SLCern6")
 should_transfer_files = IF_NEEDED
 when_to_transfer_output = ON_EXIT
 
-queue arguments from ListOfFiles.txt
+queue arguments from ListOfFiles_MC.txt
 
