@@ -6,9 +6,7 @@ log        = test/output_$(ProcId).log
 
 getenv     = True
 
-environment = "X509_USER_PROXY=$ENV(HOME)/x509up_u61469"
-
-requirements = (OpSysAndVer =?= "SLCern6")
+environment = "X509_USER_PROXY=/afs/cern.ch/user/m/malvesga/private/x509up_u61469"
 
 +JobFlavour = "microcentury"
 
