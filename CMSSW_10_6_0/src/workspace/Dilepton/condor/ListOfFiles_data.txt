@@ -8,7 +8,7 @@ DoubleMuon/crab_DoubleMuon_Data_2017C/output_dataC_5.root
 DoubleMuon/crab_DoubleMuon_Data_2017D/output_dataD_0.root 
 DoubleMuon/crab_DoubleMuon_Data_2017D/output_dataD_1.root 
 DoubleMuon/crab_DoubleMuon_Data_2017D/output_dataD_2.root 
-DoubleMuon/crab_DoubleMuon_Data_2017D/output_dataE_0.root 
+DoubleMuon/crab_DoubleMuon_Data_2017E/output_dataE_0.root 
 DoubleMuon/crab_DoubleMuon_Data_2017E/output_dataE_1.root 
 DoubleMuon/crab_DoubleMuon_Data_2017E/output_dataE_2.root 
 DoubleMuon/crab_DoubleMuon_Data_2017E/output_dataE_3.root 
