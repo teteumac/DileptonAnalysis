@@ -1,0 +1,19 @@
+executable = sub_data.sh
+
+output     = test/output_$(ProcId).out
+error      = test/output_$(ProcId).err
+log        = test/output_$(ProcId).log
+
+getenv     = True
+
+environment = "X509_USER_PROXY=$ENV(HOME)/x509up_u61469"
+
+requirements = (OpSysAndVer =?= "CentOS7")
+
++JobFlavour = "workday"
+
+should_transfer_files = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+
+queue arguments from ListOfFiles_data.txt
+
