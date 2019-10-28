@@ -44,21 +44,27 @@ Para dados:
           Para obter o JSON usado: wget https://cernbox.cern.ch/index.php/s/SwJ2vLDUfCf1CDm/download (onde o arquivo foi renomeado para json_file_rpin_2017.txt)
 
 Crab reports (MINIAOD):
-         crab_DoubleMuon_Data_2017B: Number of files processed: 106
-                                     GetEntries: 3163904
-                                     Number of events read: 6723485
-         crab_DoubleMuon_Data_2017C: Number of files processed: 454
-                                     GetEntries: 20874825
-                                     Number of events read: 41120143
-         crab_DoubleMuon_Data_2017D: Number of files processed: 223
-                                     GetEntries: 10098040
-                                     Number of events read: 21699173
-         crab_DoubleMuon_Data_2017E: Number of files processed: 573
-                                     GetEntries: 21747604
-                                     Number of events read: 48655353
-         crab_DoubleMuon_Data_2017F: Number of files processed: 846
-                                     GetEntries: 29756381
-                                     Number of events read: 73476700
+         crab_DoubleMuon_Data_2017B:          Number of files processed: 106
+                                              GetEntries: 3163904
+                                              Number of events read: 6723485
+         crab_DoubleMuon_Data_2017C:          Number of files processed: 454
+                                              GetEntries: 20874825
+                                              Number of events read: 41120143
+         crab_DoubleMuon_Data_2017C_limitRun: Number of files processed: 371
+                                              GetEntries: 12827126
+                                              Number of events read: 24936280
+         crab_DoubleMuon_Data_2017D:          Number of files processed: 223
+                                              GetEntries: 10098040
+                                              Number of events read: 21699173
+         crab_DoubleMuon_Data_2017E:          Number of files processed: 573
+                                              GetEntries: 21747604
+                                              Number of events read: 48655353
+         crab_DoubleMuon_Data_2017F:          Number of files processed: 846
+                                              GetEntries: 29756381
+                                              Number of events read: 73476700
+         crab_DoubleMuon_Data_2017F_limitRun: Number of files processed: 263
+                                              GetEntries: 3992204
+                                              Number of events read: 8866513
          crab_DoubleEG_Data_2017B: Number of files processed: 484
                                      GetEntries: 2285048
                                      Number of events read: 27190987
