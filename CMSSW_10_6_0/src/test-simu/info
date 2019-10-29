@@ -39,9 +39,17 @@ Mais info sobre o CRAB:
           https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3Commands (detalhes de alguns comandos)
      
 Eficiência dos triggers: GetEntries / Number of events read
+                      
+Obter GetEntries: root *.root -l 
+                  _file0->cd("<diretorio_da_ttree>")
+                  Int_t n = ntp1->GetEntries()
+                  n
 
-Para dados:  
-          Para obter o JSON usado: wget https://cernbox.cern.ch/index.php/s/SwJ2vLDUfCf1CDm/download (onde o arquivo foi renomeado para json_file_rpin_2017.txt)
+Para dados:  Para obter o JSON usado: wget https://cernbox.cern.ch/index.php/s/SwJ2vLDUfCf1CDm/download (onde o arquivo foi renomeado para json_file_rpin_2017.txt)
+
+Cálculo da luminosidade: compareJSON.py --and crab_projects/crab_DoubleMuon_Data_2017*/results/processedLumis.json json_file_rpin_2017.txt DoubleMuon_*.txt
+                         brilcalc lumi -b "STABLE BEAMS" -i DoubleMuon_*.txt -u /fb
+          
 
 Crab reports (MINIAOD):
          crab_DoubleMuon_Data_2017B:          Number of files processed: 106
