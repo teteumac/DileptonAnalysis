@@ -1,5 +1,0 @@
-Para rodar:
-            condor_submit condor
-            
-Para visualizar o status:
-            condor_q

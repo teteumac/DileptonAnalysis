@@ -32196,3 +32196,173 @@
 	   Disk (KB)            :       69        1   1863717 
 	   Memory (MB)          :        2     2000      2000 
 ...
+000 (2463778.015.000) 10/27 02:28:25 Job submitted from host: <137.138.156.150:9618?addrs=137.138.156.150-9618+[2001-1458-d00-14--9a]-9618&alias=bigbird13.cern.ch&noUDP&sock=schedd_2258_60f0_3>
+...
+040 (2463778.015.000) 10/27 02:30:33 Started transferring input files
+	Transferring to host: <188.185.226.47:9618?addrs=188.185.226.47-9618+[2001-1459-301-27--100-d]-9618&noUDP&sock=16363_f6b2_73577>
+...
+040 (2463778.015.000) 10/27 02:30:33 Finished transferring input files
+...
+001 (2463778.015.000) 10/27 02:30:34 Job executing on host: <188.185.226.47:9618?addrs=188.185.226.47-9618+[2001-1459-301-27--100-d]-9618&noUDP&sock=16230_022e_3>
+...
+006 (2463778.015.000) 10/27 02:30:42 Image size of job updated: 2640
+	2  -  MemoryUsage of job (MB)
+	1348  -  ResidentSetSize of job (KB)
+...
+006 (2463778.015.000) 10/27 02:35:42 Image size of job updated: 2708
+	2  -  MemoryUsage of job (MB)
+	1416  -  ResidentSetSize of job (KB)
+...
+040 (2463778.015.000) 10/27 02:36:27 Started transferring output files
+...
+040 (2463778.015.000) 10/27 02:37:59 Finished transferring output files
+...
+007 (2463778.015.000) 10/27 02:38:00 Shadow exception!
+	Error from slot1_2@b7w10n0290.cern.ch: STARTER at 188.185.226.47 failed to send file(s) to <137.138.156.150:9618>: error sending /pool/condor/dir_26051/input.root: max total download bytes exceeded (max=1024 MB, this file=2222 MB); SHADOW failed to receive file(s) from <188.185.226.47:40399>
+	1073741824  -  Run Bytes Sent By Job
+	422  -  Run Bytes Received By Job
+...
+009 (2463778.015.000) 10/27 02:38:02 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (2463779.015.000) 10/27 02:46:02 Job submitted from host: <137.138.156.150:9618?addrs=137.138.156.150-9618+[2001-1458-d00-14--9a]-9618&alias=bigbird13.cern.ch&noUDP&sock=schedd_2258_60f0_3>
+...
+040 (2463779.015.000) 10/27 02:48:21 Started transferring input files
+	Transferring to host: <188.184.71.228:9618?addrs=188.184.71.228-9618+[2001-1458-201-a8--100-3de]-9618&noUDP&sock=14508_f2c7_43542>
+...
+040 (2463779.015.000) 10/27 02:48:21 Finished transferring input files
+...
+001 (2463779.015.000) 10/27 02:48:22 Job executing on host: <188.184.71.228:9618?addrs=188.184.71.228-9618+[2001-1458-201-a8--100-3de]-9618&noUDP&sock=14372_9337_3>
+...
+006 (2463779.015.000) 10/27 02:48:30 Image size of job updated: 2708
+	2  -  MemoryUsage of job (MB)
+	1416  -  ResidentSetSize of job (KB)
+...
+040 (2463779.015.000) 10/27 02:50:31 Started transferring output files
+...
+000 (2463780.015.000) 10/27 02:51:00 Job submitted from host: <137.138.156.150:9618?addrs=137.138.156.150-9618+[2001-1458-d00-14--9a]-9618&alias=bigbird13.cern.ch&noUDP&sock=schedd_2258_60f0_3>
+...
+040 (2463779.015.000) 10/27 02:51:42 Finished transferring output files
+...
+007 (2463779.015.000) 10/27 02:51:44 Shadow exception!
+	Error from slot1_5@b7g02s0675.cern.ch: STARTER at 188.184.71.228 failed to send file(s) to <137.138.156.150:9618>: error sending /pool/condor/dir_31393/input.root: max total download bytes exceeded (max=1024 MB, this file=1784 MB); SHADOW failed to receive file(s) from <188.184.71.228:32841>
+	1073741824  -  Run Bytes Sent By Job
+	422  -  Run Bytes Received By Job
+...
+009 (2463779.015.000) 10/27 02:51:45 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+040 (2463780.015.000) 10/27 02:55:14 Started transferring input files
+	Transferring to host: <128.142.110.224:9618?addrs=128.142.110.224-9618+[--1]-9618&noUDP&sock=14041_e794_29856>
+...
+040 (2463780.015.000) 10/27 02:55:14 Finished transferring input files
+...
+001 (2463780.015.000) 10/27 02:55:15 Job executing on host: <128.142.110.224:9618?addrs=128.142.110.224-9618+[--1]-9618&noUDP&sock=13908_4f45_3>
+...
+006 (2463780.015.000) 10/27 02:55:24 Image size of job updated: 2460
+	2  -  MemoryUsage of job (MB)
+	1412  -  ResidentSetSize of job (KB)
+...
+040 (2463780.015.000) 10/27 02:57:07 Started transferring output files
+...
+040 (2463780.015.000) 10/27 02:57:07 Finished transferring output files
+...
+005 (2463780.015.000) 10/27 02:57:07 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:00, Sys 0 00:00:12  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:12  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	21769  -  Run Bytes Sent By Job
+	422  -  Run Bytes Received By Job
+	21769  -  Total Bytes Sent By Job
+	422  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :                 1           
+	   Disk (KB)            :       69        1   2090449 
+	   Memory (MB)          :        2     2000      2000 
+...
+000 (2471880.015.000) 10/28 15:41:17 Job submitted from host: <137.138.156.150:9618?addrs=137.138.156.150-9618+[2001-1458-d00-14--9a]-9618&alias=bigbird13.cern.ch&noUDP&sock=schedd_2258_60f0_3>
+...
+040 (2471880.015.000) 10/28 16:03:27 Started transferring input files
+	Transferring to host: <188.185.232.73:9618?addrs=188.185.232.73-9618+[2001-1459-301-15--100-43]-9618&noUDP&sock=16486_a0d7_72587>
+...
+040 (2471880.015.000) 10/28 16:03:27 Finished transferring input files
+...
+001 (2471880.015.000) 10/28 16:03:28 Job executing on host: <188.185.232.73:9618?addrs=188.185.232.73-9618+[2001-1459-301-15--100-43]-9618&noUDP&sock=16404_5ba9_3>
+...
+006 (2471880.015.000) 10/28 16:03:37 Image size of job updated: 136
+	1  -  MemoryUsage of job (MB)
+	132  -  ResidentSetSize of job (KB)
+...
+006 (2471880.015.000) 10/28 16:08:37 Image size of job updated: 3056
+	2  -  MemoryUsage of job (MB)
+	1616  -  ResidentSetSize of job (KB)
+...
+006 (2471880.015.000) 10/28 16:23:38 Image size of job updated: 136780
+	72  -  MemoryUsage of job (MB)
+	73296  -  ResidentSetSize of job (KB)
+...
+006 (2471880.015.000) 10/28 16:24:36 Image size of job updated: 136900
+	72  -  MemoryUsage of job (MB)
+	73300  -  ResidentSetSize of job (KB)
+...
+040 (2471880.015.000) 10/28 16:24:36 Started transferring output files
+...
+040 (2471880.015.000) 10/28 16:24:36 Finished transferring output files
+...
+004 (2471880.015.000) 10/28 16:24:36 Job was evicted.
+	(0) CPU times
+		Usr 0 00:03:31, Sys 0 00:00:22  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	5486  -  Run Bytes Sent By Job
+	581  -  Run Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :                 1           
+	   Disk (KB)            :  6696684        1   2111276 
+	   Memory (MB)          :       72     2000      2000 
+...
+009 (2471880.015.000) 10/28 16:24:37 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (2472919.015.000) 10/28 16:30:41 Job submitted from host: <137.138.156.150:9618?addrs=137.138.156.150-9618+[2001-1458-d00-14--9a]-9618&alias=bigbird13.cern.ch&noUDP&sock=schedd_2258_60f0_3>
+...
+009 (2472919.015.000) 10/28 16:41:23 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (2473048.015.000) 10/28 16:41:53 Job submitted from host: <137.138.156.150:9618?addrs=137.138.156.150-9618+[2001-1458-d00-14--9a]-9618&alias=bigbird13.cern.ch&noUDP&sock=schedd_2258_60f0_3>
+...
+040 (2473048.015.000) 10/28 16:50:33 Started transferring input files
+	Transferring to host: <128.142.120.36:9618?addrs=128.142.120.36-9618+[2001-1458-301-b5--100-2ee]-9618&noUDP&sock=3666_c74e_20781>
+...
+040 (2473048.015.000) 10/28 16:50:33 Finished transferring input files
+...
+001 (2473048.015.000) 10/28 16:50:34 Job executing on host: <128.142.120.36:9618?addrs=128.142.120.36-9618+[2001-1458-301-b5--100-2ee]-9618&noUDP&sock=1823_013d_3>
+...
+006 (2473048.015.000) 10/28 16:50:43 Image size of job updated: 3052
+	2  -  MemoryUsage of job (MB)
+	1748  -  ResidentSetSize of job (KB)
+...
+006 (2473048.015.000) 10/28 16:55:21 Image size of job updated: 104156
+	2  -  MemoryUsage of job (MB)
+	1748  -  ResidentSetSize of job (KB)
+...
+040 (2473048.015.000) 10/28 16:55:21 Started transferring output files
+...
+040 (2473048.015.000) 10/28 16:55:21 Finished transferring output files
+...
+005 (2473048.015.000) 10/28 16:55:22 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:26, Sys 0 00:00:17  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:26, Sys 0 00:00:17  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	11228  -  Run Bytes Sent By Job
+	580  -  Run Bytes Received By Job
+	11228  -  Total Bytes Sent By Job
+	580  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :                 1           
+	   Disk (KB)            :      579        1   2111910 
+	   Memory (MB)          :        2     2000      2000 
+...

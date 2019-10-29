@@ -29,9 +29,11 @@ int CompHistos()
 
 		  TFile *f_elastic_x130 = new TFile("histos_MC/output_elastic_xangle130_cut.root");
 		  TFile *f_inel_el_x130 = new TFile("histos_MC/output_inel-el_xangle130_cut.root");
-		  TFile *f_dy = new TFile("histos_MC/output_dy_cut.root");
-		  TFile *f_dy_resample = new TFile("histos_MC/output_dy_resample.root");
-		  TFile *f_data = new TFile("histos_data/output_data_cut.root");
+		  TFile *f_dy = new TFile("histos_MC/output_dy_cut_EG.root");
+		  TFile *f_dy_resample = new TFile("histos_MC/output_dy_resample_EG.root");
+		  //TFile *f_dy = new TFile("histos_MC/output_dy_cut_muon.root");
+		  //TFile *f_dy_resample = new TFile("histos_MC/output_dy_resample_muon.root");
+		  TFile *f_data = new TFile("histos_data/output_data_cut_limitRun.root");
 
 		  //for (int i = 0; i < Nhist; i++) {
 
@@ -208,12 +210,14 @@ int CompHistos()
         double n_events_h_inel_el_x130 = 200000;
         double n_events_h_dy = 48675378;
         double n_events_pileup = 18964805;
-		  double number_of_samples = 0.01;
+		  double number_of_samples = 100; //Used on the resampled DY  
+		  double total_lumi = 37.498268; //Used on the total luminosity data
+		  double limit_lumi = 22.658923; //Used on the limited luminosity data
 
-		  scale_factor_elastic_x130 = eff_trigger_elastic_x130*37.022*0.017254036*1000 / n_events_h_elastic_x130 ; //
-		  scale_factor_inel_el_x130 = eff_trigger_inel_el_x130*37.022*0.025643100*1000 / n_events_h_inel_el_x130 ; //
-		  scale_factor_dy = event_selection*eff_trigger_dy*37.022*5334000 / n_events_h_dy; 
-		  scale_factor_dy_resample = event_selection*eff_trigger_dy*37.022*5334000 / n_events_h_dy*number_of_samples; 
+		  scale_factor_elastic_x130 = eff_trigger_elastic_x130*limit_lumi*0.017254036*1000 / n_events_h_elastic_x130 ; //
+		  scale_factor_inel_el_x130 = eff_trigger_inel_el_x130*limit_lumi*0.025643100*1000 / n_events_h_inel_el_x130 ; //
+		  scale_factor_dy = event_selection*eff_trigger_dy*limit_lumi*5334000 / n_events_h_dy; 
+		  scale_factor_dy_resample = eff_trigger_dy*limit_lumi*5334000 / ( n_events_h_dy*number_of_samples ) ; 
 
 		  h_elastic_x130_mass->SetLineColor(kBlue);
 		  h_inel_el_x130_mass->SetLineColor(kGreen);
@@ -772,7 +776,8 @@ int CompHistos()
    	  l_mass->AddEntry(h_inel_el_x130_mass,"Semi-exclusivo","f");
    	  l_mass->AddEntry(h_dy_mass,"Drell-Yan","f");
    	  l_mass->Draw();
-		  c_mass->SaveAs("comp/mass.png");
+		  c_mass->SaveAs("comp_EG/mass.png");
+		  //c_mass->SaveAs("comp_muon/mass.png");
 		  c_mass->cd();
 		  c_mass->Close();
 
@@ -789,7 +794,8 @@ int CompHistos()
    	  l_pt->AddEntry(h_inel_el_x130_pt,"Semi-exclusivo","f");
    	  l_pt->AddEntry(h_dy_pt,"Drell-Yan","f");
    	  l_pt->Draw();
-		  c_pt->SaveAs("comp/pt.png");
+		  c_pt->SaveAs("comp_EG/pt.png");
+		  //c_pt->SaveAs("comp_muon/pt.png");
 		  c_pt->cd();
 		  c_pt->Close();
 
@@ -806,7 +812,8 @@ int CompHistos()
    	  l_y->AddEntry(h_inel_el_x130_y,"Semi-exclusivo","f");
    	  l_y->AddEntry(h_dy_y,"Drell-Yan","f");
    	  l_y->Draw();
-		  c_y->SaveAs("comp/y.png");
+		  c_y->SaveAs("comp_EG/y.png");
+		  //c_y->SaveAs("comp_muon/y.png");
 		  c_y->cd();
 		  c_y->Close();
 
@@ -830,7 +837,8 @@ int CompHistos()
    	  l_proton_xi_left_single->AddEntry(h_inel_el_x130_proton_xi_left_single,"Semi-exclusivo","f");
    	  l_proton_xi_left_single->AddEntry(h_dy_proton_xi_left_single,"Drell-Yan","f");
    	  l_proton_xi_left_single->Draw();
-		  c_proton_xi_left_single->SaveAs("comp/proton_xi_left_single.png");
+		  c_proton_xi_left_single->SaveAs("comp_EG/proton_xi_left_single.png");
+		  //c_proton_xi_left_single->SaveAs("comp_muon/proton_xi_left_single.png");
 		  c_proton_xi_left_single->cd();
 		  c_proton_xi_left_single->Close();
 
@@ -847,7 +855,8 @@ int CompHistos()
    	  l_proton_xi_right_single->AddEntry(h_inel_el_x130_proton_xi_right_single,"Semi-exclusivo","f");
    	  l_proton_xi_right_single->AddEntry(h_dy_proton_xi_right_single,"Drell-Yan","f");
    	  l_proton_xi_right_single->Draw();
-		  c_proton_xi_right_single->SaveAs("comp/proton_xi_right_single.png");
+		  c_proton_xi_right_single->SaveAs("comp_EG/proton_xi_right_single.png");
+		  //c_proton_xi_right_single->SaveAs("comp_muon/proton_xi_right_single.png");
 		  c_proton_xi_right_single->cd();
 		  c_proton_xi_right_single->Close();
 
@@ -864,7 +873,8 @@ int CompHistos()
    	  l_proton_xi_left_multi->AddEntry(h_inel_el_x130_proton_xi_left_multi,"Semi-exclusivo","f");
    	  l_proton_xi_left_multi->AddEntry(h_dy_proton_xi_left_multi,"Drell-Yan","f");
    	  l_proton_xi_left_multi->Draw();
-		  c_proton_xi_left_multi->SaveAs("comp/proton_xi_left_multi.png");
+		  c_proton_xi_left_multi->SaveAs("comp_EG/proton_xi_left_multi.png");
+		  //c_proton_xi_left_multi->SaveAs("comp_muon/proton_xi_left_multi.png");
 		  c_proton_xi_left_multi->cd();
 		  c_proton_xi_left_multi->Close();
 
@@ -881,12 +891,14 @@ int CompHistos()
    	  l_proton_xi_right_multi->AddEntry(h_inel_el_x130_proton_xi_right_multi,"Semi-exclusivo","f");
    	  l_proton_xi_right_multi->AddEntry(h_dy_proton_xi_right_multi,"Drell-Yan","f");
    	  l_proton_xi_right_multi->Draw();
-		  c_proton_xi_right_multi->SaveAs("comp/proton_xi_right_multi.png");
+		  c_proton_xi_right_multi->SaveAs("comp_EG/proton_xi_right_multi.png");
+		  //c_proton_xi_right_multi->SaveAs("comp_muon/proton_xi_right_multi.png");
 		  c_proton_xi_right_multi->cd();
 		  c_proton_xi_right_multi->Close();
 
 		  TCanvas *c_diff_proton_reco_pair_xi_left_single = new TCanvas("c_diff_proton_reco_pair_xi_left_single","",0,0,1200,1000);
-		  hs_diff_proton_reco_pair_xi_left_single.Draw("HIST");
+		  h_data_diff_proton_reco_pair_xi_left_single->Draw();
+		  hs_diff_proton_reco_pair_xi_left_single.Draw("HISTSAME");
 		  h_data_diff_proton_reco_pair_xi_left_single->Draw("SAME");
 	 	  auto l_diff_proton_reco_pair_xi_left_single = new TLegend(0.9,0.9,0.7,0.7);
    	  l_diff_proton_reco_pair_xi_left_single->SetHeader("Work in progress","C"); // option "C" allows to center the header
@@ -898,7 +910,8 @@ int CompHistos()
    	  l_diff_proton_reco_pair_xi_left_single->AddEntry(h_inel_el_x130_diff_proton_reco_pair_xi_left_single,"Semi-exclusivo","f");
    	  l_diff_proton_reco_pair_xi_left_single->AddEntry(h_dy_diff_proton_reco_pair_xi_left_single,"Drell-Yan","f");
    	  l_diff_proton_reco_pair_xi_left_single->Draw();
-		  c_diff_proton_reco_pair_xi_left_single->SaveAs("comp/diff_proton_reco_pair_xi_left_single.png");
+		  c_diff_proton_reco_pair_xi_left_single->SaveAs("comp_EG/diff_proton_reco_pair_xi_left_single.png");
+		  //c_diff_proton_reco_pair_xi_left_single->SaveAs("comp_muon/diff_proton_reco_pair_xi_left_single.png");
 		  c_diff_proton_reco_pair_xi_left_single->cd();
 		  c_diff_proton_reco_pair_xi_left_single->Close();
 
@@ -915,7 +928,8 @@ int CompHistos()
    	  l_diff_proton_reco_pair_xi_right_single->AddEntry(h_inel_el_x130_diff_proton_reco_pair_xi_right_single,"Semi-exclusivo","f");
    	  l_diff_proton_reco_pair_xi_right_single->AddEntry(h_dy_diff_proton_reco_pair_xi_right_single,"Drell-Yan","f");
    	  l_diff_proton_reco_pair_xi_right_single->Draw();
-		  c_diff_proton_reco_pair_xi_right_single->SaveAs("comp/diff_proton_reco_pair_xi_right_single.png");
+		  c_diff_proton_reco_pair_xi_right_single->SaveAs("comp_EG/diff_proton_reco_pair_xi_right_single.png");
+		  //c_diff_proton_reco_pair_xi_right_single->SaveAs("comp_muon/diff_proton_reco_pair_xi_right_single.png");
 		  c_diff_proton_reco_pair_xi_right_single->cd();
 		  c_diff_proton_reco_pair_xi_right_single->Close();
 
@@ -932,7 +946,8 @@ int CompHistos()
    	  l_diff_proton_reco_pair_xi_left_multi->AddEntry(h_inel_el_x130_diff_proton_reco_pair_xi_left_multi,"Semi-exclusivo","f");
    	  l_diff_proton_reco_pair_xi_left_multi->AddEntry(h_dy_diff_proton_reco_pair_xi_left_multi,"Drell-Yan","f");
    	  l_diff_proton_reco_pair_xi_left_multi->Draw();
-		  c_diff_proton_reco_pair_xi_left_multi->SaveAs("comp/diff_proton_reco_pair_xi_left_multi.png");
+		  c_diff_proton_reco_pair_xi_left_multi->SaveAs("comp_EG/diff_proton_reco_pair_xi_left_multi.png");
+		  //c_diff_proton_reco_pair_xi_left_multi->SaveAs("comp_muon/diff_proton_reco_pair_xi_left_multi.png");
 		  c_diff_proton_reco_pair_xi_left_multi->cd();
 		  c_diff_proton_reco_pair_xi_left_multi->Close();
 
@@ -949,7 +964,8 @@ int CompHistos()
    	  l_diff_proton_reco_pair_xi_right_multi->AddEntry(h_inel_el_x130_diff_proton_reco_pair_xi_right_multi,"Semi-exclusivo","f");
    	  l_diff_proton_reco_pair_xi_right_multi->AddEntry(h_dy_diff_proton_reco_pair_xi_right_multi,"Drell-Yan","f");
    	  l_diff_proton_reco_pair_xi_right_multi->Draw();
-		  c_diff_proton_reco_pair_xi_right_multi->SaveAs("comp/diff_proton_reco_pair_xi_right_multi.png");
+		  c_diff_proton_reco_pair_xi_right_multi->SaveAs("comp_EG/diff_proton_reco_pair_xi_right_multi.png");
+		  //c_diff_proton_reco_pair_xi_right_multi->SaveAs("comp_muon/diff_proton_reco_pair_xi_right_multi.png");
 		  c_diff_proton_reco_pair_xi_right_multi->cd();
 		  c_diff_proton_reco_pair_xi_right_multi->Close();
 
@@ -966,7 +982,8 @@ int CompHistos()
    	  l_ratio_proton_reco_pair_xi_left_single->AddEntry(h_inel_el_x130_ratio_proton_reco_pair_xi_left_single,"Semi-exclusivo","f");
    	  l_ratio_proton_reco_pair_xi_left_single->AddEntry(h_dy_ratio_proton_reco_pair_xi_left_single,"Drell-Yan","f");
    	  l_ratio_proton_reco_pair_xi_left_single->Draw();
-		  c_ratio_proton_reco_pair_xi_left_single->SaveAs("comp/ratio_proton_reco_pair_xi_left_single.png");
+		  c_ratio_proton_reco_pair_xi_left_single->SaveAs("comp_EG/ratio_proton_reco_pair_xi_left_single.png");
+		  //c_ratio_proton_reco_pair_xi_left_single->SaveAs("comp_muon/ratio_proton_reco_pair_xi_left_single.png");
 		  c_ratio_proton_reco_pair_xi_left_single->cd();
 		  c_ratio_proton_reco_pair_xi_left_single->Close();
 
@@ -983,7 +1000,8 @@ int CompHistos()
    	  l_ratio_proton_reco_pair_xi_right_single->AddEntry(h_inel_el_x130_ratio_proton_reco_pair_xi_right_single,"Semi-exclusivo","f");
    	  l_ratio_proton_reco_pair_xi_right_single->AddEntry(h_dy_ratio_proton_reco_pair_xi_right_single,"Drell-Yan","f");
    	  l_ratio_proton_reco_pair_xi_right_single->Draw();
-		  c_ratio_proton_reco_pair_xi_right_single->SaveAs("comp/ratio_proton_reco_pair_xi_right_single.png");
+		  c_ratio_proton_reco_pair_xi_right_single->SaveAs("comp_EG/ratio_proton_reco_pair_xi_right_single.png");
+		  //c_ratio_proton_reco_pair_xi_right_single->SaveAs("comp_muon/ratio_proton_reco_pair_xi_right_single.png");
 		  c_ratio_proton_reco_pair_xi_right_single->cd();
 		  c_ratio_proton_reco_pair_xi_right_single->Close();
 
@@ -1000,7 +1018,8 @@ int CompHistos()
    	  l_ratio_proton_reco_pair_xi_left_multi->AddEntry(h_inel_el_x130_ratio_proton_reco_pair_xi_left_multi,"Semi-exclusivo","f");
    	  l_ratio_proton_reco_pair_xi_left_multi->AddEntry(h_dy_ratio_proton_reco_pair_xi_left_multi,"Drell-Yan","f");
    	  l_ratio_proton_reco_pair_xi_left_multi->Draw();
-		  c_ratio_proton_reco_pair_xi_left_multi->SaveAs("comp/ratio_proton_reco_pair_xi_left_multi.png");
+		  c_ratio_proton_reco_pair_xi_left_multi->SaveAs("comp_EG/ratio_proton_reco_pair_xi_left_multi.png");
+		  //c_ratio_proton_reco_pair_xi_left_multi->SaveAs("comp_muon/ratio_proton_reco_pair_xi_left_multi.png");
 		  c_ratio_proton_reco_pair_xi_left_multi->cd();
 		  c_ratio_proton_reco_pair_xi_left_multi->Close();
 
@@ -1017,7 +1036,8 @@ int CompHistos()
    	  l_ratio_proton_reco_pair_xi_right_multi->AddEntry(h_inel_el_x130_ratio_proton_reco_pair_xi_right_multi,"Semi-exclusivo","f");
    	  l_ratio_proton_reco_pair_xi_right_multi->AddEntry(h_dy_ratio_proton_reco_pair_xi_right_multi,"Drell-Yan","f");
    	  l_ratio_proton_reco_pair_xi_right_multi->Draw();
-		  c_ratio_proton_reco_pair_xi_right_multi->SaveAs("comp/ratio_proton_reco_pair_xi_right_multi.png");
+		  c_ratio_proton_reco_pair_xi_right_multi->SaveAs("comp_EG/ratio_proton_reco_pair_xi_right_multi.png");
+		  //c_ratio_proton_reco_pair_xi_right_multi->SaveAs("comp_muon/ratio_proton_reco_pair_xi_right_multi.png");
 		  c_ratio_proton_reco_pair_xi_right_multi->cd();
 		  c_ratio_proton_reco_pair_xi_right_multi->Close();
 
@@ -1034,7 +1054,8 @@ int CompHistos()
    	  l_mass_re->AddEntry(h_inel_el_x130_mass,"Semi-exclusivo","f");
    	  l_mass_re->AddEntry(h_dy_resample_mass,"Drell-Yan","f");
    	  l_mass_re->Draw();
-		  c_mass_re->SaveAs("comp/mass_resample.png");
+		  c_mass_re->SaveAs("comp_EG/mass_resample.png");
+		  //c_mass_re->SaveAs("comp_muon/mass_resample.png");
 		  c_mass_re->cd();
 		  c_mass_re->Close();
 
@@ -1051,7 +1072,8 @@ int CompHistos()
    	  l_pt_re->AddEntry(h_inel_el_x130_pt,"Semi-exclusivo","f");
    	  l_pt_re->AddEntry(h_dy_resample_pt,"Drell-Yan","f");
    	  l_pt_re->Draw();
-		  c_pt_re->SaveAs("comp/pt_resample.png");
+		  c_pt_re->SaveAs("comp_EG/pt_resample.png");
+		  //c_pt_re->SaveAs("comp_muon/pt_resample.png");
 		  c_pt_re->cd();
 		  c_pt_re->Close();
 
@@ -1068,7 +1090,8 @@ int CompHistos()
    	  l_y_re->AddEntry(h_inel_el_x130_y,"Semi-exclusivo","f");
    	  l_y_re->AddEntry(h_dy_resample_y,"Drell-Yan","f");
    	  l_y_re->Draw();
-		  c_y_re->SaveAs("comp/y_resample.png");
+		  c_y_re->SaveAs("comp_EG/y_resample.png");
+		  //c_y_re->SaveAs("comp_muon/y_resample.png");
 		  c_y_re->cd();
 		  c_y_re->Close();
 
@@ -1092,7 +1115,8 @@ int CompHistos()
    	  l_proton_xi_left_single_re->AddEntry(h_inel_el_x130_proton_xi_left_single,"Semi-exclusivo","f");
    	  l_proton_xi_left_single_re->AddEntry(h_dy_resample_proton_xi_left_single,"Drell-Yan","f");
    	  l_proton_xi_left_single_re->Draw();
-		  c_proton_xi_left_single_re->SaveAs("comp/proton_xi_left_single_resample.png");
+		  c_proton_xi_left_single_re->SaveAs("comp_EG/proton_xi_left_single_resample.png");
+		  //c_proton_xi_left_single_re->SaveAs("comp_muon/proton_xi_left_single_resample.png");
 		  c_proton_xi_left_single_re->cd();
 		  c_proton_xi_left_single_re->Close();
 
@@ -1109,7 +1133,8 @@ int CompHistos()
    	  l_proton_xi_right_single_re->AddEntry(h_inel_el_x130_proton_xi_right_single,"Semi-exclusivo","f");
    	  l_proton_xi_right_single_re->AddEntry(h_dy_proton_xi_right_single,"Drell-Yan","f");
    	  l_proton_xi_right_single_re->Draw();
-		  c_proton_xi_right_single_re->SaveAs("comp/proton_xi_right_single.png");
+		  c_proton_xi_right_single_re->SaveAs("comp_EG/proton_xi_right_single_resample.png");
+		  //c_proton_xi_right_single_re->SaveAs("comp_muon/proton_xi_right_single_resample.png");
 		  c_proton_xi_right_single_re->cd();
 		  c_proton_xi_right_single_re->Close();
 
@@ -1126,7 +1151,8 @@ int CompHistos()
    	  l_proton_xi_left_multi_re->AddEntry(h_inel_el_x130_proton_xi_left_multi,"Semi-exclusivo","f");
    	  l_proton_xi_left_multi_re->AddEntry(h_dy_resample_proton_xi_left_multi,"Drell-Yan","f");
    	  l_proton_xi_left_multi_re->Draw();
-		  c_proton_xi_left_multi_re->SaveAs("comp/proton_xi_left_multi_resample.png");
+		  c_proton_xi_left_multi_re->SaveAs("comp_EG/proton_xi_left_multi_resample.png");
+		  //c_proton_xi_left_multi_re->SaveAs("comp_muon/proton_xi_left_multi_resample.png");
 		  c_proton_xi_left_multi_re->cd();
 		  c_proton_xi_left_multi_re->Close();
 
@@ -1143,7 +1169,8 @@ int CompHistos()
    	  l_proton_xi_right_multi_re->AddEntry(h_inel_el_x130_proton_xi_right_multi,"Semi-exclusivo","f");
    	  l_proton_xi_right_multi_re->AddEntry(h_dy_resample_proton_xi_right_multi,"Drell-Yan","f");
    	  l_proton_xi_right_multi_re->Draw();
-		  c_proton_xi_right_multi_re->SaveAs("comp/proton_xi_right_multi_resample.png");
+		  c_proton_xi_right_multi_re->SaveAs("comp_EG/proton_xi_right_multi_resample.png");
+		  //c_proton_xi_right_multi_re->SaveAs("comp_muon/proton_xi_right_multi_resample.png");
 		  c_proton_xi_right_multi_re->cd();
 		  c_proton_xi_right_multi_re->Close();
 
@@ -1160,7 +1187,8 @@ int CompHistos()
    	  l_diff_proton_reco_pair_xi_left_single_re->AddEntry(h_inel_el_x130_diff_proton_reco_pair_xi_left_single,"Semi-exclusivo","f");
    	  l_diff_proton_reco_pair_xi_left_single_re->AddEntry(h_dy_resample_diff_proton_reco_pair_xi_left_single,"Drell-Yan","f");
    	  l_diff_proton_reco_pair_xi_left_single_re->Draw();
-		  c_diff_proton_reco_pair_xi_left_single_re->SaveAs("comp/diff_proton_reco_pair_xi_left_single_resample.png");
+		  c_diff_proton_reco_pair_xi_left_single_re->SaveAs("comp_EG/diff_proton_reco_pair_xi_left_single_resample.png");
+		  //c_diff_proton_reco_pair_xi_left_single_re->SaveAs("comp_muon/diff_proton_reco_pair_xi_left_single_resample.png");
 		  c_diff_proton_reco_pair_xi_left_single_re->cd();
 		  c_diff_proton_reco_pair_xi_left_single_re->Close();
 
@@ -1177,7 +1205,8 @@ int CompHistos()
    	  l_diff_proton_reco_pair_xi_right_single_re->AddEntry(h_inel_el_x130_diff_proton_reco_pair_xi_right_single,"Semi-exclusivo","f");
    	  l_diff_proton_reco_pair_xi_right_single_re->AddEntry(h_dy_resample_diff_proton_reco_pair_xi_right_single,"Drell-Yan","f");
    	  l_diff_proton_reco_pair_xi_right_single_re->Draw();
-		  c_diff_proton_reco_pair_xi_right_single_re->SaveAs("comp/diff_proton_reco_pair_xi_right_single_resample.png");
+		  c_diff_proton_reco_pair_xi_right_single_re->SaveAs("comp_EG/diff_proton_reco_pair_xi_right_single_resample.png");
+		  //c_diff_proton_reco_pair_xi_right_single_re->SaveAs("comp_muon/diff_proton_reco_pair_xi_right_single_resample.png");
 		  c_diff_proton_reco_pair_xi_right_single_re->cd();
 		  c_diff_proton_reco_pair_xi_right_single_re->Close();
 
@@ -1194,7 +1223,8 @@ int CompHistos()
    	  l_diff_proton_reco_pair_xi_left_multi_re->AddEntry(h_inel_el_x130_diff_proton_reco_pair_xi_left_multi,"Semi-exclusivo","f");
    	  l_diff_proton_reco_pair_xi_left_multi_re->AddEntry(h_dy_resample_diff_proton_reco_pair_xi_left_multi,"Drell-Yan","f");
    	  l_diff_proton_reco_pair_xi_left_multi_re->Draw();
-		  c_diff_proton_reco_pair_xi_left_multi_re->SaveAs("comp/diff_proton_reco_pair_xi_left_multi_resample.png");
+		  c_diff_proton_reco_pair_xi_left_multi_re->SaveAs("comp_EG/diff_proton_reco_pair_xi_left_multi_resample.png");
+		  //c_diff_proton_reco_pair_xi_left_multi_re->SaveAs("comp_muon/diff_proton_reco_pair_xi_left_multi_resample.png");
 		  c_diff_proton_reco_pair_xi_left_multi_re->cd();
 		  c_diff_proton_reco_pair_xi_left_multi_re->Close();
 
@@ -1211,7 +1241,8 @@ int CompHistos()
    	  l_diff_proton_reco_pair_xi_right_multi_re->AddEntry(h_inel_el_x130_diff_proton_reco_pair_xi_right_multi,"Semi-exclusivo","f");
    	  l_diff_proton_reco_pair_xi_right_multi_re->AddEntry(h_dy_resample_diff_proton_reco_pair_xi_right_multi,"Drell-Yan","f");
    	  l_diff_proton_reco_pair_xi_right_multi_re->Draw();
-		  c_diff_proton_reco_pair_xi_right_multi_re->SaveAs("comp/diff_proton_reco_pair_xi_right_multi_resample.png");
+		  c_diff_proton_reco_pair_xi_right_multi_re->SaveAs("comp_EG/diff_proton_reco_pair_xi_right_multi_resample.png");
+		  //c_diff_proton_reco_pair_xi_right_multi_re->SaveAs("comp_muon/diff_proton_reco_pair_xi_right_multi_resample.png");
 		  c_diff_proton_reco_pair_xi_right_multi_re->cd();
 		  c_diff_proton_reco_pair_xi_right_multi_re->Close();
 
@@ -1228,7 +1259,8 @@ int CompHistos()
    	  l_ratio_proton_reco_pair_xi_left_single_re->AddEntry(h_inel_el_x130_ratio_proton_reco_pair_xi_left_single,"Semi-exclusivo","f");
    	  l_ratio_proton_reco_pair_xi_left_single_re->AddEntry(h_dy_resample_ratio_proton_reco_pair_xi_left_single,"Drell-Yan","f");
    	  l_ratio_proton_reco_pair_xi_left_single_re->Draw();
-		  c_ratio_proton_reco_pair_xi_left_single_re->SaveAs("comp/ratio_proton_reco_pair_xi_left_single_resample.png");
+		  c_ratio_proton_reco_pair_xi_left_single_re->SaveAs("comp_EG/ratio_proton_reco_pair_xi_left_single_resample.png");
+		  //c_ratio_proton_reco_pair_xi_left_single_re->SaveAs("comp_muon/ratio_proton_reco_pair_xi_left_single_resample.png");
 		  c_ratio_proton_reco_pair_xi_left_single_re->cd();
 		  c_ratio_proton_reco_pair_xi_left_single_re->Close();
 
@@ -1245,7 +1277,8 @@ int CompHistos()
    	  l_ratio_proton_reco_pair_xi_right_single_re->AddEntry(h_inel_el_x130_ratio_proton_reco_pair_xi_right_single,"Semi-exclusivo","f");
    	  l_ratio_proton_reco_pair_xi_right_single_re->AddEntry(h_dy_resample_ratio_proton_reco_pair_xi_right_single,"Drell-Yan","f");
    	  l_ratio_proton_reco_pair_xi_right_single_re->Draw();
-		  c_ratio_proton_reco_pair_xi_right_single_re->SaveAs("comp/ratio_proton_reco_pair_xi_right_single_resample.png");
+		  c_ratio_proton_reco_pair_xi_right_single_re->SaveAs("comp_EG/ratio_proton_reco_pair_xi_right_single_resample.png");
+		  //c_ratio_proton_reco_pair_xi_right_single_re->SaveAs("comp_muon/ratio_proton_reco_pair_xi_right_single_resample.png");
 		  c_ratio_proton_reco_pair_xi_right_single_re->cd();
 		  c_ratio_proton_reco_pair_xi_right_single_re->Close();
 
@@ -1262,7 +1295,8 @@ int CompHistos()
    	  l_ratio_proton_reco_pair_xi_left_multi_re->AddEntry(h_inel_el_x130_ratio_proton_reco_pair_xi_left_multi,"Semi-exclusivo","f");
    	  l_ratio_proton_reco_pair_xi_left_multi_re->AddEntry(h_dy_resample_ratio_proton_reco_pair_xi_left_multi,"Drell-Yan","f");
    	  l_ratio_proton_reco_pair_xi_left_multi_re->Draw();
-		  c_ratio_proton_reco_pair_xi_left_multi_re->SaveAs("comp/ratio_proton_reco_pair_xi_left_multi_resample.png");
+		  c_ratio_proton_reco_pair_xi_left_multi_re->SaveAs("comp_EG/ratio_proton_reco_pair_xi_left_multi_resample.png");
+		  //c_ratio_proton_reco_pair_xi_left_multi_re->SaveAs("comp_muon/ratio_proton_reco_pair_xi_left_multi_resample.png");
 		  c_ratio_proton_reco_pair_xi_left_multi_re->cd();
 		  c_ratio_proton_reco_pair_xi_left_multi_re->Close();
 
@@ -1279,11 +1313,13 @@ int CompHistos()
    	  l_ratio_proton_reco_pair_xi_right_multi_re->AddEntry(h_inel_el_x130_ratio_proton_reco_pair_xi_right_multi,"Semi-exclusivo","f");
    	  l_ratio_proton_reco_pair_xi_right_multi_re->AddEntry(h_dy_resample_ratio_proton_reco_pair_xi_right_multi,"Drell-Yan","f");
    	  l_ratio_proton_reco_pair_xi_right_multi_re->Draw();
-		  c_ratio_proton_reco_pair_xi_right_multi_re->SaveAs("comp/ratio_proton_reco_pair_xi_right_multi_resample.png");
+		  c_ratio_proton_reco_pair_xi_right_multi_re->SaveAs("comp_EG/ratio_proton_reco_pair_xi_right_multi_resample.png");
+		  //c_ratio_proton_reco_pair_xi_right_multi_re->SaveAs("comp_muon/ratio_proton_reco_pair_xi_right_multi_resample.png");
 		  c_ratio_proton_reco_pair_xi_right_multi_re->cd();
 		  c_ratio_proton_reco_pair_xi_right_multi_re->Close();
 
-		  TFile* f4 = new TFile("comp/comp_data_MC_2017.root", "RECREATE");
+		  TFile* f4 = new TFile("comp_EG/comp_data_MC_2017.root", "RECREATE");
+		  //TFile* f4 = new TFile("comp_muon/comp_data_MC_2017.root", "RECREATE");
 		  hs_mass.Draw("HIST");
 		  hs_pt.Draw("HIST");
 		  hs_y.Draw("HIST");

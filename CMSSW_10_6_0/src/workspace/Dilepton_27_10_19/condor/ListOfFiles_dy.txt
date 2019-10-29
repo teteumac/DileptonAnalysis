@@ -1,9 +1,0 @@
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_0.root 
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_1.root 
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_2.root 
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_3.root 
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_4.root 
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_5.root 
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_6.root 
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_7.root 
-DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_8.root

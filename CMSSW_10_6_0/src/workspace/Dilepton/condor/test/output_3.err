@@ -2,243 +2,166 @@ Could not find platform independent libraries <prefix>
 Could not find platform dependent libraries <exec_prefix>
 Consider setting $PYTHONHOME to <prefix>[:<exec_prefix>]
 ImportError: No module named site
-Warning in <TClassTable::Add>: class timespec already in TClassTable
-Warning in <TClassTable::Add>: class reverse_iterator<__gnu_cxx::__normal_iterator<TString*,vector<TString> > > already in TClassTable
-Warning in <TClassTable::Add>: class reverse_iterator<__gnu_cxx::__normal_iterator<string*,vector<string> > > already in TClassTable
-Warning in <TClassTable::Add>: class reverse_iterator<__gnu_cxx::__normal_iterator<int*,vector<int> > > already in TClassTable
-Warning in <TClassTable::Add>: class __gnu_cxx::__normal_iterator<char*,string> already in TClassTable
-Warning in <TClassTable::Add>: class __gnu_cxx::__normal_iterator<const char*,string> already in TClassTable
-Warning in <TClassTable::Add>: class __gnu_cxx::__normal_iterator<TString*,vector<TString> > already in TClassTable
-Warning in <TClassTable::Add>: class __gnu_cxx::__normal_iterator<const TString*,vector<TString> > already in TClassTable
-Warning in <TClassTable::Add>: class __gnu_cxx::__normal_iterator<string*,vector<string> > already in TClassTable
-Warning in <TClassTable::Add>: class __gnu_cxx::__normal_iterator<const string*,vector<string> > already in TClassTable
-Warning in <TClassTable::Add>: class __gnu_cxx::__normal_iterator<int*,vector<int> > already in TClassTable
-Warning in <TClassTable::Add>: class __gnu_cxx::__normal_iterator<const int*,vector<int> > already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualIsAProxy already in TClassTable
-Warning in <TClassTable::Add>: class TIsAProxy already in TClassTable
-Warning in <TClassTable::Add>: class TStorage already in TClassTable
-Warning in <TClassTable::Add>: class TObject already in TClassTable
-Warning in <TClassTable::Add>: class TIterator already in TClassTable
-Warning in <TClassTable::Add>: class TSubString already in TClassTable
-Warning in <TClassTable::Add>: class TString already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualMutex already in TClassTable
-Warning in <TClassTable::Add>: class TLockGuard already in TClassTable
-Warning in <TClassTable::Add>: class ROOT::TVirtualRWMutex already in TClassTable
-Warning in <TClassTable::Add>: class ROOT::TReadLockGuard already in TClassTable
-Warning in <TClassTable::Add>: class ROOT::TWriteLockGuard already in TClassTable
-Warning in <TClassTable::Add>: class TCollection already in TClassTable
-Warning in <TClassTable::Add>: class TIter already in TClassTable
-Warning in <TClassTable::Add>: class TSeqCollection already in TClassTable
-Warning in <TClassTable::Add>: class TList already in TClassTable
-Warning in <TClassTable::Add>: class TListIter already in TClassTable
-Warning in <TClassTable::Add>: class TNamed already in TClassTable
-Warning in <TClassTable::Add>: class TDictionary already in TClassTable
-Warning in <TClassTable::Add>: class TInterpreter already in TClassTable
-Warning in <TClassTable::Add>: class TQObject already in TClassTable
-Warning in <TClassTable::Add>: class TQObjSender already in TClassTable
-Warning in <TClassTable::Add>: class TApplicationImp already in TClassTable
-Warning in <TClassTable::Add>: class TApplication already in TClassTable
-Warning in <TClassTable::Add>: class TAtt3D already in TClassTable
-Warning in <TClassTable::Add>: class TAttAxis already in TClassTable
-Warning in <TClassTable::Add>: class TAttBBox already in TClassTable
-Warning in <TClassTable::Add>: class SetWindowAttributes_t already in TClassTable
-Warning in <TClassTable::Add>: class WindowAttributes_t already in TClassTable
-Warning in <TClassTable::Add>: class Event_t already in TClassTable
-Warning in <TClassTable::Add>: class GCValues_t already in TClassTable
-Warning in <TClassTable::Add>: class ColorStruct_t already in TClassTable
-Warning in <TClassTable::Add>: class PictureAttributes_t already in TClassTable
-Warning in <TClassTable::Add>: class Segment_t already in TClassTable
-Warning in <TClassTable::Add>: class Point_t already in TClassTable
-Warning in <TClassTable::Add>: class Rectangle_t already in TClassTable
-Warning in <TClassTable::Add>: class TAttBBox2D already in TClassTable
-Warning in <TClassTable::Add>: class TAttFill already in TClassTable
-Warning in <TClassTable::Add>: class TAttLine already in TClassTable
-Warning in <TClassTable::Add>: class TAttMarker already in TClassTable
-Warning in <TClassTable::Add>: class TAttPad already in TClassTable
-Warning in <TClassTable::Add>: class TAttText already in TClassTable
-Warning in <TClassTable::Add>: class TBase64 already in TClassTable
-Warning in <TClassTable::Add>: class TStopwatch already in TClassTable
-Warning in <TClassTable::Add>: class TBenchmark already in TClassTable
-Warning in <TClassTable::Add>: class TBrowserImp already in TClassTable
-Warning in <TClassTable::Add>: class TBrowser already in TClassTable
-Warning in <TClassTable::Add>: class TBuffer already in TClassTable
-Warning in <TClassTable::Add>: class TBuffer3D already in TClassTable
-Warning in <TClassTable::Add>: class TCanvasImp already in TClassTable
-Warning in <TClassTable::Add>: class TArray already in TClassTable
-Warning in <TClassTable::Add>: class TArrayI already in TClassTable
-Warning in <TClassTable::Add>: class TColor already in TClassTable
-Warning in <TClassTable::Add>: class TColorGradient already in TClassTable
-Warning in <TClassTable::Add>: class TLinearGradient already in TClassTable
-Warning in <TClassTable::Add>: class TRadialGradient already in TClassTable
-Warning in <TClassTable::Add>: class TContextMenuImp already in TClassTable
-Warning in <TClassTable::Add>: class TContextMenu already in TClassTable
-Warning in <TClassTable::Add>: class TControlBarImp already in TClassTable
-Warning in <TClassTable::Add>: class TDatime already in TClassTable
-Warning in <TClassTable::Add>: class TUUID already in TClassTable
-Warning in <TClassTable::Add>: class TDirectory already in TClassTable
-Warning in <TClassTable::Add>: class TEnvRec already in TClassTable
-Warning in <TClassTable::Add>: class TEnv already in TClassTable
-Warning in <TClassTable::Add>: class TExec already in TClassTable
-Warning in <TClassTable::Add>: class TFileCollection already in TClassTable
-Warning in <TClassTable::Add>: class THashTable already in TClassTable
-Warning in <TClassTable::Add>: class THashTableIter already in TClassTable
-Warning in <TClassTable::Add>: class TMap already in TClassTable
-Warning in <TClassTable::Add>: class TPair already in TClassTable
-Warning in <TClassTable::Add>: class TMapIter already in TClassTable
-Warning in <TClassTable::Add>: class TUrl already in TClassTable
-Warning in <TClassTable::Add>: class TMD5 already in TClassTable
-Warning in <TClassTable::Add>: class TObjString already in TClassTable
-Warning in <TClassTable::Add>: class TFileInfo already in TClassTable
-Warning in <TClassTable::Add>: class TFileInfoMeta already in TClassTable
-Warning in <TClassTable::Add>: class TFolder already in TClassTable
-Warning in <TClassTable::Add>: class TGuiFactory already in TClassTable
-Warning in <TClassTable::Add>: class TInetAddress already in TClassTable
-Warning in <TClassTable::Add>: class TInspectorImp already in TClassTable
-Warning in <TClassTable::Add>: class TMacro already in TClassTable
-Warning in <TClassTable::Add>: class TMemberInspector already in TClassTable
-Warning in <TClassTable::Add>: class TMessageHandler already in TClassTable
-Warning in <TClassTable::Add>: class TObjectSpy already in TClassTable
-Warning in <TClassTable::Add>: class TObjectRefSpy already in TClassTable
-Warning in <TClassTable::Add>: class TPRegexp already in TClassTable
-Warning in <TClassTable::Add>: class TPMERegexp already in TClassTable
-Warning in <TClassTable::Add>: class TStringToken already in TClassTable
-Warning in <TClassTable::Add>: class TObjArray already in TClassTable
-Warning in <TClassTable::Add>: class TObjArrayIter already in TClassTable
-Warning in <TClassTable::Add>: class TClass already in TClassTable
-Warning in <TClassTable::Add>: class TROOT already in TClassTable
-Warning in <TClassTable::Add>: class TParameter<bool> already in TClassTable
-Warning in <TClassTable::Add>: class TParameter<Long64_t> already in TClassTable
-Warning in <TClassTable::Add>: class TParameter<long> already in TClassTable
-Warning in <TClassTable::Add>: class TParameter<int> already in TClassTable
-Warning in <TClassTable::Add>: class TParameter<double> already in TClassTable
-Warning in <TClassTable::Add>: class TParameter<float> already in TClassTable
-Warning in <TClassTable::Add>: class TMethodCall already in TClassTable
-Warning in <TClassTable::Add>: class TPluginHandler already in TClassTable
-Warning in <TClassTable::Add>: class TPluginManager already in TClassTable
-Warning in <TClassTable::Add>: class TPoint already in TClassTable
-Warning in <TClassTable::Add>: class TProcessID already in TClassTable
-Warning in <TClassTable::Add>: class TProcessUUID already in TClassTable
-Warning in <TClassTable::Add>: class TQClass already in TClassTable
-Warning in <TClassTable::Add>: class TQCommand already in TClassTable
-Warning in <TClassTable::Add>: class TQUndoManager already in TClassTable
-Warning in <TClassTable::Add>: class TQConnection already in TClassTable
-Warning in <TClassTable::Add>: class TSysEvtHandler already in TClassTable
-Warning in <TClassTable::Add>: class TFileHandler already in TClassTable
-Warning in <TClassTable::Add>: class TSignalHandler already in TClassTable
-Warning in <TClassTable::Add>: class TStdExceptionHandler already in TClassTable
-Warning in <TClassTable::Add>: class TTime already in TClassTable
-Warning in <TClassTable::Add>: class TTimer already in TClassTable
-Warning in <TClassTable::Add>: class FileStat_t already in TClassTable
-Warning in <TClassTable::Add>: class UserGroup_t already in TClassTable
-Warning in <TClassTable::Add>: class SysInfo_t already in TClassTable
-Warning in <TClassTable::Add>: class CpuInfo_t already in TClassTable
-Warning in <TClassTable::Add>: class MemInfo_t already in TClassTable
-Warning in <TClassTable::Add>: class ProcInfo_t already in TClassTable
-Warning in <TClassTable::Add>: class RedirectHandle_t already in TClassTable
-Warning in <TClassTable::Add>: class TProcessEventTimer already in TClassTable
-Warning in <TClassTable::Add>: class TSystem already in TClassTable
-Warning in <TClassTable::Add>: class TRedirectOutputGuard already in TClassTable
-Warning in <TClassTable::Add>: class TRef already in TClassTable
-Warning in <TClassTable::Add>: class TRefCnt already in TClassTable
-Warning in <TClassTable::Add>: class TRegexp already in TClassTable
-Warning in <TClassTable::Add>: class TSystemFile already in TClassTable
-Warning in <TClassTable::Add>: class TSystemDirectory already in TClassTable
-Warning in <TClassTable::Add>: class TRemoteObject already in TClassTable
-Warning in <TClassTable::Add>: class TRootIOCtor already in TClassTable
-Warning in <TClassTable::Add>: class TStringLong already in TClassTable
-Warning in <TClassTable::Add>: class TStyle already in TClassTable
-Warning in <TClassTable::Add>: class TTask already in TClassTable
-Warning in <TClassTable::Add>: class TTimeStamp already in TClassTable
-Warning in <TClassTable::Add>: class TUri already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualAuth already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualFFT already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualGLPainter already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualGLManip already in TClassTable
-Warning in <TClassTable::Add>: class TGLManager already in TClassTable
-Warning in <TClassTable::Add>: class TGLPaintDevice already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualMonitoringWriter already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualMonitoringReader already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualPS already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualX already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualPad already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualPadEditor already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualPadPainter already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualPerfStats already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualTableInterface already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualViewer3D already in TClassTable
-Warning in <TClassTable::Add>: class TArrayC already in TClassTable
-Warning in <TClassTable::Add>: class TArrayD already in TClassTable
-Warning in <TClassTable::Add>: class TArrayF already in TClassTable
-Warning in <TClassTable::Add>: class TArrayL already in TClassTable
-Warning in <TClassTable::Add>: class TArrayL64 already in TClassTable
-Warning in <TClassTable::Add>: class TArrayS already in TClassTable
-Warning in <TClassTable::Add>: class TBits already in TClassTable
-Warning in <TClassTable::Add>: class TBits::TReference already in TClassTable
-Warning in <TClassTable::Add>: class TBtree already in TClassTable
-Warning in <TClassTable::Add>: class TBtreeIter already in TClassTable
-Warning in <TClassTable::Add>: class TClassTable already in TClassTable
-Warning in <TClassTable::Add>: class TClonesArray already in TClassTable
-Warning in <TClassTable::Add>: class TExMap already in TClassTable
-Warning in <TClassTable::Add>: class TExMapIter already in TClassTable
-Warning in <TClassTable::Add>: class THashList already in TClassTable
-Warning in <TClassTable::Add>: class TObjectTable already in TClassTable
-Warning in <TClassTable::Add>: class TOrdCollection already in TClassTable
-Warning in <TClassTable::Add>: class TOrdCollectionIter already in TClassTable
-Warning in <TClassTable::Add>: class TRefArray already in TClassTable
-Warning in <TClassTable::Add>: class TRefArrayIter already in TClassTable
-Warning in <TClassTable::Add>: class TRefTable already in TClassTable
-Warning in <TClassTable::Add>: class TSortedList already in TClassTable
-Warning in <TClassTable::Add>: class TClassRef already in TClassTable
-Warning in <TClassTable::Add>: class TDataType already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualCollectionProxy already in TClassTable
-Warning in <TClassTable::Add>: class TUnixSystem already in TClassTable
-Warning in <TClassTable::Add>: class TBaseClass already in TClassTable
-Warning in <TClassTable::Add>: class TClassGenerator already in TClassTable
-Warning in <TClassTable::Add>: class TClassMenuItem already in TClassTable
-Warning in <TClassTable::Add>: class TClassStreamer already in TClassTable
-Warning in <TClassTable::Add>: class TDataMember already in TClassTable
-Warning in <TClassTable::Add>: class TOptionListItem already in TClassTable
-Warning in <TClassTable::Add>: class TDictAttributeMap already in TClassTable
-Warning in <TClassTable::Add>: class TEnum already in TClassTable
-Warning in <TClassTable::Add>: class TGlobal already in TClassTable
-Warning in <TClassTable::Add>: class TEnumConstant already in TClassTable
-Warning in <TClassTable::Add>: class TFileMergeInfo already in TClassTable
-Warning in <TClassTable::Add>: class TFunction already in TClassTable
-Warning in <TClassTable::Add>: class TFunctionTemplate already in TClassTable
-Warning in <TClassTable::Add>: class TListOfDataMembers already in TClassTable
-Warning in <TClassTable::Add>: class TListOfEnums already in TClassTable
-Warning in <TClassTable::Add>: class TListOfEnumsWithLock already in TClassTable
-Warning in <TClassTable::Add>: class TListOfEnumsWithLockIter already in TClassTable
-Warning in <TClassTable::Add>: class TListOfFunctionTemplates already in TClassTable
-Warning in <TClassTable::Add>: class TListOfFunctions already in TClassTable
-Warning in <TClassTable::Add>: class TListOfFunctionsIter already in TClassTable
-Warning in <TClassTable::Add>: class TMemberStreamer already in TClassTable
-Warning in <TClassTable::Add>: class TMethod already in TClassTable
-Warning in <TClassTable::Add>: class TMethodArg already in TClassTable
-Warning in <TClassTable::Add>: class TProtoClass already in TClassTable
-Warning in <TClassTable::Add>: class TProtoClass::TProtoRealData already in TClassTable
-Warning in <TClassTable::Add>: class TRealData already in TClassTable
-Warning in <TClassTable::Add>: class ROOT::TSchemaRule already in TClassTable
-Warning in <TClassTable::Add>: class ROOT::TSchemaRule::TSources already in TClassTable
-Warning in <TClassTable::Add>: class ROOT::Detail::TSchemaRuleSet already in TClassTable
-Warning in <TClassTable::Add>: class ROOT::Detail::TStatusBitsChecker already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerElement already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerBase already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerBasicPointer already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerLoop already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerBasicType already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerObject already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerObjectAny already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerObjectPointer already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerObjectAnyPointer already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerString already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerSTL already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerSTLstring already in TClassTable
-Warning in <TClassTable::Add>: class TStreamerArtificial already in TClassTable
-Warning in <TClassTable::Add>: class TToggle already in TClassTable
-Warning in <TClassTable::Add>: class TToggleGroup already in TClassTable
-Warning in <TClassTable::Add>: class TVirtualStreamerInfo already in TClassTable
+WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
+Error in <TTree::SetBranchAddress>: unknown branch -> nGenMuonCand
+Error in <TTree::SetBranchAddress>: unknown branch -> nGenMuonCandOutOfAccept
+Error in <TTree::SetBranchAddress>: unknown branch -> GenMuonCand_pt
+Error in <TTree::SetBranchAddress>: unknown branch -> GenMuonCand_eta
+Error in <TTree::SetBranchAddress>: unknown branch -> GenMuonCand_phi
+Error in <TTree::SetBranchAddress>: unknown branch -> GenMuonCand_e
+Error in <TTree::SetBranchAddress>: unknown branch -> nGenProtCand
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_pt
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_eta
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_phi
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_e
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_status
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_mass
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_pt
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_eta
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_phi
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_dpt
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_dphi
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_3Dangle
 
  *** Break *** segmentation violation
-cp: cannot stat 'output_cut.root': No such file or directory
-rm: cannot remove 'output_cut.root': No such file or directory
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00002b8d382ac41c in waitpid () from /lib64/libc.so.6
+#1  0x00002b8d38229f12 in do_system () from /lib64/libc.so.6
+#2  0x00002b8d37b8252d in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj/lib/libCore.so
+#3  0x00002b8d37b84dd4 in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj/lib/libCore.so
+#4  <signal handler called>
+#5  0x00002b8d44d9ae5c in ?? ()
+#6  0x3fcaae1480000000 in ?? ()
+#7  0x3faea3d700000000 in ?? ()
+#8  0xbfceae1480000000 in ?? ()
+#9  0xbf9c9eb860000000 in ?? ()
+#10 0x3f83000000000000 in ?? ()
+#11 0xbf9eccccc0000000 in ?? ()
+#12 0xbfa1b33340000000 in ?? ()
+#13 0x3f92fae140000000 in ?? ()
+#14 0xbf8e9999a0000000 in ?? ()
+#15 0xbf6c3851e0000000 in ?? ()
+#16 0x3fa5800000000000 in ?? ()
+#17 0x3f6fc7ae20000000 in ?? ()
+#18 0xbf98c28f60000000 in ?? ()
+#19 0xbfafb33340000000 in ?? ()
+#20 0xbfa523d700000000 in ?? ()
+#21 0x3fa1d1eb80000000 in ?? ()
+#22 0x3f8a051ec0000000 in ?? ()
+#23 0x3f97666660000000 in ?? ()
+#24 0x3fc89999a0000000 in ?? ()
+#25 0x3fa4d70a40000000 in ?? ()
+#26 0xbfb4a8f5c0000000 in ?? ()
+#27 0x3fb3028f60000000 in ?? ()
+#28 0x3fb28cccc0000000 in ?? ()
+#29 0x3fba70a3e0000000 in ?? ()
+#30 0x3fcfa8f5c0000000 in ?? ()
+#31 0xbfc0f5c280000000 in ?? ()
+#32 0x3fd1547ae0000000 in ?? ()
+#33 0xbfa5851ec0000000 in ?? ()
+#34 0x3fb0051ec0000000 in ?? ()
+#35 0x3f9fae1480000000 in ?? ()
+#36 0xbfe21c2900000000 in ?? ()
+#37 0xbf9a428f60000000 in ?? ()
+#38 0x3ef5bd70a0000000 in ?? ()
+#39 0x3fa628f5c0000000 in ?? ()
+#40 0x3fb4d1eb80000000 in ?? ()
+#41 0x3fbe9999a0000000 in ?? ()
+#42 0xbf52f5c280000000 in ?? ()
+#43 0x3fc3b5c280000000 in ?? ()
+#44 0x3fac947ae0000000 in ?? ()
+#45 0xbfbf570a40000000 in ?? ()
+#46 0xbfc2e147a0000000 in ?? ()
+#47 0xbfbd333340000000 in ?? ()
+#48 0x3f99800000000000 in ?? ()
+#49 0xbfb4547ae0000000 in ?? ()
+#50 0xbfd547ae20000000 in ?? ()
+#51 0x3fb44f5c20000000 in ?? ()
+#52 0x3fadbd70a0000000 in ?? ()
+#53 0x3fa5851ec0000000 in ?? ()
+#54 0xbfca1999a0000000 in ?? ()
+#55 0x3fc6147ae0000000 in ?? ()
+#56 0xbfc3ccccc0000000 in ?? ()
+#57 0x3fc6570a40000000 in ?? ()
+#58 0xbfb15999a0000000 in ?? ()
+#59 0xbfdcdc2900000000 in ?? ()
+#60 0x000000000000004d in ?? ()
+#61 0x0000000000000092 in ?? ()
+#62 0x0000000000000000 in ?? ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash.
+You may get help by asking at the ROOT forum http://root.cern.ch/forum
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at http://root.cern.ch/bugs Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#5  0x00002b8d44d9ae5c in ?? ()
+#6  0x3fcaae1480000000 in ?? ()
+#7  0x3faea3d700000000 in ?? ()
+#8  0xbfceae1480000000 in ?? ()
+#9  0xbf9c9eb860000000 in ?? ()
+#10 0x3f83000000000000 in ?? ()
+#11 0xbf9eccccc0000000 in ?? ()
+#12 0xbfa1b33340000000 in ?? ()
+#13 0x3f92fae140000000 in ?? ()
+#14 0xbf8e9999a0000000 in ?? ()
+#15 0xbf6c3851e0000000 in ?? ()
+#16 0x3fa5800000000000 in ?? ()
+#17 0x3f6fc7ae20000000 in ?? ()
+#18 0xbf98c28f60000000 in ?? ()
+#19 0xbfafb33340000000 in ?? ()
+#20 0xbfa523d700000000 in ?? ()
+#21 0x3fa1d1eb80000000 in ?? ()
+#22 0x3f8a051ec0000000 in ?? ()
+#23 0x3f97666660000000 in ?? ()
+#24 0x3fc89999a0000000 in ?? ()
+#25 0x3fa4d70a40000000 in ?? ()
+#26 0xbfb4a8f5c0000000 in ?? ()
+#27 0x3fb3028f60000000 in ?? ()
+#28 0x3fb28cccc0000000 in ?? ()
+#29 0x3fba70a3e0000000 in ?? ()
+#30 0x3fcfa8f5c0000000 in ?? ()
+#31 0xbfc0f5c280000000 in ?? ()
+#32 0x3fd1547ae0000000 in ?? ()
+#33 0xbfa5851ec0000000 in ?? ()
+#34 0x3fb0051ec0000000 in ?? ()
+#35 0x3f9fae1480000000 in ?? ()
+#36 0xbfe21c2900000000 in ?? ()
+#37 0xbf9a428f60000000 in ?? ()
+#38 0x3ef5bd70a0000000 in ?? ()
+#39 0x3fa628f5c0000000 in ?? ()
+#40 0x3fb4d1eb80000000 in ?? ()
+#41 0x3fbe9999a0000000 in ?? ()
+#42 0xbf52f5c280000000 in ?? ()
+#43 0x3fc3b5c280000000 in ?? ()
+#44 0x3fac947ae0000000 in ?? ()
+#45 0xbfbf570a40000000 in ?? ()
+#46 0xbfc2e147a0000000 in ?? ()
+#47 0xbfbd333340000000 in ?? ()
+#48 0x3f99800000000000 in ?? ()
+#49 0xbfb4547ae0000000 in ?? ()
+#50 0xbfd547ae20000000 in ?? ()
+#51 0x3fb44f5c20000000 in ?? ()
+#52 0x3fadbd70a0000000 in ?? ()
+#53 0x3fa5851ec0000000 in ?? ()
+#54 0xbfca1999a0000000 in ?? ()
+#55 0x3fc6147ae0000000 in ?? ()
+#56 0xbfc3ccccc0000000 in ?? ()
+#57 0x3fc6570a40000000 in ?? ()
+#58 0xbfb15999a0000000 in ?? ()
+#59 0xbfdcdc2900000000 in ?? ()
+#60 0x000000000000004d in ?? ()
+#61 0x0000000000000092 in ?? ()
+#62 0x0000000000000000 in ?? ()
+===========================================================
+
+
