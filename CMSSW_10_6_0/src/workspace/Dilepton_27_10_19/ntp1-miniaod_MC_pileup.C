@@ -93,7 +93,7 @@ void ntp1::Loop()
 	TH1D *proton_resolution_left_rp3_6 = new TH1D("proton_resolution_left_rp3_6", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
 	TH1D *proton_resolution_left_rp3_7 = new TH1D("proton_resolution_left_rp3_7", "#xi Proton Left Proton Resolution - RP 3", 20, -.05, .05);
 	TH1D *diff_proton_reco_pair_xi_left_rp3 = new TH1D("diff_proton_reco_pair_xi_left_rp3", "reco (Proton - Pair) #xi Left - RP 3", 10, -1, 1);
-	TH1D *ratio_proton_reco_pair_xi_left_rp3 = new TH1D("ratio_proton_reco_pair_xi_left_rp3", "reco (1 - Proton/Pair) #xi Left - RP 3", 10, -10, 1);
+	TH1D *ratio_proton_reco_pair_xi_left_rp3 = new TH1D("ratio_proton_reco_pair_xi_left_rp3", "reco (1 - Proton/Pair) #xi Left - RP 3", 10, -20, 3);
 
 	TH1D *proton_xi_left_rp23 = new TH1D("proton_xi_left_rp23", "#xi Proton Left - RP 23", 20, 0, 0.16);
 	TH1D *proton_resolution_left_gen_rp23 = new TH1D("proton_resolution_left_gen_rp23", "#xi Left gen Proton Resolution - RP 23", 20, -.8, .8);
@@ -108,7 +108,7 @@ void ntp1::Loop()
 	TH1D *proton_resolution_left_rp23_6 = new TH1D("proton_resolution_left_rp23_6", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
 	TH1D *proton_resolution_left_rp23_7 = new TH1D("proton_resolution_left_rp23_7", "#xi Proton Left Proton Resolution - RP 23", 20, -.05, .05);
 	TH1D *diff_proton_reco_pair_xi_left_rp23 = new TH1D("diff_proton_reco_pair_xi_left_rp23", "reco (Proton - Pair) #xi Left - RP 23", 10, -1, 1);
-	TH1D *ratio_proton_reco_pair_xi_left_rp23 = new TH1D("ratio_proton_reco_pair_xi_left_rp23", "reco (1 - Proton/Pair) #xi Left - RP 23", 10, -10, 1);
+	TH1D *ratio_proton_reco_pair_xi_left_rp23 = new TH1D("ratio_proton_reco_pair_xi_left_rp23", "reco (1 - Proton/Pair) #xi Left - RP 23", 10, -20, 3);
 
 	TH1D *proton_xi_left_single = new TH1D("proton_xi_left_single", "#xi Proton Left - Single RP", 20, 0, 0.16);
 	TH1D *proton_resolution_left_gen_single = new TH1D("proton_resolution_left_gen_single", "#xi Left gen Proton Resolution - Single RP", 20, -.8, .8);
@@ -124,7 +124,7 @@ void ntp1::Loop()
 	TH1D *proton_resolution_left_single_6 = new TH1D("proton_resolution_left_single_6", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
 	TH1D *proton_resolution_left_single_7 = new TH1D("proton_resolution_left_single_7", "#xi Proton Left Proton Resolution - Single RP", 20, -.05, .05);
 	TH1D *diff_proton_reco_pair_xi_left_single = new TH1D("diff_proton_reco_pair_xi_left_single", "reco (Proton - Pair) #xi Left - Single", 10, -1, 1);
-	TH1D *ratio_proton_reco_pair_xi_left_single = new TH1D("ratio_proton_reco_pair_xi_left_single", "reco (1 - reco Proton/Pair) #xi Left - Single", 10, -10, 1);
+	TH1D *ratio_proton_reco_pair_xi_left_single = new TH1D("ratio_proton_reco_pair_xi_left_single", "reco (1 - reco Proton/Pair) #xi Left - Single", 10, -20, 3);
 
 	TH1D *proton_xi_right_rp103 = new TH1D("proton_xi_right_rp103", "#xi Proton Right - RP 103", 20, 0, 0.16);
 	TH1D *proton_resolution_right_gen_rp103 = new TH1D("proton_resolution_right_gen_rp103", "#xi Right gen Proton Resolution - RP 103", 20, -.8, .8);
@@ -139,7 +139,7 @@ void ntp1::Loop()
 	TH1D *proton_resolution_right_rp103_6 = new TH1D("proton_resolution_right_rp103_6", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
 	TH1D *proton_resolution_right_rp103_7 = new TH1D("proton_resolution_right_rp103_7", "#xi Proton Right Proton Resolution - RP 103", 20, -.05, .05);
 	TH1D *diff_proton_reco_pair_xi_right_rp103 = new TH1D("diff_proton_reco_pair_xi_right_rp103", "reco (Proton - Pair) #xi Right - RP 103", 10, -1, 1);
-	TH1D *ratio_proton_reco_pair_xi_right_rp103 = new TH1D("ratio_proton_reco_pair_xi_right_rp103", "reco (1 - Proton/Pair) #xi Right - RP 103", 10, -10, 1);
+	TH1D *ratio_proton_reco_pair_xi_right_rp103 = new TH1D("ratio_proton_reco_pair_xi_right_rp103", "reco (1 - Proton/Pair) #xi Right - RP 103", 10, -20, 3);
 
 	TH1D *proton_xi_right_rp123 = new TH1D("proton_xi_right_rp123", "#xi Proton Right - RP 123", 20, 0, 0.16);
 	TH1D *proton_resolution_right_gen_rp123 = new TH1D("proton_resolution_right_gen_rp123", "#xi Right gen Proton Resolution - RP 123", 20, -.8, .8);
@@ -154,7 +154,7 @@ void ntp1::Loop()
 	TH1D *proton_resolution_right_rp123_6 = new TH1D("proton_resolution_right_rp123_6", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
 	TH1D *proton_resolution_right_rp123_7 = new TH1D("proton_resolution_right_rp123_7", "#xi Proton Right Proton Resolution - RP 123", 20, -.05, .05);
 	TH1D *diff_proton_reco_pair_xi_right_rp123 = new TH1D("diff_proton_reco_pair_xi_right_rp123", "reco (Proton - Pair) #xi Right - RP 123", 10, -1, 1);
-	TH1D *ratio_proton_reco_pair_xi_right_rp123 = new TH1D("ratio_proton_reco_pair_xi_right_rp123", "reco (1 - Proton/Pair) #xi Right - RP 123", 10, -10, 1);
+	TH1D *ratio_proton_reco_pair_xi_right_rp123 = new TH1D("ratio_proton_reco_pair_xi_right_rp123", "reco (1 - Proton/Pair) #xi Right - RP 123", 10, -20, 3);
 
 	TH1D *proton_xi_right_single = new TH1D("proton_xi_right_single", "#xi Proton Right - Single RP", 20, 0, 0.16);
 	TH1D *proton_resolution_right_gen_single = new TH1D("proton_resolution_right_gen_single", "#xi Right gen Proton Resolution - Single RP", 20, -.8, .8);
@@ -170,7 +170,7 @@ void ntp1::Loop()
 	TH1D *proton_resolution_right_single_6 = new TH1D("proton_resolution_right_single_6", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
 	TH1D *proton_resolution_right_single_7 = new TH1D("proton_resolution_right_single_7", "#xi Proton Right Proton Resolution - Single RP", 20, -.05, .05);
 	TH1D *diff_proton_reco_pair_xi_right_single = new TH1D("diff_proton_reco_pair_xi_right_single", "reco (Proton - Pair) #xi Right - Single", 10, -1, 1);
-	TH1D *ratio_proton_reco_pair_xi_right_single = new TH1D("ratio_proton_reco_pair_xi_right_single", "reco (1 - Proton/Pair) #xi Right - Single", 10, -10, 1);
+	TH1D *ratio_proton_reco_pair_xi_right_single = new TH1D("ratio_proton_reco_pair_xi_right_single", "reco (1 - Proton/Pair) #xi Right - Single", 10, -20, 3);
 
 	TH1D *proton_xi_left_multi = new TH1D("proton_xi_left_multi", "#xi Proton Left - Multi RP", 20, 0, 0.16);
 	TH1D *proton_resolution_left_gen_multi = new TH1D("proton_resolution_left_gen_multi", "#xi Left gen Proton Resolution - Multi RP", 20, -2, 2);
@@ -185,7 +185,7 @@ void ntp1::Loop()
 	TH1D *proton_resolution_left_multi_6 = new TH1D("proton_resolution_left_multi_6", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
 	TH1D *proton_resolution_left_multi_7 = new TH1D("proton_resolution_left_multi_7", "#xi Proton Left Proton Resolution - Multi RP", 20, -.05, .05);
 	TH1D *diff_proton_reco_pair_xi_left_multi = new TH1D("diff_proton_reco_pair_xi_left_multi", "reco (Proton - Pair) #xi Left - Multi", 10, -1, 1);
-	TH1D *ratio_proton_reco_pair_xi_left_multi = new TH1D("ratio_proton_reco_pair_xi_left_multi", "reco (1 - Proton/Pair) #xi Left - Multi", 10, -10, 1);
+	TH1D *ratio_proton_reco_pair_xi_left_multi = new TH1D("ratio_proton_reco_pair_xi_left_multi", "reco (1 - Proton/Pair) #xi Left - Multi", 10, -20, 3);
 
 	TH1D *proton_xi_right_multi = new TH1D("proton_xi_right_multi", "#xi Proton Right - Multi RP", 20, 0, 0.16);
 	TH1D *proton_resolution_right_gen_multi = new TH1D("proton_resolution_right_gen_multi", "#xi Right gen Proton Resolution - Multi RP", 20, -.2, .2);
@@ -200,7 +200,7 @@ void ntp1::Loop()
 	TH1D *proton_resolution_right_multi_6 = new TH1D("proton_resolution_right_multi_6", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
 	TH1D *proton_resolution_right_multi_7 = new TH1D("proton_resolution_right_multi_7", "#xi Proton Right Proton Resolution - Multi RP", 20, -.05, .05);
 	TH1D *diff_proton_reco_pair_xi_right_multi = new TH1D("diff_proton_reco_pair_xi_right_multi", "reco (Proton - Pair) #xi Right - Multi", 10, -1, 1);
-	TH1D *ratio_proton_reco_pair_xi_right_multi = new TH1D("ratio_proton_reco_pair_xi_right_multi", "reco (1 - Proton/Pair) #xi Right - Multi", 10, -10, 1);
+	TH1D *ratio_proton_reco_pair_xi_right_multi = new TH1D("ratio_proton_reco_pair_xi_right_multi", "reco (1 - Proton/Pair) #xi Right - Multi", 10, -20, 3);
 
 	TH1D *xi_pair_resolution_left = new TH1D("xi_pair_resolution_left", "Left #xi #mu^{+}#mu^{-} gen - #xi #mu^{+}#mu^{-} reco", 20, -.005, .005);
 	TH1D *xi_pair_resolution_right = new TH1D("xi_pair_resolution_right", "Right #xi #mu^{+}#mu^{-} gen - #xi #mu^{+}#mu^{-} reco", 20, -.005, .005);

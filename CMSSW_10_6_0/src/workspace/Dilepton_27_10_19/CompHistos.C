@@ -33,7 +33,7 @@ int CompHistos()
 		  TFile *f_dy_resample = new TFile("histos_MC/output_dy_resample_EG.root");
 		  //TFile *f_dy = new TFile("histos_MC/output_dy_cut_muon.root");
 		  //TFile *f_dy_resample = new TFile("histos_MC/output_dy_resample_muon.root");
-		  TFile *f_data = new TFile("histos_data/output_data_cut.root");
+		  TFile *f_data = new TFile("histos_data/output_data_cut_limitRun.root");
 
 		  //for (int i = 0; i < Nhist; i++) {
 
@@ -210,12 +210,14 @@ int CompHistos()
         double n_events_h_inel_el_x130 = 200000;
         double n_events_h_dy = 48675378;
         double n_events_pileup = 18964805;
-		  double number_of_samples = 100;
+		  double number_of_samples = 100; //Used on the resampled DY  
+		  double total_lumi = 37.498268; //Used on the total luminosity data
+		  double limit_lumi = 22.658923; //Used on the limited luminosity data
 
-		  scale_factor_elastic_x130 = eff_trigger_elastic_x130*37.022*0.017254036*1000 / n_events_h_elastic_x130 ; //
-		  scale_factor_inel_el_x130 = eff_trigger_inel_el_x130*37.022*0.025643100*1000 / n_events_h_inel_el_x130 ; //
-		  scale_factor_dy = event_selection*eff_trigger_dy*37.022*5334000 / n_events_h_dy; 
-		  scale_factor_dy_resample = event_selection*eff_trigger_dy*37.022*5334000 / ( n_events_h_dy*number_of_samples ); 
+		  scale_factor_elastic_x130 = eff_trigger_elastic_x130*limit_lumi*0.017254036*1000 / n_events_h_elastic_x130 ; //
+		  scale_factor_inel_el_x130 = eff_trigger_inel_el_x130*limit_lumi*0.025643100*1000 / n_events_h_inel_el_x130 ; //
+		  scale_factor_dy = event_selection*eff_trigger_dy*limit_lumi*5334000 / n_events_h_dy; 
+		  scale_factor_dy_resample = eff_trigger_dy*limit_lumi*5334000 / ( n_events_h_dy*number_of_samples ) ; 
 
 		  h_elastic_x130_mass->SetLineColor(kBlue);
 		  h_inel_el_x130_mass->SetLineColor(kGreen);
@@ -895,7 +897,8 @@ int CompHistos()
 		  c_proton_xi_right_multi->Close();
 
 		  TCanvas *c_diff_proton_reco_pair_xi_left_single = new TCanvas("c_diff_proton_reco_pair_xi_left_single","",0,0,1200,1000);
-		  hs_diff_proton_reco_pair_xi_left_single.Draw("HIST");
+		  h_data_diff_proton_reco_pair_xi_left_single->Draw();
+		  hs_diff_proton_reco_pair_xi_left_single.Draw("HISTSAME");
 		  h_data_diff_proton_reco_pair_xi_left_single->Draw("SAME");
 	 	  auto l_diff_proton_reco_pair_xi_left_single = new TLegend(0.9,0.9,0.7,0.7);
    	  l_diff_proton_reco_pair_xi_left_single->SetHeader("Work in progress","C"); // option "C" allows to center the header
