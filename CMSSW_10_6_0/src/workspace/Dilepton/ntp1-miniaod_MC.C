@@ -1098,8 +1098,8 @@ void ntp1::Loop()
 	//cout << "oi" <<endl;
 }
 	
-int run() {
-	ntp1 m;
+int run(std::string fileName="input.root") {
+	ntp1 m(fileName);
  	m.Loop();
 
  	return 0;
