@@ -1,0 +1,6 @@
+/eos/user/w/walterjr/LxplusBackup/Madgraph-Gen-ZZ-tau/A0Z1E-6ACZ0FF1E25/
+/eos/user/w/walterjr/LxplusBackup/Madgraph-Gen-ZZ-tau/A0Z1E-6ACZ0FF1E3/
+/eos/user/w/walterjr/LxplusBackup/Madgraph-Gen-ZZ-tau/A0Z1E-6ACZ0FF5E2/
+/eos/user/w/walterjr/LxplusBackup/Madgraph-Gen-ZZ-tau/A0Z5E-6ACZ0FF1E25/
+/eos/user/w/walterjr/LxplusBackup/Madgraph-Gen-ZZ-tau/A0Z5E-6ACZ0FF1E3/
+/eos/user/w/walterjr/LxplusBackup/Madgraph-Gen-ZZ-tau/A0Z5E-6ACZ0FF5E2/

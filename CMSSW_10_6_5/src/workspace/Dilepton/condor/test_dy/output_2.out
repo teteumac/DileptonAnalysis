@@ -1,0 +1,16 @@
+running
+Accessing dir /eos/user/m/malvesga/miniaod/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/output_dy_2.root:/ggll_miniaod
+Loaded 18964805 pileup events.
+Total number of events: 804555
+Pileup sample increment: 23
+0cortes: 804555
+1cortes: 18041
+2cortes: 17769
+3cortes: 17470
+4cortes: 7919
+5cortes: 7919
+6cortes: 6950
+7cortes: 1359
+8cortes: 11
+(int) 0
+moving file

@@ -1,0 +1,7 @@
+executable              = welcome.sh
+arguments               = $(ProcId)
+output                  = output/welcome_$(ProcId).out
+error                   = error/welcome_$(ProcId).err
+log                     = log/welcome_$(ProcId).log
+
+queue

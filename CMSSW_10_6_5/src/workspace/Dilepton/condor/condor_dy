@@ -1,0 +1,19 @@
+executable = sub_dy.sh
+
+output     = test_dy/output_$(ProcId).out
+error      = test_dy/output_$(ProcId).err
+log        = test_dy/output_$(ProcId).log
+
+getenv     = True
+
+environment = "X509_USER_PROXY=$ENV(HOME)/x509up_u61469"
+
+requirements = (OpSysAndVer =?= "CentOS7")
+
++JobFlavour = "microcentury"
+
+should_transfer_files = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+
+queue arguments from ListOfFiles_dy.txt
+

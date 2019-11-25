@@ -1,0 +1,42 @@
+running
+Accessing dir /eos/user/m/malvesga/miniaod/DoubleMuon/crab_DoubleMuon_Data_2017E/output_dataE_5.root:/ggll_miniaod
+0cortes: 3237605
+1cortes: 46640
+2cortes: 43255
+3cortes: 41510
+4cortes: 19436
+5cortes: 19436
+6cortes: 11436
+7cortes: 1598
+8cortes: 27
+RP3 entries: 0
+RP3 match entries: 0
+RP3 non-match entries: 0
+RP23 entries: 31
+RP23 match entries: 5
+RP23 non-match entries: 26
+Left Single RP entries: 31
+Left Single RP match entries: 5
+Left Single RP non-match entries: 26
+Left Single RP 2 entries: 6
+Left Single RP 2 match entries: 1
+Left Single RP 2 non-match entries: 5
+RP103 entries: 8
+RP103 match entries: 0
+RP103 non-match entries: 8
+RP123 entries: 18
+RP123 match entries: 5
+RP123 non-match entries: 13
+Right Single RP entries: 26
+Right Single RP match entries: 5
+Right Single RP non-match entries: 21
+Right Single RP 2 entries: 5
+Right Single RP 2 match entries: 0
+Right Single RP 2 non-match entries: 5
+Left Multi RP entries: 3
+Left Multi RP match entries: 0
+Left Multi RP non-match entries: 0
+Right Multi RP entries: 1
+Right Multi RP match entries: 0
+Right Multi RP non-match entries: 1
+moving file
