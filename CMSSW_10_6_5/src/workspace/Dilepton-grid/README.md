@@ -4,7 +4,7 @@ Workflow of the analysis.
 
 ## Files
 
-The ntp1 files, generated from using MakeClass on the ntpules of interest, are the files where I'm applying all the selection criteria, filling the histograms and obtaining the main variables for this analysis.
+The ntp1 files, generated from MakeClass on the ntpules of interest, are the files where I'm applying all the selection criteria, filling the histograms and obtaining the main variables for this analysis.
 
 ```
 histos_data , ntp1-miniaod_data.C , ntp1.h
