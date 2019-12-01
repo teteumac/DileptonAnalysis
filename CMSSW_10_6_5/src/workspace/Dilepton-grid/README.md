@@ -2,7 +2,7 @@
 
 Workflow of the analysis.
 
-## ntp1 files
+## Files
 
 The ntp1 files, generated from using MakeClass on the ntpules of interest, are the files where I'm aplying all the selection
 criteria, filling the histograms and obtaining the main variables for this analysis.
@@ -24,6 +24,24 @@ ntp1-miniaod_MC_pileup.C , ntp1_pileup.h
 ```
 
 Used to analyze the background MC ntuples.
+
+```
+pol_function.C
+```
+
+From the gaussian fit using signal MC, draws a first degree polynomial (<!-- \mathbf{k}\sigma \mathbf{j} --> x proton <!-- \mathbf{k}\xi \mathbf{j} -->) using proton resolution information 
+
+
+```
+```
+```
+```
+```
+```
+```
+```
+```
+
 
 ### Prerequisites
 
