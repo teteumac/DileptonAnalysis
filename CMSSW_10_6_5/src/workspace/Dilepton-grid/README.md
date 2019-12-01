@@ -24,7 +24,7 @@ ntp1-miniaod_MC_pileup.C , ntp1_pileup.h
 
 Analyze the background MC ntuples. The output root files are in the *histos_MC* folder.
 
-*PS.: All root files are created using HTCondor, where I run all ntp1 files, use "hadd" method to cluster them and put on these folders. More information on the using of HTCondor on this analysis on condor folder.*
+*PS.: All root files were processed using HTCondor, where I ran all ntp1 files, used "hadd" method to cluster them and put on these folders. More information on the using of HTCondor on this analysis on condor folder.*
 
 ```
 pol_function.C
