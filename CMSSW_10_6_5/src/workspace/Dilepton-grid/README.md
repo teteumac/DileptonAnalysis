@@ -29,7 +29,7 @@ Used to analyze the background MC ntuples.
 pol_function.C
 ```
 
-From the gaussian fit using signal MC, draws a first degree polynomial (<!-- \mathbf{k}\sigma \mathbf{j} --> x proton <!-- \mathbf{k}\xi \mathbf{j} -->) using proton resolution information 
+From the gaussian fit using signal MC, draws a first degree polynomial (![sigma](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di) x proton <!-- \mathbf{k}\xi \mathbf{j} -->) using proton resolution information 
 
 
 ```
