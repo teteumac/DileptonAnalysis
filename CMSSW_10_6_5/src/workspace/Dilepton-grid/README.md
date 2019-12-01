@@ -4,38 +4,46 @@ Workflow of the analysis.
 
 ## Files
 
-The ntp1 files, generated from using MakeClass on the ntpules of interest, are the files where I'm aplying all the selection
-criteria, filling the histograms and obtaining the main variables for this analysis.
+The ntp1 files, generated from using MakeClass on the ntpules of interest, are the files where I'm applying all the selection criteria, filling the histograms and obtaining the main variables for this analysis.
 
 ```
 ntp1-miniaod_data.C , ntp1.h
 ```
 
-Used to analyze the data ntuples.
+Analyze the data ntuples.
 
 ```
 ntp1-miniaod_MC.C , ntp1.h
 ```
 
-Used to analyze the signal MC ntuples.
+Analyze the signal MC ntuples.
 
 ```
 ntp1-miniaod_MC_pileup.C , ntp1_pileup.h
 ```
 
-Used to analyze the background MC ntuples.
+Analyze the background MC ntuples.
 
 ```
 pol_function.C
 ```
 
-From the gaussian fit using signal MC, draws a first degree polynomial (![sigma](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di) x proton <!-- \mathbf{k}\xi \mathbf{j} -->) using proton resolution information 
+From gaussian fit using proton resolution information from signal MC, draws a first degree polynomial (σ x ξ). 
 
+```
+draw_band.py
+```
+
+From the functions generated from pol_function.C and requiring 2σ to consider an event compatible, draws a "matching" band 
+on 2D proton ξ graphs.
 
 ```
+CompHistos_new.C
 ```
-```
-```
+
+Takes all histograms generated from ntp1 files, apply scale factors on MC histograms, put them in the same Canvas using
+THStack method, where filled bars are the MC ones and the dots are data. The output pngs are in comp_new folder.
+
 ```
 ```
 ```
