@@ -13,7 +13,25 @@ On this tutorial I'll use the MC one to explain.*
 (I'll say only *hadoop* for now on).
 
 2. The files that you use to analyze/process the files that you are going to read DON'T NEED to be located at *hadoop*.
-I highly recommend you to keep these files at your */home* folder, because is not so simple to manage files in *hadoop*.  
+I highly recommend you to keep these files at your */home* folder, because is not so simple to manage files in *hadoop*.
+
+3. I have made all *hadoop* management using *xrd* commands, for example: 
+
+```
+xrdfs xrootd.hepgrid.uerj.br rm /cms/store/user/malvesga/(file)
+```
+
+```
+xrdfs xrootd.hepgrid.uerj.br mkdir /cms/store/user/malvesga/(directory)
+```
+
+```
+xrdfs xrootd.hepgrid.uerj.br rmdir /cms/store/user/malvesga/(directory)
+```
+
+```
+xrdcp /home/.../(file) root://xrootd.hepgrid.uerj.br//cms/store/user/malvesga/(file)
+```
 
 So, summarizing, put ntuples, samples, files you want to read at *hadoop* and files you want to execute at */home*.
 
