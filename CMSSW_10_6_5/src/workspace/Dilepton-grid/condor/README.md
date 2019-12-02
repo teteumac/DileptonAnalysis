@@ -56,7 +56,7 @@ interpreter for the file in question when you try to execute it.
 
 5. **root -b -l <<EOS ... EOS** : That is what I want the HTCondor to do for me. Just for a better understading, 
 I open the root client, load my analyzer (that can be located at your */home* folder) and use this run function, 
-where the first "" is the file I want to read (that have to be located at *hadoop*) and the second "" is the output file (that can be located at your */home*).
+where the first "" is the file I want to read (that have to be located at *hadoop*) and the second "" is the output file (that can be located at your */home*). Putting that way, the output files are going to appear in my *condor* folder, at */home*.
 
 ### Submission file
 
