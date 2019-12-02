@@ -115,7 +115,7 @@ do *cmsenv* on the executable file. with that said, obviously you need to run *c
 
 9. **transfer_input_files = ...** : Takes the selected files and transfer to where HTCondor is going to run.
 
-10. **x509userproxy = /tmp/...** : Run in Analysis *id <username>* and copy the *uid* field. Complete *x509userproxy = /tmp/x509up_u<uid>*. Obviously you need to run *voms-proxy-init --voms cms* to use HTCondor.
+10. **x509userproxy = /tmp/...** : Run in Analysis *id (username)* and copy the *uid* field. Complete *x509userproxy = /tmp/x509up_u(uid)*. Obviously you need to run *voms-proxy-init --voms cms* to use HTCondor.
 
 11. **use_x509userproxy = true** : Explicitly asks for the voms-proxy generated file.
 
