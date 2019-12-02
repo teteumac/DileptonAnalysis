@@ -19,8 +19,8 @@ So, summarizing, put ntuples, samples, files you want to read at *hadoop* and fi
 
 ## Executable file 
 
-The executable file is where you want to describe what the HTCondor have to do when you runs it. For example, my 
-*sub_MC.sh* :
+The executable file is where you want to describe what the HTCondor have to do when you runs it. For the example, my 
+*sub_MC.sh* file :
 
 ```
 #!/bin/bash
@@ -46,7 +46,7 @@ where we have:
 1. #!/bin/bash : The shebang is a directive to the loader to use the program which is specified after the #! as the 
 interpreter for the file in question when you try to execute it.
 
-2. file=$1 : This line is going to take the arguments from your file that have the list of files.
+2. file=$1 : This line is going to take the arguments from your file that have the list of files you want to read.
 
 3. echo "..." : Just a command to return me which stage of the executable the HTCondor are in.
 
@@ -58,7 +58,7 @@ where the first "" is the file I want to read (that have to be located at *hadoo
 
 ## Submission file
 
-The submission file is something like this: 
+The submission file is where you are going to set up the HTCondor the way you want. For the example, my *condor_MC* file: 
 
 ```
 executable = sub_MC.sh
@@ -93,21 +93,62 @@ queue arguments from ListOfFiles_MC.txt
 
 where we have : 
 
-1. 
+1. executable = sub_MC.sh : Indicates to the executable you want to run using HTCondor.
 
+2. Universe = grid : Set the HTCondor's universe (it is like the HTCondor's work environment) to grid (default is vanilla).
 
-### Installing
+3. output = test_MC/output_$(ProcId).out : Saves the output text from the execution of the executable file. 
+The $(ProcId) is to save the file with the number of the job that corresponds to that file.
 
-A step by step series of examples that tell you how to get a development env running
+4. error = test_MC/output_$(ProcId).err : Saves the error text from the execution of the executable file if it fails.
 
-Say what the step will be
+5. log = test_MC/output_$(ProcId).log : Saves the log text from the execution.
+
+6. getenv = True : Gets the environment of the actual system and uses it on HTCondor run. That is why you don't need to
+do *cmsenv* on the executable file. with that said, obviously you need to run *cmsenv* on Analysis BEFORE running HTCondor.
+
+7. should_transfer_files = YES : Explicitly enables the file transfer mechanism.
+
+8. when_to_transfer_output = ON_EXIT_OR_EVICT : Tells HTCondor when output files are to be transferred back to the submit machine. For more information about options on 7 or 8 commands, visit https://research.cs.wisc.edu/htcondor/manual/v7.6/2_5Submitting_Job.html.
+
+9. transfer_input_files = ... : Takes the selected files and transfer to where HTCondor is going to run.
+
+10. x509userproxy = /tmp/... : *voms-proxy-init --voms cms* create a proxy file at */tmp/*, something like *x509up_...*
+Take the path to this file and put on this command. Obviously you need to run voms command to use HTCondor.
+
+11. use_x509userproxy = true : Explicitly asks for the voms-proxy generated file.
+
+12. +JobFlavour = "microcentury" : Set the aproximate timestamp that you want to HTCondor to run your jobs. The longer 
+the chosen time, the lower the job priority on server. But, if you put an insufficient timestamp, HTCondor will not end 
+your job properly. More timestamps at https://twiki.cern.ch/twiki/bin/view/ABPComputing/LxbatchHTCondor.
+
+13. grid_resource = condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 : Specifies the remote *condor_schedd* daemon to which the job should be submitted. More information at https://research.cs.wisc.edu/htcondor/manual/v7.6/5_3Grid_Universe.html.
+
+14. all +remote_... : The remote machine needs to understand the attributes of the job. These are specified in the submit description file using the '+' syntax, followed by the string *remote_*.
+
+15. accounting_group... : Individual settings for the one using Analysis.
+
+16. queue arguments from ListOfFiles_MC.txt : Takes the arguments from *ListOfFiles_MC.txt*, my file that lists my files that 
+are going to be read.
+
+## List of files
+
+The list of files is just an ordinary file that have all your files to be read. For the example, my *ListOfFiles_MC.txt* file : 
+
 
 ```
-Give the example
+output_elastic_xangle100.root 
+output_elastic_xangle110.root 
+output_elastic_xangle120.root 
+output_elastic_xangle130.root 
+output_elastic_xangle140.root 
+output_elastic_xangle150.root 
+output_inel-el_xangle100.root 
+output_inel-el_xangle110.root 
+output_inel-el_xangle120.root 
+output_inel-el_xangle130.root 
+output_inel-el_xangle140.root 
+output_inel-el_xangle150.root 
+
 ```
 
-And repeat
-
-```
-until finished
-```
