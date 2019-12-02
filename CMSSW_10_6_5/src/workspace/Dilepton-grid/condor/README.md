@@ -18,19 +18,19 @@ I highly recommend you to keep these files at your */home* folder, because is no
 3. I have made all *hadoop* management using *xrd* commands, for example: 
 
 ```
-xrdfs xrootd.hepgrid.uerj.br rm /cms/store/user/malvesga/(file)
+xrdfs xrootd.hepgrid.uerj.br rm /cms/store/user/(username)/(file)
 ```
 
 ```
-xrdfs xrootd.hepgrid.uerj.br mkdir /cms/store/user/malvesga/(directory)
+xrdfs xrootd.hepgrid.uerj.br mkdir /cms/store/user/(username)/(directory)
 ```
 
 ```
-xrdfs xrootd.hepgrid.uerj.br rmdir /cms/store/user/malvesga/(directory)
+xrdfs xrootd.hepgrid.uerj.br rmdir /cms/store/user/(username)/(directory)
 ```
 
 ```
-xrdcp /home/.../(file) root://xrootd.hepgrid.uerj.br//cms/store/user/malvesga/(file)
+xrdcp /home/.../(file) root://xrootd.hepgrid.uerj.br//cms/store/user/(username)/(file)
 ```
 
 So, summarizing, put ntuples, samples, files you want to read at *hadoop* and files you want to execute at */home*.
