@@ -169,3 +169,11 @@ condor_q
 
 Check all jobs's status.
 
+```
+condor_rm (username) or condor_rm (jobid)
+```
+
+Remove all jobs or remove just selected jobs.
+
+
+**If you have any questions, feel free to talk to me anytime**
