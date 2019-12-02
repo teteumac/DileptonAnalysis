@@ -7,6 +7,16 @@ The last one is optional, but I'll explain everything considering the usage of t
 *PS.: Despite the fact that I have a lot of files in this folder, the majority is just the same file with different options.
 On this tutorial I'll use the MC one to explain.*
 
+## Important things to clarify before we start
+
+1. All your files that you want to read using HTCondor at T2_BR_UERJ HAVE to be located at */mnt/hadoop/cms/store/user/*
+(I'll say only *hadoop* for now on).
+
+2. The files that you use to analyze/process the files that you are going to read DON'T NEED to be located at *hadoop*.
+I highly recommend you to keep these files at your */home* folder, because is not so simple to manage files in *hadoop*.  
+
+So, summarizing, put ntuples, samples, files you want to read at *hadoop* and files you want to execute at */home*.
+
 ## Executable file 
 
 The executable file is where you want to describe what the HTCondor have to do when you runs it. For example, my 
@@ -43,10 +53,8 @@ interpreter for the file in question when you try to execute it.
 4. ls -la $file, ls -la, pwd : Just to confirm that I'm doing everything on the way that I want.
 
 5. root -b -l <<EOS ... EOS : That is what I want the HTCondor to do for me. Just for a better understading, 
-I open the root client with this "<<EOS" option to just close the root client when I put EOS in the end,
-load my analyzer, that can be located at your */home* folder at Analysis and use this run function, 
-where the first "" is the file I want to read (that have to be located at */mnt/hadoop*) and the second "" is the 
-output file (that have to be located at your */home*).
+I open the root client, load my analyzer (that can be located at your */home* folder) and use this run function, 
+where the first "" is the file I want to read (that have to be located at *hadoop*) and the second "" is the output file (that can be located at your */home*).
 
 ## Submission file
 
@@ -82,6 +90,10 @@ accounting_group = group_uerj
 
 queue arguments from ListOfFiles_MC.txt
 ```
+
+where we have : 
+
+1. 
 
 
 ### Installing
