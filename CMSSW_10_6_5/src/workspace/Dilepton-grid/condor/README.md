@@ -107,7 +107,7 @@ The $(ProcId) is to save the file with the number of the job that corresponds to
 5. **log = test_MC/output_$(ProcId).log** : Saves the log text from the execution.
 
 6. **getenv = True** : Gets the environment of the actual system and uses it on HTCondor run. That is why you don't need to
-do *cmsenv* on the executable file. with that said, obviously you need to run *cmsenv* on Analysis BEFORE running HTCondor.
+do *cmsenv* on the executable file. With that said, obviously you need to run *cmsenv* on Analysis BEFORE running HTCondor.
 
 7. **should_transfer_files = YES** : Explicitly enables the file transfer mechanism.
 
