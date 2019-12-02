@@ -9,13 +9,13 @@ On this tutorial I'll use the MC one to explain.*
 
 ## Important things to clarify before we start
 
-1. All your files that you want to read using HTCondor at T2_BR_UERJ HAVE to be located at */mnt/hadoop/cms/store/user/*
+1. All your files that you want to read using HTCondor at T2_BR_UERJ have to be located at */mnt/hadoop/cms/store/user/*
 (I'll say only *hadoop* for now on).
 
-2. The files that you use to analyze/process the files that you are going to read DON'T NEED to be located at *hadoop*.
+2. The files that you use to analyze/process the files that you are going to read dont-t need to be located at *hadoop*.
 I highly recommend you to keep these files at your */home* folder, because is not so simple to manage files in *hadoop*.
 
-3. I have made all *hadoop* management using *xrd* commands, for example: 
+3. I have made all *hadoop* management using *xrd* commands, for example : 
 
 ```
 xrdfs xrootd.hepgrid.uerj.br rm /cms/store/user/(username)/(file)
