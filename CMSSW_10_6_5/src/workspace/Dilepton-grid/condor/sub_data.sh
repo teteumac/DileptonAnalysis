@@ -10,7 +10,7 @@ pwd
 
 echo 'Running'
 root -b -l <<EOS
-.L ntp1-miniaod_data.C
+.L ntp1-miniaod_data.C+
 run("/mnt/hadoop/cms/store/user/malvesga/data_limitRun/$file", "$file")
 .q
 EOS

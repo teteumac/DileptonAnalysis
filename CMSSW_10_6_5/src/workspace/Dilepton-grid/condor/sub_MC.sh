@@ -10,7 +10,7 @@ pwd
 
 echo 'Running'
 root -b -l <<EOS
-.L ntp1-miniaod_MC.C
+.L ntp1-miniaod_MC.C+
 run("/mnt/hadoop/cms/store/user/malvesga/MC_signal/$file", "$file")
 .q
 EOS

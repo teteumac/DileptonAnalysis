@@ -289,8 +289,8 @@ class ntp1 {
       virtual void     Loop();
       virtual Bool_t   Notify();
       virtual void     Show(Long64_t entry = -1);
-};
 
+};
 #endif
 #ifdef ntp1_cxx
 ntp1::ntp1(std::string const& fileName_, std::string const& outfileName_, TTree *tree) : fChain(0), fileName(fileName_), outfileName(outfileName_)

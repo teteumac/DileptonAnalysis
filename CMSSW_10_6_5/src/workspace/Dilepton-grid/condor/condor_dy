@@ -14,7 +14,7 @@ transfer_input_files = /home/malvesga/CMSSW_10_6_5/src/workspace/Dilepton_15_11_
 x509userproxy = /tmp/x509up_u10024
 use_x509userproxy = true
 
-+JobFlavour = "microcentury"
++JobFlavour = "espresso"
 
 grid_resource = condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
 +remote_jobuniverse = 5

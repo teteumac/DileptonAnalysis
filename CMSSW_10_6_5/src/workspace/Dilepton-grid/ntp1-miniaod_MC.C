@@ -14,6 +14,7 @@
 #include <TGraphErrors.h>
 #include <TSpline.h>
 #include <math.h>
+#include <map>
 #include "DataFormats/Math/interface/deltaPhi.h"
 
 #define PI 3.14159265358979323846
@@ -50,8 +51,11 @@ void ntp1::Loop()
    //    fChain->GetEntry(jentry);       //read all branches
    //by  b_branchname->GetEntry(ientry); //read only this branch
    //
+   
    bool match = false;
    unsigned int n_sigmas_xi = 2.;
+   const int nbins = 5;
+   double bins[nbins+1] = {0, 0.025, 0.035, 0.05, 0.1, 0.16};
 
    TH1D *h_PrimVertex_z = new TH1D("h_PrimVertex_z", "PrimVertexCand_z", 100, -25, 25);
    TH1D *h_PrimVertex_dif_muon1 = new TH1D("h_PrimVertex_dif_muon1", "PrimVertexCand_dif_muon1", 100, -0.1, 0.1);
@@ -73,7 +77,7 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *proton_xi_left_rp3 = new TH1D("proton_xi_left_rp3", "#xi Proton Left - RP 3", 10, 0, 0.16);
-   TH1D *proton_xi_left_rp3_match = new TH1D("proton_xi_left_rp3_match", "#xi Proton Left - Matching Events - RP 3", 10, 0, 0.16);
+   TH1D *proton_xi_left_rp3_match = new TH1D("proton_xi_left_rp3_match", "#xi Proton Left - Matching Events - RP 3", nbins, bins);
    TH1D *proton_resolution_left_gen_rp3 = new TH1D("proton_resolution_left_gen_rp3", "#xi Left gen Proton Resolution - RP 3", 20, -.8, .8);
    TH1D *proton_resolution_left_reco_rp3 = new TH1D("proton_resolution_left_reco_rp3", "#xi Left reco Proton Resolution - RP 3", 20, -.8, .8);
    TH1D *pair_xi_left_rp3 = new TH1D("pair_xi_left_rp3", "#xi Pair Left - RP 3", 10, 0, 0.16);
@@ -109,7 +113,7 @@ void ntp1::Loop()
 
    //1 proton
    TH1D *proton_xi_left_rp23 = new TH1D("proton_xi_left_rp23", "#xi Proton Left - RP 23", 10, 0, 0.16);
-   TH1D *proton_xi_left_rp23_match = new TH1D("proton_xi_left_rp23_match", "#xi Proton Left - Matching Events - RP 23", 10, 0, 0.16);
+   TH1D *proton_xi_left_rp23_match = new TH1D("proton_xi_left_rp23_match", "#xi Proton Left - Matching Events - RP 23", nbins, bins);
    TH1D *proton_resolution_left_gen_rp23 = new TH1D("proton_resolution_left_gen_rp23", "#xi Left gen Proton Resolution - RP 23", 20, -.8, .8);
    TH1D *proton_resolution_left_reco_rp23 = new TH1D("proton_resolution_left_reco_rp23", "#xi Left reco Proton Resolution - RP 23", 20, -.8, .8);
    TH1D *pair_xi_left_rp23 = new TH1D("pair_xi_left_rp23", "#xi Pair Left - RP 23", 10, 0, 0.16);
@@ -139,7 +143,7 @@ void ntp1::Loop()
 
    //n protons
    TH1D *proton_xi_left_rp23_nprot = new TH1D("proton_xi_left_rp23_nprot", "#xi Proton Left - RP 23", 10, 0, 0.16);
-   TH1D *proton_xi_left_rp23_nprot_match = new TH1D("proton_xi_left_rp23_nprot_match", "#xi Proton Left - Matching Events - RP 23", 10, 0, 0.16);
+   TH1D *proton_xi_left_rp23_nprot_match = new TH1D("proton_xi_left_rp23_nprot_match", "#xi Proton Left - Matching Events - RP 23", nbins, bins);
    TH1D *proton_resolution_left_gen_rp23_nprot = new TH1D("proton_resolution_left_gen_rp23_nprot", "#xi Left gen Proton Resolution - RP 23", 20, -.8, .8);
    TH1D *proton_resolution_left_reco_rp23_nprot = new TH1D("proton_resolution_left_reco_rp23_nprot", "#xi Left reco Proton Resolution - RP 23", 20, -.8, .8);
    TH1D *pair_xi_left_rp23_nprot = new TH1D("pair_xi_left_rp23_nprot", "#xi Pair Left - RP 23", 10, 0, 0.16);
@@ -206,7 +210,7 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *proton_xi_right_rp103 = new TH1D("proton_xi_right_rp103", "#xi Proton Right - RP 103", 10, 0, 0.16);
-   TH1D *proton_xi_right_rp103_match = new TH1D("proton_xi_right_rp103_match", "#xi Proton Right - Matching Events - RP 103", 10, 0, 0.16);
+   TH1D *proton_xi_right_rp103_match = new TH1D("proton_xi_right_rp103_match", "#xi Proton Right - Matching Events - RP 103", nbins, bins);
    TH1D *proton_resolution_right_gen_rp103 = new TH1D("proton_resolution_right_gen_rp103", "#xi Right gen Proton Resolution - RP 103", 20, -.8, .8);
    TH1D *proton_resolution_right_reco_rp103 = new TH1D("proton_resolution_right_reco_rp103", "#xi Right reco Proton Resolution - RP 103", 20, -.8, .8);
    TH1D *pair_xi_right_rp103 = new TH1D("pair_xi_right_rp103", "#xi Pair Right - RP 103", 10, 0, 0.16);
@@ -242,7 +246,7 @@ void ntp1::Loop()
 
    //1 proton
    TH1D *proton_xi_right_rp123 = new TH1D("proton_xi_right_rp123", "#xi Proton Right - RP 123", 10, 0, 0.16);
-   TH1D *proton_xi_right_rp123_match = new TH1D("proton_xi_right_rp123_match", "#xi Proton Right - Matching Events - RP 123", 10, 0, 0.16);
+   TH1D *proton_xi_right_rp123_match = new TH1D("proton_xi_right_rp123_match", "#xi Proton Right - Matching Events - RP 123", nbins, bins);
    TH1D *proton_resolution_right_gen_rp123 = new TH1D("proton_resolution_right_gen_rp123", "#xi Right gen Proton Resolution - RP 123", 20, -.8, .8);
    TH1D *proton_resolution_right_reco_rp123 = new TH1D("proton_resolution_right_reco_rp123", "#xi Right reco Proton Resolution - RP 123", 20, -.8, .8);
    TH1D *pair_xi_right_rp123 = new TH1D("pair_xi_right_rp123", "#xi Pair Right - RP 123", 10, 0, 0.16);
@@ -272,7 +276,7 @@ void ntp1::Loop()
 
    //n protons
    TH1D *proton_xi_right_rp123_nprot = new TH1D("proton_xi_right_rp123_nprot", "#xi Proton Right - RP 123", 10, 0, 0.16);
-   TH1D *proton_xi_right_rp123_nprot_match = new TH1D("proton_xi_right_rp123_nprot_match", "#xi Proton Right - Matching Events - RP 123", 10, 0, 0.16);
+   TH1D *proton_xi_right_rp123_nprot_match = new TH1D("proton_xi_right_rp123_nprot_match", "#xi Proton Right - Matching Events - RP 123", nbins, bins);
    TH1D *proton_resolution_right_gen_rp123_nprot = new TH1D("proton_resolution_right_gen_rp123_nprot", "#xi Right gen Proton Resolution - RP 123", 20, -.8, .8);
    TH1D *proton_resolution_right_reco_rp123_nprot = new TH1D("proton_resolution_right_reco_rp123_nprot", "#xi Right reco Proton Resolution - RP 123", 20, -.8, .8);
    TH1D *pair_xi_right_rp123_nprot = new TH1D("pair_xi_right_rp123_nprot", "#xi Pair Right - RP 123", 10, 0, 0.16);
@@ -339,7 +343,7 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *proton_xi_left_multi = new TH1D("proton_xi_left_multi", "#xi Proton Left - Multi RP", 10, 0, 0.16);
-   TH1D *proton_xi_left_multi_match = new TH1D("proton_xi_left_multi_match", "#xi Proton Left - Matching Events - Multi RP", 10, 0, 0.16);
+   TH1D *proton_xi_left_multi_match = new TH1D("proton_xi_left_multi_match", "#xi Proton Left - Matching Events - Multi RP", nbins, bins);
    TH1D *proton_resolution_left_gen_multi = new TH1D("proton_resolution_left_gen_multi", "#xi Left gen Proton Resolution - Multi RP", 20, -2, 2);
    TH1D *proton_resolution_left_reco_multi = new TH1D("proton_resolution_left_reco_multi", "#xi Left reco Proton Resolution - Multi RP", 20, -2, 2);
    TH1D *pair_xi_left_multi = new TH1D("pair_xi_left_multi", "#xi Pair Left - Multi RP", 10, 0, 0.16);
@@ -374,7 +378,7 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *proton_xi_right_multi = new TH1D("proton_xi_right_multi", "#xi Proton Right - Multi RP", 10, 0, 0.16);
-   TH1D *proton_xi_right_multi_match = new TH1D("proton_xi_right_multi_match", "#xi Proton Right - Matching Events - Multi RP", 10, 0, 0.16);
+   TH1D *proton_xi_right_multi_match = new TH1D("proton_xi_right_multi_match", "#xi Proton Right - Matching Events - Multi RP", nbins, bins);
    TH1D *proton_resolution_right_gen_multi = new TH1D("proton_resolution_right_gen_multi", "#xi Right gen Proton Resolution - Multi RP", 20, -.2, .2);
    TH1D *proton_resolution_right_reco_multi = new TH1D("proton_resolution_right_reco_multi", "#xi Right reco Proton Resolution - Multi RP", 20, -2, 2);
    TH1D *pair_xi_right_multi = new TH1D("pair_xi_right_multi", "#xi Pair Right - Multi RP", 10, 0, 0.16);
@@ -422,7 +426,8 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *multiplicity_0prot = new TH1D("multiplicity_0prot", "Track Multiplicity 0 proton", 100, 0, 100);
-   TH1D *cut_flow = new TH1D("cut_flow", "Cut Flow", 15, 0, 15);
+   TH1D *cut_flow = new TH1D("cut_flow", "Cut Flow", 9, 0, 9);
+   TH1D *cut_match = new TH1D("cut_match", "Cut Match", 6, 0, 6);
 
    if (fChain == 0) return;
 
@@ -500,6 +505,14 @@ void ntp1::Loop()
       nb = fChain->GetEntry(jentry);   nbytes += nb;
       // if (Cut(ientry) < 0) continue;
       double cont_prot = 0;
+      double B_45_pixel;
+      double C1_45_pixel;
+      double E_45_pixel;
+      double F1_45_pixel;
+      double B_56_pixel;
+      double C1_56_pixel;
+      double E_56_pixel;
+      double F1_56_pixel;
       double L_B = 2.367133065;
       double L_C1 = 5.372685500;
       double L_E = 9.061579666;
@@ -661,6 +674,15 @@ void ntp1::Loop()
 
                               for (unsigned int idx = 0; idx < nRecoProtCand; ++idx ) {
                                  cont_prot++;
+                                 if(ProtCand_trackx1[idx] >= 1.995 && ProtCand_trackx1[idx] <= 24.479 && ProtCand_tracky1[idx] >= -11.098 && ProtCand_tracky1[idx] <= 4.398) B_45_pixel = eff_pixel_rddam_B_45->GetBinContent(eff_pixel_rddam_B_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                 if(ProtCand_trackx1[idx] >= 1.860 && ProtCand_trackx1[idx] <= 24.334 && ProtCand_tracky1[idx] >= -11.098 && ProtCand_tracky1[idx] <= 4.298) C1_45_pixel = eff_pixel_rddam_C1_45->GetBinContent(eff_pixel_rddam_C1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                 if(ProtCand_trackx1[idx] >= 1.995 && ProtCand_trackx1[idx] <= 24.479 && ProtCand_tracky1[idx] >= -10.098 && ProtCand_tracky1[idx] <= 4.998) E_45_pixel = eff_pixel_rddam_E_45->GetBinContent(eff_pixel_rddam_E_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                 if(ProtCand_trackx1[idx] >= 1.995 && ProtCand_trackx1[idx] <= 24.479 && ProtCand_tracky1[idx] >= -10.098 && ProtCand_tracky1[idx] <= 4.998) F1_45_pixel = eff_pixel_rddam_F1_45->GetBinContent(eff_pixel_rddam_F1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                 if(ProtCand_trackx1[idx] >= 2.422 && ProtCand_trackx1[idx] <= 24.620 && ProtCand_tracky1[idx] >= -10.698 && ProtCand_tracky1[idx] <= 4.698) B_56_pixel = eff_pixel_rddam_B_56->GetBinContent(eff_pixel_rddam_B_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                 if(ProtCand_trackx1[idx] >= 2.422 && ProtCand_trackx1[idx] <= 24.620 && ProtCand_tracky1[idx] >= -10.698 && ProtCand_tracky1[idx] <= 4.698) C1_56_pixel = eff_pixel_rddam_C1_56->GetBinContent(eff_pixel_rddam_C1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                 if(ProtCand_trackx1[idx] >= 2.422 && ProtCand_trackx1[idx] <= 24.620 && ProtCand_tracky1[idx] >= -9.698 && ProtCand_tracky1[idx] <= 5.498) E_56_pixel = eff_pixel_rddam_E_56->GetBinContent(eff_pixel_rddam_E_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                 if(ProtCand_trackx1[idx] >= 2.422 && ProtCand_trackx1[idx] <= 24.620 && ProtCand_tracky1[idx] >= -9.798 && ProtCand_tracky1[idx] <= 5.398) F1_56_pixel = eff_pixel_rddam_F1_56->GetBinContent(eff_pixel_rddam_F1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+
                                  if (ProtCand_trackpixshift1[idx] == 0) { 
 
                                     if (ProtCand_rpid[idx] == 3) {
@@ -717,10 +739,10 @@ void ntp1::Loop()
 
                                     if (ProtCand_rpid[idx] == 23) {
                                        if (ProtCand_ismultirp[idx] == 0) {
-                                          double weight_rddam_B = eff_pixel_rddam_B_45->GetBinContent(eff_pixel_rddam_B_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_C1 = eff_pixel_rddam_C1_45->GetBinContent(eff_pixel_rddam_C1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_E = eff_pixel_rddam_E_45->GetBinContent(eff_pixel_rddam_E_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_F1 = eff_pixel_rddam_F1_45->GetBinContent(eff_pixel_rddam_F1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_rddam_B = B_45_pixel;
+                                          double weight_rddam_C1 = C1_45_pixel;
+                                          double weight_rddam_E = E_45_pixel;
+                                          double weight_rddam_F1 = F1_45_pixel;
                                           double weight_rddam = (weight_rddam_B*L_B + weight_rddam_C1*L_C1 + weight_rddam_E*L_E + weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                           proton_xi_left_rp23_nprot->Fill(ProtCand_xi[idx], weight_rddam);
                                           proton_resolution_left_gen_rp23_nprot->Fill((xi_proton_gen_left - ProtCand_xi[idx])/xi_proton_gen_left);
@@ -777,15 +799,15 @@ void ntp1::Loop()
 
                                     if (ProtCand_rpid[idx] == 103) {                           
                                        if (ProtCand_ismultirp[idx] == 0) {
-                                          double weight_rddam_B = eff_strips_rddam_B_45->GetBinContent(eff_strips_rddam_B_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_C1 = eff_strips_rddam_C1_45->GetBinContent(eff_strips_rddam_C1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_E = eff_strips_rddam_E_45->GetBinContent(eff_strips_rddam_E_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_F1 = eff_strips_rddam_F1_45->GetBinContent(eff_strips_rddam_F1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_rddam_B = eff_strips_rddam_B_56->GetBinContent(eff_strips_rddam_B_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_rddam_C1 = eff_strips_rddam_C1_56->GetBinContent(eff_strips_rddam_C1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_rddam_E = eff_strips_rddam_E_56->GetBinContent(eff_strips_rddam_E_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_rddam_F1 = eff_strips_rddam_F1_56->GetBinContent(eff_strips_rddam_F1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
                                           double weight_rddam = (weight_rddam_B*L_B + weight_rddam_C1*L_C1 + weight_rddam_E*L_E + weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
-                                          double weight_multitrack_B = eff_strips_multitrack_B_45->GetBinContent(eff_strips_multitrack_B_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_multitrack_C1 = eff_strips_multitrack_C1_45->GetBinContent(eff_strips_multitrack_C1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_multitrack_E = eff_strips_multitrack_E_45->GetBinContent(eff_strips_multitrack_E_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_multitrack_F1 = eff_strips_multitrack_F1_45->GetBinContent(eff_strips_multitrack_F1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_multitrack_B = eff_strips_multitrack_B_56->GetBinContent(eff_strips_multitrack_B_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_multitrack_C1 = eff_strips_multitrack_C1_56->GetBinContent(eff_strips_multitrack_C1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_multitrack_E = eff_strips_multitrack_E_56->GetBinContent(eff_strips_multitrack_E_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_multitrack_F1 = eff_strips_multitrack_F1_56->GetBinContent(eff_strips_multitrack_F1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
                                           double weight_multitrack = (weight_multitrack_B*L_B + weight_multitrack_C1*L_C1 + weight_multitrack_E*L_E + weight_multitrack_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                           double weight = weight_rddam*weight_multitrack;
                                           proton_xi_right_rp103->Fill(ProtCand_xi[idx], weight);
@@ -829,10 +851,10 @@ void ntp1::Loop()
 
                                     if (ProtCand_rpid[idx] == 123) {
                                        if (ProtCand_ismultirp[idx] == 0) {
-                                          double weight_rddam_B = eff_pixel_rddam_B_45->GetBinContent(eff_pixel_rddam_B_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_C1 = eff_pixel_rddam_C1_45->GetBinContent(eff_pixel_rddam_C1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_E = eff_pixel_rddam_E_45->GetBinContent(eff_pixel_rddam_E_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                          double weight_rddam_F1 = eff_pixel_rddam_F1_45->GetBinContent(eff_pixel_rddam_F1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                          double weight_rddam_B = B_56_pixel;
+                                          double weight_rddam_C1 = C1_56_pixel;
+                                          double weight_rddam_E = E_56_pixel;
+                                          double weight_rddam_F1 = F1_56_pixel;
                                           double weight_rddam = (weight_rddam_B*L_B + weight_rddam_C1*L_C1 + weight_rddam_E*L_E + weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                           proton_xi_right_rp123_nprot->Fill(ProtCand_xi[idx], weight_rddam);
                                           proton_resolution_right_gen_rp123_nprot->Fill((xi_proton_gen_right - ProtCand_xi[idx])/xi_proton_gen_right);
@@ -890,10 +912,10 @@ void ntp1::Loop()
                                     if (ProtCand_trackpixshift2[idx] == 0) { 
                                        if (ProtCand_arm[idx] == 0) {
                                           if (ProtCand_ismultirp[idx] == 1) {
-                                             double pixel_weight_rddam_B = eff_pixel_rddam_B_45->GetBinContent(eff_pixel_rddam_B_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                             double pixel_weight_rddam_C1 = eff_pixel_rddam_C1_45->GetBinContent(eff_pixel_rddam_C1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                             double pixel_weight_rddam_E = eff_pixel_rddam_E_45->GetBinContent(eff_pixel_rddam_E_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                             double pixel_weight_rddam_F1 = eff_pixel_rddam_F1_45->GetBinContent(eff_pixel_rddam_F1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                             double pixel_weight_rddam_B = B_45_pixel;
+                                             double pixel_weight_rddam_C1 = C1_45_pixel;
+                                             double pixel_weight_rddam_E = E_45_pixel;
+                                             double pixel_weight_rddam_F1 = F1_45_pixel;
                                              double pixel_weight_rddam = (pixel_weight_rddam_B*L_B + pixel_weight_rddam_C1*L_C1 + pixel_weight_rddam_E*L_E + pixel_weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                              double strips_weight_rddam_B = eff_strips_rddam_B_45->GetBinContent(eff_strips_rddam_B_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
                                              double strips_weight_rddam_C1 = eff_strips_rddam_C1_45->GetBinContent(eff_strips_rddam_C1_45->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
@@ -948,10 +970,10 @@ void ntp1::Loop()
 
                                        if (ProtCand_arm[idx] == 1) {                           
                                           if (ProtCand_ismultirp[idx] == 1) {
-                                             double pixel_weight_rddam_B = eff_pixel_rddam_B_56->GetBinContent(eff_pixel_rddam_B_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                             double pixel_weight_rddam_C1 = eff_pixel_rddam_C1_56->GetBinContent(eff_pixel_rddam_C1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                             double pixel_weight_rddam_E = eff_pixel_rddam_E_56->GetBinContent(eff_pixel_rddam_E_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
-                                             double pixel_weight_rddam_F1 = eff_pixel_rddam_F1_56->GetBinContent(eff_pixel_rddam_F1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
+                                             double pixel_weight_rddam_B = B_56_pixel;
+                                             double pixel_weight_rddam_C1 = C1_56_pixel;
+                                             double pixel_weight_rddam_E = E_56_pixel;
+                                             double pixel_weight_rddam_F1 = F1_56_pixel;
                                              double pixel_weight_rddam = (pixel_weight_rddam_B*L_B + pixel_weight_rddam_C1*L_C1 + pixel_weight_rddam_E*L_E + pixel_weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                              double strips_weight_rddam_B = eff_strips_rddam_B_56->GetBinContent(eff_strips_rddam_B_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
                                              double strips_weight_rddam_C1 = eff_strips_rddam_C1_56->GetBinContent(eff_strips_rddam_C1_56->FindBin(ProtCand_trackx1[idx], ProtCand_tracky1[idx]));
@@ -1006,12 +1028,20 @@ void ntp1::Loop()
                                     }
                                  }
                               }
+                              if(single_rp23_trackx1 >= 1.995 && single_rp23_trackx1 <= 24.479 && single_rp23_tracky1 >= -11.098 && single_rp23_tracky1 <= 4.398) B_45_pixel = eff_pixel_rddam_B_45->GetBinContent(eff_pixel_rddam_B_45->FindBin(single_rp23_trackx1, single_rp23_tracky1));
+                              if(single_rp23_trackx1 >= 1.860 && single_rp23_trackx1 <= 24.334 && single_rp23_tracky1 >= -11.098 && single_rp23_tracky1 <= 4.298) C1_45_pixel = eff_pixel_rddam_C1_45->GetBinContent(eff_pixel_rddam_C1_45->FindBin(single_rp23_trackx1, single_rp23_tracky1));
+                              if(single_rp23_trackx1 >= 1.995 && single_rp23_trackx1 <= 24.479 && single_rp23_tracky1 >= -10.098 && single_rp23_tracky1 <= 4.998) E_45_pixel = eff_pixel_rddam_E_45->GetBinContent(eff_pixel_rddam_E_45->FindBin(single_rp23_trackx1, single_rp23_tracky1));
+                              if(single_rp23_trackx1 >= 1.995 && single_rp23_trackx1 <= 24.479 && single_rp23_tracky1 >= -10.098 && single_rp23_tracky1 <= 4.998) F1_45_pixel = eff_pixel_rddam_F1_45->GetBinContent(eff_pixel_rddam_F1_45->FindBin(single_rp23_trackx1, single_rp23_tracky1));
+                              if(single_rp123_trackx1 >= 2.422 && single_rp123_trackx1 <= 24.620 && single_rp123_tracky1 >= -10.698 && single_rp123_tracky1 <= 4.698) B_56_pixel = eff_pixel_rddam_B_56->GetBinContent(eff_pixel_rddam_B_56->FindBin(single_rp123_trackx1, single_rp123_tracky1));
+                              if(single_rp123_trackx1 >= 2.422 && single_rp123_trackx1 <= 24.620 && single_rp123_tracky1 >= -10.698 && single_rp123_tracky1 <= 4.698) C1_56_pixel = eff_pixel_rddam_C1_56->GetBinContent(eff_pixel_rddam_C1_56->FindBin(single_rp123_trackx1, single_rp123_tracky1));
+                              if(single_rp123_trackx1 >= 2.422 && single_rp123_trackx1 <= 24.620 && single_rp123_tracky1 >= -9.698 && single_rp123_tracky1 <= 5.498) E_56_pixel = eff_pixel_rddam_E_56->GetBinContent(eff_pixel_rddam_E_56->FindBin(single_rp123_trackx1, single_rp123_tracky1));
+                              if(single_rp123_trackx1 >= 2.422 && single_rp123_trackx1 <= 24.620 && single_rp123_tracky1 >= -9.798 && single_rp123_tracky1 <= 5.398) F1_56_pixel = eff_pixel_rddam_F1_56->GetBinContent(eff_pixel_rddam_F1_56->FindBin(single_rp123_trackx1, single_rp123_tracky1));
 
                               if (cont_single_rp23==1 && single_rp23_xi > 0){
-                                 double weight_rddam_B = eff_pixel_rddam_B_45->GetBinContent(eff_pixel_rddam_B_45->FindBin(single_rp23_trackx1, single_rp23_tracky1));
-                                 double weight_rddam_C1 = eff_pixel_rddam_C1_45->GetBinContent(eff_pixel_rddam_C1_45->FindBin(single_rp23_trackx1, single_rp23_tracky1));
-                                 double weight_rddam_E = eff_pixel_rddam_E_45->GetBinContent(eff_pixel_rddam_E_45->FindBin(single_rp23_trackx1, single_rp23_tracky1));
-                                 double weight_rddam_F1 = eff_pixel_rddam_F1_45->GetBinContent(eff_pixel_rddam_F1_45->FindBin(single_rp23_trackx1, single_rp23_tracky1));
+                                 double weight_rddam_B = B_45_pixel;
+                                 double weight_rddam_C1 = C1_45_pixel;
+                                 double weight_rddam_E = E_45_pixel;
+                                 double weight_rddam_F1 = F1_45_pixel;
                                  double weight_rddam = (weight_rddam_B*L_B + weight_rddam_C1*L_C1 + weight_rddam_E*L_E + weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                  double weight = weight_rddam*eff_1prot_rp23;
                                  proton_xi_left_rp23->Fill(single_rp23_xi, weight);
@@ -1054,10 +1084,10 @@ void ntp1::Loop()
                                  single_left_xi = single_rp23_xi;
                                  single_left_trackx1 = single_rp23_trackx1;
                                  single_left_tracky1 = single_rp23_tracky1;
-                                 double weight_rddam_B = eff_pixel_rddam_B_45->GetBinContent(eff_pixel_rddam_B_45->FindBin(single_left_trackx1, single_left_tracky1));
-                                 double weight_rddam_C1 = eff_pixel_rddam_C1_45->GetBinContent(eff_pixel_rddam_C1_45->FindBin(single_left_trackx1, single_left_tracky1));
-                                 double weight_rddam_E = eff_pixel_rddam_E_45->GetBinContent(eff_pixel_rddam_E_45->FindBin(single_left_trackx1, single_left_tracky1));
-                                 double weight_rddam_F1 = eff_pixel_rddam_F1_45->GetBinContent(eff_pixel_rddam_F1_45->FindBin(single_left_trackx1, single_left_tracky1));
+                                 double weight_rddam_B = B_45_pixel;
+                                 double weight_rddam_C1 = C1_45_pixel;
+                                 double weight_rddam_E = E_45_pixel;
+                                 double weight_rddam_F1 = F1_45_pixel;
                                  double weight_rddam = (weight_rddam_B*L_B + weight_rddam_C1*L_C1 + weight_rddam_E*L_E + weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                  double weight = weight_rddam*eff_1prot_rp23;
                                  proton_xi_left_single->Fill(single_left_xi, weight);
@@ -1139,10 +1169,10 @@ void ntp1::Loop()
                               }
 
                               if (cont_single_rp123==1 && single_rp123_xi > 0){
-                                 double weight_rddam_B = eff_pixel_rddam_B_56->GetBinContent(eff_pixel_rddam_B_56->FindBin(single_rp123_trackx1, single_rp123_tracky1));
-                                 double weight_rddam_C1 = eff_pixel_rddam_C1_56->GetBinContent(eff_pixel_rddam_C1_56->FindBin(single_rp123_trackx1, single_rp123_tracky1));
-                                 double weight_rddam_E = eff_pixel_rddam_E_56->GetBinContent(eff_pixel_rddam_E_56->FindBin(single_rp123_trackx1, single_rp123_tracky1));
-                                 double weight_rddam_F1 = eff_pixel_rddam_F1_56->GetBinContent(eff_pixel_rddam_F1_56->FindBin(single_rp123_trackx1, single_rp123_tracky1));
+                                 double weight_rddam_B = B_56_pixel;
+                                 double weight_rddam_C1 = C1_56_pixel;
+                                 double weight_rddam_E = E_56_pixel;
+                                 double weight_rddam_F1 = F1_56_pixel;
                                  double weight_rddam = (weight_rddam_B*L_B + weight_rddam_C1*L_C1 + weight_rddam_E*L_E + weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                  double weight = weight_rddam*eff_1prot_rp123;
                                  proton_xi_right_rp123->Fill(single_rp123_xi, weight);
@@ -1185,10 +1215,10 @@ void ntp1::Loop()
                                  single_right_xi = single_rp123_xi;
                                  single_right_trackx1 = single_rp123_trackx1;
                                  single_right_tracky1 = single_rp123_tracky1;
-                                 double weight_rddam_B = eff_pixel_rddam_B_56->GetBinContent(eff_pixel_rddam_B_56->FindBin(single_right_trackx1, single_right_tracky1));
-                                 double weight_rddam_C1 = eff_pixel_rddam_C1_56->GetBinContent(eff_pixel_rddam_C1_56->FindBin(single_right_trackx1, single_right_tracky1));
-                                 double weight_rddam_E = eff_pixel_rddam_E_56->GetBinContent(eff_pixel_rddam_E_56->FindBin(single_right_trackx1, single_right_tracky1));
-                                 double weight_rddam_F1 = eff_pixel_rddam_F1_56->GetBinContent(eff_pixel_rddam_F1_56->FindBin(single_right_trackx1, single_right_tracky1));
+                                 double weight_rddam_B = B_56_pixel;
+                                 double weight_rddam_C1 = C1_56_pixel;
+                                 double weight_rddam_E = E_56_pixel;
+                                 double weight_rddam_F1 = F1_56_pixel;
                                  double weight_rddam = (weight_rddam_B*L_B + weight_rddam_C1*L_C1 + weight_rddam_E*L_E + weight_rddam_F1*L_F1)/(L_B+L_C1+L_E+L_F1);
                                  double weight = weight_rddam*eff_1prot_rp123;
                                  proton_xi_right_single->Fill(single_right_xi, weight);
@@ -1535,23 +1565,24 @@ void ntp1::Loop()
    cut_flow->SetBinContent(9, oitocortes);
    cut_flow->GetXaxis()->SetBinLabel(9, "extra tracks");
    cout << "corte_match_rp23_nprot: " << corte_match_rp23_nprot << endl;
-   cut_flow->SetBinContent(10, corte_match_rp23_nprot);
-   cut_flow->GetXaxis()->SetBinLabel(10, "match rp23 nprot");
+   
+   cut_match->SetBinContent(1, corte_match_rp23_nprot);
+   cut_match->GetXaxis()->SetBinLabel(1, "match rp23 nprot");
    cout << "corte_match_rp23_1prot: " << corte_match_rp23_1prot << endl;
-   cut_flow->SetBinContent(11, corte_match_rp23_1prot);
-   cut_flow->GetXaxis()->SetBinLabel(11, "match rp23 1prot");
+   cut_match->SetBinContent(2, corte_match_rp23_1prot);
+   cut_match->GetXaxis()->SetBinLabel(2, "match rp23 1prot");
    cout << "corte_match_rp123_nprot: " << corte_match_rp123_nprot << endl;
-   cut_flow->SetBinContent(12, corte_match_rp123_nprot);
-   cut_flow->GetXaxis()->SetBinLabel(12, "match rp123 nprot");
+   cut_match->SetBinContent(3, corte_match_rp123_nprot);
+   cut_match->GetXaxis()->SetBinLabel(3, "match rp123 nprot");
    cout << "corte_match_rp123_1prot: " << corte_match_rp123_1prot << endl;
-   cut_flow->SetBinContent(13, corte_match_rp123_1prot);
-   cut_flow->GetXaxis()->SetBinLabel(13, "match rp123 1prot");
+   cut_match->SetBinContent(4, corte_match_rp123_1prot);
+   cut_match->GetXaxis()->SetBinLabel(4, "match rp123 1prot");
    cout << "corte_match_left_multi: " << corte_match_left_multi << endl;
-   cut_flow->SetBinContent(14, corte_match_left_multi);
-   cut_flow->GetXaxis()->SetBinLabel(14, "match left multi");
+   cut_match->SetBinContent(5, corte_match_left_multi);
+   cut_match->GetXaxis()->SetBinLabel(5, "match left multi");
    cout << "corte_match_right_multi: " << corte_match_right_multi << endl;
-   cut_flow->SetBinContent(15, corte_match_right_multi);
-   cut_flow->GetXaxis()->SetBinLabel(15, "match right multi");
+   cut_match->SetBinContent(6, corte_match_right_multi);
+   cut_match->GetXaxis()->SetBinLabel(6, "match right multi");
 
    Int_t n = 4;
 
@@ -1928,6 +1959,7 @@ void ntp1::Loop()
 
    multiplicity_0prot->Write();
    cut_flow->Write();
+   cut_match->Write();
 
    f->Close();
 

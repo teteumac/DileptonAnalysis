@@ -53,6 +53,8 @@ void ntp1::Loop()
 
    bool match = false;
    unsigned int n_sigmas_xi = 2.;
+   const int nbins = 5;
+   double bins[nbins+1] = {0, 0.025, 0.035, 0.05, 0.1, 0.16};
 
    TH1D *h_crossing_angle = new TH1D("h_crossing_angle", "CrossingAngle", 70, 90, 160);
 
@@ -71,7 +73,7 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *proton_xi_left_rp3 = new TH1D("proton_xi_left_rp3", "#xi Proton Left - RP 3", 10, 0, 0.16);
-   TH1D *proton_xi_left_rp3_match = new TH1D("proton_xi_left_rp3_match", "#xi Proton Left - Matching Events - RP 3", 10, 0, 0.16);
+   TH1D *proton_xi_left_rp3_match = new TH1D("proton_xi_left_rp3_match", "#xi Proton Left - Matching Events - RP 3", nbins, bins);
    TH1D *pair_xi_left_rp3 = new TH1D("pair_xi_left_rp3", "#xi Pair Left - RP 3", 10, 0, 0.16);
    TH2D *xi_left_reco_rp3 = new TH2D("xi_left_reco_rp3", "#xi Left Correlation - RP 3", 20, 0, 0.16, 20, 0, 0.16); 
    TGraph *g_xi_left_reco_rp3 = new TGraph();
@@ -100,7 +102,7 @@ void ntp1::Loop()
    
    //1 proton
    TH1D *proton_xi_left_rp23 = new TH1D("proton_xi_left_rp23", "#xi Proton Left - RP 23", 10, 0, 0.16);
-   TH1D *proton_xi_left_rp23_match = new TH1D("proton_xi_left_rp23_match", "#xi Proton Left - Match - RP 23", 10, 0, 0.16);
+   TH1D *proton_xi_left_rp23_match = new TH1D("proton_xi_left_rp23_match", "#xi Proton Left - Match - RP 23", nbins, bins);
    TH1D *pair_xi_left_rp23 = new TH1D("pair_xi_left_rp23", "#xi Pair Left - RP 23", 10, 0, 0.16);
    TH2D *xi_left_reco_rp23 = new TH2D("xi_left_reco_rp23", "#xi Left Correlation - RP 23", 20, 0, 0.16, 20, 0, 0.16); 
    TGraph *g_xi_left_reco_rp23 = new TGraph(); 
@@ -123,7 +125,7 @@ void ntp1::Loop()
    
    //n protons
    TH1D *proton_xi_left_rp23_nprot = new TH1D("proton_xi_left_rp23_nprot", "#xi Proton Left - RP 23", 10, 0, 0.16);
-   TH1D *proton_xi_left_rp23_nprot_match = new TH1D("proton_xi_left_rp23_nprot_match", "#xi Proton Left - Match - RP 23", 10, 0, 0.16);
+   TH1D *proton_xi_left_rp23_nprot_match = new TH1D("proton_xi_left_rp23_nprot_match", "#xi Proton Left - Match - RP 23", nbins, bins);
    TH1D *pair_xi_left_rp23_nprot = new TH1D("pair_xi_left_rp23_nprot", "#xi Pair Left - RP 23", 10, 0, 0.16);
    TH2D *xi_left_reco_rp23_nprot = new TH2D("xi_left_reco_rp23_nprot", "#xi Left Correlation - RP 23", 20, 0, 0.16, 20, 0, 0.16); 
    TGraph *g_xi_left_reco_rp23_nprot = new TGraph(); 
@@ -176,7 +178,7 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *proton_xi_right_rp103 = new TH1D("proton_xi_right_rp103", "#xi Proton Right - RP 103", 10, 0, 0.16);
-   TH1D *proton_xi_right_rp103_match = new TH1D("proton_xi_right_rp103_match", "#xi Proton Right - Matching Events - RP 103", 10, 0, 0.16);
+   TH1D *proton_xi_right_rp103_match = new TH1D("proton_xi_right_rp103_match", "#xi Proton Right - Matching Events - RP 103", nbins, bins);
    TH1D *pair_xi_right_rp103 = new TH1D("pair_xi_right_rp103", "#xi Pair Right - RP 103", 10, 0, 0.16);
    TH2D *xi_right_reco_rp103 = new TH2D("xi_right_reco_rp103", "#xi Right Correlation - RP 103", 20, 0, 0.16, 20, 0, 0.16); 
    TGraph *g_xi_right_reco_rp103 = new TGraph();
@@ -205,7 +207,7 @@ void ntp1::Loop()
    
    //1 proton
    TH1D *proton_xi_right_rp123 = new TH1D("proton_xi_right_rp123", "#xi Proton Right - RP 123", 10, 0, 0.16);
-   TH1D *proton_xi_right_rp123_match = new TH1D("proton_xi_right_rp123_match", "#xi Proton Right - Match - RP 123", 10, 0, 0.16);
+   TH1D *proton_xi_right_rp123_match = new TH1D("proton_xi_right_rp123_match", "#xi Proton Right - Match - RP 123", nbins, bins);
    TH1D *pair_xi_right_rp123 = new TH1D("pair_xi_right_rp123", "#xi Pair Right - RP 123", 10, 0, 0.16);
    TH2D *xi_right_reco_rp123 = new TH2D("xi_right_reco_rp123", "#xi Right Correlation - RP 123", 20, 0, 0.16, 20, 0, 0.16); 
    TGraph *g_xi_right_reco_rp123 = new TGraph(); 
@@ -228,7 +230,7 @@ void ntp1::Loop()
    
    //n protons
    TH1D *proton_xi_right_rp123_nprot = new TH1D("proton_xi_right_rp123_nprot", "#xi Proton Right - RP 123", 10, 0, 0.16);
-   TH1D *proton_xi_right_rp123_nprot_match = new TH1D("proton_xi_right_rp123_nprot_match", "#xi Proton Right - Match - RP 123", 10, 0, 0.16);
+   TH1D *proton_xi_right_rp123_nprot_match = new TH1D("proton_xi_right_rp123_nprot_match", "#xi Proton Right - Match - RP 123", nbins, bins);
    TH1D *pair_xi_right_rp123_nprot = new TH1D("pair_xi_right_rp123_nprot", "#xi Pair Right - RP 123", 10, 0, 0.16);
    TH2D *xi_right_reco_rp123_nprot = new TH2D("xi_right_reco_rp123_nprot", "#xi Right Correlation - RP 123", 20, 0, 0.16, 20, 0, 0.16); 
    TGraph *g_xi_right_reco_rp123_nprot = new TGraph(); 
@@ -281,7 +283,7 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *proton_xi_left_multi = new TH1D("proton_xi_left_multi", "#xi Proton Left - Multi RP", 10, 0, 0.16);
-   TH1D *proton_xi_left_multi_match = new TH1D("proton_xi_left_multi_match", "#xi Proton Left - Match - Multi RP", 10, 0, 0.16);
+   TH1D *proton_xi_left_multi_match = new TH1D("proton_xi_left_multi_match", "#xi Proton Left - Match - Multi RP", nbins, bins);
    TH1D *pair_xi_left_multi = new TH1D("pair_xi_left_multi", "#xi Pair Left - Multi RP", 10, 0, 0.16);
    TH2D *xi_left_reco_multi = new TH2D("xi_left_reco_multi", "#xi Left Correlation - Multi RP", 20, 0, 0.16, 20, 0, 0.16); 	
    TGraph *g_xi_left_reco_multi = new TGraph(); 
@@ -309,7 +311,7 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    
    TH1D *proton_xi_right_multi = new TH1D("proton_xi_right_multi", "#xi Proton Right - Multi RP", 10, 0, 0.16);
-   TH1D *proton_xi_right_multi_match = new TH1D("proton_xi_right_multi_match", "#xi Proton Right - Match - Multi RP", 10, 0, 0.16);
+   TH1D *proton_xi_right_multi_match = new TH1D("proton_xi_right_multi_match", "#xi Proton Right - Match - Multi RP", nbins, bins);
    TH1D *pair_xi_right_multi = new TH1D("pair_xi_right_multi", "#xi Pair Right - Multi RP", 10, 0, 0.16);
    TH2D *xi_right_reco_multi = new TH2D("xi_right_reco_multi", "#xi Right Correlation - Multi RP", 20, 0, 0.16, 20, 0, 0.16); 	
    TGraph *g_xi_right_reco_multi = new TGraph(); 
@@ -335,7 +337,8 @@ void ntp1::Loop()
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    TH1D *multiplicity_0prot = new TH1D("multiplicity_0prot", "Track Multiplicity 0 proton", 100, 0, 100);
-   TH1D *cut_flow = new TH1D("cut_flow", "Cut Flow", 15, 0, 15);
+   TH1D *cut_flow = new TH1D("cut_flow", "Cut Flow", 9, 0, 9);
+   TH1D *cut_match = new TH1D("cut_match", "Cut Match", 6, 0, 6);
 
    if (fChain == 0) return;
 
@@ -849,23 +852,24 @@ void ntp1::Loop()
    cut_flow->SetBinContent(9, oitocortes);
    cut_flow->GetXaxis()->SetBinLabel(9, "extra tracks");
    cout << "corte_match_rp23_nprot: " << corte_match_rp23_nprot << endl;
-   cut_flow->SetBinContent(10, corte_match_rp23_nprot);
-   cut_flow->GetXaxis()->SetBinLabel(10, "match rp23 nprot");
+
+   cut_match->SetBinContent(1, corte_match_rp23_nprot);
+   cut_match->GetXaxis()->SetBinLabel(1, "match rp23 nprot");
    cout << "corte_match_rp23_1prot: " << corte_match_rp23_1prot << endl;
-   cut_flow->SetBinContent(11, corte_match_rp23_1prot);
-   cut_flow->GetXaxis()->SetBinLabel(11, "match rp23 1prot");
+   cut_match->SetBinContent(2, corte_match_rp23_1prot);
+   cut_match->GetXaxis()->SetBinLabel(2, "match rp23 1prot");
    cout << "corte_match_rp123_nprot: " << corte_match_rp123_nprot << endl;
-   cut_flow->SetBinContent(12, corte_match_rp123_nprot);
-   cut_flow->GetXaxis()->SetBinLabel(12, "match rp123 nprot");
+   cut_match->SetBinContent(3, corte_match_rp123_nprot);
+   cut_match->GetXaxis()->SetBinLabel(3, "match rp123 nprot");
    cout << "corte_match_rp123_1prot: " << corte_match_rp123_1prot << endl;
-   cut_flow->SetBinContent(13, corte_match_rp123_1prot);
-   cut_flow->GetXaxis()->SetBinLabel(13, "match rp123 1prot");
+   cut_match->SetBinContent(4, corte_match_rp123_1prot);
+   cut_match->GetXaxis()->SetBinLabel(4, "match rp123 1prot");
    cout << "corte_match_left_multi: " << corte_match_left_multi << endl;
-   cut_flow->SetBinContent(14, corte_match_left_multi);
-   cut_flow->GetXaxis()->SetBinLabel(14, "match left multi");
+   cut_match->SetBinContent(5, corte_match_left_multi);
+   cut_match->GetXaxis()->SetBinLabel(5, "match left multi");
    cout << "corte_match_right_multi: " << corte_match_right_multi << endl;
-   cut_flow->SetBinContent(15, corte_match_right_multi);
-   cut_flow->GetXaxis()->SetBinLabel(15, "match right multi");
+   cut_match->SetBinContent(6, corte_match_right_multi);
+   cut_match->GetXaxis()->SetBinLabel(6, "match right multi");
 
    if(cont_event_rp23_1prot > 0) {
       cout << "Razao pelo menos 1 proton - rp23: " << cont_event_rp23_1prot/cont_total << endl;
@@ -1031,6 +1035,7 @@ void ntp1::Loop()
 
    multiplicity_0prot->Write();
    cut_flow->Write();
+   cut_match->Write();
    f->Close();
 
 }
