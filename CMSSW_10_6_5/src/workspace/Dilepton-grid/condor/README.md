@@ -15,23 +15,7 @@ On this tutorial I'll use the MC one to explain.*
 2. The files that you use to analyze/process the files that you are going to read don't need to be located at *hadoop*.
 I highly recommend you to keep these files at your */home* folder, because is not so simple to manage files in *hadoop*.
 
-3. I have made all *hadoop* management using *xrd* commands, for example : 
-
-```
-xrdfs xrootd.hepgrid.uerj.br rm /cms/store/user/(username)/(file)
-```
-
-```
-xrdfs xrootd.hepgrid.uerj.br mkdir /cms/store/user/(username)/(directory)
-```
-
-```
-xrdfs xrootd.hepgrid.uerj.br rmdir /cms/store/user/(username)/(directory)
-```
-
-```
-xrdcp /home/.../(file) root://xrootd.hepgrid.uerj.br//cms/store/user/(username)/(file)
-```
+3. I have made all *hadoop* management using *xrd* and *gfal* commands (session 2 of https://docs.google.com/document/d/1w_PWWS-05BODuxkyS7BQZCbk25DC1NlG13RXXzbSQqM/edit). Always use *gfal* commands before doing *cmsenv*, because *cmsenv* changes the paths of some libraries and make *gfal* not work properly.
 
 So, summarizing, put ntuples, samples, files you want to read at *hadoop* and files you want to execute at */home*.
 
