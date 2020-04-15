@@ -1,0 +1,207 @@
+ls: cannot access output_dataC_0_limitRun.root: No such file or directory
+Error in <TTree::SetBranchAddress>: unknown branch -> nGenMuonCand
+Error in <TTree::SetBranchAddress>: unknown branch -> nGenMuonCandOutOfAccept
+Error in <TTree::SetBranchAddress>: unknown branch -> GenMuonCand_pt
+Error in <TTree::SetBranchAddress>: unknown branch -> GenMuonCand_eta
+Error in <TTree::SetBranchAddress>: unknown branch -> GenMuonCand_phi
+Error in <TTree::SetBranchAddress>: unknown branch -> GenMuonCand_e
+Error in <TTree::SetBranchAddress>: unknown branch -> nGenProtCand
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_pt
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_eta
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_phi
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_e
+Error in <TTree::SetBranchAddress>: unknown branch -> GenProtCand_status
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_mass
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_pt
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_eta
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_phi
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_dpt
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_dphi
+Error in <TTree::SetBranchAddress>: unknown branch -> GenPair_3Dangle
+
+ *** Break *** segmentation violation
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00002b53c182bbbc in waitpid () from /lib64/libc.so.6
+#1  0x00002b53c17a9ea2 in do_system () from /lib64/libc.so.6
+#2  0x00002b53c110156d in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCore.so
+#3  0x00002b53c1103e14 in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCore.so
+#4  <signal handler called>
+#5  0x00002b53cff2740c in ?? ()
+#6  0x3f88947ae0000000 in ?? ()
+#7  0x3fa1e147a0000000 in ?? ()
+#8  0xbf7f333340000000 in ?? ()
+#9  0xbf92947ae0000000 in ?? ()
+#10 0xbf1ed1eb80000000 in ?? ()
+#11 0xbf91e66660000000 in ?? ()
+#12 0x3f5d6147a0000000 in ?? ()
+#13 0xbf891eb860000000 in ?? ()
+#14 0xbf829c2900000000 in ?? ()
+#15 0x3fbf147ae0000000 in ?? ()
+#16 0xbf8c000000000000 in ?? ()
+#17 0xbfb4d1eb80000000 in ?? ()
+#18 0x3f72e3d700000000 in ?? ()
+#19 0xbfa53d70a0000000 in ?? ()
+#20 0x3f9dd1eb80000000 in ?? ()
+#21 0xbf8628f5c0000000 in ?? ()
+#22 0xbf6eae1480000000 in ?? ()
+#23 0xbf7ed1eb80000000 in ?? ()
+#24 0x3f5ef0a3e0000000 in ?? ()
+#25 0xbf497ae140000000 in ?? ()
+#26 0x3f7b9999a0000000 in ?? ()
+#27 0x3f992e1480000000 in ?? ()
+#28 0xbfaa666660000000 in ?? ()
+#29 0xbf9d9eb860000000 in ?? ()
+#30 0xbf8bf5c280000000 in ?? ()
+#31 0xbfc623d700000000 in ?? ()
+#32 0x3f99ae1480000000 in ?? ()
+#33 0x3f8feb8520000000 in ?? ()
+#34 0x3f8f1eb860000000 in ?? ()
+#35 0x3fa0d70a40000000 in ?? ()
+#36 0xbf904f5c20000000 in ?? ()
+#37 0xbf913851e0000000 in ?? ()
+#38 0xbf89bd70a0000000 in ?? ()
+#39 0xbfb10a3d80000000 in ?? ()
+#40 0xbf818a3d80000000 in ?? ()
+#41 0xbf8f9eb860000000 in ?? ()
+#42 0x3fa5a3d700000000 in ?? ()
+#43 0xbfb96b8520000000 in ?? ()
+#44 0xbf97947ae0000000 in ?? ()
+#45 0x3f7dae1480000000 in ?? ()
+#46 0xbfae6147a0000000 in ?? ()
+#47 0x3f964cccc0000000 in ?? ()
+#48 0xbf8bf5c280000000 in ?? ()
+#49 0x3f6d800000000000 in ?? ()
+#50 0x3fc0947ae0000000 in ?? ()
+#51 0xbfb0e147a0000000 in ?? ()
+#52 0x3f7b8f5c20000000 in ?? ()
+#53 0x3fa14a3d80000000 in ?? ()
+#54 0x3f9be147a0000000 in ?? ()
+#55 0xbfc93851e0000000 in ?? ()
+#56 0x3fa4947ae0000000 in ?? ()
+#57 0xbfc5d1eb80000000 in ?? ()
+#58 0x3fa66147a0000000 in ?? ()
+#59 0x3fcf147ae0000000 in ?? ()
+#60 0xbfb18cccc0000000 in ?? ()
+#61 0x3fc71999a0000000 in ?? ()
+#62 0x3fb9b851e0000000 in ?? ()
+#63 0xbf998f5c20000000 in ?? ()
+#64 0x3fd0ab8520000000 in ?? ()
+#65 0xbfbad1eb80000000 in ?? ()
+#66 0x3fd0b33340000000 in ?? ()
+#67 0x3fd25eb860000000 in ?? ()
+#68 0x3fb6851ec0000000 in ?? ()
+#69 0x3fb50a3d80000000 in ?? ()
+#70 0x00007fff76a64160 in ?? ()
+#71 0x00007fff76a64150 in ?? ()
+#72 0x0000000000000001 in ?? ()
+#73 0x00007fff76a644e0 in ?? ()
+#74 0x00000000029f6f60 in ?? ()
+#75 0x00007fff76a64180 in ?? ()
+#76 0x00002b53c26786cf in cling::Interpreter::EvaluateInternal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cling::CompilationOptions, cling::Value*, cling::Transaction**, unsigned long) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+#77 0x00002b53c2678c3f in cling::Interpreter::process(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cling::Value*, cling::Transaction**, bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+#78 0x00002b53c2723b3d in cling::MetaProcessor::process(llvm::StringRef, cling::Interpreter::CompilationResult&, cling::Value*, bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+#79 0x00002b53c25d6b4e in HandleInterpreterException(cling::MetaProcessor*, char const*, cling::Interpreter::CompilationResult&, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+#80 0x00002b53c25e5efc in TCling::ProcessLine(char const*, TInterpreter::EErrorCode*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+#81 0x00002b53c0fb9a8d in TApplication::ProcessLine(char const*, bool, int*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCore.so
+#82 0x00002b53c0bce792 in TRint::ProcessLineNr(char const*, char const*, int*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libRint.so
+#83 0x00002b53c0bceae4 in TRint::HandleTermInput() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libRint.so
+#84 0x00002b53c11032f8 in TUnixSystem::CheckDescriptors() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCore.so
+#85 0x00002b53c1104ad8 in TUnixSystem::DispatchOneEvent(bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCore.so
+#86 0x00002b53c1021851 in TSystem::Run() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCore.so
+#87 0x00002b53c0fb7b3f in TApplication::Run(bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCore.so
+#88 0x00002b53c0bd010c in TRint::Run(bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libRint.so
+#89 0x000000000040098a in main ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash.
+You may get help by asking at the ROOT forum http://root.cern.ch/forum
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at http://root.cern.ch/bugs Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#5  0x00002b53cff2740c in ?? ()
+#6  0x3f88947ae0000000 in ?? ()
+#7  0x3fa1e147a0000000 in ?? ()
+#8  0xbf7f333340000000 in ?? ()
+#9  0xbf92947ae0000000 in ?? ()
+#10 0xbf1ed1eb80000000 in ?? ()
+#11 0xbf91e66660000000 in ?? ()
+#12 0x3f5d6147a0000000 in ?? ()
+#13 0xbf891eb860000000 in ?? ()
+#14 0xbf829c2900000000 in ?? ()
+#15 0x3fbf147ae0000000 in ?? ()
+#16 0xbf8c000000000000 in ?? ()
+#17 0xbfb4d1eb80000000 in ?? ()
+#18 0x3f72e3d700000000 in ?? ()
+#19 0xbfa53d70a0000000 in ?? ()
+#20 0x3f9dd1eb80000000 in ?? ()
+#21 0xbf8628f5c0000000 in ?? ()
+#22 0xbf6eae1480000000 in ?? ()
+#23 0xbf7ed1eb80000000 in ?? ()
+#24 0x3f5ef0a3e0000000 in ?? ()
+#25 0xbf497ae140000000 in ?? ()
+#26 0x3f7b9999a0000000 in ?? ()
+#27 0x3f992e1480000000 in ?? ()
+#28 0xbfaa666660000000 in ?? ()
+#29 0xbf9d9eb860000000 in ?? ()
+#30 0xbf8bf5c280000000 in ?? ()
+#31 0xbfc623d700000000 in ?? ()
+#32 0x3f99ae1480000000 in ?? ()
+#33 0x3f8feb8520000000 in ?? ()
+#34 0x3f8f1eb860000000 in ?? ()
+#35 0x3fa0d70a40000000 in ?? ()
+#36 0xbf904f5c20000000 in ?? ()
+#37 0xbf913851e0000000 in ?? ()
+#38 0xbf89bd70a0000000 in ?? ()
+#39 0xbfb10a3d80000000 in ?? ()
+#40 0xbf818a3d80000000 in ?? ()
+#41 0xbf8f9eb860000000 in ?? ()
+#42 0x3fa5a3d700000000 in ?? ()
+#43 0xbfb96b8520000000 in ?? ()
+#44 0xbf97947ae0000000 in ?? ()
+#45 0x3f7dae1480000000 in ?? ()
+#46 0xbfae6147a0000000 in ?? ()
+#47 0x3f964cccc0000000 in ?? ()
+#48 0xbf8bf5c280000000 in ?? ()
+#49 0x3f6d800000000000 in ?? ()
+#50 0x3fc0947ae0000000 in ?? ()
+#51 0xbfb0e147a0000000 in ?? ()
+#52 0x3f7b8f5c20000000 in ?? ()
+#53 0x3fa14a3d80000000 in ?? ()
+#54 0x3f9be147a0000000 in ?? ()
+#55 0xbfc93851e0000000 in ?? ()
+#56 0x3fa4947ae0000000 in ?? ()
+#57 0xbfc5d1eb80000000 in ?? ()
+#58 0x3fa66147a0000000 in ?? ()
+#59 0x3fcf147ae0000000 in ?? ()
+#60 0xbfb18cccc0000000 in ?? ()
+#61 0x3fc71999a0000000 in ?? ()
+#62 0x3fb9b851e0000000 in ?? ()
+#63 0xbf998f5c20000000 in ?? ()
+#64 0x3fd0ab8520000000 in ?? ()
+#65 0xbfbad1eb80000000 in ?? ()
+#66 0x3fd0b33340000000 in ?? ()
+#67 0x3fd25eb860000000 in ?? ()
+#68 0x3fb6851ec0000000 in ?? ()
+#69 0x3fb50a3d80000000 in ?? ()
+#70 0x00007fff76a64160 in ?? ()
+#71 0x00007fff76a64150 in ?? ()
+#72 0x0000000000000001 in ?? ()
+#73 0x00007fff76a644e0 in ?? ()
+#74 0x00000000029f6f60 in ?? ()
+#75 0x00007fff76a64180 in ?? ()
+#76 0x00002b53c26786cf in cling::Interpreter::EvaluateInternal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cling::CompilationOptions, cling::Value*, cling::Transaction**, unsigned long) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+#77 0x00002b53c2678c3f in cling::Interpreter::process(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cling::Value*, cling::Transaction**, bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+#78 0x00002b53c2723b3d in cling::MetaProcessor::process(llvm::StringRef, cling::Interpreter::CompilationResult&, cling::Value*, bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+#79 0x00002b53c25d6b4e in HandleInterpreterException(cling::MetaProcessor*, char const*, cling::Interpreter::CompilationResult&, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj2/lib/libCling.so
+===========================================================
+
+

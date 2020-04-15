@@ -1,0 +1,866 @@
+000 (205.005.000) 11/26 22:16:39 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (205.005.000) 11/26 22:16:56 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 388235.0
+...
+001 (205.005.000) 11/26 22:17:51 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (205.005.000) 11/26 22:34:53 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:03:14, Sys 0 00:00:18  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:03:14, Sys 0 00:00:18  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (209.005.000) 11/27 11:57:50 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (209.005.000) 11/27 11:58:07 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 390989.0
+...
+001 (209.005.000) 11/27 11:59:07 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (209.005.000) 11/27 12:18:29 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:52, Sys 0 00:00:22  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:52, Sys 0 00:00:22  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (220.005.000) 11/28 10:56:03 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (220.005.000) 11/28 10:56:24 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 395676.0
+...
+001 (220.005.000) 11/28 10:58:23 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (220.005.000) 11/28 11:22:55 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:56, Sys 0 00:00:28  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:56, Sys 0 00:00:28  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (221.005.000) 11/28 15:16:31 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (221.005.000) 11/28 15:16:49 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 396529.0
+...
+001 (221.005.000) 11/28 15:18:51 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (221.005.000) 11/28 15:39:41 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:03:01, Sys 0 00:00:28  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:03:01, Sys 0 00:00:28  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (222.005.000) 11/28 16:39:22 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (222.005.000) 11/28 16:39:39 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 396786.0
+...
+001 (222.005.000) 11/28 16:41:36 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (222.005.000) 11/28 16:58:54 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:51, Sys 0 00:00:21  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:51, Sys 0 00:00:21  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (236.005.000) 11/28 22:16:14 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (236.005.000) 11/28 22:16:32 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 398102.0
+...
+001 (236.005.000) 11/28 22:17:28 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (236.005.000) 11/28 22:34:37 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:03:20, Sys 0 00:00:19  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:03:20, Sys 0 00:00:19  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (251.005.000) 12/02 15:26:34 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (251.005.000) 12/02 15:26:48 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 413148.0
+...
+001 (251.005.000) 12/02 15:27:48 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (251.005.000) 12/02 15:47:25 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:03, Sys 0 00:00:11  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:03, Sys 0 00:00:11  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (256.005.000) 12/02 16:16:31 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (256.005.000) 12/02 16:16:43 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 413245.0
+...
+001 (256.005.000) 12/02 16:18:43 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (256.005.000) 12/02 16:39:04 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:05, Sys 0 00:00:14  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:05, Sys 0 00:00:14  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (261.005.000) 12/04 14:02:11 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (261.005.000) 12/04 14:02:25 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 414041.0
+...
+001 (261.005.000) 12/04 14:04:28 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (261.005.000) 12/04 14:24:44 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:58, Sys 0 00:00:24  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:58, Sys 0 00:00:24  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (268.005.000) 12/06 16:09:47 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (268.005.000) 12/06 16:09:58 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 420360.0
+...
+001 (268.005.000) 12/06 16:12:09 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (268.005.000) 12/06 16:32:15 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:44, Sys 0 00:00:21  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:44, Sys 0 00:00:21  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (271.005.000) 12/06 16:53:59 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (271.005.000) 12/06 16:54:19 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 420547.0
+...
+001 (271.005.000) 12/06 16:56:16 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (271.005.000) 12/06 16:57:30 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:01, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:01, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (275.005.000) 12/06 18:08:06 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (275.005.000) 12/06 18:08:24 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 420842.0
+...
+001 (275.005.000) 12/06 18:10:26 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (275.005.000) 12/06 18:31:53 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:08:46, Sys 0 00:00:24  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:08:46, Sys 0 00:00:24  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (279.005.000) 12/07 12:59:22 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (279.005.000) 12/07 12:59:39 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 424594.0
+...
+001 (279.005.000) 12/07 13:00:39 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (279.005.000) 12/07 13:28:21 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:08:44, Sys 0 00:00:44  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:08:44, Sys 0 00:00:44  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (282.005.000) 12/07 13:50:40 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (282.005.000) 12/07 13:50:50 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 424828.0
+...
+001 (282.005.000) 12/07 13:51:46 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+009 (282.005.000) 12/07 14:05:22 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (284.005.000) 12/07 14:07:28 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (284.005.000) 12/07 14:07:42 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 424867.0
+...
+005 (284.005.000) 12/07 14:11:06 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:01, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:01, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (287.005.000) 12/07 14:20:20 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (287.005.000) 12/07 14:20:35 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 424982.0
+...
+001 (287.005.000) 12/07 14:21:38 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (287.005.000) 12/07 14:45:00 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:07:15, Sys 0 00:00:16  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:07:15, Sys 0 00:00:16  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (292.005.000) 12/07 14:45:07 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (292.005.000) 12/07 14:45:17 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 425124.0
+...
+001 (292.005.000) 12/07 14:46:58 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (292.005.000) 12/07 15:13:53 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:08:51, Sys 0 00:00:33  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:08:51, Sys 0 00:00:33  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (293.005.000) 12/07 20:14:25 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (293.005.000) 12/07 20:14:41 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 426207.0
+...
+001 (293.005.000) 12/07 20:15:36 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (293.005.000) 12/07 20:45:51 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:25, Sys 0 00:00:52  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:25, Sys 0 00:00:52  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (296.005.000) 12/07 23:12:50 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (296.005.000) 12/07 23:13:11 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 426849.0
+...
+005 (296.005.000) 12/07 23:15:29 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (299.005.000) 12/07 23:28:04 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (299.005.000) 12/07 23:28:22 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 426938.0
+...
+001 (299.005.000) 12/07 23:29:17 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+009 (299.005.000) 12/07 23:41:27 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (302.005.000) 12/08 00:45:25 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (302.005.000) 12/08 00:45:43 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 427237.0
+...
+001 (302.005.000) 12/08 00:46:40 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+009 (302.005.000) 12/08 01:14:17 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (306.005.000) 12/08 01:14:33 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (306.005.000) 12/08 01:14:51 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 427362.0
+...
+001 (306.005.000) 12/08 01:16:51 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (306.005.000) 12/08 01:41:28 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:07:47, Sys 0 00:00:13  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:07:47, Sys 0 00:00:13  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (309.005.000) 12/09 00:21:31 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (309.005.000) 12/09 00:21:49 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 431935.0
+...
+001 (309.005.000) 12/09 00:23:54 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (309.005.000) 12/09 00:50:41 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:11:01, Sys 0 00:00:37  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:11:01, Sys 0 00:00:37  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (313.005.000) 12/09 02:05:42 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (313.005.000) 12/09 02:05:49 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 432355.0
+...
+001 (313.005.000) 12/09 02:07:46 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (313.005.000) 12/09 02:38:25 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:21, Sys 0 00:00:54  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:21, Sys 0 00:00:54  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (319.005.000) 12/09 14:53:42 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (319.005.000) 12/09 14:53:55 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 434422.0
+...
+001 (319.005.000) 12/09 14:55:57 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (319.005.000) 12/09 15:22:45 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:11:50, Sys 0 00:00:35  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:11:50, Sys 0 00:00:35  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (323.005.000) 12/10 11:52:51 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (323.005.000) 12/10 11:53:09 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 438589.0
+...
+001 (323.005.000) 12/10 11:54:06 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (323.005.000) 12/10 11:55:23 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (326.005.000) 12/10 12:43:19 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (326.005.000) 12/10 12:43:35 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 438800.0
+...
+001 (326.005.000) 12/10 12:45:41 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (326.005.000) 12/10 13:13:33 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:40, Sys 0 00:00:42  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:40, Sys 0 00:00:42  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (327.005.000) 12/10 16:24:47 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (327.005.000) 12/10 16:25:06 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 439576.0
+...
+001 (327.005.000) 12/10 16:27:02 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (327.005.000) 12/10 16:52:28 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:11:20, Sys 0 00:00:29  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:11:20, Sys 0 00:00:29  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (336.005.000) 12/12 14:35:33 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (336.005.000) 12/12 14:35:50 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 448846.0
+...
+001 (336.005.000) 12/12 14:37:47 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+009 (336.005.000) 12/12 14:44:29 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (341.005.000) 12/12 14:50:23 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5957_95c2_8>
+...
+027 (341.005.000) 12/12 14:50:36 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 448976.0
+...
+001 (341.005.000) 12/12 14:51:38 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (341.005.000) 12/12 15:20:35 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:07:59, Sys 0 00:00:29  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:07:59, Sys 0 00:00:29  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (346.005.000) 12/12 17:06:16 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+009 (346.005.000) 12/12 17:06:27 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (359.005.000) 12/12 19:23:39 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (359.005.000) 12/12 19:23:46 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 450024.0
+...
+001 (359.005.000) 12/12 19:24:47 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (359.005.000) 12/12 19:26:06 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (360.005.000) 12/12 19:39:13 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (360.005.000) 12/12 19:39:30 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 450079.0
+...
+001 (360.005.000) 12/12 19:40:26 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+000 (363.005.000) 12/12 19:43:34 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+009 (360.005.000) 12/12 19:43:40 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+027 (363.005.000) 12/12 19:43:45 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 450145.0
+...
+001 (363.005.000) 12/12 19:44:46 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (363.005.000) 12/12 20:10:44 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:06, Sys 0 00:00:21  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:06, Sys 0 00:00:21  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (367.005.000) 12/12 23:08:59 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (367.005.000) 12/12 23:09:18 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 450905.0
+...
+001 (367.005.000) 12/12 23:10:20 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (367.005.000) 12/12 23:35:51 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:22, Sys 0 00:00:32  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:22, Sys 0 00:00:32  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (380.005.000) 12/13 19:27:01 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (380.005.000) 12/13 19:27:19 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 455038.0
+...
+001 (380.005.000) 12/13 19:29:26 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+009 (380.005.000) 12/13 19:43:53 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (383.005.000) 12/13 19:58:23 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (383.005.000) 12/13 19:58:39 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 455180.0
+...
+001 (383.005.000) 12/13 19:59:40 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+009 (383.005.000) 12/13 20:12:30 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (386.005.000) 12/13 20:44:47 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (386.005.000) 12/13 20:45:04 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 455389.0
+...
+001 (386.005.000) 12/13 20:47:04 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (386.005.000) 12/13 21:15:04 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:21, Sys 0 00:00:50  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:21, Sys 0 00:00:50  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (389.005.000) 12/13 23:58:08 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (389.005.000) 12/13 23:58:25 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 456066.0
+...
+001 (389.005.000) 12/13 23:59:20 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (389.005.000) 12/14 00:28:05 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:34, Sys 0 00:00:40  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:34, Sys 0 00:00:40  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (398.005.000) 12/16 13:51:50 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (398.005.000) 12/16 13:52:03 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 467752.0
+...
+001 (398.005.000) 12/16 13:54:04 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (398.005.000) 12/16 14:17:37 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:11:11, Sys 0 00:00:29  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:11:11, Sys 0 00:00:29  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (404.005.000) 12/17 15:08:09 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (404.005.000) 12/17 15:08:20 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 472912.0
+...
+001 (404.005.000) 12/17 15:10:21 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (404.005.000) 12/17 15:37:23 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:29, Sys 0 00:00:39  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:29, Sys 0 00:00:39  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (441.005.000) 01/08 18:53:04 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (441.005.000) 01/08 18:53:19 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 541551.0
+...
+009 (441.005.000) 01/08 18:54:04 Job was aborted by the user.
+	via condor_rm (by user malvesga)
+...
+000 (442.005.000) 01/08 18:54:09 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (442.005.000) 01/08 18:54:24 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 541565.0
+...
+001 (442.005.000) 01/08 18:55:20 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (442.005.000) 01/08 19:17:52 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:07:57, Sys 0 00:00:22  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:07:57, Sys 0 00:00:22  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (555.005.000) 01/14 15:40:31 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (555.005.000) 01/14 15:40:40 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 556001.0
+...
+001 (555.005.000) 01/14 15:42:36 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (555.005.000) 01/14 16:05:00 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:09, Sys 0 00:00:18  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:09, Sys 0 00:00:18  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (1405.005.000) 01/29 14:06:06 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (1405.005.000) 01/29 14:06:19 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 636993.0
+...
+001 (1405.005.000) 01/29 14:07:19 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (1405.005.000) 01/29 14:08:35 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (1406.005.000) 01/29 14:16:58 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (1406.005.000) 01/29 14:17:12 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 637009.0
+...
+001 (1406.005.000) 01/29 14:18:12 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (1406.005.000) 01/29 14:54:41 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:11:27, Sys 0 00:00:33  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:11:27, Sys 0 00:00:33  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (1407.005.000) 01/29 17:40:21 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (1407.005.000) 01/29 17:40:36 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 637049.0
+...
+001 (1407.005.000) 01/29 17:41:41 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (1407.005.000) 01/29 18:07:33 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:33, Sys 0 00:00:45  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:33, Sys 0 00:00:45  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (1408.005.000) 01/29 18:40:02 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (1408.005.000) 01/29 18:40:16 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 637071.0
+...
+001 (1408.005.000) 01/29 18:41:16 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (1408.005.000) 01/29 19:09:16 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:34, Sys 0 00:00:35  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:34, Sys 0 00:00:35  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (1409.005.000) 01/29 22:08:10 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (1409.005.000) 01/29 22:08:24 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 637112.0
+...
+001 (1409.005.000) 01/29 22:09:24 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (1409.005.000) 01/29 22:33:02 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:10:25, Sys 0 00:00:33  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:10:25, Sys 0 00:00:33  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (1410.005.000) 01/30 12:49:31 Job submitted from host: <192.168.128.10:9618?addrs=192.168.128.10-9618+[--1]-9618&noUDP&sock=5714_e83e_3>
+...
+027 (1410.005.000) 01/30 12:49:45 Job submitted to grid resource
+    GridResource: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+    GridJobId: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619 637537.0
+...
+001 (1410.005.000) 01/30 12:50:51 Job executing on host: condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619
+...
+005 (1410.005.000) 01/30 13:12:25 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:08:33, Sys 0 00:00:22  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:08:33, Sys 0 00:00:22  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...

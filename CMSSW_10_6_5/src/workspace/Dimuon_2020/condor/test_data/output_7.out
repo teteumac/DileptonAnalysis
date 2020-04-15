@@ -1,0 +1,41 @@
+Input file: output_dataE_2.root
+Listing input file:
+Listing current dir:
+total 252
+drwx------   4 malvesga cms     4096 Jan 30 12:50 .
+drwxr-xr-x. 13 condor   condor  4096 Jan 30 12:50 ..
+-rwx------   1 malvesga cms       48 Jan 30 12:50 .chirp.config
+-rw-r--r--   1 condor   condor 75604 Jan 30 12:50 .job.ad
+-rw-r--r--   1 condor   condor  5194 Jan 30 12:50 .machine.ad
+-rw-r--r--   1 malvesga cms       65 Jan 30 12:50 _condor_stderr
+-rw-r--r--   1 malvesga cms       73 Jan 30 12:50 _condor_stdout
+-rwxr-xr-x   1 malvesga cms      263 Jan 30 12:50 condor_exec.exe
+-rw-r--r--   1 malvesga cms    95310 Jan 30 12:50 ntp1-miniaod_data.C
+-rw-r--r--   1 malvesga cms    27583 Jan 30 12:50 ntp1.h
+drwx------   2 malvesga cms     4096 Jan 30 12:50 tmp
+drwx------   3 malvesga cms     4096 Jan 30 12:50 var
+-rw-------   1 malvesga cms     9174 Jan 30 12:50 x509up_u10024
+/var/lib/condor/execute/dir_5099
+Running
+Accessing dir /mnt/hadoop/cms/store/user/malvesga/data_limitRun/output_dataE_2.root:/ggll_miniaod
+0cortes: 3458966
+1cortes: 48804
+2cortes: 45225
+3cortes: 43536
+4cortes: 20204
+5cortes: 20204
+6cortes: 12216
+7cortes: 1756
+8cortes: 58
+corte_match_rp3: 1
+corte_match_rp23_nprot: 11
+corte_match_rp23_1prot: 6
+corte_match_rp103: 1
+corte_match_rp123_nprot: 7
+corte_match_rp123_1prot: 4
+corte_match_left_multi: 1
+corte_match_right_multi: 0
+Razao pelo menos 1 proton - rp23: 0.520177
+Razao pelo menos 1 proton - 45: 0.522559
+Razao pelo menos 1 proton - rp123: 0.497808
+Razao pelo menos 1 proton - 56: 0.575418

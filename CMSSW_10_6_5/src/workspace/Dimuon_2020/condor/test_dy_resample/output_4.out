@@ -1,0 +1,42 @@
+Input file: output_dy_4.root
+Listing input file:
+Listing current dir:
+total 272
+drwx------   4 malvesga cms      4096 Jan 23 20:32 .
+drwxr-xr-x. 10 condor   condor   4096 Jan 23 20:32 ..
+-rwx------   1 malvesga cms        48 Jan 23 20:32 .chirp.config
+-rw-r--r--   1 condor   condor  75659 Jan 23 20:32 .job.ad
+-rw-r--r--   1 condor   condor   5229 Jan 23 20:32 .machine.ad
+-rw-r--r--   1 malvesga cms        62 Jan 23 20:32 _condor_stderr
+-rw-r--r--   1 malvesga cms        70 Jan 23 20:32 _condor_stdout
+-rwxr-xr-x   1 malvesga cms       278 Jan 23 20:32 condor_exec.exe
+-rw-r--r--   1 malvesga cms    102984 Jan 23 20:32 ntp1-miniaod_MC_pileup.C
+-rw-r--r--   1 malvesga cms     38249 Jan 23 20:32 ntp1_pileup.h
+drwx------   2 malvesga cms      4096 Jan 23 20:32 tmp
+drwx------   3 malvesga cms      4096 Jan 23 20:32 var
+-rw-------   1 malvesga cms      9141 Jan 23 20:32 x509up_u10024
+/var/lib/condor/execute/dir_2968
+Running
+Accessing dir /mnt/hadoop/cms/store/user/malvesga/MC_bkg/output_dy_4.root:/ggll_miniaod
+Loaded 23701060 pileup events.
+Total number of events: 809063
+Total number of events (resampled): 80906300
+Pileup sample increment: 29
+0cortes: 7.79228e+07
+1cortes: 1.59159e+06
+2cortes: 1.56771e+06
+3cortes: 1.54307e+06
+4cortes: 745404
+5cortes: 745404
+6cortes: 660224
+7cortes: 136806
+8cortes: 2372.89
+corte_match_rp3: 39.028
+corte_match_rp23_nprot: 151.242
+corte_match_rp23_1prot: 56.9491
+corte_match_rp103: 32.7068
+corte_match_rp123_nprot: 112.243
+corte_match_rp123_1prot: 50.017
+corte_match_left_multi: 14.7732
+corte_match_right_multi: 7.60851
+(int) 0
