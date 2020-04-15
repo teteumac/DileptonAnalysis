@@ -40,7 +40,7 @@ From the functions generated from pol_function.C and requiring 2σ to consider a
 on 2D proton ξ graphs. The output pngs are in the *results* folder.
 
 ```
-CompHistos_new.C
+CompHistos_new.C , CompHistos_match.C
 ```
 
 Takes all histograms generated from ntp1 files, apply scale factors on MC histograms, put them in the same Canvas using
