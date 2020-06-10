@@ -1,2 +1,0 @@
-/mnt/hadoop/cms/store/user/malvesga/output_dataB.root
-/mnt/hadoop/cms/store/user/malvesga/output_dataC_0.root 

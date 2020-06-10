@@ -1,9 +1,0 @@
-output_dy_0.root 
-output_dy_1.root 
-output_dy_2.root 
-output_dy_3.root 
-output_dy_4.root 
-output_dy_5.root 
-output_dy_6.root 
-output_dy_7.root 
-output_dy_8.root
