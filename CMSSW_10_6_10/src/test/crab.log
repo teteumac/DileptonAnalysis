@@ -1,0 +1,752 @@
+DEBUG 2020-04-19 16:44:07.643 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-19 16:44:07.664 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-19 16:44:07.665 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-19 16:44:07.884 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-19 16:44:07.896 UTC: 	 Checking credentials
+DEBUG 2020-04-19 16:44:07.896 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-19 16:44:07.896 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-19 16:44:08.001 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604697
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:08.106 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604696
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:08.106 UTC: 	 Proxy lifetime 604697 secs is different from voms extension lifetime 604696 secs for proxy: /tmp/x509up_u10024
+DEBUG 2020-04-19 16:44:08.107 UTC: 	 Proxy valid for 167:58:16 hours
+DEBUG 2020-04-19 16:44:08.108 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-19 16:44:08.190 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-19 16:44:08.211 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-19 16:44:08.211 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-19 16:44:08.212 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-19 16:44:08.221 UTC: 	 Checking credentials
+DEBUG 2020-04-19 16:44:08.221 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-19 16:44:08.221 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-19 16:44:08.326 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604696
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:08.431 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604696
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:08.431 UTC: 	 Proxy valid for 167:58:16 hours
+DEBUG 2020-04-19 16:44:08.432 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-19 16:44:08.499 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-19 16:44:08.519 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-19 16:44:08.520 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-19 16:44:08.520 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-19 16:44:08.528 UTC: 	 Checking credentials
+DEBUG 2020-04-19 16:44:08.529 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-19 16:44:08.529 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-19 16:44:08.633 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604696
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:08.738 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604696
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:08.739 UTC: 	 Proxy valid for 167:58:16 hours
+DEBUG 2020-04-19 16:44:08.740 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-19 16:44:08.790 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-19 16:44:08.810 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-19 16:44:08.811 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-19 16:44:08.811 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-19 16:44:08.819 UTC: 	 Checking credentials
+DEBUG 2020-04-19 16:44:08.820 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-19 16:44:08.820 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-19 16:44:08.924 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604696
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:09.029 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604696
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:09.030 UTC: 	 Proxy valid for 167:58:16 hours
+DEBUG 2020-04-19 16:44:09.031 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-19 16:44:09.090 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-19 16:44:09.110 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-19 16:44:09.111 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-19 16:44:09.111 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-19 16:44:09.120 UTC: 	 Checking credentials
+DEBUG 2020-04-19 16:44:09.120 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-19 16:44:09.120 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-19 16:44:09.224 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604695
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:09.330 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604695
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 16:44:09.330 UTC: 	 Proxy valid for 167:58:15 hours
+DEBUG 2020-04-19 16:44:09.331 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-19 20:32:15.017 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-19 20:32:15.039 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-19 20:32:15.039 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2020-04-19 20:32:15.041 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-19 20:32:15.055 UTC: 	 Checking credentials
+DEBUG 2020-04-19 20:32:15.056 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-19 20:32:15.056 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-19 20:32:15.160 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 591825
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 20:32:15.266 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 591824
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 20:32:15.266 UTC: 	 Proxy lifetime 591825 secs is different from voms extension lifetime 591824 secs for proxy: /tmp/x509up_u10024
+DEBUG 2020-04-19 20:32:15.266 UTC: 	 Proxy valid for 164:23:44 hours
+DEBUG 2020-04-19 20:32:15.379 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 20:32:15.379 UTC: 	 Checking credentials
+DEBUG 2020-04-19 20:32:15.379 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-19 20:32:15.379 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-19 20:32:15.484 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 591825
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 20:32:15.589 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 591824
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 20:32:15.590 UTC: 	 Proxy lifetime 591825 secs is different from voms extension lifetime 591824 secs for proxy: /tmp/x509up_u10024
+DEBUG 2020-04-19 20:32:15.590 UTC: 	 Proxy valid for 164:23:44 hours
+DEBUG 2020-04-19 20:32:15.695 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u10024 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-19 20:32:15.696 UTC: 	 Command use: checkwrite
+DEBUG 2020-04-19 20:32:15.696 UTC: 	 Options use: ['--site=T2_BR_UERJ']
+DEBUG 2020-04-19 20:32:15.696 UTC: 	 Instance is None
+DEBUG 2020-04-19 20:32:15.696 UTC: 	 Server base url is None
+INFO 2020-04-19 20:32:15.700 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2020-04-19 20:32:15.700 UTC: 	 Retrieving DN from proxy...
+INFO 2020-04-19 20:32:16.172 UTC: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+INFO 2020-04-19 20:32:16.173 UTC: 	 Retrieving username for this DN...
+DEBUG 2020-04-19 20:32:16.173 UTC: 	 Retrieving username from SiteDB...
+DEBUG 2020-04-19 20:32:20.432 UTC: 	 Error UsernameException: Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u10024 --key /tmp/x509up_u10024 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+DEBUG 2020-04-19 20:32:20.432 UTC: 	 Retrieving username from CRIC...
+DEBUG 2020-04-19 20:32:25.018 UTC: 	 Username is: malvesga
+INFO 2020-04-19 20:32:25.018 UTC: 	 Failed to get username from SiteDB.
+ Details are in crab.log file
+Will try new Coputing Resource Information Catalog CRIC
+INFO 2020-04-19 20:32:25.018 UTC: 	 username is malvesga
+INFO 2020-04-19 20:32:25.018 UTC: 	 Validating LFN /store/user/malvesga...
+INFO 2020-04-19 20:32:25.019 UTC: 	 LFN /store/user/malvesga is valid.
+INFO 2020-04-19 20:32:25.034 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2020-04-19 20:32:25.037 UTC: 	 Will check write permission in /store/user/malvesga on site T2_BR_UERJ
+INFO 2020-04-19 20:32:26.280 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20200419_173225 and copy (dummy) file crab3checkwrite_20200419_173225.tmp to /store/user/malvesga
+
+INFO 2020-04-19 20:32:26.286 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///home/malvesga/CMSSW_10_6_10/src/test/crab3checkwrite_20200419_173225.tmp 'gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200419_173225/crab3checkwrite_20200419_173225.tmp'
+INFO 2020-04-19 20:32:26.289 UTC: 	 Please wait...
+INFO 2020-04-19 20:32:28.679 UTC: 	 
+Successfully created directory crab3checkwrite_20200419_173225 and copied file crab3checkwrite_20200419_173225.tmp to /store/user/malvesga
+INFO 2020-04-19 20:32:28.680 UTC: 	 
+Attempting to delete file gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200419_173225/crab3checkwrite_20200419_173225.tmp
+
+INFO 2020-04-19 20:32:28.680 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -v -t 180 'gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200419_173225/crab3checkwrite_20200419_173225.tmp'
+INFO 2020-04-19 20:32:28.680 UTC: 	 Please wait...
+INFO 2020-04-19 20:32:30.889 UTC: 	 
+Successfully deleted file gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200419_173225/crab3checkwrite_20200419_173225.tmp
+INFO 2020-04-19 20:32:30.889 UTC: 	 
+Attempting to delete directory gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200419_173225/
+
+INFO 2020-04-19 20:32:30.889 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -r -v -t 180 'gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200419_173225/'
+INFO 2020-04-19 20:32:30.890 UTC: 	 Please wait...
+INFO 2020-04-19 20:32:32.996 UTC: 	 
+Successfully deleted directory gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200419_173225/
+INFO 2020-04-19 20:32:32.997 UTC: 	 
+Checkwrite Result:
+INFO 2020-04-19 20:32:32.997 UTC: 	 Success: Able to write in /store/user/malvesga on site T2_BR_UERJ
+DEBUG 2020-04-19 22:42:57.180 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-19 22:42:57.202 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-19 22:42:57.203 UTC: 	 Executing command: 'status'
+DEBUG 2020-04-19 22:42:57.203 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+ERROR 2020-04-19 22:42:57.207 UTC: 	 Cannot find .requestcache file in CRAB project directory /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017B
+ERROR 2020-04-19 22:42:57.207 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017B
+DEBUG 2020-04-19 22:43:22.684 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-19 22:43:22.705 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-19 22:43:22.706 UTC: 	 Executing command: 'status'
+DEBUG 2020-04-19 22:43:22.706 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+ERROR 2020-04-19 22:43:22.709 UTC: 	 Cannot find .requestcache file in CRAB project directory /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017C
+ERROR 2020-04-19 22:43:22.709 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017C
+DEBUG 2020-04-26 17:04:56.141 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:04:56.201 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:04:56.201 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:04:56.704 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:04:56.715 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:04:56.716 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:04:56.716 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:04:56.821 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604137
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:56.926 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604137
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:56.926 UTC: 	 Proxy valid for 167:48:57 hours
+DEBUG 2020-04-26 17:04:56.928 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:04:56.961 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:04:56.981 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:04:56.981 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:04:56.982 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:04:56.990 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:04:56.991 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:04:56.991 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:04:57.096 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604136
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:57.201 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604136
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:57.201 UTC: 	 Proxy valid for 167:48:56 hours
+DEBUG 2020-04-26 17:04:57.202 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:04:57.220 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:04:57.241 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:04:57.241 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:04:57.241 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:04:57.250 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:04:57.250 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:04:57.251 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:04:57.355 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604136
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:57.461 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604136
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:57.461 UTC: 	 Proxy valid for 167:48:56 hours
+DEBUG 2020-04-26 17:04:57.462 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:04:57.481 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:04:57.501 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:04:57.501 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:04:57.502 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:04:57.510 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:04:57.511 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:04:57.511 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:04:57.615 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604136
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:57.721 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604136
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:57.721 UTC: 	 Proxy valid for 167:48:56 hours
+DEBUG 2020-04-26 17:04:57.722 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:04:57.740 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:04:57.761 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:04:57.761 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:04:57.761 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:04:57.770 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:04:57.770 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:04:57.771 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:04:57.875 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604136
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:57.981 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604136
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:04:57.981 UTC: 	 Proxy valid for 167:48:56 hours
+DEBUG 2020-04-26 17:04:57.982 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:07:07.633 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:07:07.655 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:07:07.656 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2020-04-26 17:07:07.656 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:07:07.666 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:07:07.666 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:07:07.667 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:07:07.771 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604006
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:07:07.876 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604006
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:07:07.876 UTC: 	 Proxy valid for 167:46:46 hours
+DEBUG 2020-04-26 17:07:07.988 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:07:07.988 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:07:07.989 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:07:07.989 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:07:08.093 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604005
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:07:08.198 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604005
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:07:08.199 UTC: 	 Proxy valid for 167:46:45 hours
+DEBUG 2020-04-26 17:07:08.304 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u10024 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:07:08.305 UTC: 	 Command use: checkwrite
+DEBUG 2020-04-26 17:07:08.305 UTC: 	 Options use: ['--site=T2_BR_UERJ']
+DEBUG 2020-04-26 17:07:08.305 UTC: 	 Instance is None
+DEBUG 2020-04-26 17:07:08.305 UTC: 	 Server base url is None
+INFO 2020-04-26 17:07:08.309 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2020-04-26 17:07:08.309 UTC: 	 Retrieving DN from proxy...
+INFO 2020-04-26 17:07:08.689 UTC: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+INFO 2020-04-26 17:07:08.690 UTC: 	 Retrieving username for this DN...
+DEBUG 2020-04-26 17:07:08.690 UTC: 	 Retrieving username from SiteDB...
+DEBUG 2020-04-26 17:07:10.835 UTC: 	 Error UsernameException: Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u10024 --key /tmp/x509up_u10024 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+DEBUG 2020-04-26 17:07:10.835 UTC: 	 Retrieving username from CRIC...
+DEBUG 2020-04-26 17:07:15.313 UTC: 	 Username is: malvesga
+INFO 2020-04-26 17:07:15.313 UTC: 	 Failed to get username from SiteDB.
+ Details are in crab.log file
+Will try new Coputing Resource Information Catalog CRIC
+INFO 2020-04-26 17:07:15.313 UTC: 	 username is malvesga
+INFO 2020-04-26 17:07:15.313 UTC: 	 Validating LFN /store/user/malvesga...
+INFO 2020-04-26 17:07:15.314 UTC: 	 LFN /store/user/malvesga is valid.
+INFO 2020-04-26 17:07:15.387 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2020-04-26 17:07:15.388 UTC: 	 Will check write permission in /store/user/malvesga on site T2_BR_UERJ
+INFO 2020-04-26 17:07:16.561 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20200426_140715 and copy (dummy) file crab3checkwrite_20200426_140715.tmp to /store/user/malvesga
+
+INFO 2020-04-26 17:07:16.567 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///home/malvesga/CMSSW_10_6_10/src/test/crab3checkwrite_20200426_140715.tmp 'gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200426_140715/crab3checkwrite_20200426_140715.tmp'
+INFO 2020-04-26 17:07:16.571 UTC: 	 Please wait...
+INFO 2020-04-26 17:07:21.522 UTC: 	 
+Successfully created directory crab3checkwrite_20200426_140715 and copied file crab3checkwrite_20200426_140715.tmp to /store/user/malvesga
+INFO 2020-04-26 17:07:21.522 UTC: 	 
+Attempting to delete file gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200426_140715/crab3checkwrite_20200426_140715.tmp
+
+INFO 2020-04-26 17:07:21.523 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -v -t 180 'gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200426_140715/crab3checkwrite_20200426_140715.tmp'
+INFO 2020-04-26 17:07:21.523 UTC: 	 Please wait...
+INFO 2020-04-26 17:07:23.529 UTC: 	 
+Successfully deleted file gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200426_140715/crab3checkwrite_20200426_140715.tmp
+INFO 2020-04-26 17:07:23.529 UTC: 	 
+Attempting to delete directory gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200426_140715/
+
+INFO 2020-04-26 17:07:23.530 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -r -v -t 180 'gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200426_140715/'
+INFO 2020-04-26 17:07:23.530 UTC: 	 Please wait...
+INFO 2020-04-26 17:07:25.434 UTC: 	 
+Successfully deleted directory gsiftp://gridftp.hepgrid.uerj.br//mnt/hadoop/cms//store/user/malvesga/crab3checkwrite_20200426_140715/
+INFO 2020-04-26 17:07:25.436 UTC: 	 
+Checkwrite Result:
+INFO 2020-04-26 17:07:25.436 UTC: 	 Success: Able to write in /store/user/malvesga on site T2_BR_UERJ
+DEBUG 2020-04-26 17:08:33.460 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:08:33.480 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:08:33.481 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:08:33.699 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:08:33.710 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:08:33.710 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:08:33.710 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:08:33.815 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 603920
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:33.920 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 603920
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:33.920 UTC: 	 Proxy valid for 167:45:20 hours
+DEBUG 2020-04-26 17:08:33.921 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:08:33.940 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:08:33.960 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:08:33.961 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:08:33.961 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:08:33.970 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:08:33.970 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:08:33.970 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:08:34.075 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 603919
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:34.180 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 603919
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:34.180 UTC: 	 Proxy valid for 167:45:19 hours
+DEBUG 2020-04-26 17:08:34.181 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:08:34.199 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:08:34.220 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:08:34.220 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:08:34.220 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:08:34.229 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:08:34.229 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:08:34.229 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:08:34.334 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 603919
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:34.439 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 603919
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:34.439 UTC: 	 Proxy valid for 167:45:19 hours
+DEBUG 2020-04-26 17:08:34.440 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:08:34.458 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:08:34.479 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:08:34.479 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:08:34.479 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:08:34.488 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:08:34.488 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:08:34.488 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:08:34.593 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 603919
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:34.698 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 603919
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:34.699 UTC: 	 Proxy valid for 167:45:19 hours
+DEBUG 2020-04-26 17:08:34.700 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-04-26 17:08:34.718 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-26 17:08:34.739 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-04-26 17:08:34.739 UTC: 	 Executing command: 'submit'
+DEBUG 2020-04-26 17:08:34.739 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-04-26 17:08:34.748 UTC: 	 Checking credentials
+DEBUG 2020-04-26 17:08:34.748 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-04-26 17:08:34.748 UTC: 	 Getting proxy life time left
+DEBUG 2020-04-26 17:08:34.853 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 603919
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:34.959 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 603919
+
+ error: 
+ retcode : 0
+DEBUG 2020-04-26 17:08:34.959 UTC: 	 Proxy valid for 167:45:19 hours
+DEBUG 2020-04-26 17:08:34.961 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-03 01:28:40.008 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-03 01:28:40.028 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-03 01:28:40.029 UTC: 	 Executing command: 'status'
+DEBUG 2020-05-03 01:28:40.030 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+ERROR 2020-05-03 01:28:40.033 UTC: 	 Error: crab_projects/crab_DoubleMuon_Data_UL2017A is not a valid CRAB project directory.
+ERROR 2020-05-03 01:28:40.033 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_DoubleMuon_Data_UL2017A is not a valid CRAB project directory.
+DEBUG 2020-05-04 01:51:46.811 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-04 01:51:46.832 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-04 01:51:46.833 UTC: 	 Executing command: 'status'
+DEBUG 2020-05-04 01:51:46.833 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+ERROR 2020-05-04 01:51:46.836 UTC: 	 Error: --verboseErrors is not a valid CRAB project directory.
+ERROR 2020-05-04 01:51:46.836 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: --verboseErrors is not a valid CRAB project directory.
+DEBUG 2020-05-13 14:34:05.421 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-13 14:34:05.422 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-13 14:34:05.569 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-13 14:34:05.570 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-13 14:34:06.008 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-13 14:34:06.012 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-13 14:34:06.058 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-13 14:34:06.058 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-13 14:34:06.104 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-13 14:34:06.105 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-13 14:34:06.105 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-13 14:34:06.107 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-13 14:34:06.149 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-13 14:34:06.149 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-13 14:34:06.201 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-13 14:34:06.201 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-13 14:34:06.201 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-13 14:34:06.206 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-15 04:45:01.507 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-15 04:45:01.508 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-15 04:45:01.632 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-15 04:45:01.632 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-15 04:45:02.070 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-15 04:45:02.079 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-19 20:10:17.511 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-19 20:10:17.511 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-19 20:10:17.531 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-19 20:10:17.531 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-19 20:10:17.773 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-19 20:10:17.777 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-19 20:10:17.854 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-19 20:10:17.854 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-19 20:10:17.874 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-19 20:10:17.875 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-19 20:10:17.875 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-19 20:10:17.878 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-19 20:10:17.920 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-19 20:10:17.921 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-19 20:10:17.941 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-19 20:10:17.941 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-19 20:10:17.942 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-19 20:10:17.944 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-19 20:10:17.987 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-19 20:10:17.987 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-19 20:10:18.007 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-19 20:10:18.007 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-19 20:10:18.007 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-19 20:10:18.009 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-19 20:10:18.051 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-19 20:10:18.051 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-19 20:10:18.071 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-19 20:10:18.072 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-19 20:10:18.072 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-19 20:10:18.074 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-19 20:42:42.291 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-19 20:42:42.292 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-19 20:42:42.312 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-19 20:42:42.312 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-19 20:42:42.578 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-19 20:42:42.581 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-20 03:28:20.289 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-20 03:28:20.290 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-20 03:28:20.311 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-20 03:28:20.311 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-20 03:28:20.685 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-20 03:28:20.688 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-29 02:12:36.788 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-29 02:12:36.789 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-29 02:12:36.809 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-29 02:12:36.810 UTC: 	 Executing command: 'submit'
+DEBUG 2020-05-29 02:12:37.078 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-05-29 02:12:37.090 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-05-29 03:46:56.324 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-05-29 03:46:56.325 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-05-29 03:46:56.345 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-05-29 03:46:56.346 UTC: 	 Executing command: 'status'
+DEBUG 2020-05-29 03:46:56.347 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+ERROR 2020-05-29 03:46:56.350 UTC: 	 Error: crab_projects/crab_DoubleMuon_Data_UL2017_new is not a valid CRAB project directory.
+ERROR 2020-05-29 03:46:56.350 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005-bcolbf2/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005-bcolbf2/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005-bcolbf2/lib/CRABClient/Commands/status.py", line 41, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005-bcolbf2/lib/CRABClient/Commands/SubCommand.py", line 278, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005-bcolbf2/lib/CRABClient/Commands/SubCommand.py", line 619, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_DoubleMuon_Data_UL2017_new is not a valid CRAB project directory.
+INFO 2020-05-29 03:46:56.354 UTC: 	 Log file is /home/malvesga/CMSSW_10_6_10/src/test/crab.log
+DEBUG 2020-06-09 23:37:42.104 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-06-09 23:37:42.104 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-06-09 23:37:42.125 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-06-09 23:37:42.125 UTC: 	 Executing command: 'status'
+DEBUG 2020-06-09 23:37:42.126 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+ERROR 2020-06-09 23:37:42.129 UTC: 	 Error: crab_projects/crab_GGToMuMu-Semi-Exclusive-RunIIFall17/ is not a valid CRAB project directory.
+ERROR 2020-06-09 23:37:42.129 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005/lib/CRABClient/Commands/status.py", line 41, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005/lib/CRABClient/Commands/SubCommand.py", line 278, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/3.3.2005/lib/CRABClient/Commands/SubCommand.py", line 619, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_GGToMuMu-Semi-Exclusive-RunIIFall17/ is not a valid CRAB project directory.
+INFO 2020-06-09 23:37:42.134 UTC: 	 Log file is /home/malvesga/CMSSW_10_6_10/src/test/crab.log

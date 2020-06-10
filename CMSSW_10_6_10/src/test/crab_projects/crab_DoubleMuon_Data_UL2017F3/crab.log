@@ -1,0 +1,423 @@
+DEBUG 2020-06-09 18:10:07.676 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-06-09 18:10:07.677 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-06-09 18:10:07.699 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-06-09 18:10:07.700 UTC: 	 Executing command: 'submit'
+DEBUG 2020-06-09 18:10:07.701 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-06-09 18:10:07.705 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-06-09 18:10:07.808 UTC: 	 Checking credentials
+DEBUG 2020-06-09 18:10:07.809 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-06-09 18:10:07.809 UTC: 	 Getting proxy life time left
+DEBUG 2020-06-09 18:10:07.916 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 602686
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 18:10:08.022 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 602686
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 18:10:08.023 UTC: 	 Proxy valid for 167:24:46 hours
+DEBUG 2020-06-09 18:10:08.129 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u10024 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 18:10:09.473 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2020-06-09 18:10:09.589 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 18:10:09.589 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-06-09 18:10:09.590 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo_cmsweb.cern.ch for credential name
+DEBUG 2020-06-09 18:10:11.199 UTC: 	 Executing : 
+ command : myproxy-info -l dd1b5d1b83c99fbbd3bf757235d61a80afd751db -s myproxy.cern.ch
+ output : username: dd1b5d1b83c99fbbd3bf757235d61a80afd751db
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 719:10:55  (30.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 18:10:11.200 UTC: 	 Myproxy is valid: 2589055
+DEBUG 2020-06-09 18:10:11.200 UTC: 	 Retrieving username ...
+DEBUG 2020-06-09 18:10:11.200 UTC: 	 Retrieving username from CRIC...
+DEBUG 2020-06-09 18:10:13.557 UTC: 	 username is malvesga
+DEBUG 2020-06-09 18:10:13.567 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-06-09 18:10:13.567 UTC: 	 using malvesga_CRAB as credential login name
+DEBUG 2020-06-09 18:10:15.176 UTC: 	 Executing : 
+ command : myproxy-info -l malvesga_CRAB -s myproxy.cern.ch
+ output : username: malvesga_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 436:08:11  (18.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 18:10:15.177 UTC: 	 Myproxy is valid: 1570091
+DEBUG 2020-06-09 18:10:15.177 UTC: 	 Command use: submit
+DEBUG 2020-06-09 18:10:15.178 UTC: 	 Options use: ['--config', <WMCore.Configuration.Configuration object at 0x7f274bc53e50>]
+DEBUG 2020-06-09 18:10:16.514 UTC: 	 CRABClient version: 3.3.2005
+DEBUG 2020-06-09 18:10:16.514 UTC: 	 Instance is prod
+DEBUG 2020-06-09 18:10:16.514 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-06-09 18:10:16.514 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-06-09 18:10:16.514 UTC: 	 Started submission
+DEBUG 2020-06-09 18:10:16.515 UTC: 	 Working on /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3
+DEBUG 2020-06-09 18:10:17.828 UTC: 	 Loading required information from the environment
+DEBUG 2020-06-09 18:10:17.828 UTC: 	 Found CMSSW_10_6_10 for slc7_amd64_gcc820 with base /home/malvesga/CMSSW_10_6_10
+DEBUG 2020-06-09 18:10:17.828 UTC: 	 Loading required information from the environment
+DEBUG 2020-06-09 18:10:17.828 UTC: 	 Found CMSSW_10_6_10 for slc7_amd64_gcc820 with base /home/malvesga/CMSSW_10_6_10
+DEBUG 2020-06-09 18:10:17.829 UTC: 	 UNIQUE NAME: tarUUID fc85815b-073a-424b-bdd1-798d3d8a1ef2 
+DEBUG 2020-06-09 18:10:17.829 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.workArea = 'crab_projects'
+config.General.transferOutputs = True
+config.General.transferLogs = True
+config.General.requestName = 'DoubleMuon_Data_UL2017F3'
+config.section_('JobType')
+config.JobType.psetName = 'RunGGLL_UL_data_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.inputFiles = ['direct_simu_reco_cff.py', 'PUHistos_data.root']
+config.JobType.allowUndistributedCMSSW = True
+config.section_('Data')
+config.Data.inputDataset = '/DoubleMuon/Run2017F-09Aug2019_UL2017-v1/MINIAOD'
+config.Data.outputDatasetTag = 'data'
+config.Data.publication = False
+config.Data.ignoreLocality = True
+config.Data.splitting = 'Automatic'
+config.Data.inputDBS = 'global'
+config.Data.outLFNDirBase = '/store/user/malvesga/miniaod/DoubleMuon_Data_UL2017F3'
+config.Data.lumiMask = '/home/malvesga/CMSSW_10_6_10/src/test/json_file_rpin_2017.txt'
+config.Data.runRange = '305965-306462'
+config.section_('Site')
+config.Site.whitelist = ['T2_CH_*', 'T2_BE_*', 'T2_DE_*', 'T2_RU_*', 'T2_US_*', 'T2_IT_*', 'T2_ES_*']
+config.Site.storageSite = 'T2_BR_UERJ'
+
+DEBUG 2020-06-09 18:10:17.829 UTC: 	 self.config.JobType.psetName: RunGGLL_UL_data_cfg.py
+INFO 2020-06-09 18:10:17.830 UTC: 	 Importing CMSSW configuration RunGGLL_UL_data_cfg.py
+INFO 2020-06-09 18:10:17.830 UTC: 	 Finished importing CMSSW configuration RunGGLL_UL_data_cfg.py
+DEBUG 2020-06-09 18:10:17.831 UTC: 	 Writing CMSSW configuration to /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3/inputs/PSet.py
+DEBUG 2020-06-09 18:10:19.081 UTC: 	 The following EDM output files will be collected: []
+DEBUG 2020-06-09 18:10:19.081 UTC: 	 The following TFile output files will be collected: ['output_data.root']
+DEBUG 2020-06-09 18:10:19.081 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2020-06-09 18:10:19.081 UTC: 	 Loading required information from the environment
+DEBUG 2020-06-09 18:10:19.081 UTC: 	 Found CMSSW_10_6_10 for slc7_amd64_gcc820 with base /home/malvesga/CMSSW_10_6_10
+DEBUG 2020-06-09 18:10:19.082 UTC: 	 Making tarball in /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3/inputs/fc85815b-073a-424b-bdd1-798d3d8a1ef2default.tgz
+DEBUG 2020-06-09 18:10:19.083 UTC: 	 Checking directory /home/malvesga/CMSSW_10_6_10/lib
+DEBUG 2020-06-09 18:10:19.083 UTC: 	 Adding directory /home/malvesga/CMSSW_10_6_10/lib to tarball
+DEBUG 2020-06-09 18:10:19.300 UTC: 	 Checking directory /home/malvesga/CMSSW_10_6_10/biglib
+DEBUG 2020-06-09 18:10:19.301 UTC: 	 Adding directory /home/malvesga/CMSSW_10_6_10/biglib to tarball
+DEBUG 2020-06-09 18:10:19.303 UTC: 	 Checking directory /home/malvesga/CMSSW_10_6_10/module
+DEBUG 2020-06-09 18:10:19.323 UTC: 	 Adding data directory /home/malvesga/CMSSW_10_6_10/src/IOMC/EventVertexGenerators/interface to tarball
+DEBUG 2020-06-09 18:10:19.337 UTC: 	 Adding data directory /home/malvesga/CMSSW_10_6_10/src/DiffractiveForwardAnalysis/GammaGammaLeptonLepton/interface to tarball
+DEBUG 2020-06-09 18:10:19.581 UTC: 	 Adding file direct_simu_reco_cff.py to tarball
+DEBUG 2020-06-09 18:10:19.582 UTC: 	 Adding file PUHistos_data.root to tarball
+DEBUG 2020-06-09 18:10:20.017 UTC: 	 Uploading archive /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3/inputs/fc85815b-073a-424b-bdd1-798d3d8a1ef2default.tgz (0.524414.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2020-06-09 18:10:23.442 UTC: 	 Loading required information from the environment
+DEBUG 2020-06-09 18:10:23.443 UTC: 	 Found CMSSW_10_6_10 for slc7_amd64_gcc820 with base /home/malvesga/CMSSW_10_6_10
+DEBUG 2020-06-09 18:10:23.443 UTC: 	 Making tarball in /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3/inputs/debugFiles.tgz
+DEBUG 2020-06-09 18:10:23.539 UTC: 	 Uploading archive /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3/inputs/debugFiles.tgz (2 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2020-06-09 18:10:25.094 UTC: 	 Result uploading input files: 43c633eb03af2d77f9206eb368bc195b70dc6ee8249fa9c9dc31db619a2fdf87.tar.gz 
+DEBUG 2020-06-09 18:10:25.094 UTC: 	 Attaching lumi mask /home/malvesga/CMSSW_10_6_10/src/test/json_file_rpin_2017.txt to the request
+DEBUG 2020-06-09 18:10:25.094 UTC: 	 Reading lumi-mask from /home/malvesga/CMSSW_10_6_10/src/test/json_file_rpin_2017.txt
+INFO 2020-06-09 18:10:25.305 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2020-06-09 18:10:25.305 UTC: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 1, 'savelogsflag': 1, 'useparent': 0, 'asyncdest': 'T2_BR_UERJ', 'algoargs': 480, 'cachefilename': '43c633eb03af2d77f9206eb368bc195b70dc6ee8249fa9c9dc31db619a2fdf87.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_10_6_10', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/DoubleMuon/Run2017F-09Aug2019_UL2017-v1/MINIAOD', 'lfn': '/store/user/malvesga/miniaod/DoubleMuon_Data_UL2017F3', 'dryrun': 0, 'workflow': 'crab_DoubleMuon_Data_UL2017F3', 'sitewhitelist': ['T2_CH_*', 'T2_BE_*', 'T2_DE_*', 'T2_RU_*', 'T2_US_*', 'T2_IT_*', 'T2_ES_*'], 'runs': [u'305967', u'306029', u'306030', u'306037', u'306038', u'306041', u'306042', u'306048', u'306049', u'306051', u'306091', u'306092', u'306095', u'306121', u'306122', u'306125', u'306126', u'306134', u'306135', u'306138', u'306139', u'306153', u'306154', u'306155', u'306169', u'306170', u'306171', u'306418', u'306419', u'306420', u'306422', u'306423', u'306432', u'306454', u'306455', u'306456', u'306457', u'306458', u'306459', u'306460'], 'lumis': ['1,32', '78,94', '1,110', '12,44', '1,138', '1,320', '1,365', '1,136', '1,358', '1,389', '422,619', '1,588,593,976', '1,300', '74,147', '1,127', '1,756,770,2642,2667,3001', '1,472', '73,76', '1,1095', '1,1298', '1,1102', '96,160', '1,251,253,691,709,1231', '1,1440', '1,735', '1,15', '1,482', '1,33,35,67', '1,58', '1,108', '9,123', '1,323', '1,330', '37,97', '1,6', '1,237,239,784', '1,28', '1,17,20,35,37,41,43,47,49,53,56,60,62,66,68,72,74,77,79,83,85,89,93,102,104,108,110,114,116,120,122,126,129,139,141,145,147,151,153,166,169,173,175,179,181,185,187,191,193,197,200,210,212,216,218,222,225,229,231,235,237,241,243,247,249,249,252,256,258,264', '1,512,514,2272', '1,64'], 'nonprodsw': 1, 'tfileoutfiles': ['output_data.root'], 'oneEventMode': 0, 'debugfilename': 'ad0115fb7485e5a03fa6796980a652ea4c5a6953cac2a1c00f669624bf232cb0.tar.gz', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc7_amd64_gcc820', 'totalunits': 0, 'splitalgo': 'Automatic', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'data'} 
+DEBUG 2020-06-09 18:10:25.306 UTC: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=1&savelogsflag=1&useparent=0&asyncdest=T2_BR_UERJ&algoargs=480&cachefilename=43c633eb03af2d77f9206eb368bc195b70dc6ee8249fa9c9dc31db619a2fdf87.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_10&primarydataset=&inputdata=%2FDoubleMuon%2FRun2017F-09Aug2019_UL2017-v1%2FMINIAOD&lfn=%2Fstore%2Fuser%2Fmalvesga%2Fminiaod%2FDoubleMuon_Data_UL2017F3&dryrun=0&workflow=crab_DoubleMuon_Data_UL2017F3&nonprodsw=1&oneEventMode=0&debugfilename=ad0115fb7485e5a03fa6796980a652ea4c5a6953cac2a1c00f669624bf232cb0.tar.gz&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc820&totalunits=0&splitalgo=Automatic&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=data&sitewhitelist=T2_CH_%2A&sitewhitelist=T2_BE_%2A&sitewhitelist=T2_DE_%2A&sitewhitelist=T2_RU_%2A&sitewhitelist=T2_US_%2A&sitewhitelist=T2_IT_%2A&sitewhitelist=T2_ES_%2A&tfileoutfiles=output_data.root&runs=305967&runs=306029&runs=306030&runs=306037&runs=306038&runs=306041&runs=306042&runs=306048&runs=306049&runs=306051&runs=306091&runs=306092&runs=306095&runs=306121&runs=306122&runs=306125&runs=306126&runs=306134&runs=306135&runs=306138&runs=306139&runs=306153&runs=306154&runs=306155&runs=306169&runs=306170&runs=306171&runs=306418&runs=306419&runs=306420&runs=306422&runs=306423&runs=306432&runs=306454&runs=306455&runs=306456&runs=306457&runs=306458&runs=306459&runs=306460&lumis=1%2C32&lumis=78%2C94&lumis=1%2C110&lumis=12%2C44&lumis=1%2C138&lumis=1%2C320&lumis=1%2C365&lumis=1%2C136&lumis=1%2C358&lumis=1%2C389&lumis=422%2C619&lumis=1%2C588%2C593%2C976&lumis=1%2C300&lumis=74%2C147&lumis=1%2C127&lumis=1%2C756%2C770%2C2642%2C2667%2C3001&lumis=1%2C472&lumis=73%2C76&lumis=1%2C1095&lumis=1%2C1298&lumis=1%2C1102&lumis=96%2C160&lumis=1%2C251%2C253%2C691%2C709%2C1231&lumis=1%2C1440&lumis=1%2C735&lumis=1%2C15&lumis=1%2C482&lumis=1%2C33%2C35%2C67&lumis=1%2C58&lumis=1%2C108&lumis=9%2C123&lumis=1%2C323&lumis=1%2C330&lumis=37%2C97&lumis=1%2C6&lumis=1%2C237%2C239%2C784&lumis=1%2C28&lumis=1%2C17%2C20%2C35%2C37%2C41%2C43%2C47%2C49%2C53%2C56%2C60%2C62%2C66%2C68%2C72%2C74%2C77%2C79%2C83%2C85%2C89%2C93%2C102%2C104%2C108%2C110%2C114%2C116%2C120%2C122%2C126%2C129%2C139%2C141%2C145%2C147%2C151%2C153%2C166%2C169%2C173%2C175%2C179%2C181%2C185%2C187%2C191%2C193%2C197%2C200%2C210%2C212%2C216%2C218%2C222%2C225%2C229%2C231%2C235%2C237%2C241%2C243%2C247%2C249%2C249%2C252%2C256%2C258%2C264&lumis=1%2C512%2C514%2C2272&lumis=1%2C64
+DEBUG 2020-06-09 18:10:26.955 UTC: 	 Result: {u'result': [{u'RequestName': u'200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3'}]}
+INFO 2020-06-09 18:10:27.042 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2020-06-09 18:10:27.042 UTC: 	 Task name: 200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-09 18:10:27.042 UTC: 	 Project dir: crab_projects/crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-09 18:10:27.042 UTC: 	 Please use ' crab status -d crab_projects/crab_DoubleMuon_Data_UL2017F3 ' to check how the submission process proceeds.
+DEBUG 2020-06-09 18:10:27.043 UTC: 	 About to return
+DEBUG 2020-06-09 23:33:32.884 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-06-09 23:33:32.885 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-06-09 23:33:32.905 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-06-09 23:33:32.906 UTC: 	 Executing command: 'status'
+DEBUG 2020-06-09 23:33:32.907 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-06-09 23:33:32.973 UTC: 	 Checking credentials
+DEBUG 2020-06-09 23:33:32.973 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-06-09 23:33:32.974 UTC: 	 Getting proxy life time left
+DEBUG 2020-06-09 23:33:33.078 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 583280
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 23:33:33.184 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 583280
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 23:33:33.184 UTC: 	 Proxy valid for 162:01:20 hours
+DEBUG 2020-06-09 23:33:34.413 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2020-06-09 23:33:34.527 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 23:33:34.527 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-06-09 23:33:34.527 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo_cmsweb.cern.ch for credential name
+DEBUG 2020-06-09 23:33:36.035 UTC: 	 Executing : 
+ command : myproxy-info -l dd1b5d1b83c99fbbd3bf757235d61a80afd751db -s myproxy.cern.ch
+ output : username: dd1b5d1b83c99fbbd3bf757235d61a80afd751db
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 713:47:31  (29.7 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 23:33:36.037 UTC: 	 Myproxy is valid: 2569651
+DEBUG 2020-06-09 23:33:36.037 UTC: 	 Retrieving username ...
+DEBUG 2020-06-09 23:33:36.037 UTC: 	 Retrieving username from CRIC...
+DEBUG 2020-06-09 23:33:37.957 UTC: 	 username is malvesga
+DEBUG 2020-06-09 23:33:37.966 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-06-09 23:33:37.967 UTC: 	 using malvesga_CRAB as credential login name
+DEBUG 2020-06-09 23:33:39.474 UTC: 	 Executing : 
+ command : myproxy-info -l malvesga_CRAB -s myproxy.cern.ch
+ output : username: malvesga_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 430:44:47  (17.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-09 23:33:39.475 UTC: 	 Myproxy is valid: 1550687
+DEBUG 2020-06-09 23:33:39.476 UTC: 	 Command use: status
+DEBUG 2020-06-09 23:33:39.476 UTC: 	 Options use: ['-d', 'crab_projects/crab_DoubleMuon_Data_UL2017F3']
+DEBUG 2020-06-09 23:33:40.739 UTC: 	 CRABClient version: 3.3.2005
+DEBUG 2020-06-09 23:33:40.739 UTC: 	 Instance is prod
+DEBUG 2020-06-09 23:33:40.739 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-06-09 23:33:40.740 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-06-09 23:33:42.037 UTC: 	 Got information from server oracle database: {u'result': [u'200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-06-09 18:10:26.813443', u'None', u'2020-06-09 18:16:42.624554', u'None', u'CMSSW_10_6_10', u'slc7_amd64_gcc820', u'/DoubleMuon/Run2017F-09Aug2019_UL2017-v1/MINIAOD', u'F', u'0', u"['T2_CH_CERN_HLT', 'T2_CH_CSCS', 'T2_US_Florida', 'T2_DE_RWTH', 'T2_US_Purdue', 'T2_IT_Bari', 'T2_US_Nebraska', 'T2_BE_UCL', 'T2_ES_IFCA', 'T2_BE_IIHE', 'T2_US_UCSD', 'T2_ES_CIEMAT', 'T2_RU_IHEP', 'T2_US_Wisconsin', 'T2_DE_DESY', 'T2_RU_SINP', 'T2_US_MIT', 'T2_IT_Legnaro', 'T2_IT_Rome', 'T2_US_Caltech', 'T2_RU_ITEP', 'T2_CH_CERN', 'T2_RU_JINR', 'T2_US_Vanderbilt', 'T2_IT_Pisa', 'T2_RU_INR']", u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 480, 'halt_job_on_file_boundaries': False, 'runs': ['305967', '306029', '306030', '306037', '306038', '306041', '306042', '306048', '306049', '306051', '306091', '306092', '306095', '306121', '306122', '306125', '306126', '306134', '306135', '306138', '306139', '306153', '306154', '306155', '306169', '306170', '306171', '306418', '306419', '306420', '306422', '306423', '306432', '306454', '306455', '306456', '306457', '306458', '306459', '306460'], 'lumis': ['1,32', '78,94', '1,110', '12,44', '1,138', '1,320', '1,365', '1,136', '1,358', '1,389', '422,619', '1,588,593,976', '1,300', '74,147', '1,127', '1,756,770,2642,2667,3001', '1,472', '73,76', '1,1095', '1,1298', '1,1102', '96,160', '1,251,253,691,709,1231', '1,1440', '1,735', '1,15', '1,482', '1,33,35,67', '1,58', '1,108', '9,123', '1,323', '1,330', '37,97', '1,6', '1,237,239,784', '1,28', '1,17,20,35,37,41,43,47,49,53,56,60,62,66,68,72,74,77,79,83,85,89,93,102,104,108,110,114,116,120,122,126,129,139,141,145,147,151,153,166,169,173,175,179,181,185,187,191,193,197,200,210,212,216,218,222,225,229,231,235,237,241,243,247,249,249,252,256,258,264', '1,512,514,2272', '1,64']}", u'43c633eb03af2d77f9206eb368bc195b70dc6ee8249fa9c9dc31db619a2fdf87.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'malvesga', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo', u'cms', u'None', u'None', u'data-00000000000000000000000000000000', u'F', u'T2_BR_UERJ', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['output_data.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'["The following sites from the user site whitelist are blacklisted by the CRAB server: [u\'T2_RU_ITEP\']. Since the CRAB server blacklist has precedence, these sites are not considered in the user whitelist."]', u'http://vocms0137.cern.ch/mon/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov', u'crab3@vocms0137.cern.ch', u'F', u'[]', u'T', u'/store/user/malvesga/miniaod/DoubleMuon_Data_UL2017F3', u'T', u'None', u'F', u'None', u'DoubleMuon', u'None', u'ad0115fb7485e5a03fa6796980a652ea4c5a6953cac2a1c00f669624bf232cb0.tar.gz', u'52189818', u'filetransfers', u'F', u'152.92.255.3', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-06-09 23:33:42.038 UTC: 	 CRAB project directory:		/home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-09 23:33:42.038 UTC: 	 Task name:			200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-09 23:33:42.039 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0137.cern.ch - crab-prod-tw01
+INFO 2020-06-09 23:33:42.039 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-06-09 23:33:42.039 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200609_181026%3Amalvesga_crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-09 23:33:42.045 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=malvesga&var-task=200609_181026%3Amalvesga_crab_DoubleMuon_Data_UL2017F3&from=1591726226000&to=now
+INFO 2020-06-09 23:33:42.045 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+WARNING 2020-06-09 23:33:42.045 UTC: 	 Warning:			The following sites from the user site whitelist are blacklisted by the CRAB server: [u'T2_RU_ITEP']. Since the CRAB server blacklist has precedence, these sites are not considered in the user whitelist.
+DEBUG 2020-06-09 23:33:42.046 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 52189818)
+DEBUG 2020-06-09 23:33:42.046 UTC: 	 Webdir is located at http://vocms0137.cern.ch/mon/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+DEBUG 2020-06-09 23:33:43.268 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0137/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+DEBUG 2020-06-09 23:33:43.268 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0137/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3/status_cache
+DEBUG 2020-06-09 23:33:44.519 UTC: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [8.0, 16230.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191474.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1543536], 'TotalUserCpuTimeHistory': [7388.0], 'SiteHistory': ['Unknown', 'T2_IT_Rome'], 'TotalSysCpuTimeHistory': [439.0]}, '10': {'Retries': 0, 'WallDurations': [9.0, 15029.0], 'StartTimes': [1591728536.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191473.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1439540], 'TotalUserCpuTimeHistory': [7157.0], 'SiteHistory': ['Unknown', 'T2_ES_IFCA'], 'TotalSysCpuTimeHistory': [580.0]}, '13': {'Retries': 0, 'WallDurations': [9.0, 7940.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191476.0'], 'EndTimes': [1591736474.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1367864], 'TotalUserCpuTimeHistory': [6655], 'SiteHistory': ['Unknown', 'T2_DE_DESY'], 'TotalSysCpuTimeHistory': [388]}, '12': {'Retries': 0, 'WallDurations': [9.0, 10526.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191475.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1434380], 'TotalUserCpuTimeHistory': [6299.0], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [450.0]}, '15': {'Retries': 0, 'WallDurations': [9.0, 10691.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728440.0], 'JobIds': ['52191478.0'], 'EndTimes': [1591739225.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1348580], 'TotalUserCpuTimeHistory': [8914], 'SiteHistory': ['Unknown', 'T2_DE_DESY'], 'TotalSysCpuTimeHistory': [303]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 950.0], 'StartTimes': [1591726818.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189822.0'], 'EndTimes': [1591727768.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1253084], 'TotalUserCpuTimeHistory': [688], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [28]}, '0-2': {'Retries': 0, 'WallDurations': [10.0, 1020.0], 'StartTimes': [1591726763.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189824.0'], 'EndTimes': [1591727783.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [917668], 'TotalUserCpuTimeHistory': [62], 'SiteHistory': ['Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [8]}, '0-3': {'Retries': 0, 'WallDurations': [9.0, 1141.0], 'StartTimes': [1591726766.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189823.0'], 'EndTimes': [1591727907.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1174008], 'TotalUserCpuTimeHistory': [621], 'SiteHistory': ['Unknown', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [39]}, '16': {'Retries': 0, 'WallDurations': [9.0, 10798.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728440.0], 'JobIds': ['52191479.0'], 'EndTimes': [1591739332.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1281284], 'TotalUserCpuTimeHistory': [8164], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [486]}, '1': {'Retries': 0, 'WallDurations': [8.0, 16836.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728432.0], 'JobIds': ['52191463.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1661236], 'TotalUserCpuTimeHistory': [8253.0], 'SiteHistory': ['Unknown', 'T2_CH_CSCS'], 'TotalSysCpuTimeHistory': [343.0]}, '3': {'Retries': 0, 'WallDurations': [9.0, 15342.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191465.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1470612], 'TotalUserCpuTimeHistory': [7828.0], 'SiteHistory': ['Unknown', 'T2_RU_IHEP'], 'TotalSysCpuTimeHistory': [364.0]}, '2': {'Retries': 0, 'WallDurations': [8.0, 11257.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728432.0], 'JobIds': ['52191464.0'], 'EndTimes': [1591739791.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1436656], 'TotalUserCpuTimeHistory': [6908], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [352]}, '5': {'Retries': 0, 'WallDurations': [8.0, 15942.0], 'StartTimes': [1591728535.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191469.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1536728], 'TotalUserCpuTimeHistory': [7550.0], 'SiteHistory': ['Unknown', 'T2_ES_IFCA'], 'TotalSysCpuTimeHistory': [573.0]}, '4': {'Retries': 0, 'WallDurations': [9.0, 9611.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191467.0'], 'EndTimes': [1591738144.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1543956], 'TotalUserCpuTimeHistory': [5192], 'SiteHistory': ['Unknown', 'T2_CH_CSCS'], 'TotalSysCpuTimeHistory': [196]}, '7': {'Retries': 0, 'WallDurations': [8.0, 14157.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728438.0], 'JobIds': ['52191471.0'], 'EndTimes': [1591742691.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1490516], 'TotalUserCpuTimeHistory': [10179], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [710]}, '6': {'Retries': 0, 'WallDurations': [9.0, 14293.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191468.0'], 'EndTimes': [1591742826.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1532948], 'TotalUserCpuTimeHistory': [10791], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [744]}, '9': {'Retries': 0, 'WallDurations': [8.0, 16835.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191472.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1436508], 'TotalUserCpuTimeHistory': [4643.0], 'SiteHistory': ['Unknown', 'T2_ES_CIEMAT'], 'TotalSysCpuTimeHistory': [291.0]}, '8': {'Retries': 0, 'WallDurations': [8.0, 15274.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728438.0], 'JobIds': ['52191470.0'], 'EndTimes': [1591743807.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'transferring', 'ResidentSetSize': [1502984], 'TotalUserCpuTimeHistory': [11525], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [538]}, '14': {'Retries': 0, 'WallDurations': [9.0, 16540.0], 'StartTimes': [1591728535.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191477.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1320304], 'TotalUserCpuTimeHistory': [9717.0], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [560.0]}}
+INFO 2020-06-09 23:33:44.519 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-06-09 23:33:44.519 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-06-09 23:33:44.520 UTC: 	 
+Jobs status:                    finished     		 43.8% ( 7/16)
+INFO 2020-06-09 23:33:44.520 UTC: 	 				running      		 50.0% ( 8/16)
+INFO 2020-06-09 23:33:44.520 UTC: 	 				transferring 		  6.2% ( 1/16)
+INFO 2020-06-09 23:33:44.520 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-06-09 23:33:44.522 UTC: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2020-06-09 23:33:44.522 UTC: 	 
+Summary of run jobs:
+ * Memory: 896MB min, 1507MB max, 1404MB ave
+ * Runtime: 0:15:50 min, 4:14:34 max, 3:15:52 ave
+ * CPU eff: 56% min, 89% max, 77% ave
+ * Waste: 0:01:09 (0% of total)
+
+INFO 2020-06-09 23:33:44.528 UTC: 	 Log file is /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3/crab.log
+DEBUG 2020-06-10 02:56:12.962 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-06-10 02:56:12.962 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-06-10 02:56:13.045 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-06-10 02:56:13.045 UTC: 	 Executing command: 'status'
+DEBUG 2020-06-10 02:56:13.046 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-06-10 02:56:13.171 UTC: 	 Checking credentials
+DEBUG 2020-06-10 02:56:13.171 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-06-10 02:56:13.171 UTC: 	 Getting proxy life time left
+DEBUG 2020-06-10 02:56:13.286 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 571120
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 02:56:13.507 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 571120
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 02:56:13.507 UTC: 	 Proxy valid for 158:38:40 hours
+DEBUG 2020-06-10 02:56:15.032 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2020-06-10 02:56:15.144 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 02:56:15.144 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-06-10 02:56:15.144 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo_cmsweb.cern.ch for credential name
+DEBUG 2020-06-10 02:56:16.796 UTC: 	 Executing : 
+ command : myproxy-info -l dd1b5d1b83c99fbbd3bf757235d61a80afd751db -s myproxy.cern.ch
+ output : username: dd1b5d1b83c99fbbd3bf757235d61a80afd751db
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 710:24:50  (29.6 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 02:56:16.797 UTC: 	 Myproxy is valid: 2557490
+DEBUG 2020-06-10 02:56:16.797 UTC: 	 Retrieving username ...
+DEBUG 2020-06-10 02:56:16.797 UTC: 	 Retrieving username from CRIC...
+DEBUG 2020-06-10 02:56:19.808 UTC: 	 username is malvesga
+DEBUG 2020-06-10 02:56:19.821 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-06-10 02:56:19.822 UTC: 	 using malvesga_CRAB as credential login name
+DEBUG 2020-06-10 02:56:21.368 UTC: 	 Executing : 
+ command : myproxy-info -l malvesga_CRAB -s myproxy.cern.ch
+ output : username: malvesga_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 427:22:05  (17.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 02:56:21.368 UTC: 	 Myproxy is valid: 1538525
+DEBUG 2020-06-10 02:56:21.374 UTC: 	 Command use: status
+DEBUG 2020-06-10 02:56:21.374 UTC: 	 Options use: ['-d', 'crab_projects/crab_DoubleMuon_Data_UL2017F3']
+DEBUG 2020-06-10 02:56:22.559 UTC: 	 CRABClient version: 3.3.2005
+DEBUG 2020-06-10 02:56:22.560 UTC: 	 Instance is prod
+DEBUG 2020-06-10 02:56:22.560 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-06-10 02:56:22.560 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-06-10 02:56:23.737 UTC: 	 Got information from server oracle database: {u'result': [u'200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-06-09 18:10:26.813443', u'None', u'2020-06-09 18:16:42.624554', u'None', u'CMSSW_10_6_10', u'slc7_amd64_gcc820', u'/DoubleMuon/Run2017F-09Aug2019_UL2017-v1/MINIAOD', u'F', u'0', u"['T2_CH_CERN_HLT', 'T2_CH_CSCS', 'T2_US_Florida', 'T2_DE_RWTH', 'T2_US_Purdue', 'T2_IT_Bari', 'T2_US_Nebraska', 'T2_BE_UCL', 'T2_ES_IFCA', 'T2_BE_IIHE', 'T2_US_UCSD', 'T2_ES_CIEMAT', 'T2_RU_IHEP', 'T2_US_Wisconsin', 'T2_DE_DESY', 'T2_RU_SINP', 'T2_US_MIT', 'T2_IT_Legnaro', 'T2_IT_Rome', 'T2_US_Caltech', 'T2_RU_ITEP', 'T2_CH_CERN', 'T2_RU_JINR', 'T2_US_Vanderbilt', 'T2_IT_Pisa', 'T2_RU_INR']", u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 480, 'halt_job_on_file_boundaries': False, 'runs': ['305967', '306029', '306030', '306037', '306038', '306041', '306042', '306048', '306049', '306051', '306091', '306092', '306095', '306121', '306122', '306125', '306126', '306134', '306135', '306138', '306139', '306153', '306154', '306155', '306169', '306170', '306171', '306418', '306419', '306420', '306422', '306423', '306432', '306454', '306455', '306456', '306457', '306458', '306459', '306460'], 'lumis': ['1,32', '78,94', '1,110', '12,44', '1,138', '1,320', '1,365', '1,136', '1,358', '1,389', '422,619', '1,588,593,976', '1,300', '74,147', '1,127', '1,756,770,2642,2667,3001', '1,472', '73,76', '1,1095', '1,1298', '1,1102', '96,160', '1,251,253,691,709,1231', '1,1440', '1,735', '1,15', '1,482', '1,33,35,67', '1,58', '1,108', '9,123', '1,323', '1,330', '37,97', '1,6', '1,237,239,784', '1,28', '1,17,20,35,37,41,43,47,49,53,56,60,62,66,68,72,74,77,79,83,85,89,93,102,104,108,110,114,116,120,122,126,129,139,141,145,147,151,153,166,169,173,175,179,181,185,187,191,193,197,200,210,212,216,218,222,225,229,231,235,237,241,243,247,249,249,252,256,258,264', '1,512,514,2272', '1,64']}", u'43c633eb03af2d77f9206eb368bc195b70dc6ee8249fa9c9dc31db619a2fdf87.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'malvesga', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo', u'cms', u'None', u'None', u'data-00000000000000000000000000000000', u'F', u'T2_BR_UERJ', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['output_data.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'["The following sites from the user site whitelist are blacklisted by the CRAB server: [u\'T2_RU_ITEP\']. Since the CRAB server blacklist has precedence, these sites are not considered in the user whitelist."]', u'http://vocms0137.cern.ch/mon/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov', u'crab3@vocms0137.cern.ch', u'F', u'[]', u'T', u'/store/user/malvesga/miniaod/DoubleMuon_Data_UL2017F3', u'T', u'None', u'F', u'None', u'DoubleMuon', u'None', u'ad0115fb7485e5a03fa6796980a652ea4c5a6953cac2a1c00f669624bf232cb0.tar.gz', u'52189818', u'filetransfers', u'F', u'152.92.255.3', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-06-10 02:56:23.737 UTC: 	 CRAB project directory:		/home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-10 02:56:23.737 UTC: 	 Task name:			200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-10 02:56:23.737 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0137.cern.ch - crab-prod-tw01
+INFO 2020-06-10 02:56:23.738 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-06-10 02:56:23.738 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200609_181026%3Amalvesga_crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-10 02:56:23.743 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=malvesga&var-task=200609_181026%3Amalvesga_crab_DoubleMuon_Data_UL2017F3&from=1591726226000&to=now
+INFO 2020-06-10 02:56:23.744 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+WARNING 2020-06-10 02:56:23.744 UTC: 	 Warning:			The following sites from the user site whitelist are blacklisted by the CRAB server: [u'T2_RU_ITEP']. Since the CRAB server blacklist has precedence, these sites are not considered in the user whitelist.
+DEBUG 2020-06-10 02:56:23.744 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 52189818)
+DEBUG 2020-06-10 02:56:23.744 UTC: 	 Webdir is located at http://vocms0137.cern.ch/mon/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+DEBUG 2020-06-10 02:56:24.948 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0137/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+DEBUG 2020-06-10 02:56:24.949 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0137/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3/status_cache
+DEBUG 2020-06-10 02:56:26.103 UTC: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [8.0, 18098.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191474.0'], 'EndTimes': [1591746632.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1577872], 'TotalUserCpuTimeHistory': [8213], 'SiteHistory': ['Unknown', 'T2_IT_Rome'], 'TotalSysCpuTimeHistory': [490]}, '10': {'Retries': 0, 'WallDurations': [9.0, 25891.0], 'StartTimes': [1591728536.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191473.0'], 'EndTimes': [1591754427.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1439540], 'TotalUserCpuTimeHistory': [12498], 'SiteHistory': ['Unknown', 'T2_ES_IFCA'], 'TotalSysCpuTimeHistory': [1034]}, '13': {'Retries': 0, 'WallDurations': [9.0, 7940.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191476.0'], 'EndTimes': [1591736474.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1367864], 'TotalUserCpuTimeHistory': [6655], 'SiteHistory': ['Unknown', 'T2_DE_DESY'], 'TotalSysCpuTimeHistory': [388]}, '12': {'Retries': 0, 'WallDurations': [9.0, 17173.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191475.0'], 'EndTimes': [1591745707.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1434380], 'TotalUserCpuTimeHistory': [10752], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [1398]}, '15': {'Retries': 0, 'WallDurations': [9.0, 10691.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728440.0], 'JobIds': ['52191478.0'], 'EndTimes': [1591739225.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1348580], 'TotalUserCpuTimeHistory': [8914], 'SiteHistory': ['Unknown', 'T2_DE_DESY'], 'TotalSysCpuTimeHistory': [303]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 950.0], 'StartTimes': [1591726818.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189822.0'], 'EndTimes': [1591727768.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1253084], 'TotalUserCpuTimeHistory': [688], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [28]}, '0-2': {'Retries': 0, 'WallDurations': [10.0, 1020.0], 'StartTimes': [1591726763.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189824.0'], 'EndTimes': [1591727783.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [917668], 'TotalUserCpuTimeHistory': [62], 'SiteHistory': ['Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [8]}, '0-3': {'Retries': 0, 'WallDurations': [9.0, 1141.0], 'StartTimes': [1591726766.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189823.0'], 'EndTimes': [1591727907.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1174008], 'TotalUserCpuTimeHistory': [621], 'SiteHistory': ['Unknown', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [39]}, '16': {'Retries': 0, 'WallDurations': [9.0, 10798.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728440.0], 'JobIds': ['52191479.0'], 'EndTimes': [1591739332.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1281284], 'TotalUserCpuTimeHistory': [8164], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [486]}, '1': {'Retries': 0, 'WallDurations': [8.0, 19303.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728432.0], 'JobIds': ['52191463.0'], 'EndTimes': [1591747837.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1661236], 'TotalUserCpuTimeHistory': [9465], 'SiteHistory': ['Unknown', 'T2_CH_CSCS'], 'TotalSysCpuTimeHistory': [389]}, '3': {'Retries': 0, 'WallDurations': [9.0, 21567.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191465.0'], 'EndTimes': [1591750101.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1470612], 'TotalUserCpuTimeHistory': [10447], 'SiteHistory': ['Unknown', 'T2_RU_IHEP'], 'TotalSysCpuTimeHistory': [485]}, '2': {'Retries': 0, 'WallDurations': [8.0, 11257.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728432.0], 'JobIds': ['52191464.0'], 'EndTimes': [1591739791.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1436656], 'TotalUserCpuTimeHistory': [6908], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [352]}, '5': {'Retries': 0, 'WallDurations': [8.0, 22295.0], 'StartTimes': [1591728535.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191469.0'], 'EndTimes': [1591750830.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1536728], 'TotalUserCpuTimeHistory': [10541], 'SiteHistory': ['Unknown', 'T2_ES_IFCA'], 'TotalSysCpuTimeHistory': [792]}, '4': {'Retries': 0, 'WallDurations': [9.0, 9611.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191467.0'], 'EndTimes': [1591738144.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1543956], 'TotalUserCpuTimeHistory': [5192], 'SiteHistory': ['Unknown', 'T2_CH_CSCS'], 'TotalSysCpuTimeHistory': [196]}, '7': {'Retries': 0, 'WallDurations': [8.0, 14157.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728438.0], 'JobIds': ['52191471.0'], 'EndTimes': [1591742691.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1490516], 'TotalUserCpuTimeHistory': [10179], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [710]}, '6': {'Retries': 0, 'WallDurations': [9.0, 14293.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191468.0'], 'EndTimes': [1591742826.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1532948], 'TotalUserCpuTimeHistory': [10791], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [744]}, '9': {'Retries': 0, 'WallDurations': [8.0, 25650.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191472.0'], 'EndTimes': [1591754184.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'transferring', 'ResidentSetSize': [1471180], 'TotalUserCpuTimeHistory': [8672], 'SiteHistory': ['Unknown', 'T2_ES_CIEMAT'], 'TotalSysCpuTimeHistory': [707]}, '8': {'Retries': 0, 'WallDurations': [8.0, 15274.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728438.0], 'JobIds': ['52191470.0'], 'EndTimes': [1591743807.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1502984], 'TotalUserCpuTimeHistory': [11525], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [538]}, '14': {'Retries': 0, 'WallDurations': [9.0, 17338.0], 'StartTimes': [1591728535.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191477.0'], 'EndTimes': [1591745873.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1320304], 'TotalUserCpuTimeHistory': [10149], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [590]}}
+INFO 2020-06-10 02:56:26.103 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-06-10 02:56:26.103 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-06-10 02:56:26.103 UTC: 	 
+Jobs status:                    finished     		 93.8% (15/16)
+INFO 2020-06-10 02:56:26.103 UTC: 	 				transferring 		  6.2% ( 1/16)
+INFO 2020-06-10 02:56:26.103 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-06-10 02:56:26.104 UTC: 	 
+Summary of run jobs:
+ * Memory: 896MB min, 1622MB max, 1429MB ave
+ * Runtime: 0:15:50 min, 7:11:31 max, 4:32:13 ave
+ * CPU eff: 37% min, 89% max, 61% ave
+ * Waste: 0:02:17 (0% of total)
+
+INFO 2020-06-10 02:56:26.129 UTC: 	 Log file is /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3/crab.log
+DEBUG 2020-06-10 16:03:14.164 UTC: 	 CRAB Client version: 3.3.2005
+DEBUG 2020-06-10 16:03:14.165 UTC: 	 Running on: Linux analysis7.academica.hepgrid 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-06-10 16:03:14.185 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-06-10 16:03:14.185 UTC: 	 Executing command: 'status'
+DEBUG 2020-06-10 16:03:14.186 UTC: 	 Found CRAB cache file /home/malvesga/.crab3
+DEBUG 2020-06-10 16:03:14.259 UTC: 	 Checking credentials
+DEBUG 2020-06-10 16:03:14.260 UTC: 	 Found proxy file /tmp/x509up_u10024
+DEBUG 2020-06-10 16:03:14.260 UTC: 	 Getting proxy life time left
+DEBUG 2020-06-10 16:03:14.364 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -timeleft
+ output : 604394
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 16:03:14.470 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u10024 -actimeleft
+ output : 604394
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 16:03:14.470 UTC: 	 Proxy valid for 167:53:14 hours
+DEBUG 2020-06-10 16:03:15.672 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2020-06-10 16:03:15.786 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 16:03:15.786 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-06-10 16:03:15.786 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo_cmsweb.cern.ch for credential name
+DEBUG 2020-06-10 16:03:17.094 UTC: 	 Executing : 
+ command : myproxy-info -l dd1b5d1b83c99fbbd3bf757235d61a80afd751db -s myproxy.cern.ch
+ output : username: dd1b5d1b83c99fbbd3bf757235d61a80afd751db
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 697:17:49  (29.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 16:03:17.096 UTC: 	 Myproxy is valid: 2510269
+DEBUG 2020-06-10 16:03:17.096 UTC: 	 Retrieving username ...
+DEBUG 2020-06-10 16:03:17.096 UTC: 	 Retrieving username from CRIC...
+DEBUG 2020-06-10 16:03:19.318 UTC: 	 username is malvesga
+DEBUG 2020-06-10 16:03:19.326 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-06-10 16:03:19.327 UTC: 	 using malvesga_CRAB as credential login name
+DEBUG 2020-06-10 16:03:20.634 UTC: 	 Executing : 
+ command : myproxy-info -l malvesga_CRAB -s myproxy.cern.ch
+ output : username: malvesga_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 414:15:06  (17.3 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-06-10 16:03:20.635 UTC: 	 Myproxy is valid: 1491306
+DEBUG 2020-06-10 16:03:20.636 UTC: 	 Command use: status
+DEBUG 2020-06-10 16:03:20.636 UTC: 	 Options use: ['-d', 'crab_projects/crab_DoubleMuon_Data_UL2017F3']
+DEBUG 2020-06-10 16:03:21.812 UTC: 	 CRABClient version: 3.3.2005
+DEBUG 2020-06-10 16:03:21.812 UTC: 	 Instance is prod
+DEBUG 2020-06-10 16:03:21.812 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-06-10 16:03:21.812 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-06-10 16:03:22.996 UTC: 	 Got information from server oracle database: {u'result': [u'200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-06-09 18:10:26.813443', u'None', u'2020-06-09 18:16:42.624554', u'None', u'CMSSW_10_6_10', u'slc7_amd64_gcc820', u'/DoubleMuon/Run2017F-09Aug2019_UL2017-v1/MINIAOD', u'F', u'0', u"['T2_CH_CERN_HLT', 'T2_CH_CSCS', 'T2_US_Florida', 'T2_DE_RWTH', 'T2_US_Purdue', 'T2_IT_Bari', 'T2_US_Nebraska', 'T2_BE_UCL', 'T2_ES_IFCA', 'T2_BE_IIHE', 'T2_US_UCSD', 'T2_ES_CIEMAT', 'T2_RU_IHEP', 'T2_US_Wisconsin', 'T2_DE_DESY', 'T2_RU_SINP', 'T2_US_MIT', 'T2_IT_Legnaro', 'T2_IT_Rome', 'T2_US_Caltech', 'T2_RU_ITEP', 'T2_CH_CERN', 'T2_RU_JINR', 'T2_US_Vanderbilt', 'T2_IT_Pisa', 'T2_RU_INR']", u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 480, 'halt_job_on_file_boundaries': False, 'runs': ['305967', '306029', '306030', '306037', '306038', '306041', '306042', '306048', '306049', '306051', '306091', '306092', '306095', '306121', '306122', '306125', '306126', '306134', '306135', '306138', '306139', '306153', '306154', '306155', '306169', '306170', '306171', '306418', '306419', '306420', '306422', '306423', '306432', '306454', '306455', '306456', '306457', '306458', '306459', '306460'], 'lumis': ['1,32', '78,94', '1,110', '12,44', '1,138', '1,320', '1,365', '1,136', '1,358', '1,389', '422,619', '1,588,593,976', '1,300', '74,147', '1,127', '1,756,770,2642,2667,3001', '1,472', '73,76', '1,1095', '1,1298', '1,1102', '96,160', '1,251,253,691,709,1231', '1,1440', '1,735', '1,15', '1,482', '1,33,35,67', '1,58', '1,108', '9,123', '1,323', '1,330', '37,97', '1,6', '1,237,239,784', '1,28', '1,17,20,35,37,41,43,47,49,53,56,60,62,66,68,72,74,77,79,83,85,89,93,102,104,108,110,114,116,120,122,126,129,139,141,145,147,151,153,166,169,173,175,179,181,185,187,191,193,197,200,210,212,216,218,222,225,229,231,235,237,241,243,247,249,249,252,256,258,264', '1,512,514,2272', '1,64']}", u'43c633eb03af2d77f9206eb368bc195b70dc6ee8249fa9c9dc31db619a2fdf87.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'malvesga', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=malvesga/CN=826403/CN=Miguel Gallo', u'cms', u'None', u'None', u'data-00000000000000000000000000000000', u'F', u'T2_BR_UERJ', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['output_data.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'["The following sites from the user site whitelist are blacklisted by the CRAB server: [u\'T2_RU_ITEP\']. Since the CRAB server blacklist has precedence, these sites are not considered in the user whitelist."]', u'http://vocms0137.cern.ch/mon/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov', u'crab3@vocms0137.cern.ch', u'F', u'[]', u'T', u'/store/user/malvesga/miniaod/DoubleMuon_Data_UL2017F3', u'T', u'None', u'F', u'None', u'DoubleMuon', u'None', u'ad0115fb7485e5a03fa6796980a652ea4c5a6953cac2a1c00f669624bf232cb0.tar.gz', u'52189818', u'filetransfers', u'F', u'152.92.255.3', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-06-10 16:03:22.997 UTC: 	 CRAB project directory:		/home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-10 16:03:22.997 UTC: 	 Task name:			200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-10 16:03:22.997 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0137.cern.ch - crab-prod-tw01
+INFO 2020-06-10 16:03:22.997 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-06-10 16:03:22.998 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200609_181026%3Amalvesga_crab_DoubleMuon_Data_UL2017F3
+INFO 2020-06-10 16:03:23.004 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=malvesga&var-task=200609_181026%3Amalvesga_crab_DoubleMuon_Data_UL2017F3&from=1591726226000&to=now
+INFO 2020-06-10 16:03:23.004 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+WARNING 2020-06-10 16:03:23.005 UTC: 	 Warning:			The following sites from the user site whitelist are blacklisted by the CRAB server: [u'T2_RU_ITEP']. Since the CRAB server blacklist has precedence, these sites are not considered in the user whitelist.
+DEBUG 2020-06-10 16:03:23.005 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 52189818)
+DEBUG 2020-06-10 16:03:23.005 UTC: 	 Webdir is located at http://vocms0137.cern.ch/mon/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+DEBUG 2020-06-10 16:03:24.180 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0137/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3
+DEBUG 2020-06-10 16:03:24.180 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0137/cms1238/200609_181026:malvesga_crab_DoubleMuon_Data_UL2017F3/status_cache
+DEBUG 2020-06-10 16:03:25.341 UTC: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [8.0, 18098.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191474.0'], 'EndTimes': [1591746632.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1577872], 'TotalUserCpuTimeHistory': [8213], 'SiteHistory': ['Unknown', 'T2_IT_Rome'], 'TotalSysCpuTimeHistory': [490]}, '10': {'Retries': 0, 'WallDurations': [9.0, 25891.0], 'StartTimes': [1591728536.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191473.0'], 'EndTimes': [1591754427.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1439540], 'TotalUserCpuTimeHistory': [12498], 'SiteHistory': ['Unknown', 'T2_ES_IFCA'], 'TotalSysCpuTimeHistory': [1034]}, '13': {'Retries': 0, 'WallDurations': [9.0, 7940.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191476.0'], 'EndTimes': [1591736474.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1367864], 'TotalUserCpuTimeHistory': [6655], 'SiteHistory': ['Unknown', 'T2_DE_DESY'], 'TotalSysCpuTimeHistory': [388]}, '12': {'Retries': 0, 'WallDurations': [9.0, 17173.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191475.0'], 'EndTimes': [1591745707.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1434380], 'TotalUserCpuTimeHistory': [10752], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [1398]}, '15': {'Retries': 0, 'WallDurations': [9.0, 10691.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728440.0], 'JobIds': ['52191478.0'], 'EndTimes': [1591739225.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1348580], 'TotalUserCpuTimeHistory': [8914], 'SiteHistory': ['Unknown', 'T2_DE_DESY'], 'TotalSysCpuTimeHistory': [303]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 950.0], 'StartTimes': [1591726818.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189822.0'], 'EndTimes': [1591727768.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1253084], 'TotalUserCpuTimeHistory': [688], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [28]}, '0-2': {'Retries': 0, 'WallDurations': [10.0, 1020.0], 'StartTimes': [1591726763.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189824.0'], 'EndTimes': [1591727783.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [917668], 'TotalUserCpuTimeHistory': [62], 'SiteHistory': ['Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [8]}, '0-3': {'Retries': 0, 'WallDurations': [9.0, 1141.0], 'StartTimes': [1591726766.0], 'SubmitTimes': [1591726615.0], 'JobIds': ['52189823.0'], 'EndTimes': [1591727907.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1174008], 'TotalUserCpuTimeHistory': [621], 'SiteHistory': ['Unknown', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [39]}, '16': {'Retries': 0, 'WallDurations': [9.0, 10798.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728440.0], 'JobIds': ['52191479.0'], 'EndTimes': [1591739332.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1281284], 'TotalUserCpuTimeHistory': [8164], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [486]}, '1': {'Retries': 0, 'WallDurations': [8.0, 19303.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728432.0], 'JobIds': ['52191463.0'], 'EndTimes': [1591747837.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1661236], 'TotalUserCpuTimeHistory': [9465], 'SiteHistory': ['Unknown', 'T2_CH_CSCS'], 'TotalSysCpuTimeHistory': [389]}, '3': {'Retries': 0, 'WallDurations': [9.0, 21567.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191465.0'], 'EndTimes': [1591750101.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1470612], 'TotalUserCpuTimeHistory': [10447], 'SiteHistory': ['Unknown', 'T2_RU_IHEP'], 'TotalSysCpuTimeHistory': [485]}, '2': {'Retries': 0, 'WallDurations': [8.0, 11257.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728432.0], 'JobIds': ['52191464.0'], 'EndTimes': [1591739791.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1436656], 'TotalUserCpuTimeHistory': [6908], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [352]}, '5': {'Retries': 0, 'WallDurations': [8.0, 22295.0], 'StartTimes': [1591728535.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191469.0'], 'EndTimes': [1591750830.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1536728], 'TotalUserCpuTimeHistory': [10541], 'SiteHistory': ['Unknown', 'T2_ES_IFCA'], 'TotalSysCpuTimeHistory': [792]}, '4': {'Retries': 0, 'WallDurations': [9.0, 9611.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191467.0'], 'EndTimes': [1591738144.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1543956], 'TotalUserCpuTimeHistory': [5192], 'SiteHistory': ['Unknown', 'T2_CH_CSCS'], 'TotalSysCpuTimeHistory': [196]}, '7': {'Retries': 0, 'WallDurations': [8.0, 14157.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728438.0], 'JobIds': ['52191471.0'], 'EndTimes': [1591742691.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1490516], 'TotalUserCpuTimeHistory': [10179], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [710]}, '6': {'Retries': 0, 'WallDurations': [9.0, 14293.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728433.0], 'JobIds': ['52191468.0'], 'EndTimes': [1591742826.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1532948], 'TotalUserCpuTimeHistory': [10791], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [744]}, '9': {'Retries': 0, 'WallDurations': [8.0, 25650.0], 'StartTimes': [1591728534.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191472.0'], 'EndTimes': [1591754184.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1471180], 'TotalUserCpuTimeHistory': [8672], 'SiteHistory': ['Unknown', 'T2_ES_CIEMAT'], 'TotalSysCpuTimeHistory': [707]}, '8': {'Retries': 0, 'WallDurations': [8.0, 15274.0], 'StartTimes': [1591728533.0], 'SubmitTimes': [1591728438.0], 'JobIds': ['52191470.0'], 'EndTimes': [1591743807.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1502984], 'TotalUserCpuTimeHistory': [11525], 'SiteHistory': ['Unknown', 'T2_DE_RWTH'], 'TotalSysCpuTimeHistory': [538]}, '14': {'Retries': 0, 'WallDurations': [9.0, 17338.0], 'StartTimes': [1591728535.0], 'SubmitTimes': [1591728439.0], 'JobIds': ['52191477.0'], 'EndTimes': [1591745873.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1320304], 'TotalUserCpuTimeHistory': [10149], 'SiteHistory': ['Unknown', 'T2_IT_Bari'], 'TotalSysCpuTimeHistory': [590]}}
+INFO 2020-06-10 16:03:25.341 UTC: 	 Status on the scheduler:	COMPLETED
+INFO 2020-06-10 16:03:25.342 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-06-10 16:03:25.342 UTC: 	 
+Jobs status:                    finished     		100.0% (16/16)
+INFO 2020-06-10 16:03:25.342 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-06-10 16:03:25.344 UTC: 	 
+Summary of run jobs:
+ * Memory: 896MB min, 1622MB max, 1429MB ave
+ * Runtime: 0:15:50 min, 7:11:31 max, 4:32:13 ave
+ * CPU eff: 37% min, 89% max, 61% ave
+ * Waste: 0:02:17 (0% of total)
+
+INFO 2020-06-10 16:03:25.350 UTC: 	 Log file is /home/malvesga/CMSSW_10_6_10/src/test/crab_projects/crab_DoubleMuon_Data_UL2017F3/crab.log
