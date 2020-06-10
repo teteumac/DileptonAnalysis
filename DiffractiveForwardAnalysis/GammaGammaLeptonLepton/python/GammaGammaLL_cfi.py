@@ -41,8 +41,8 @@ ggll_aod = cms.EDAnalyzer('GammaGammaLL',
     datapupath = cms.string('pileup'),
     fixedGridRhoFastjetAllLabel = cms.InputTag('fixedGridRhoFastjetAll'),
 
-	 # MINIAOD
-	 runOnMINIAOD = cms.bool(False),
+    # MINIAOD
+    runOnMINIAOD = cms.bool(False),
     pfCand = cms.InputTag('packedPFCandidates'),
 
 )
@@ -66,7 +66,8 @@ ggll_miniaod = ggll_aod.clone(
     genParticleTag = cms.InputTag('prunedGenParticles'),
     #pfTag = cms.InputTag('packedPFCandidates'),
     pileupInfo = cms.InputTag('slimmedAddPileupInfo'),
-	
-	 #MINIAOD	
-	 runOnMINIAOD = cms.bool(True),
+
+    #MINIAOD   
+    runOnMINIAOD = cms.bool(True),
 )
+

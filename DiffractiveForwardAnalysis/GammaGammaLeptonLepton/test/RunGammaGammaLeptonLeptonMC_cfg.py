@@ -26,7 +26,7 @@ process.MessageLogger.cerr.FwkReport.reportEvery = 1
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-'file:/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/input/2017/MC/LPAIRmumuElastic_Fall17/GGToMuMu_Pt-50_Inel-El_13TeV-lpairAODSIM92X.root'
+'file:/tmp/jjhollar/ctppsSimElEl_xangle120_divergence30.root'
 #'file:/tmp/jjhollar/ctppsSimElEl_xangle150_divergence0.root'
 #/store/data/Run2018A/DoubleMuon/AOD/17Sep2018-v2/60000/32D7FDE9-748B-ED43-A45D-587019CC5D92.root'
  #       'file:/tmp/jjhollar/32D7FDE9-748B-ED43-A45D-587019CC5D92.root'
@@ -168,10 +168,9 @@ process.ggll_aod.leptonsType = cms.string('Muon')
 #process.ggll_aod.leptonsType = cms.string('ElectronMuon')
 #process.ggll_aod.leptonsType = cms.string('Electron')
 process.ggll_aod.runOnMC = cms.bool(runOnMC)
-process.ggll_aod.fetchProtons = cms.bool(False)
+process.ggll_aod.fetchProtons = cms.bool(True)
 process.ggll_aod.saveExtraTracks = cms.bool(False)
 process.ggll_aod.year = cms.string('2017MC')
-process.ggll_aod.mcpupath = 'input_Event/N_TrueInteractions'
 
 
 # E/gamma identification
@@ -183,14 +182,14 @@ process.ggll_aod.phoIdLabels = cms.PSet(
     mediumLabel = cms.InputTag('mvaPhoID-Spring16-nonTrig-V1-wp90'),
     tightLabel = cms.InputTag('mvaPhoID-Spring16-nonTrig-V1-wp80'),
 )
-process.ggll_aod.eleMediumIdMap = cms.InputTag("egmGsfElectronIDs:mvaEleID-Spring16-GeneralPurpose-V1-wp90")
-process.ggll_aod.eleTightIdMap = cms.InputTag("egmGsfElectronIDs:mvaEleID-Spring16-GeneralPurpose-V1-wp80")
-process.ggll_aod.phoMediumIdMap = cms.InputTag("egmPhotonIDs:mvaPhoID-Spring16-nonTrig-V1-wp90")
-process.ggll_aod.phoTightIdMap = cms.InputTag("egmPhotonIDs:mvaPhoID-Spring16-nonTrig-V1-wp80")
+#process.ggll_aod.eleMediumIdMap = cms.InputTag("egmGsfElectronIDs:mvaEleID-Spring16-GeneralPurpose-V1-wp90")
+#process.ggll_aod.eleTightIdMap = cms.InputTag("egmGsfElectronIDs:mvaEleID-Spring16-GeneralPurpose-V1-wp80")
+#process.ggll_aod.phoMediumIdMap = cms.InputTag("egmPhotonIDs:mvaPhoID-Spring16-nonTrig-V1-wp90")
+#process.ggll_aod.phoTightIdMap = cms.InputTag("egmPhotonIDs:mvaPhoID-Spring16-nonTrig-V1-wp80")
 
 # prepare the output file
 process.TFileService = cms.Service('TFileService',
-    fileName = cms.string('/afs/cern.ch/user/m/malvesga/work/ProtonRecon/archives/10_6_0/output/2017/MC/LPAIRmumuElastic_Fall17/output_xangle120.root'),
+    fileName = cms.string('output_xangle120.root'),
     closeFileFast = cms.untracked.bool(True)
 )
 

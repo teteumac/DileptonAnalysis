@@ -94,7 +94,7 @@ namespace ggll
       unsigned int nGenProtCand;
       double GenProtCand_pt[MAX_GENPRO], GenProtCand_eta[MAX_GENPRO], GenProtCand_phi[MAX_GENPRO], GenProtCand_e[MAX_GENPHO];
       int GenProtCand_status[MAX_GENPRO];
-		unsigned int nPfCand;
+      unsigned int nPfCand;
       double PfCand_eta[MAX_PFCAND], PfCand_phi[MAX_PFCAND], PfCand_fromPV[MAX_PFCAND], PfCand_dz[MAX_PFCAND];
 
       // Pileup reweighting quantities
@@ -193,19 +193,23 @@ namespace ggll
       double LocalProtCand_x[MAX_LOCALPCAND], LocalProtCand_y[MAX_LOCALPCAND], LocalProtCand_t[MAX_LOCALPCAND];
       double LocalProtCand_xSigma[MAX_LOCALPCAND], LocalProtCand_ySigma[MAX_LOCALPCAND], LocalProtCand_tSigma[MAX_LOCALPCAND];
       int LocalProtCand_arm[MAX_LOCALPCAND], LocalProtCand_station[MAX_LOCALPCAND], LocalProtCand_pot[MAX_LOCALPCAND], LocalProtCand_rpid[MAX_LOCALPCAND];
+      float LocalProtCand_time[MAX_LOCALPCAND];
 
       // reco proton quantities
       unsigned int nRecoProtCand;
       double ProtCand_xi[MAX_PRO], ProtCand_t[MAX_PRO], ProtCand_ThX[MAX_PRO], ProtCand_ThY[MAX_PRO];
-      int ProtCand_rpid[MAX_PRO], ProtCand_arm[MAX_PRO], ProtCand_ismultirp[MAX_PRO], ProtCand_time[MAX_PRO];
+      int ProtCand_rpid[MAX_PRO], ProtCand_arm[MAX_PRO], ProtCand_ismultirp[MAX_PRO];
+      float ProtCand_time[MAX_PRO];
       double ProtCand_trackx1[MAX_PRO], ProtCand_tracky1[MAX_PRO], ProtCand_trackx2[MAX_PRO], ProtCand_tracky2[MAX_PRO];
-      int ProtCand_rpid1[MAX_PRO], ProtCand_rpid2[MAX_PRO], ProtCand_trackpixshift1[MAX_PRO], ProtCand_trackpixshift2[MAX_PRO];
+      int ProtCand_rpid1[MAX_PRO], ProtCand_rpid2[MAX_PRO], ProtCand_trackpixshift_single[MAX_PRO], ProtCand_trackpixshift_multi1[MAX_PRO], ProtCand_trackpixshift_multi2[MAX_PRO];
+      double ProtCand_trackreducedchi2_single[MAX_PRO], ProtCand_trackreducedchi2_multi1[MAX_PRO], ProtCand_trackreducedchi2_multi2[MAX_PRO], ProtCand_trackthx_single[MAX_PRO], ProtCand_trackthx_multi1[MAX_PRO], ProtCand_trackthy_single[MAX_PRO], ProtCand_trackthy_multi1[MAX_PRO], ProtCand_trackthx_multi2[MAX_PRO], ProtCand_trackthy_multi2[MAX_PRO];
+      int ProtCand_trackndof_single[MAX_PRO], ProtCand_trackndof_multi1[MAX_PRO], ProtCand_trackndof_multi2[MAX_PRO];
       
 
       void clear() {
         // event-level branches
         BX = Run = LumiSection = EventNum = 0;
-	CrossingAngle = 0.0;
+        CrossingAngle = 0.0;
 
         // high-level trigger
         nHLT = 0;
@@ -346,35 +350,48 @@ namespace ggll
           LocalProtCand_x[i] = LocalProtCand_y[i] = LocalProtCand_t[i] = -999.;
           LocalProtCand_xSigma[i] = LocalProtCand_ySigma[i] = LocalProtCand_tSigma[i] = -999.;
           LocalProtCand_arm[i] = LocalProtCand_station[i] = LocalProtCand_pot[i] = LocalProtCand_rpid[i] = -1;
+          LocalProtCand_time[i] = 0;
         }
 
-		  //PF Candidates
-		  nPfCand = 0;
-		  for ( unsigned int i = 0; i < MAX_PFCAND; ++i ) {
+        //PF Candidates
+        nPfCand = 0;
+        for ( unsigned int i = 0; i < MAX_PFCAND; ++i ) {
           PfCand_phi[i] = PfCand_eta[i] = PfCand_fromPV[i] = PfCand_dz[i] = -999.;
         }
 
-
-	nRecoProtCand = 0;
-	for (unsigned int i = 0; i < MAX_PRO; ++i )
-	  {
-	    ProtCand_xi[i] = -999.;
-	    ProtCand_t[i] = -999.;
-	    ProtCand_ThX[i] = -999.;
-	    ProtCand_ThY[i] = -999.;
-	    ProtCand_rpid[i] = -1;
-	    ProtCand_arm[i] = -1;
-	    ProtCand_time[i] = -999.;
-	    ProtCand_ismultirp[i] = -1;
-	    ProtCand_trackx1[i] = -999.;
-	    ProtCand_tracky1[i] = -999.;
+        nRecoProtCand = 0;
+        for (unsigned int i = 0; i < MAX_PRO; ++i )
+          {
+            ProtCand_xi[i] = -999.;
+            ProtCand_t[i] = -999.;
+            ProtCand_ThX[i] = -999.;
+            ProtCand_ThY[i] = -999.;
+            ProtCand_rpid[i] = -1;
+            ProtCand_arm[i] = -1;
+            ProtCand_time[i] = -999.;
+            ProtCand_ismultirp[i] = -1;
+            ProtCand_trackx1[i] = -999.;
+            ProtCand_tracky1[i] = -999.;
             ProtCand_trackx2[i] = -999.;
             ProtCand_tracky2[i] = -999.;
             ProtCand_rpid1[i] = -1;
             ProtCand_rpid2[i] = -1;
-	    ProtCand_trackpixshift1[i] = -1;
-	    ProtCand_trackpixshift2[i] = -1;
-	  }
+	         ProtCand_trackpixshift_single[i] = -1;
+	         ProtCand_trackpixshift_multi1[i] = -1;
+            ProtCand_trackpixshift_multi2[i] = -1;
+            ProtCand_trackreducedchi2_single[i] = -999.; 
+            ProtCand_trackreducedchi2_multi1[i] = -999.; 
+            ProtCand_trackreducedchi2_multi2[i] = -999.; 
+            ProtCand_trackthx_single[i] = -999.; 
+            ProtCand_trackthx_multi1[i] = -999.; 
+            ProtCand_trackthy_single[i] = -999.; 
+            ProtCand_trackthy_multi1[i] = -999.; 
+            ProtCand_trackthx_multi2[i] = -999.; 
+            ProtCand_trackthy_multi2[i] = -999.;
+            ProtCand_trackndof_single[i] = -1; 
+            ProtCand_trackndof_multi1[i] = -1; 
+            ProtCand_trackndof_multi2[i] = -1;
+          }
       }
       void attach( TTree* tree, TreeType tt, bool mc, bool storetracks ) {
         if ( !tree ) return;
@@ -477,10 +494,10 @@ namespace ggll
         tree->Branch( "PrimVertexCand_chi2", PrimVertexCand_chi2, "PrimVertexCand_chi2[nPrimVertexCand]/D" );
         tree->Branch( "PrimVertexCand_ndof", PrimVertexCand_ndof, "PrimVertexCand_ndof[nPrimVertexCand]/i" );
         tree->Branch( "PrimVertexCand_tracks", PrimVertexCand_tracks, "PrimVertexCand_tracks[nPrimVertexCand]/i" );
-        
-		  //Pf Candidates
+
+        //Pf Candidates
         tree->Branch( "nPfCand", &nPfCand, "nPfCand/i" );
-		  tree->Branch( "PfCand_phi", PfCand_phi, "PfCand_phi[nPfCand]/D" );
+        tree->Branch( "PfCand_phi", PfCand_phi, "PfCand_phi[nPfCand]/D" );
         tree->Branch( "PfCand_eta", PfCand_eta, "PfCand_eta[nPfCand]/D" );
         tree->Branch( "PfCand_fromPV", PfCand_fromPV, "PfCand_fromPV[nPfCand]/D" );
         tree->Branch( "PfCand_dz", PfCand_dz, "PfCand_dz[nPfCand]/D" );
@@ -524,7 +541,18 @@ namespace ggll
           tree->Branch( "GenPair_3Dangle", &GenPair_3Dangle, "GenPair_3Dangle/D" );
         }
 
-	//        if ( !mc ) {
+        tree->Branch( "nLocalProtCand", &nLocalProtCand, "nLocalProtCand/i" );
+        tree->Branch( "LocalProtCand_x", LocalProtCand_x, "LocalProtCand_x[nLocalProtCand]/D" );
+        tree->Branch( "LocalProtCand_y", LocalProtCand_y, "LocalProtCand_y[nLocalProtCand]/D" );
+        tree->Branch( "LocalProtCand_t", LocalProtCand_t, "LocalProtCand_t[nLocalProtCand]/D" );
+        tree->Branch( "LocalProtCand_xSigma", LocalProtCand_xSigma, "LocalProtCand_xSigma[nLocalProtCand]/D" );
+        tree->Branch( "LocalProtCand_ySigma", LocalProtCand_ySigma, "LocalProtCand_ySigma[nLocalProtCand]/D" );
+        tree->Branch( "LocalProtCand_tSigma", LocalProtCand_tSigma, "LocalProtCand_tSigma[nLocalProtCand]/D" );
+        tree->Branch( "LocalProtCand_arm", LocalProtCand_arm, "LocalProtCand_arm[nLocalProtCand]/I" );
+        tree->Branch( "LocalProtCand_station", LocalProtCand_station, "LocalProtCand_station[nLocalProtCand]/I" );
+        tree->Branch( "LocalProtCand_pot", LocalProtCand_pot, "LocalProtCand_pot[nLocalProtCand]/I" );
+	
+   //        if ( !mc ) {
 	if(1) {
           tree->Branch( "nLocalProtCand", &nLocalProtCand, "nLocalProtCand/i" );
           tree->Branch( "LocalProtCand_x", LocalProtCand_x, "LocalProtCand_x[nLocalProtCand]/D" );
@@ -537,6 +565,7 @@ namespace ggll
           tree->Branch( "LocalProtCand_station", LocalProtCand_station, "LocalProtCand_station[nLocalProtCand]/I" );
           tree->Branch( "LocalProtCand_pot", LocalProtCand_pot, "LocalProtCand_pot[nLocalProtCand]/I" );
           tree->Branch( "LocalProtCand_rpid", LocalProtCand_rpid, "LocalProtCand_rpid[nLocalProtCand]/I" );
+          tree->Branch( "LocalProtCand_time", LocalProtCand_time, "LocalProtCand_time[nLocalProtCand]/F" );
 
           tree->Branch( "nRecoProtCand", &nRecoProtCand, "nRecoProtCand/i" );
           tree->Branch( "ProtCand_xi", ProtCand_xi, "ProtCand_xi[nRecoProtCand]/D" );
@@ -546,16 +575,29 @@ namespace ggll
           tree->Branch( "ProtCand_rpid", ProtCand_rpid, "ProtCand_rpid[nRecoProtCand]/I" );
           tree->Branch( "ProtCand_arm", ProtCand_arm, "ProtCand_arm[nRecoProtCand]/I" );
           tree->Branch( "ProtCand_ismultirp", ProtCand_ismultirp, "ProtCand_ismultirp[nRecoProtCand]/I" );
-          tree->Branch( "ProtCand_time", ProtCand_time, "ProtCand_time[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_time", ProtCand_time, "ProtCand_time[nRecoProtCand]/F" );
           tree->Branch( "ProtCand_trackx1", ProtCand_trackx1, "ProtCand_trackx1[nRecoProtCand]/D" );
           tree->Branch( "ProtCand_tracky1", ProtCand_tracky1, "ProtCand_tracky1[nRecoProtCand]/D" );
           tree->Branch( "ProtCand_trackx2", ProtCand_trackx2, "ProtCand_trackx2[nRecoProtCand]/D" );
           tree->Branch( "ProtCand_tracky2", ProtCand_tracky2, "ProtCand_tracky2[nRecoProtCand]/D" );
           tree->Branch( "ProtCand_rpid1", ProtCand_rpid1, "ProtCand_rpid1[nRecoProtCand]/I" );
           tree->Branch( "ProtCand_rpid2", ProtCand_rpid2, "ProtCand_rpid2[nRecoProtCand]/I" );
-	  tree->Branch( "ProtCand_trackpixshift1", ProtCand_trackpixshift1, "ProtCand_trackpixshift1[nRecoProtCand]/I" );
-          tree->Branch( "ProtCand_trackpixshift2", ProtCand_trackpixshift2, "ProtCand_trackpixshift2[nRecoProtCand]/I" );
-        }
+          tree->Branch( "ProtCand_trackpixshift_single", ProtCand_trackpixshift_single, "ProtCand_trackpixshift_single[nRecoProtCand]/I" );
+          tree->Branch( "ProtCand_trackpixshift_multi1", ProtCand_trackpixshift_multi1, "ProtCand_trackpixshift_multi1[nRecoProtCand]/I" );
+          tree->Branch( "ProtCand_trackpixshift_multi2", ProtCand_trackpixshift_multi2, "ProtCand_trackpixshift_multi2[nRecoProtCand]/I" );
+          tree->Branch( "ProtCand_trackreducedchi2_single", ProtCand_trackreducedchi2_single, "ProtCand_trackreducedchi2_single[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackreducedchi2_multi1", ProtCand_trackreducedchi2_multi1, "ProtCand_trackreducedchi2_multi1[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackreducedchi2_multi2", ProtCand_trackreducedchi2_multi2, "ProtCand_trackreducedchi2_multi2[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackthx_single" , ProtCand_trackthx_single, "ProtCand_trackthx_single[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackthx_multi1" , ProtCand_trackthx_multi1, "ProtCand_trackthx_multi1[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackthy_single", ProtCand_trackthy_single, "ProtCand_trackthy_single[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackthy_multi1", ProtCand_trackthy_multi1, "ProtCand_trackthy_multi1[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackthx_multi2", ProtCand_trackthx_multi2, "ProtCand_trackthx_multi2[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackthy_multi2", ProtCand_trackthy_multi2, "ProtCand_trackthy_multi2[nRecoProtCand]/D" );
+          tree->Branch( "ProtCand_trackndof_single", ProtCand_trackndof_single, "ProtCand_trackndof_single[nRecoProtCand]/I" );
+          tree->Branch( "ProtCand_trackndof_multi1", ProtCand_trackndof_multi1, "ProtCand_trackndof_multi1[nRecoProtCand]/I" );
+          tree->Branch( "ProtCand_trackndof_multi2", ProtCand_trackndof_multi2, "ProtCand_trackndof_multi2[nRecoProtCand]/I" );
+   }
 
         // Extra tracks on vertex's information
 	if(storetracks == true)
@@ -596,7 +638,7 @@ namespace ggll
         tree->SetBranchAddress( "LumiSection", &LumiSection );
         tree->SetBranchAddress( "BX", &BX );
         tree->SetBranchAddress( "EventNum", &EventNum );
-	tree->SetBranchAddress( "CrossingAngle", &CrossingAngle );
+	     tree->SetBranchAddress( "CrossingAngle", &CrossingAngle );
 
         tree->SetBranchAddress( "nHLT", &nHLT );
         tree->SetBranchAddress( "HLT_Accept", HLT_Accept );
@@ -692,12 +734,12 @@ namespace ggll
         tree->SetBranchAddress( "PrimVertexCand_ndof", PrimVertexCand_ndof );
         tree->SetBranchAddress( "PrimVertexCand_tracks", PrimVertexCand_tracks );
 
-		  //Pf Candidates
+        //Pf Candidates
         tree->SetBranchAddress( "nPfCand", &nPfCand );
-		  tree->SetBranchAddress( "PfCand_phi", PfCand_phi );
-		  tree->SetBranchAddress( "PfCand_eta", PfCand_eta );
-		  tree->SetBranchAddress( "PfCand_fromPV", PfCand_fromPV );
-		  tree->SetBranchAddress( "PfCand_dz", PfCand_dz );
+        tree->SetBranchAddress( "PfCand_phi", PfCand_phi );
+        tree->SetBranchAddress( "PfCand_eta", PfCand_eta );
+        tree->SetBranchAddress( "PfCand_fromPV", PfCand_fromPV );
+        tree->SetBranchAddress( "PfCand_dz", PfCand_dz );
 
         // Lepton pairs' information
         tree->SetBranchAddress( "nPair", &nPair );
@@ -738,7 +780,18 @@ namespace ggll
           tree->SetBranchAddress( "GenPair_3Dangle", &GenPair_3Dangle );
         }
 
-	//        if ( !mc ) {
+        tree->SetBranchAddress( "nLocalProtCand", &nLocalProtCand );
+        tree->SetBranchAddress( "LocalProtCand_x", LocalProtCand_x );
+        tree->SetBranchAddress( "LocalProtCand_y", LocalProtCand_y );
+        tree->SetBranchAddress( "LocalProtCand_t", LocalProtCand_t );
+        tree->SetBranchAddress( "LocalProtCand_xSigma", LocalProtCand_xSigma );
+        tree->SetBranchAddress( "LocalProtCand_ySigma", LocalProtCand_ySigma );
+        tree->SetBranchAddress( "LocalProtCand_tSigma", LocalProtCand_tSigma );
+        tree->SetBranchAddress( "LocalProtCand_arm", LocalProtCand_arm );
+        tree->SetBranchAddress( "LocalProtCand_station", LocalProtCand_station );
+        tree->SetBranchAddress( "LocalProtCand_pot", LocalProtCand_pot );
+	
+   //        if ( !mc ) {
 	if(1) {
           tree->SetBranchAddress( "nLocalProtCand", &nLocalProtCand );
           tree->SetBranchAddress( "LocalProtCand_x", LocalProtCand_x );
@@ -751,9 +804,10 @@ namespace ggll
           tree->SetBranchAddress( "LocalProtCand_station", LocalProtCand_station );
           tree->SetBranchAddress( "LocalProtCand_pot", LocalProtCand_pot );
           tree->SetBranchAddress( "LocalProtCand_rpid", LocalProtCand_rpid );
+          tree->SetBranchAddress( "LocalProtCand_time", LocalProtCand_time );
 
-	  tree->SetBranchAddress( "nRecoProtCand", &nRecoProtCand );
-	  tree->SetBranchAddress( "ProtCand_xi", ProtCand_xi );
+	       tree->SetBranchAddress( "nRecoProtCand", &nRecoProtCand );
+	       tree->SetBranchAddress( "ProtCand_xi", ProtCand_xi );
           tree->SetBranchAddress( "ProtCand_t", ProtCand_t );
           tree->SetBranchAddress( "ProtCand_ThX", ProtCand_ThX );
           tree->SetBranchAddress( "ProtCand_ThY", ProtCand_ThY );
@@ -767,9 +821,22 @@ namespace ggll
           tree->SetBranchAddress( "ProtCand_tracky2", ProtCand_tracky2 );
           tree->SetBranchAddress( "ProtCand_rpid1", ProtCand_rpid1 );
           tree->SetBranchAddress( "ProtCand_rpid2", ProtCand_rpid2 );
-	  tree->SetBranchAddress( "ProtCand_trackpixshift1", ProtCand_trackpixshift1 );
-          tree->SetBranchAddress( "ProtCand_trackpixshift2", ProtCand_trackpixshift2 );
-        }
+	       tree->SetBranchAddress( "ProtCand_trackpixshift_single", ProtCand_trackpixshift_single );
+	       tree->SetBranchAddress( "ProtCand_trackpixshift_multi1", ProtCand_trackpixshift_multi1 );
+          tree->SetBranchAddress( "ProtCand_trackpixshift_multi2", ProtCand_trackpixshift_multi2 );
+          tree->SetBranchAddress( "ProtCand_trackreducedchi2_single", ProtCand_trackreducedchi2_single );
+          tree->SetBranchAddress( "ProtCand_trackreducedchi2_multi1", ProtCand_trackreducedchi2_multi1 );
+          tree->SetBranchAddress( "ProtCand_trackreducedchi2_multi2", ProtCand_trackreducedchi2_multi2 );
+          tree->SetBranchAddress( "ProtCand_trackthx_single", ProtCand_trackthx_single );
+          tree->SetBranchAddress( "ProtCand_trackthx_multi1", ProtCand_trackthx_multi1 );
+          tree->SetBranchAddress( "ProtCand_trackthy_single", ProtCand_trackthy_single );
+          tree->SetBranchAddress( "ProtCand_trackthy_multi1", ProtCand_trackthy_multi1 );
+          tree->SetBranchAddress( "ProtCand_trackthx_multi2", ProtCand_trackthx_multi2 );
+          tree->SetBranchAddress( "ProtCand_trackthy_multi2", ProtCand_trackthy_multi2 );
+          tree->SetBranchAddress( "ProtCand_trackndof_single", ProtCand_trackndof_single );
+          tree->SetBranchAddress( "ProtCand_trackndof_multi1", ProtCand_trackndof_multi1 );
+          tree->SetBranchAddress( "ProtCand_trackndof_multi2", ProtCand_trackndof_multi2 );
+   }
 
         // Extra tracks on vertex's information
 	if (storetracks == true)
