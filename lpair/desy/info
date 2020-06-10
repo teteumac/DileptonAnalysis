@@ -1,7 +1,0 @@
-Arquivo lpair.card contêm os inputs para rodar a simulação.
-Makefile cria o executável lpair
-
-Para rodar: 
-          ./lpair lpair.card
-          
-O arquivo ConvertLPairToLHE.C converte o arquivo criado ao rodar o lpair para o formato LHE.
