@@ -1,8 +1,10 @@
 Important commands to remember: 
 
-- cmsenv -- Set the CMSSW environment 
-- source /cvmfs/cms.cern.ch/crab3/crab.sh -- Set the CRAB3 environment
-- voms-proxy-init --voms cms --valid 168:00 -- Put GRID Certificate on for 168 hours
-- scram b -j8 -- Compile everything in the area
-- edmDumpEventContent <file.root> > text.txt -- Show the collections inside a file.root 
-- xrdcp root://cmsxrootd.fnal.gov//<path/to/file.root> -- Copy .root files from outside servers
+  - cmsenv -- Set the CMSSW environment 
+  - source /cvmfs/cms.cern.ch/crab3/crab.sh -- Set the CRAB3 environment
+  - voms-proxy-init --voms cms --valid 168:00 -- Put GRID Certificate on for 168 hours
+  - scram b -j8 -- Compile everything in the area
+  - edmDumpEventContent <file.root> > text.txt -- Show the collections inside a file.root 
+  - xrdcp root://cmsxrootd.fnal.gov//<path/to/file.root> -- Copy .root files from outside servers
+
+
