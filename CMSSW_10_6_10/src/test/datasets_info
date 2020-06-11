@@ -1,0 +1,20 @@
+Datasets for the UltraLegacy2017 analysis:
+  -- Monte Carlo: 
+  
+    - /GGToMuMu_Pt-50_Inel-El_13TeV-lpair/RunIISummer17MiniAOD-92X_upgrade2017_realistic_v10-v1/MINIAODSIM
+    
+    - /GGToMuMu_Pt-50_Elastic_13TeV-lpair/RunIIFall2017MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM
+    
+    - /DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM
+  
+  -- Data:
+  
+    - /DoubleMuon/Run2017B-09Aug2019_UL2017-v1/MINIAOD
+    
+    - /DoubleMuon/Run2017C-09Aug2019_UL2017-v1/MINIAOD
+    
+    - /DoubleMuon/Run2017D-09Aug2019_UL2017-v1/MINIAOD
+    
+    - /DoubleMuon/Run2017E-09Aug2019_UL2017-v1/MINIAOD
+    
+    - /DoubleMuon/Run2017F-09Aug2019_UL2017-v1/MINIAOD
