@@ -1,15 +1,51 @@
 Datasets for the UltraLegacy2017 analysis:
   -- Monte Carlo: 
-    - /GGToMuMu_Pt-50_Inel-El_13TeV-lpair/RunIISummer17MiniAOD-92X_upgrade2017_realistic_v10-v1/MINIAODSIM   
-    - /GGToMuMu_Pt-50_Elastic_13TeV-lpair/RunIIFall2017MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM    
+    - /GGToMuMu_Pt-50_Inel-El_13TeV-lpair/RunIISummer17MiniAOD-92X_upgrade2017_realistic_v10-v1/MINIAODSIM
+      Number of files processed: 5
+      Number of events read: 200000
+    
+    - /GGToMuMu_Pt-50_Elastic_13TeV-lpair/RunIIFall2017MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM
+      Number of files processed: 2
+      Number of events read: 200000
+
     - /DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM
+      Number of files processed: 1926
+      Number of events read: 101077576
+
   
   -- Data:  
     - /DoubleMuon/Run2017B-09Aug2019_UL2017-v1/MINIAOD
-    - /DoubleMuon/Run2017C-09Aug2019_UL2017-v1/MINIAOD    
-    - /DoubleMuon/Run2017D-09Aug2019_UL2017-v1/MINIAOD    
-    - /DoubleMuon/Run2017E-09Aug2019_UL2017-v1/MINIAOD    
-    - /DoubleMuon/Run2017F-09Aug2019_UL2017-v1/MINIAOD
+      Number of files processed: 129
+      Number of events read: 6723485
+    
+    - /DoubleMuon/Run2017C1-09Aug2019_UL2017-v1/MINIAOD
+      Number of files processed: 406
+      Number of events read: 24936280
+      
+    - /DoubleMuon/Run2017C2-09Aug2019_UL2017-v1/MINIAOD
+      Number of files processed: 315
+      Number of events read: 16183863       
+
+    - /DoubleMuon/Run2017D-09Aug2019_UL2017-v1/MINIAOD
+      Number of files processed: 290
+      Number of events read: 21699173
+      
+    - /DoubleMuon/Run2017E-09Aug2019_UL2017-v1/MINIAOD 
+      Number of files processed: 686
+      Number of events read: 48655353
+      
+    - /DoubleMuon/Run2017F1-09Aug2019_UL2017-v1/MINIAOD
+      Number of files processed: 244
+      Number of events read: 8866513
+    
+    - /DoubleMuon/Run2017F2-09Aug2019_UL2017-v1/MINIAOD
+      Number of files processed: 835
+      Number of events read: 42954817
+      
+    - /DoubleMuon/Run2017F3-09Aug2019_UL2017-v1/MINIAOD
+      Number of files processed: 518
+      Number of events read: 21655370
+       
 
  CRAB info: 
   https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial 
