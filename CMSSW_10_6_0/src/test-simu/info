@@ -51,7 +51,7 @@ Cálculo da luminosidade: compareJSON.py --and crab_projects/crab_DoubleMuon_Dat
                          brilcalc lumi -b "STABLE BEAMS" -i DoubleMuon_*.txt -u /fb
                          
 Valores de luminosidade: Total:    2.367133065 + 8.680670867 + 4.142654225 + 9.061579666 + 13.24622974 = 37.498268
-                         LimitRun: 2.367133065 + 5.372685500 + 9.061579666 + 1.714870205               = 18.516269
+                         LimitRun: 2.367133065 + 5.372685500 + 0           + 9.061579666 + 1.714870205 = 18.516269
           
 Crab reports (MINIAOD):
          crab_DoubleMuon_Data_2017B:          Number of files processed: 106
