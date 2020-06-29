@@ -17,34 +17,42 @@ Datasets for the UltraLegacy2017 analysis:
     - /DoubleMuon/Run2017B-09Aug2019_UL2017-v1/MINIAOD
       Number of files processed: 129
       Number of events read: 6723485
+      Integrated luminosity: 2.360904801
     
     - /DoubleMuon/Run2017C1-09Aug2019_UL2017-v1/MINIAOD
       Number of files processed: 406
       Number of events read: 24936280
+      Integrated luminosity: 5.313012839
       
     - /DoubleMuon/Run2017C2-09Aug2019_UL2017-v1/MINIAOD
       Number of files processed: 315
-      Number of events read: 16183863       
+      Number of events read: 16183863    
+      Integrated luminosity: 3.264135878
 
     - /DoubleMuon/Run2017D-09Aug2019_UL2017-v1/MINIAOD
       Number of files processed: 290
       Number of events read: 21699173
+      Integrated luminosity: 4.074723964
       
     - /DoubleMuon/Run2017E-09Aug2019_UL2017-v1/MINIAOD 
       Number of files processed: 686
       Number of events read: 48655353
+      Integrated luminosity: 8.958810514
       
     - /DoubleMuon/Run2017F1-09Aug2019_UL2017-v1/MINIAOD
       Number of files processed: 244
       Number of events read: 8866513
+      Integrated luminosity: 1.708478656
     
     - /DoubleMuon/Run2017F2-09Aug2019_UL2017-v1/MINIAOD
       Number of files processed: 835
       Number of events read: 42954817
+      Integrated luminosity: 7.877903151
       
     - /DoubleMuon/Run2017F3-09Aug2019_UL2017-v1/MINIAOD
       Number of files processed: 518
       Number of events read: 21655370
+      Integrated luminosity: 3.632463163
        
 
  CRAB info: 
@@ -61,4 +69,4 @@ GetEntries: root <file>.root -b
 To obtain the JSON: wget https://cernbox.cern.ch/index.php/s/SwJ2vLDUfCf1CDm/download (renamed to json_file_rpin_2017.txt)
 
 To obtain the luminosity: compareJSON.py --and crab_projects/crab_DoubleMuon_Data_2017*/results/processedLumis.json json_file_rpin_2017.txt DoubleMuon_*.txt
-                          brilcalc lumi -b "STABLE BEAMS" -i DoubleMuon_*.txt -u /fb
+                          brilcalc lumi -b "STABLE BEAMS" -i DoubleMuon_*.txt -u /fb --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_BRIL.json
