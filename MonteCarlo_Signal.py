@@ -86,17 +86,22 @@ DF_Modulo2inel = pd.DataFrame(abs(DF_MuonCand_vtxz_inel['muon2'] - DF_PrimVertex
 TLV_0_inel = TLV(DF_MuPt_inel['pt1'], DF_MuEta_inel['eta1'], DF_Muphi_inel['phi1'])
 TLV_1_inel = TLV(DF_MuPt_inel['pt2'], DF_MuEta_inel['eta2'], DF_Muphi_inel['phi2'])
 
-contador_PV  = 0
-contador_PV2 = 0
-contador_PV3 = []
 '''
+contador_PV3 = 0
+
 for i in range(0,len(nPfCand_inel)):
-	mylist = pow(pow(deltaPhi(PfCand_phi.loc[i],DataFrame(TLV_0_inel.phi)[0]),2) + pow(PfCand_eta.loc[i]-DataFrame(TLV_0_inel.eta)[0],2), 0.5) 
-	mylist2 = pow(pow(deltaPhi(PfCand_phi.loc[i],DataFrame(TLV_1_inel.phi)[0]),2) + pow(PfCand_eta.loc[i]-DataFrame(TLV_1_inel.eta)[0],2), 0.5)	
-		for value_list1, value_list2 in zip(mylist, mylist2):
-		    #print (f"value_list1 {value_list1} \t value_list2 {value_list1}")
-			if (value_list1 > 0.3 and value_list2 > 0.3):
-				contador_PV3+=1	
+
+	mylist = pow(pow(deltaPhi(PfCand_phi[i],TLV_0_inel.phi),2) + pow(PfCand_eta[i]-TLV_0_inel.eta,2), 0.5) 
+	mylist2 = pow(pow(deltaPhi(PfCand_phi[i],TLV_1_inel.phi),2) + pow(PfCand_eta[i]-TLV_1_inel.eta,2), 0.5)
+	
+	for value_list1[i], value_list2[i] in zip(mylist, mylist2):
+
+		#print (f"value_list1 {value_list1} \t value_list2 {value_list1}")
+
+		if (value_list1[i] > 0.3 and value_list2[i] > 0.3):
+			contador_PV3+=1
+							
+							
 '''				
 # -------------------------------------------------------------- #
 
