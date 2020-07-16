@@ -209,27 +209,21 @@ DF_nPfCand_dataF_1_limitRum = DataFrame(dataF_1_limitRum.array('nPfCand'))[0]
 
 print('INICÍO DA CONCATENAÇÃO \n')
 
-print('Extra Tracks')
-
-DF_ExtraTracks = pd.concat([DF_nPfCand_dataE_5,DF_nPfCand_dataE_6,DF_nPfCand_dataF_0_limitRum,DF_nPfCand_dataF_1_limitRum
-],axis=0)
-DF_ExtraTracks.to_csv('DF_ExtraTracksE3.csv') 
-
 print('PT ETA PHI \n')
 
-DF_MuPt  = pd.concat([DF_MuPt_dataB, DF_MuPt_C_0_limitRum,DF_MuPt_C_1_limitRum,DF_MuPt_C_2_limitRum,DF_MuPt_C_3_limitRum
-#DF_MuPt_dataE0,DF_MuPt_dataE1,DF_MuPt_dataE2,DF_MuPt_dataE3,DF_MuPt_dataE4
-#DF_MuPt_dataE5,DF_MuPt_dataE6,DF_MuPt_dataF_0_limitRum,DF_MuPt_dataF_1_limitRum
+DF_MuPt  = pd.concat([DF_MuPt_dataB, DF_MuPt_C_0_limitRum,DF_MuPt_C_1_limitRum,DF_MuPt_C_2_limitRum,DF_MuPt_C_3_limitRum,
+DF_MuPt_dataE0,DF_MuPt_dataE1,DF_MuPt_dataE2,DF_MuPt_dataE3,DF_MuPt_dataE4,
+DF_MuPt_dataE5,DF_MuPt_dataE6,DF_MuPt_dataF_0_limitRum,DF_MuPt_dataF_1_limitRum,
 ], axis = 0).drop([2,3,4],axis=1)
 
-DF_MuEta = pd.concat([DF_MuEta_dataB,DF_MuEta_C_0_limitRum,DF_MuEta_C_1_limitRum,DF_MuEta_C_2_limitRum,DF_MuEta_C_3_limitRum
-#DF_MuEta_dataE0,DF_MuEta_dataE1,DF_MuEta_dataE2,DF_MuEta_dataE3,DF_MuEta_dataE4
-#DF_MuEta_dataE5,DF_MuEta_dataE6,DF_MuEta_dataF_0_limitRum,DF_MuEta_dataF_1_limitRum
+DF_MuEta = pd.concat([DF_MuEta_dataB,DF_MuEta_C_0_limitRum,DF_MuEta_C_1_limitRum,DF_MuEta_C_2_limitRum,DF_MuEta_C_3_limitRum,
+DF_MuEta_dataE0,DF_MuEta_dataE1,DF_MuEta_dataE2,DF_MuEta_dataE3,DF_MuEta_dataE4,
+DF_MuEta_dataE5,DF_MuEta_dataE6,DF_MuEta_dataF_0_limitRum,DF_MuEta_dataF_1_limitRum
 ], axis = 0).drop([2,3,4],axis=1)
 
-DF_MuPhi = pd.concat([DF_MuPhi_dataB,DF_MuPhi_C_0_limitRum,DF_MuPhi_C_1_limitRum,DF_MuPhi_C_2_limitRum,DF_MuPhi_C_3_limitRum
-#F_MuPhi_dataE0,DF_MuPhi_dataE1,DF_MuPhi_dataE2,DF_MuPhi_dataE3,DF_MuPhi_dataE4
-#DF_MuPhi_dataE5,DF_MuPhi_dataE6,DF_MuPhi_dataF_0_limitRum,DF_MuPhi_dataF_1_limitRum
+DF_MuPhi = pd.concat([DF_MuPhi_dataB,DF_MuPhi_C_0_limitRum,DF_MuPhi_C_1_limitRum,DF_MuPhi_C_2_limitRum,DF_MuPhi_C_3_limitRum,
+DF_MuPhi_dataE0,DF_MuPhi_dataE1,DF_MuPhi_dataE2,DF_MuPhi_dataE3,DF_MuPhi_dataE4,
+DF_MuPhi_dataE5,DF_MuPhi_dataE6,DF_MuPhi_dataF_0_limitRum,DF_MuPhi_dataF_1_limitRum
 ], axis = 0).drop([2,3,4],axis=1)
 
 DF_ptetaphi = pd.concat([DF_MuPt, DF_MuEta, DF_MuPhi], axis = 1)
@@ -241,8 +235,8 @@ print('VERTICE PRIMARIO \n')
 
 # Vértice Primário 
 
-DataFrame_VerticePrimario_limitRum = pd.concat([#DF_PrimVertexCand_z_dataB, DF_PrimVertexCand_z_C_0_limitRum,DF_PrimVertexCand_z_C_1_limitRum, DF_PrimVertexCand_z_C_2_limitRum, DF_PrimVertexCand_z_C_3_limitRum,
-#DF_PrimVertexCand_z_dataE0,DF_PrimVertexCand_z_dataE1,DF_PrimVertexCand_z_dataE2,DF_PrimVertexCand_z_dataE3,DF_PrimVertexCand_z_dataE4
+DataFrame_VerticePrimario_limitRum = pd.concat([DF_PrimVertexCand_z_dataB, DF_PrimVertexCand_z_C_0_limitRum,DF_PrimVertexCand_z_C_1_limitRum, DF_PrimVertexCand_z_C_2_limitRum, DF_PrimVertexCand_z_C_3_limitRum,
+DF_PrimVertexCand_z_dataE0,DF_PrimVertexCand_z_dataE1,DF_PrimVertexCand_z_dataE2,DF_PrimVertexCand_z_dataE3,DF_PrimVertexCand_z_dataE4,
 DF_PrimVertexCand_z_dataE5,DF_PrimVertexCand_z_dataE6,DF_PrimVertexCand_z_dataF_0_limitRum,DF_PrimVertexCand_z_dataF_1_limitRum
 ], axis=0)
 DataFrame_VerticePrimario_limitRum.to_csv('Dados_VertPrimaE3.csv')
@@ -253,20 +247,20 @@ print('CARGA DO MUON \n')
 
 # Carga do par do Muon
 
-DataFrame_charge = pd.concat([#DF_charge_dataB,DF_charge_inel_C_3_limitRum, DF_charge_inel_C_0_limitRum,DF_charge_inel_C_1_limitRum, DF_charge_inel_C_2_limitRum,
-#DF_charge_dataE0,DF_charge_dataE1,DF_charge_dataE2,DF_charge_dataE3,DF_charge_dataE4
+DataFrame_charge = pd.concat([DF_charge_dataB,DF_charge_inel_C_3_limitRum, DF_charge_inel_C_0_limitRum,DF_charge_inel_C_1_limitRum, DF_charge_inel_C_2_limitRum,
+DF_charge_dataE0,DF_charge_dataE1,DF_charge_dataE2,DF_charge_dataE3,DF_charge_dataE4,
 DF_charge_dataE5,DF_charge_dataE6,DF_charge_dataF_0_limitRum,DF_charge_dataF_1_limitRum
 ], axis=0).drop([2,3,4], axis=1)
 DataFrame_charge.to_csv('Dados_chargeE3.csv')
 
 ########################################################################################################
 
-print('modulo \n')
+print('MÓDULO \n')
 
 # Módulo
 
-DataFrame_istight = pd.concat([#DF_charge_dataB, DF_MuonCand_istight_C_2_limitRum, DF_MuonCand_istight_C_1_limitRum, DF_MuonCand_istight_C_0_limitRum, DF_MuonCand_istight_C_3_limitRum,
-#DF_MuonCand_istight_dataE0,DF_MuonCand_istight_dataE1,DF_MuonCand_istight_dataE2,DF_MuonCand_istight_dataE3,DF_MuonCand_istight_dataE4
+DataFrame_istight = pd.concat([DF_charge_dataB, DF_MuonCand_istight_C_2_limitRum, DF_MuonCand_istight_C_1_limitRum, DF_MuonCand_istight_C_0_limitRum, DF_MuonCand_istight_C_3_limitRum,
+DF_MuonCand_istight_dataE0,DF_MuonCand_istight_dataE1,DF_MuonCand_istight_dataE2,DF_MuonCand_istight_dataE3,DF_MuonCand_istight_dataE4,
 DF_MuonCand_istight_dataE5,DF_MuonCand_istight_dataE6,DF_MuonCand_istight_dataF_0_limitRum,DF_MuonCand_istight_dataF_1_limitRum
 ],axis=0).drop([2,3,4], axis=1)
 DataFrame_istight.to_csv('Dados_istightE3.csv')
@@ -274,8 +268,8 @@ DataFrame_istight.to_csv('Dados_istightE3.csv')
 print('TIGHT MUON \n')
 
 # TIGHT MUON IDENTIFICATION
-DataFrame_vtxz = pd.concat([#DF_MuonCand_vtxz_dataB,DF_MuonCand_vtxz_C_3_limitRum, DF_MuonCand_vtxz_C_0_limitRum, DF_MuonCand_vtxz_C_1_limitRum, DF_MuonCand_vtxz_C_2_limitRum,
-#DF_MuonCand_vtxz_dataE0,DF_MuonCand_vtxz_dataE1,DF_MuonCand_vtxz_dataE2,DF_MuonCand_vtxz_dataE3,DF_MuonCand_vtxz_dataE4
+DataFrame_vtxz = pd.concat([DF_MuonCand_vtxz_dataB,DF_MuonCand_vtxz_C_3_limitRum, DF_MuonCand_vtxz_C_0_limitRum, DF_MuonCand_vtxz_C_1_limitRum, DF_MuonCand_vtxz_C_2_limitRum,
+DF_MuonCand_vtxz_dataE0,DF_MuonCand_vtxz_dataE1,DF_MuonCand_vtxz_dataE2,DF_MuonCand_vtxz_dataE3,DF_MuonCand_vtxz_dataE4,
 DF_MuonCand_vtxz_dataE5,DF_MuonCand_vtxz_dataE6,DF_MuonCand_vtxz_dataF_0_limitRum,DF_MuonCand_vtxz_dataF_1_limitRum
 ], axis=0).drop([2,3,4], axis=1)
 
