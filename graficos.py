@@ -27,7 +27,7 @@ dataset = DataSet2.rename(columns={0:'Pt', 1:'MassaInvariante', 2:'Acoplanaridad
 
 # ------------------------ DADOS ------------------------- #
 
-DataFrame_signal = pd.DataFrame(np.delete((np.array(pd.read_csv('amostra_doublemuon.csv'))),0,1))
+DataFrame_DoubleMuon = pd.DataFrame(np.delete((np.array(pd.read_csv('amostra_doublemuon.csv'))),0,1))
 
 # -------------------- NORMALIZACAO ---------------------- #
 
@@ -57,11 +57,11 @@ DataFrame = pd.concat([dataset,pesos], axis=1)
 
 # ------------------ GRAFICAR -------------------------- #
 
-DataFrame_signal_pt = DataFrame_signal[0]
-DataFrame_signal_delta_eta = DataFrame_signal[3]
-DataFrame_signal_inv_mass = DataFrame_signal[1]
-DataFrame_signal_acc = DataFrame_signal[2]
-DataFrame_signal_vertiprima = DataFrame_signal[4]
+DataFrame_DoubleMuon_pt = DataFrame_DoubleMuon[0]
+DataFrame_DoubleMuon_delta_eta = DataFrame_DoubleMuon[3]
+DataFrame_DoubleMuon_inv_mass = DataFrame_DoubleMuon[1]
+DataFrame_DoubleMuon_acc = DataFrame_DoubleMuon[2]
+DataFrame_DoubleMuon_vertiprima = DataFrame_DoubleMuon[4]
 
 
 DataSet_signal_exclusivo_pt = DataSet_signal_exclusivo[0]
@@ -78,11 +78,11 @@ DataSet_signal_semiexclusivo_deltaeta = DataSet_signal_semiexclusivo[3]
 DataSet_signal_semiexclusivo_vertiprima = DataSet_signal_semiexclusivo[4]
 
 
-file_bk_pt = DataSet_backgraund[0]
-file_bk_invmass = DataSet_backgraund[1]
-file_bk_acopla = DataSet_backgraund[2]
-file_bk_deltaeta = DataSet_backgraund[3]
-file_bk_verticeprima = DataSet_backgraund[4]
+DataSet_backg_pt = DataSet_backgraund[0]
+DataSet_backg_invmass = DataSet_backgraund[1]
+DataSet_backg_acopla = DataSet_backgraund[2]
+DataSet_backg_deltaeta = DataSet_backgraund[3]
+DataSet_backg_verticeprima = DataSet_backgraund[4]
 
 
 # --------------------------------- Gráficos da simulação  --------------------------------- #
@@ -94,22 +94,22 @@ import mplhep as hep
 
 ##################################################################################
 
+# O primeiro número é a binagem e os outros dois são os limites na abscissa
 histo = hist.Hist("Events",
-        hist.Cat("sample", ""),
+        hist.Cat("sample", ""), # Os samples aparece na legenda dos gráficos
         hist.Bin("pt", "$P_{T}$", 20, 0, 20),
         hist.Bin("delta_eta", "$\Delta \eta$", 20, -3, 3),
-        hist.Bin("massa_inv", "Invariante Mass", 20, 0, 600),
+        hist.Bin("massa_inv", "Invariante Mass", 20, 0, 600), 
         hist.Bin("acopla", "Acoplanarity", 20, 0, .12),   
         hist.Bin("vertiprima", "Primary Vertice", 20, 0, 15),                                               
         )
-
 histo.fill(
     sample="Drell-Yan",
-    pt=np.array(file_bk_pt),
-    delta_eta = np.array(file_bk_deltaeta),    
-    massa_inv = np.array(file_bk_invmass),
-    acopla = np.array(file_bk_acopla),
-    vertiprima = np.array(file_bk_verticeprima),  
+    pt=np.array(DataSet_backg_pt),
+    delta_eta = np.array(DataSet_backg_deltaeta),    
+    massa_inv = np.array(DataSet_backg_invmass),
+    acopla = np.array(DataSet_backg_acopla),
+    vertiprima = np.array(DataSet_backg_verticeprima),  
     weight = np.array(weight_backgr['pesos'])
     )
 histo.fill(
@@ -132,11 +132,11 @@ histo.fill(
     )
 histo.fill(
     sample="Data-2017",
-    pt=np.array(DataFrame_signal_pt),
-    delta_eta = np.array(DataFrame_signal_delta_eta),    
-    massa_inv = np.array(DataFrame_signal_inv_mass),
-    acopla = np.array(DataFrame_signal_acc),   
-    vertiprima = np.array(DataFrame_signal_vertiprima)
+    pt=np.array(DataFrame_DoubleMuon_pt),
+    delta_eta = np.array(DataFrame_DoubleMuon_delta_eta),    
+    massa_inv = np.array(DataFrame_DoubleMuon_inv_mass),
+    acopla = np.array(DataFrame_DoubleMuon_acc),   
+    vertiprima = np.array(DataFrame_DoubleMuon_vertiprima)
         )
 
 plt.rcParams.update({
