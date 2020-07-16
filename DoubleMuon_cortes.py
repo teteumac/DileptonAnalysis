@@ -22,7 +22,7 @@ def Acoplanaridade(x,y):
 def MassaInvariante(x,y):
 	return pd.DataFrame((x + y).mass, columns = ['inv_mass'])	
 
-def	DeltaEta(x,y):
+def DeltaEta(x,y):
 	return pd.DataFrame((x.rapidity - y.rapidity), columns=['delta_eta'])
 
 def Pt(x,y):
@@ -48,6 +48,7 @@ DataFrame_modulo1 = pd.DataFrame(np.delete((np.array(pd.read_csv('Dados_moduloE1
 DataFrame_modulo2 = pd.DataFrame(np.delete((np.array(pd.read_csv('Dados_moduloE2.csv'))),0,1), columns = ['almir1', 'almir2'])
 DataFrame_modulo3 = pd.DataFrame(np.delete((np.array(pd.read_csv('Dados_moduloE3.csv'))),0,1), columns = ['almir1', 'almir2'])
 DataFrame_modulo  = pd.concat([DataFrame_modulo1,DataFrame_modulo2,DataFrame_modulo3],axis=0)
+
 # carga
 
 DataFrame_carga1 = pd.DataFrame(np.delete((np.array(pd.read_csv('Dados_chargeE1.csv'))),0,1), columns = ['carga1', 'carga2'])
@@ -72,17 +73,14 @@ DataFrame_extratracks  = pd.concat([DataFrame_extratracks1,DataFrame_extratracks
 
 dataset = pd.concat([DF_ptetphi, DataFrame_carga, DataFrame_VertiPrima, DataFrame_modulo, DataFrame_instight,DataFrame_extratracks], axis=1)
 
-dataset = dataset.dropna() 
-
+# ínicio dos cortes
+dataset = dataset.dropna() # elimina os eventos que tenha pelo menos um elemento com NaN 
 corte_pt1 = dataset.loc[dataset['pt1'] > 50]
 corte_pt2 = corte_pt1.loc[corte_pt1['pt2'] > 50]
-
-
 corte_oppos_charged_muon = corte_pt2.loc[corte_pt2['carga1']*corte_pt2['carga2'] < 0] 
-
 corte_tight_muon_identification = corte_oppos_charged_muon.loc[corte_oppos_charged_muon['instight1']*corte_oppos_charged_muon['instight2']==1] 
 
-
+# TLorentzVector já com os cortes
 TLV_0 = TLV(corte_tight_muon_identification['pt1'], corte_tight_muon_identification['eta1'], corte_tight_muon_identification['phi1'])
 TLV_1 = TLV(corte_tight_muon_identification['pt2'], corte_tight_muon_identification['eta2'], corte_tight_muon_identification['phi2'])
 
@@ -95,15 +93,5 @@ DataFrame_almir = pd.DataFrame(np.array(corte_tight_muon_identification.loc[:,'a
 DataFrame_extratracks = pd.DataFrame(np.array(corte_tight_muon_identification['ExtraTracks'])).rename(columns = {0:'ExtraTracks'})
 
 amostra_doublemuon = pd.concat([DF_PT, DataFrame_Massa_inva, DataFrame_Acopla, DataFrame_DeltaEta, DataFrame_VerticePrima, DataFrame_almir,DataFrame_extratracks], axis = 1)
-
-
-corte_MassaInvariante = amostra_doublemuon.loc[amostra_doublemuon['inv_mass'] > 110]
-
-corte_VerticePriama = corte_MassaInvariante.loc[corte_MassaInvariante['vertice_prima'] < 15]
-
-corte_almir = corte_VerticePriama.loc[corte_VerticePriama['almir1'] < 0.012].loc[corte_VerticePriama['almir2'] < 0.012]
-
-corte_acoplanaridade = corte_almir.loc[corte_almir['acoplanaridade'] < 0.009]
-
 
 amostra_doublemuon.to_csv('amostra_doublemuon.csv')
