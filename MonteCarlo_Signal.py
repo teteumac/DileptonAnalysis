@@ -100,7 +100,12 @@ for i in range(0,len(nPfCand_inel)):
 
 		if (value_list1[i] > 0.3 and value_list2[i] > 0.3):
 			contador_PV3+=1
-							
+import itertools
+it = (i for i in range(0,len(nPfCand_inel)))
+mylist = pow(pow(deltaPhi(PfCand_phi,TLV_0_inel.phi),2) + pow(PfCand_eta-TLV_0_inel.eta,2), 0.5)
+mylist2 = pow(pow(deltaPhi(PfCand_phi,TLV_1_inel.phi),2) + pow(PfCand_eta-TLV_1_inel.eta,2), 0.5)
+a = itertools.dropwhile(mylist > 0.3 and mylist2 > 0.3, enumerate(it))
+list(a)							
 							
 '''				
 # -------------------------------------------------------------- #
