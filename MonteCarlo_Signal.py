@@ -41,8 +41,8 @@ def Acoplanaridade(x,y):
 def MassaInvariante(x,y):
 	return pd.DataFrame((x + y).mass, columns = ['inv_mass'])	
 
-def	DeltaEta(x,y):
-	return pd.DataFrame((x.rapidity - y.rapidity), columns=['delta_eta'])
+def DeltaEta(x,y):
+        return pd.DataFrame((x.rapidity - y.rapidity), columns=['delta_eta'])
 
 def Pt(x,y):
 	return pd.DataFrame((x+y).pt, columns = ['Pt'])	
@@ -87,6 +87,8 @@ TLV_0_inel = TLV(DF_MuPt_inel['pt1'], DF_MuEta_inel['eta1'], DF_Muphi_inel['phi1
 TLV_1_inel = TLV(DF_MuPt_inel['pt2'], DF_MuEta_inel['eta2'], DF_Muphi_inel['phi2'])
 
 '''
+# Tentativa de calcular o número de traços extras
+
 contador_PV3 = 0
 
 for i in range(0,len(nPfCand_inel)):
@@ -163,17 +165,7 @@ DF_VerticePrima_elas = pd.DataFrame(np.array(corte_tight_muon_identification_exc
 DF_Almir_elas = pd.DataFrame(np.array(corte_tight_muon_identification_exclusivo.loc[:,'almir1':'almir2'])).rename(columns = {0:'almir1',1:'almir2'})
 DF_nPfCand_elas = pd.DataFrame(np.array(corte_tight_muon_identification_exclusivo[0]), columns = ['extra_tracks'])
 
-
 amostra_exclusivo = pd.concat([DF_MuPt_elas, DF_M_inv_elas, Acc_elas, Delta_Eta_elas, DF_VerticePrima_elas, DF_Almir_elas, DF_nPfCand_elas], axis = 1)
-
-corte_MassaInvariante = amostra_exclusivo.loc[amostra_exclusivo['inv_mass'] > 110]
-
-corte_VerticePriama = corte_MassaInvariante.loc[corte_MassaInvariante['vertice_prima'] < 15]
-
-corte_almir = corte_VerticePriama.loc[corte_VerticePriama['almir1'] < 0.012].loc[corte_VerticePriama['almir2'] < 0.012]
-
-corte_acoplanaridade = corte_almir.loc[corte_almir['acoplanaridade'] < 0.009]
-
 
 amostra_exclusivo.to_csv('amostra_exclusivo.csv')
 
